@@ -1,0 +1,100 @@
+---
+layout: default
+title: Capa - Malware Analysis Tool
+---
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Automated Malware Analysis</h1>
+    <br><br><br>
+    <p>Designed to assist in the analysis of potentially malicious programs</p><br>
+    <p>capa provides a powerful framework for identifying and understanding the behavioural characteristics of software.</p>
+    <br><br>
+    <div class="button"><br><br>
+    <a href="rule.html" class="btn">Browse Rule Library</a>
+    </div>
+  </div>
+</section>
+
+<section class="sub-hero">
+  <div class="sub-hero-content">
+    <h1>Capa: Unveiling Malware's True Nature</h1>
+    <p class="big">capa detects capabilities in executable files. 
+      You run it against a PE, ELF, .NET module, or shellcode file and it tells you what it thinks the program can do.
+      For example, it might suggest that the file is a backdoor, is capable of installing services,
+      or relies on HTTP to communicate.</p>
+      <br><br>
+  </div>
+</section>
+
+<div class="feat">
+  <h1>HOW IT WORKS?</h1>
+  <br>
+  <p class="big">At its core, capa leverages a rule-based approach to identify specific features and indicators of malicious behaviour. These rules are defined by experts in the field and encapsulate patterns, signatures, and heuristics commonly associated with various malware families, techniques, or behaviours. 
+  </p><br>
+</div>
+
+<section class="features">
+  <div class="feature">
+    <h2>Rule-Based Analysis</h2>
+    <p class="big">capa employs a rule-based analysis approach to identify and analyse malware behaviours. It applies a collection of predefined rules to detect common techniques, tactics, and procedures used by malware.</p>
+  </div>
+
+  <div class="feature">
+    <h2>Behavioural Pattern Detection</h2>
+    <p class="big">capa focuses on detecting behavioural patterns exhibited by malware rather than relying solely on static attributes or signatures. By analysing the behaviour of a file or code, it can uncover malicious intent and identify potential threats.</p>
+  </div>
+
+  <div class="feature">
+    <h2>Extensibility and Collaboration</h2>
+    <p class="big">capa allows for extensibility, enabling users to create custom rules tailored to their specific analysis needs. It also promotes community collaboration, encouraging users to contribute to the rule library and share insights.</p><br>
+  </div>
+</section>
+
+<section class="info">
+  <h3>Check out:</h3><br>
+  <li>the overview in our first <a href="https://www.mandiant.com/resources/blog/capa-automatically-identify-malware-capabilities" style="color:#3480C5;">capa blog post</a></li>
+  <br><li> major version 2.0 updates described in our <a href="https://www.mandiant.com/resources/blog/capa-2-better-stronger-faster" style="color:#3480C5;">second blog post</a></li>
+  <br><li>the major version 3.0 (ELF support) described in the <a href="https://www.mandiant.com/resources/blog/elfant-in-the-room-capa-v3" style="color:#3480C5;"> third blog post</a></li>
+  <br><li>the major version 4.0 (.NET support) described in the <a href="https://www.mandiant.com/resources/blog/capa-v4-casting-wider-net" style="color:#3480C5;">fourth blog post</a></li>
+  <br><br>
+  <center><img src="assets\img\output.png" alt="" width="800" height="680"></center><br><br>
+  <div class="download-info">
+    <h1>Download and Usage</h1><br>
+    <p class="big">Download stable releases of the standalone capa binaries <a href="https://github.com/mandiant/capa/releases" style="color:#3480C5;">here</a>. You can run the standalone binaries without installation. capa is a command line tool that should be run from the terminal.</p><br>
+    <p>To use capa as a library or integrate with another tool, see <a href="https://github.com/mandiant/capa/blob/master/doc/installation.md" style="color:#3480C5;">doc/installation.md</a> for further setup instructions.</p><br>
+    <p>For more information about how to use capa, see <a href="https://github.com/mandiant/capa/blob/master/doc/usage.md" style="color:#3480C5;">doc/usage.md</a>.</p>
+  </div>
+
+  <div class="example-info"><br>
+    <h1>Example</h1><br>
+    <p class="big">In the above sample output, we ran capa against an unknown binary (suspicious.exe), and the tool reported that the program can send HTTP requests, decode data via XOR and Base64, install services, and spawn new processes. Taken together, this makes us think that suspicious.exe could be a persistent backdoor. Therefore, our next analysis step might be to run suspicious.exe in a sandbox and try to recover the command and control server.</p><br>
+    <p>By passing the -vv flag (for very verbose), capa reports exactly where it found evidence of these capabilities. This is useful for at least two reasons:</p><br>
+    <li>it helps explain why we should trust the results, and enables us to verify the conclusions, and</li><br>
+    <li>it shows where within the binary an experienced analyst might study with IDA Pro</li><br><br>
+    <center><img src="assets\img\example.png" alt="" width="800" height="580"></center><br><br>
+    <p class="big">capa uses a collection of rules to identify capabilities within a program. These rules are easy to write, even for those new to reverse engineering. By authoring rules, you can extend the capabilities that capa recognizes. In some regards, capa rules are a mixture of the OpenIOC, Yara, and YAML formats.</p><br>
+    <p>Here's an example rule used by capa:</p><br><br>
+    <center><img src="assets\img\rule.png" alt="" width="800" height="480"></center><br><br>
+    <p class="big">The <a href="https://github.com/mandiant/capa-rules" style="color:#3480C5;">github.com/mandiant/capa-rules</a> repository contains hundreds of standard library rules that are distributed with capa. Please learn to write rules and contribute new entries as you find interesting techniques in malware.</p><br>
+    <p class="big">If you use IDA Pro, then you can use the <a href="https://github.com/mandiant/capa/tree/master/capa/ida/plugin" style="color:#3480C5;">explorer plugin</a>. capa explorer helps you identify interesting areas of a program and build new capa rules using features extracted directly from your IDA Pro database.</p>
+    <br><br><center><img src="assets\img\explorer_expanded.png" alt="" width="800" height="580"></center><br><br>
+  </div>
+    
+  <h1>Further Information</h1><br>
+  <h2>capa</h2>
+  <br><li><a href="https://github.com/mandiant/capa/blob/master/doc/installation.md" style="color:#3480C5;">Installation</a></li>
+  <br><li><a href="https://github.com/mandiant/capa/blob/master/doc/usage.md" style="color:#3480C5;">Usage</a></li>
+  <br><li><a href="https://github.com/mandiant/capa/blob/master/doc/limitations.md" style="color:#3480C5;">Limitations</a></li>
+  <br><li><a href="https://github.com/mandiant/capa/blob/master/.github/CONTRIBUTING.md" style="color:#3480C5;">Contributing Guide</a></li><br>
+  <h2>capa rules</h2>
+  <br><li><a href="https://github.com/mandiant/capa-rules" style="color:#3480C5;">capa-rules repository</a></li>
+  <br><li><a href="https://github.com/mandiant/capa-rules/blob/master/doc/format.md" style="color:#3480C5;">capa-rules rule format</a></li>
+  <br><h2>capa testfiles</h2>
+  <br><p>The <a href="https://github.com/mandiant/capa-testfiles" style="color:#3480C5;">capa-testfiles repository</a> contains the data we use to test capa's code and rules</p><br>
+</section>
+
+<footer>
+</footer>
+</body>
+</html>
