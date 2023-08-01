@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<h1 id="rule-name">Loading...</h1>
+<div id="rule-details">Loading...</div>
+<link rel="stylesheet" href="/assets/styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+
+
+<script>
+$(document).ready(function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const ruleParam = urlParams.get('rule');
+
+  $.get("/assets/data/rules/" + ruleParam + ".yml", function(data) {
+    const rule = jsyaml.load(data);
+
+    $('#rule-name').text(rule.rule.meta.name);
+    $('#rule-details').html(`
+      <h2>Details</h2>
+      <p><strong>Namespace:</strong> ${rule.rule.meta.namespace}</p>
+      <p><strong>Authors:</strong> ${rule.rule.meta.authors.join(', ')}</p>
+      <p><strong>Scope:</strong> ${rule.rule.meta.scope ? rule.rule.meta.scope : ''}</p>
+      <p><strong>ATT&CK:</strong> ${rule.rule.meta['att&ck'] ? rule.rule.meta['att&ck'].join(', ') : ''}</p>
+      <p><strong>MBC:</strong> ${rule.rule.meta.mbc ? rule.rule.meta.mbc.join(', ') : ''}</p>
+      <p><strong>References:</strong> ${rule.rule.meta.references ? rule.rule.meta.references.join(', ') : ''}</p>
+      <p><strong>Examples:</strong> ${rule.rule.meta.examples ? rule.rule.meta.examples.join(', ') : ''}</p>
+      <h2>Features</h2>
+      <pre>${rule.rule.features ? JSON.stringify(rule.rule.features, null, 2) : ''}</pre>
+    `);
+  }, 'text');
+});
+</script>

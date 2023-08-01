@@ -8,6 +8,9 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 .hero {
   background-image: url('img/hero-image.jpg');
@@ -132,5 +135,30 @@ p.big {
 footer {
   background-color: #080808;
   color: #fff;
+  margin-top: auto;
   padding: 20px;
 }
+.rule-card {
+  border: 1px solid #509ac9;
+  padding: 10px;
+  box-shadow: 0 2px 5px rbga(0, 0, 0, 0.15);
+  border-radius: 5px;
+  min-height: 100px; /* This sets a minimum height for your cards */
+}
+
+.rule-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 10px 10px;
+  color: #3c4449;
+}
+.rule-card a, 
+.rule-card a:visited, 
+.rule-card a:hover, 
+.rule-card a:active {
+  text-decoration: none;
+  color: black;
+}
+
+
