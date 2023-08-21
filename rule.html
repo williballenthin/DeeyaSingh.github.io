@@ -2,9 +2,12 @@
 layout: default
 ---
 <link rel="stylesheet" href="/assets/styles.css">
-
-<h1>Rules</h1>
-<p>Display rules under Namespace:</p>
+<div class="heading">
+<h1>Rule Library</h1>
+</div>
+<br>
+<div class="flex-row">
+  <span> Display rules under Namespace:</span>
 <select id="namespaceSelect">
   <option value="">--Select Namespace--</option>
   <option value="anti-analysis">anti-analysis</option>
@@ -25,7 +28,8 @@ layout: default
 </select>
 
 <button id="searchButton">Search</button>
-
+</div>
+<br>
 <div class="rule-grid" id="rule-grid">
   {% for rule_file in site.data.rules %}
     {% assign rule = rule_file[1].rule %}
@@ -33,7 +37,7 @@ layout: default
       <h3><a href="rule-detail.html?rule={{ rule_file[0] }}">{{ rule.meta.name }}</a></h3>
       <p>{{ rule.meta.namespace }}</p>
       <p>Authors: {{ rule.meta.authors | join: ", " }}</p>
-      <!-- Add more rule data as needed -->
+      
     </div>
     {% assign index_mod = forloop.index0 | modulo: 4 %}
     {% if forloop.index0 != 0 and index_mod == 3 %}

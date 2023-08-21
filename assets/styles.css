@@ -1,4 +1,4 @@
-/* Reset default styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +12,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
 }
+
 .hero {
   background-image: url('img/hero-image.jpg');
   background-size: cover;
@@ -30,7 +31,6 @@ body {
   text-align: left;
   color: #fff;
   font-size: 26px;
-  
 }
 
 .hero h1 {
@@ -73,6 +73,7 @@ p.big {
   font-size: 22px;
   padding-left: 80px;
 }
+
 .feat{
   background-color: #080808;
   padding-left: 80px;
@@ -86,6 +87,7 @@ p.big {
 .feat h1{
   font-size: 42;
 }
+
 .feature{
   background-color: #080808;
   padding-left: 30px;
@@ -94,6 +96,7 @@ p.big {
   padding-bottom: 40px;
   color: #ffffff;
 }
+
 .features {
   display: flex;
   justify-content: space-around;
@@ -124,26 +127,41 @@ p.big {
   padding-right: 80px;
   padding-left: 80px;
   font-size: 18px;
-
 }
+
 .info h1{
   font-size: 36px;
 }
+
 .info h2{
   font-size: 28px;
 }
+
 footer {
   background-color: #080808;
   color: #fff;
   margin-top: auto;
   padding: 20px;
 }
+
 .rule-card {
   border: 1px solid #509ac9;
   padding: 10px;
   box-shadow: 0 2px 5px rbga(0, 0, 0, 0.15);
   border-radius: 5px;
-  min-height: 100px; /* This sets a minimum height for your cards */
+  min-height: 100px; 
+}
+
+pre {
+  font-size: 1em; 
+  font-family: Arial, sans-serif; 
+  white-space: pre-wrap; 
+}
+
+.flex-row {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
 }
 
 .rule-grid {
@@ -153,6 +171,7 @@ footer {
   padding: 10px 10px;
   color: #3c4449;
 }
+
 .rule-card a, 
 .rule-card a:visited, 
 .rule-card a:hover, 
@@ -161,4 +180,19 @@ footer {
   color: black;
 }
 
+#rule-name {
+  background-color: black; 
+  color: white; 
+  padding: 10px 40px; 
+}
 
+#rule-details {
+  padding: 40px; 
+}
+
+.heading {
+  background-color: black; 
+  color: white; 
+  padding: 10px 40px; 
+  text-align: center;
+}
