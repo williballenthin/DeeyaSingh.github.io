@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>modify access privileges</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">modify access privileges</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/modify</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Privilege Escalation::Access Token Manipulation [T1134]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 9324D1A8AE37A36AE560C37448C9705A:0x403BE0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: advapi32.AdjustTokenPrivileges
+      - optional:
+        - or:
+          - api: advapi32.LookupPrivilegeValue
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

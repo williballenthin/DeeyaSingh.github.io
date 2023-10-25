@@ -1,0 +1,102 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>validate payment card number using luhn algorithm with no lookup table</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">validate payment card number using luhn algorithm with no lookup table</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> </p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Checksum::Luhn [C0032.002]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 6fcc13563aad936c7d0f3165351cb453:0x4026C0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - characteristic: loop
+      - description: Iterate over CC digits
+      - or:
+        - basic block:
+          - and:
+            - or:
+              - instruction:
+                - mnemonic: shl
+                - number: 1
+              - instruction:
+                - mnemonic: imul
+                - number: 2
+              - mnemonic: add = add al, al
+            - instruction:
+              - mnemonic: cmp
+              - number: 9
+            - description: Digital Root check number*2 < 0x9
+        - and:
+          - instruction:
+            - mnemonic: cmp
+            - number: 9
+            - description: Compare number to 0x9 for Digital Root
+          - basic block:
+            - or:
+              - instruction:
+                - mnemonic: imul
+                - number: 2
+              - instruction:
+                - mnemonic: shl
+                - number: 1
+              - mnemonic: add = add al, al
+              - description: 2*Number for Digital Root
+      - or:
+        - instruction:
+          - mnemonic: sub
+          - number: 48
+          - description: Conversion of chr to int (SUB 0x30)
+        - instruction:
+          - offset: -48
+          - mnemonic: lea
+          - description: Conversion of chr to int (LEA REG,[REG+ -0x30])
+      - basic block:
+        - or:
+          - and:
+            - or:
+              - mnemonic: div
+              - and:
+                - mnemonic: idiv
+                - mnemonic: cdq
+            - number: 10
+            - optional:
+              - mnemonic: neg
+            - description: Final section returning checkum % 10
+          - and:
+            - mnemonic: shr
+            - mnemonic: imul
+            - number: 1717986919
+            - number: 31
+            - number: 2
+            - optional:
+              - mnemonic: neg
+            - description: Compiler optimized returning checkum % 10
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

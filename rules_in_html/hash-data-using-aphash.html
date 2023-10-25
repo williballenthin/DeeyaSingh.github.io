@@ -1,0 +1,63 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>hash data using aphash</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">hash data using aphash</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/hashing/aphash</p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Non-Cryptographic Hash [C0030]</p>
+    <p><strong>References:</strong> https://www.partow.net/programming/hashfunctions/</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - and:
+      - number: 2863311530
+      - instruction:
+        - description: hash << 7
+        - mnemonic: shl
+        - number: 7
+      - instruction:
+        - description: hash << 11
+        - mnemonic: shl
+        - number: 11
+      - instruction:
+        - description: hash >> 5
+        - mnemonic: shr
+        - number: 5
+      - instruction:
+        - description: hash >> 3
+        - mnemonic: shr
+        - number: 3
+      - instruction:
+        - description: iterator & 1
+        - mnemonic: and
+        - number: 1
+      - characteristic: nzxor
+      - characteristic: loop
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

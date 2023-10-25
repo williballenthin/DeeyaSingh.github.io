@@ -1,0 +1,83 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>parse PE header</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">parse PE header</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/pe</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 9324D1A8AE37A36AE560C37448C9705A:0x403DD0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - os: windows
+      - and:
+        - mnemonic: cmp
+        - or:
+          - number: 0x4550 = IMAGE_NT_SIGNATURE (PE)
+          - and:
+            - number: 80
+            - number: 69
+        - or:
+          - number: 0x5A4D = IMAGE_DOS_SIGNATURE (MZ)
+          - and:
+            - number: 77
+            - number: 90
+        - optional:
+          - and:
+            - operand[1].offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
+            - or:
+              - and:
+                - arch: i386
+                - operand[1].offset: 0x50 = IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage
+                - operand[1].offset: 0x34 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
+              - and:
+                - arch: amd64
+                - operand[1].offset: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage
+                - operand[1].offset: 0x30 = IMAGE_NT_HEADERS64.OptionalHeader.ImageBase
+          - basic block:
+            - and:
+              - operand[1].offset: 0x3C = IMAGE_DOS_HEADER.e_lfanew
+              - 3 or more:
+                - operand[1].offset: 0x4 = IMAGE_NT_HEADERS.FileHeader.Machine
+                - operand[1].offset: 0x6 = IMAGE_NT_HEADERS.FileHeader.NumberOfSections
+                - operand[1].offset: 0x14 = IMAGE_NT_HEADERS.FileHeader.SizeOfOptionalHeader
+                - operand[1].offset: 0x16 = IMAGE_NT_HEADERS.FileHeader.Characteristics
+                - operand[1].offset: 0x28 = IMAGE_NT_HEADERS.OptionalHeader.AddressOfEntryPoint
+                - or:
+                  - and:
+                    - arch: i386
+                    - operand[1].offset: 0x34 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
+                    - operand[1].offset: 0x50 = IMAGE_NT_HEADERS.OptionalHeader.SizeOfImage
+                  - and:
+                    - arch: amd64
+                    - operand[1].offset: 0x30 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
+                    - operand[1].offset: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

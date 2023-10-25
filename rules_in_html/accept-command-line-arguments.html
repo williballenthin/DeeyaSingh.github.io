@@ -1,0 +1,43 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>accept command line arguments</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">accept command line arguments</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/cli</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Execution::Command and Scripting Interpreter [T1059]</p>
+    <p><strong>MBC:</strong> Execution::Command and Scripting Interpreter [E1059]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> e5369ac309f1be6d77afeeb3edab0ed8:0x402760</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: GetCommandLine
+      - api: CommandLineToArgv
+      - api: System.Environment::GetCommandLineArgs
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

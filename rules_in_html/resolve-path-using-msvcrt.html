@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>resolve path using msvcrt</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">resolve path using msvcrt</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/cli</p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> Discovery::File and Directory Discovery [T1083]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 31600ad0d1a7ea615690df111ae36c73:0x4016B8</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: msvcrt.__p__pgmptr
+      - api: msvcrt.__p__wpgmptr
+      - api: msvcrt._get_pgmptr
+      - api: msvcrt._get_wpgmptr
+      - api: msvcrt._pgmptr
+      - api: msvcrt._wpgmptr
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

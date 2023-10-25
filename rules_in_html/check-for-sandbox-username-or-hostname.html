@@ -1,0 +1,96 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>check for sandbox username or hostname</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">check for sandbox username or hostname</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
+    <p><strong>Authors:</strong> @_re_fox, echernofsky@google.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion [T1497]</p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009]</p>
+    <p><strong>References:</strong> https://github.com/LloydLabs/wsb-detect</p>
+    <p><strong>Examples:</strong> ccbf7cba35bab56563c0fbe4237fdc41:0x402B90</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - match: get session user name
+        - match: get hostname
+      - or:
+        - string: /MALTEST/i
+        - description: Betabot Username Check
+        - string: /TEQUILABOOMBOOM/i
+        - description: VirusTotal Sandbox
+        - string: /SANDBOX/i
+        - description: Gookit Username Check
+        - string: /^VIRUS/i
+        - description: Satan Username Check
+        - string: /MALWARE/i
+        - description: Betabot Username Check
+        - string: /SAND\s?BOX/i
+        - description: Betabot Username Check
+        - string: /Test\sUser/i
+        - description: Betabot Username Check
+        - string: /CurrentUser/i
+        - description: Gookit Username Check
+        - string: /7SILVIA/i
+        - description: Gookit Username Check
+        - string: /FORTINET/i
+        - description: Shifu Username Check
+        - string: /John\s?Doe/i
+        - description: Emotet Username Check
+        - string: /Emily/i
+        - description: Trickbot Downloader Username Check
+        - string: /HANSPETER(-PC)?/i
+        - description: Trickbot Downloader Username Check
+        - string: /HAPUBWS/i
+        - description: Trickbot Downloader Username Check
+        - string: /Hong\sLee/i
+        - description: Trickbot Downloader Username Check
+        - string: /IT-ADMIN/i
+        - description: Trickbot Downloader Username Check
+        - string: /JOHN(-PC)?/i
+        - description: Trickbot Downloader Username Check
+        - string: /Johnson/i
+        - description: Trickbot Downloader Username Check
+        - string: /Miller/i
+        - description: Trickbot Downloader Username Check
+        - string: /MUELLER(-PC)?/i
+        - description: Trickbot Downloader Username Check
+        - string: /Peter\sWilson/i
+        - description: Trickbot Downloader Username Check
+        - string: /SystemIT/i
+        - description: Trickbot Downloader Username Check
+        - string: /Timmy/i
+        - description: Trickbot Downloader Username Check
+        - string: /WIN7-TRAPS/i
+        - description: Trickbot Downloader Username Check
+        - string: /WDAGUtilityAccount/i
+        - description: Windows Defender Application Guard
+        - string: /HAL9TH/i
+        - description: Windows Defender Emulator
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

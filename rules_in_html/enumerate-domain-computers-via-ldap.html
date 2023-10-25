@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>enumerate domain computers via LDAP</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">enumerate domain computers via LDAP</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/network/domain</p>
+    <p><strong>Authors:</strong> awillia2@cisco.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Discovery::System Network Configuration Discovery [T1016]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/adshlp/nf-adshlp-adsopenobject, https://www.vkremez.com/2017/12/lets-learn-introducing-new-trickbot.html, https://chuongdong.com/reverse%20engineering/2021/05/23/MountLockerRansomware/</p>
+    <p><strong>Examples:</strong> 1e2791877da02d49998dea79515a89ca:0x6CD41FF8, 3808f21e56dede99bc914d90aeabe47a:0x140007144</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - api: activeds.ADsOpenObject
+        - api: activeds.#9
+      - optional:
+        - string: {001677D0-FD16-11CE-ABC4-02608C9E7553}
+        - description: IID_IADsContainer
+        - string: {109BA8EC-92F0-11D0-A790-00C04FD8D5A8}
+        - description: IID_IDirectorySearch
+        - substring: LDAP://
+      - or:
+        - substring: (objectClass=computer)
+        - substring: (objectCategory=computer)
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

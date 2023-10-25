@@ -1,0 +1,48 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>stop service</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">stop service</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/service/stop</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Persistence::Create or Modify System Process::Windows Service [T1543.003], Impact::Service Stop [T1489]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> E544A4D616B60147D9774B48C2B65EF2:0x402140</p>
+    <pre><strong>Features</strong>
+    - and:
+      - optional:
+        - match: get service handle
+      - basic block:
+        - and:
+          - number: 0x1 = SERVICE_CONTROL_STOP
+          - or:
+            - api: advapi32.ControlService
+            - api: advapi32.ControlServiceEx
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

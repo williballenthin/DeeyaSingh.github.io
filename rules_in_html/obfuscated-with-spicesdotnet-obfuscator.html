@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>obfuscated with Spices.Net Obfuscator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">obfuscated with Spices.Net Obfuscator</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/obfuscation</p>
+    <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
+    <p><strong>Scope:</strong> file</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Anti-Static Analysis::Executable Code Obfuscation [B0032]</p>
+    <p><strong>References:</strong> https://www.9rays.net/Category/53-spicesnet-suite.aspx, https://github.com/de4dot/de4dot/blob/master/de4dot.code/deobfuscators/Spices_Net/Deobfuscator.cs#L122</p>
+    <p><strong>Examples:</strong> 0953cc3b77ed2974b09e3a00708f88de931d681e2d0cb64afbaf714610beabe6</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: compiled to the .NET platform
+      - or:
+        - string: NineRays.Obfuscator.Evaluation
+        - string: NineRays.Obfuscator.SoftwareWatermarkAttribute
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

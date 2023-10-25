@@ -1,0 +1,43 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>get session information</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">get session information</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/session</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Discovery::System Owner/User Discovery [T1033]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: wtsapi32.WTSQuerySessionInformation
+      - optional:
+        - api: wtsapi32.WTSFreeMemory
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

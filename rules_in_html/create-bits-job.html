@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>create BITS job</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">create BITS job</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/client</p>
+    <p><strong>Authors:</strong> @mr-tz</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::BITS Jobs [T1197], Persistence::BITS Jobs [T1197]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://www.mandiant.com/resources/attacker-use-of-windows-background-intelligent-transfer-service</p>
+    <p><strong>Examples:</strong> 08ac667c65d36d6542917655571e61c8.exe_:0x401E78</p>
+    <pre><strong>Features</strong>
+    - and:
+      - and:
+        - bytes: 0D 4C E3 5C C9 0D 1F 4C 89 7C DA A1 B7 8C EE 7C = IBackgroundCopyManager
+        - bytes: 4B D3 91 49 A1 80 91 42 83 B6 33 28 36 6B 90 97 = BITS_ControlClass
+        - offset: 0xC = IBackgroundCopyManagerVtbl.CreateJob
+        - offset: 0x10 = IBackgroundCopyJobVtbl.AddFile
+      - optional:
+        - description: SetNotifyCmdLine may be use to persist
+        - bytes: 39 07 B5 54 6F 68 EB 45 9D FF D6 A9 A0 FA A9 AF = IBackgroundCopyJob2
+        - offset: 0x8C = IBackgroundCopyJob2Vtbl.SetNotifyCmdLine
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

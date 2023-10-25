@@ -1,0 +1,72 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>inspect section memory permissions</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">inspect section memory permissions</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/pe</p>
+    <p><strong>Authors:</strong> @Ana06</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Discovery::Code Discovery::Inspect Section Memory Permissions [B0046.002]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> E4C33AC3638EEF68311F8AC0D72483C7:0x401480</p>
+    <pre><strong>Features</strong>
+    - and:
+      - os: windows
+      - 3 or more:
+        - and:
+          - number: 0x40000000 = IMAGE_SCN_MEM_READ
+          - number: 0x2 = PAGE_READONLY
+        - and:
+          - number: 0x20000000 = IMAGE_SCN_MEM_EXECUTE
+          - number: 0x10 = PAGE_EXECUTE
+        - and:
+          - or:
+            - number: 0x60000000 = IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_EXECUTE
+            - and:
+              - number: 0x40000000 = IMAGE_SCN_MEM_READ
+              - number: 0x20000000 = IMAGE_SCN_MEM_EXECUTE
+          - number: 0x20 = PAGE_EXECUTE_READ
+        - and:
+          - or:
+            - number: 0xC0000000 = IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE
+            - and:
+              - number: 0x40000000 = IMAGE_SCN_MEM_READ
+              - number: 0x80000000 = IMAGE_SCN_MEM_WRITE
+          - number: 0x4 = PAGE_READWRITE
+        - and:
+          - or:
+            - number: 0xE0000000 = IMAGE_SCN_MEM_READ | IMAGE_SCN_MEM_WRITE | IMAGE_SCN_MEM_EXECUTE
+            - and:
+              - number: 0x40000000 = IMAGE_SCN_MEM_READ
+              - number: 0x80000000 = IMAGE_SCN_MEM_WRITE
+              - number: 0x20000000 = IMAGE_SCN_MEM_EXECUTE
+          - number: 0x40 = PAGE_EXECUTE_READWRITE
+      - optional:
+        - number: 0x1 = PAGE_NOACCESS
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

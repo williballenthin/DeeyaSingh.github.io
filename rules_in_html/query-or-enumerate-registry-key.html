@@ -1,0 +1,59 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>query or enumerate registry key</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">query or enumerate registry key</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/registry</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Discovery::Query Registry [T1012]</p>
+    <p><strong>MBC:</strong> Operating System::Registry::Query Registry Key [C0036.005]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 493167E85E45363D09495D0841C30648:0x404930, B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x402608</p>
+    <pre><strong>Features</strong>
+    - and:
+      - optional:
+        - match: create or open registry key
+      - or:
+        - api: advapi32.RegEnumKey
+        - api: advapi32.RegEnumKeyEx
+        - api: advapi32.RegQueryInfoKeyA
+        - api: ZwQueryKey
+        - api: ZwEnumerateKey
+        - api: NtQueryKey
+        - api: NtEnumerateKey
+        - api: RtlCheckRegistryKey
+        - api: SHEnumKeyEx
+        - api: SHQueryInfoKey
+        - api: SHRegEnumUSKey
+        - api: SHRegQueryInfoUSKey
+        - api: Microsoft.Win32.RegistryKey::GetSubKeyNames
+        - api: Microsoft.Win32.RegistryKey::OpenBaseKey
+        - api: Microsoft.Win32.RegistryKey::OpenRemoteBaseKey
+        - api: Microsoft.Win32.RegistryKey::OpenSubKey
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

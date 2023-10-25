@@ -1,0 +1,54 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>get process heap flags</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">get process heap flags</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> Discovery::Process Discovery [T1057]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/bed03d2f849d9060c68f8d5905bd204d0cb3f593/al-khaser/AntiDebug/ProcessHeap_Flags.cpp#L13</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_:0x425470</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: PEB access
+      - or:
+        - and:
+          - arch: i386
+          - number: 0x18 = PEB->ProcessHeap
+          - or:
+            - number: 0x40 = ProcessHeap->HeapFlags >= Vista
+            - number: 0xC = ProcessHeap->HeapFlags < Vista
+        - and:
+          - arch: amd64
+          - number: 0x30 = PEB->ProcessHeap
+          - or:
+            - number: 0x70 = ProcessHeap->HeapFlags >= Vista
+            - number: 0x14 = ProcessHeap->HeapFlags < Vista
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

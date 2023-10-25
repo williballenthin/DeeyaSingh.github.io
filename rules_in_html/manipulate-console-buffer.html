@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>manipulate console buffer</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">manipulate console buffer</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/console</p>
+    <p><strong>Authors:</strong> william.ballenthin@mandiant.com, michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Operating System::Console [C0033]</p>
+    <p><strong>References:</strong> https://stackoverflow.com/a/15770935/87207</p>
+    <p><strong>Examples:</strong> 3aa7ee4d67f562933bc998f352b1f319:0x705413A0</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - or:
+          - api: kernel32.SetConsoleCursorPosition
+          - api: kernel32.ReadConsoleOutputCharacter
+          - api: kernel32.WriteConsoleOutputCharacter
+          - api: kernel32.WriteConsoleOutput
+          - api: kernel32.WriteConsoleInput
+        - optional:
+          - api: kernel32.GetStdHandle
+          - number: 0xfffffff5 = STD_OUTPUT_HANDLE
+      - api: System.Console::Write
+      - api: System.Console::WriteLine
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

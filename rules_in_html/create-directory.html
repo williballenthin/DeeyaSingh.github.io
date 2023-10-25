@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>create directory</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">create directory</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system/create</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> File System::Create Directory [C0046]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 17-02.dll_:0x10008f62, 692f7fd6d198e804d6af98eb9e390d61:0x6000003</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: kernel32.CreateDirectory
+      - api: kernel32.CreateDirectoryEx
+      - api: kernel32.CreateDirectoryTransacted
+      - api: NtCreateDirectoryObject
+      - api: ZwCreateDirectoryObject
+      - api: SHCreateDirectory
+      - api: SHCreateDirectoryEx
+      - api: _mkdir
+      - api: _wmkdir
+      - api: System.IO.Directory::CreateDirectory
+      - api: System.IO.DirectoryInfo::Create
+      - api: System.IO.DirectoryInfo::CreateSubdirectory
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

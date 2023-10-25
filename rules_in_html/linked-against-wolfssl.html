@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>linked against wolfSSL</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">linked against wolfSSL</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/static/wolfssl</p>
+    <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
+    <p><strong>Scope:</strong> file</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Cryptography::Crypto Library [C0059]</p>
+    <p><strong>References:</strong> https://www.wolfssl.com/, https://github.com/wolfSSL/wolfssl/blob/2841b5c93b87311dadcf2278151df7453e56db96/wolfssl/internal.h#L4646</p>
+    <p><strong>Examples:</strong> 5789181cba467fa940cdce809b88b9bf7e0e9d4e079e32a68d2b911a8cc47da9</p>
+    <pre><strong>Features</strong>
+    - or:
+      - string: SSLeay wolfSSL compatibility
+      - string: wolfSSL_Init
+      - string: Please supply a buffer for error string
+      - 3 or more:
+        - substring: CLNTSRVR
+        - substring: server finished
+        - substring: client finished
+        - substring: DOGNGRD
+        - substring: DOWNGRD
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

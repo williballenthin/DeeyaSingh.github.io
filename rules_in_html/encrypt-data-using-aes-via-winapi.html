@@ -1,0 +1,55 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using AES via WinAPI</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using AES via WinAPI</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/aes</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05], Cryptography::Encrypt Data::AES [C0027.001]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> BC577119D1A5B7DA489E7B5817D3CC38:0x10002FAC</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - number: 0x6611 = CALG_AES
+        - number: 0x660E = CALG_AES_128
+        - number: 0x660F = CALG_AES_192
+        - number: 0x6610 = CALG_AES_256
+      - or:
+        - api: CryptGenKey
+        - api: CryptDeriveKey
+        - api: CryptImportKey
+      - optional:
+        - or:
+          - number: 1 = PROV_RSA_FULL
+          - api: CryptAcquireContext
+          - api: CryptEncrypt
+          - api: CryptDecrypt
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

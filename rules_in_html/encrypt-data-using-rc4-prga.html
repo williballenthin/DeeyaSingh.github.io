@@ -1,0 +1,51 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using RC4 PRGA</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using RC4 PRGA</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/rc4</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Cryptography::Encrypt Data::RC4 [C0027.009], Cryptography::Generate Pseudo-random Sequence::RC4 PRGA [C0021.004]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 34404A3FB9804977C6AB86CB991FB130:0x403DB0, 34404A3FB9804977C6AB86CB991FB130:0x403E50, 9324D1A8AE37A36AE560C37448C9705A:0x4049F0, 73CE04892E5F39EC82B00C02FC04C70F:0x4064C6</p>
+    <pre><strong>Features</strong>
+    - and:
+      - count(characteristic(nzxor)): 1
+      - or:
+        - match: calculate modulo 256 via x86 assembly
+        - count(mnemonic(movzx)): 4 or more
+      - count(characteristic(calls from)): (0, 4)
+      - count(basic blocks): (4, 50)
+      - match: contain loop
+      - optional:
+        - or:
+          - number: 255
+          - number: 256
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

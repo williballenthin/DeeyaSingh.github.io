@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>receive HTTP response</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">receive HTTP response</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/client</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Get Response [C0002.017]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x10002790</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: System.Net.WebRequest::GetResponse
+      - api: winhttp.WinHttpReceiveResponse
+      - and:
+        - api: winhttp.WinHttpReadData
+        - optional:
+          - api: winhttp.WinHttpQueryDataAvailable
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

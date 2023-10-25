@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>write file to startup folder</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">write file to startup folder</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/startup-folder</p>
+    <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 07F7846BBCDA782E5639292AD93907EB:0x401040</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: get startup folder
+      - or:
+        - match: copy file
+        - match: move file
+        - match: host-interaction/file-system/write
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

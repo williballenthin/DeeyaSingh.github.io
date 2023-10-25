@@ -1,0 +1,54 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using Salsa20 or ChaCha</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using Salsa20 or ChaCha</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/salsa20</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> http://cr.yp.to/snuffle/ecrypt.c</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - or:
+      - description: part of key setup
+      - string: expand 32-byte k = sigma
+      - string: expand 16-byte k = tau
+      - string: expand 32-byte kexpand 16-byte k
+      - and:
+        - string: expa
+        - string: nd 3
+        - string: 2-by
+        - string: te k
+      - and:
+        - number: 0x61707865 = "apxe"
+        - number: 0x3320646E = "3 dn"
+        - number: 0x79622D32 = "yb-2"
+        - number: 0x6B206574 = "k et"
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

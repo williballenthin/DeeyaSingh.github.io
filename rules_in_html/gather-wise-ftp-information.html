@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>gather wise-ftp information</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">gather wise-ftp information</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection/file-managers</p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Credential Access::Credentials from Password Stores [T1555]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://www.wise-ftp.de/en/</p>
+    <p><strong>Examples:</strong> 5a2f620f29ca2f44fc22df67b674198f:0x408E0D</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - string: wiseftpsrvs.ini
+        - string: wiseftp.ini
+        - string: wiseftpsrvs.bin
+      - and:
+        - string: wiseftpsrvs.bin
+        - or:
+          - substring: \AceBIT
+          - substring: Software\AceBIT
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

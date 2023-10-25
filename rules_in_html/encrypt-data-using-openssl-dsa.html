@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using OpenSSL DSA</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using OpenSSL DSA</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/dsa</p>
+    <p><strong>Authors:</strong> Ana06</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://github.com/openssl/openssl/blob/fdc5043d58900663b493147298e64f11353b35fe/crypto/objects/obj_dat.h</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - or:
+      - bytes: 2B 0E 03 02 0D = DSA-SHA
+      - bytes: 2B 0E 03 02 0C = DSA-old
+      - bytes: 2B 0E 03 02 1B = DSA-SHA1-old
+      - bytes: 2A 86 48 CE 38 04 03 = DSA-SHA1
+      - bytes: 60 86 48 01 65 03 04 03 01 = DSA-SHA224
+      - bytes: 60 86 48 01 65 03 04 03 02 = DSA-SHA256
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

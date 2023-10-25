@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>get session integrity level</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">get session integrity level</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/session</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Discovery::System Owner/User Discovery [T1033]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 9879D201DC5ACA863F357184CD1F170E:0x10003643</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: shell32.IsUserAnAdmin
+      - and:
+        - api: System.Security.Principal.WindowsIdentity::GetCurrent
+        - number: 0x220 = BUILTIN\Administrators
+        - api: System.Security.Principal.WindowsPrincipal::IsInRole
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

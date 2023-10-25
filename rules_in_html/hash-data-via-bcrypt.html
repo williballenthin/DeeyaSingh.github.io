@@ -1,0 +1,51 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>hash data via BCrypt</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">hash data via BCrypt</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/hashing</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Cryptography::Cryptographic Hash [C0029]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - api: BCryptHash
+        - and:
+          - api: BCryptHashData
+          - optional:
+            - api: BCryptFinishHash
+            - api: BCryptDestroyHash
+            - api: BCryptCreateHash
+      - optional:
+        - api: BCryptOpenAlgorithmProvider
+        - api: BCryptCloseAlgorithmProvider
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

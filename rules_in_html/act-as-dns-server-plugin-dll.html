@@ -1,0 +1,43 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>act as DNS server plugin DLL</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">act as DNS server plugin DLL</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence</p>
+    <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
+    <p><strong>Scope:</strong> file</p>
+    <p><strong>ATT&CK:</strong> Persistence::Server Software Component [T1505]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://medium.com/@esnesenon/feature-not-bug-dnsadmin-to-dc-compromise-in-one-line-a0f779b8dc83</p>
+    <p><strong>Examples:</strong> 36f506a34b99bf4c199b3c9ec8aa02bd631feafdca20e69e33e714c269ddb8c5</p>
+    <pre><strong>Features</strong>
+    - or:
+      - export: DnsPluginInitialize
+      - export: DnsPluginCleanup
+      - export: DnsPluginQuery
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

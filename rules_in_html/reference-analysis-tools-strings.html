@@ -1,0 +1,76 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>reference analysis tools strings</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">reference analysis tools strings</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> file</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Discovery::Analysis Tool Discovery::Process detection [B0013.001]</p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiAnalysis/process.cpp</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_</p>
+    <pre><strong>Features</strong>
+    - or:
+      - string: /ollydbg(\.exe)?/i
+      - string: /ProcessHacker(\.exe)?/i
+      - string: /tcpview(\.exe)?/i
+      - string: /autoruns(\.exe)?/i
+      - string: /autorunsc(\.exe)?/i
+      - string: /filemon(\.exe)?/i
+      - string: /procmon(\.exe)?/i
+      - string: /regmon(\.exe)?/i
+      - string: /procexp(\.exe)?/i
+      - string: /ida[gqtuw]?(\.exe)?$/i
+      - string: /ida[gqtuw]64(\.exe)?$/i
+      - string: /ImmunityDebugger(\.exe)?/i
+      - string: /Wireshark(\.exe)?/i
+      - string: /dumpcap(\.exe)?/i
+      - string: /HookExplorer(\.exe)?/i
+      - string: /ImportREC(\.exe)?/i
+      - string: /PETools(\.exe)?/i
+      - string: /LordPE(\.exe)?/i
+      - string: /SysInspector(\.exe)?/i
+      - string: /proc_analyzer(\.exe)?/i
+      - string: /sysAnalyzer(\.exe)?/i
+      - string: /sniff_hit(\.exe)?/i
+      - string: /windbg(\.exe)?/i
+      - string: /joeboxcontrol(\.exe)?/i
+      - string: /joeboxserver(\.exe)?/i
+      - string: /ResourceHacker(\.exe)?/i
+      - string: /x32dbg(\.exe)?/i
+      - string: /x64dbg(\.exe)?/i
+      - string: /Fiddler(\.exe)?/i
+      - string: /httpdebugger(\.exe)?/i
+      - string: /fakenet(\.exe)?/i
+      - string: /netmon(\.exe)?/i
+      - string: /WPE PRO(\.exe)?/i
+      - string: /decompile(\.exe)?/i
+      - string: /scylla/i
+      - string: /megadumper/i
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>extract resource via kernel32 functions</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">extract resource via kernel32 functions</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> executable/resource</p>
+    <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> BF88E1BD4A3BDE10B419A622278F1FF7:0x401000, Practical Malware Analysis Lab 01-04.exe_:0x4011FC, 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x140001ABA</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - or:
+          - api: kernel32.LoadResource
+          - api: kernel32.LockResource
+          - api: LdrAccessResource
+        - optional:
+          - api: kernel32.GetModuleHandle
+          - or:
+            - api: kernel32.FindResource
+            - api: kernel32.FindResourceEx
+            - api: LdrFindResource_U
+            - api: LdrFindResourceEx_U
+          - api: kernel32.SizeofResource
+          - api: kernel32.FreeResource
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

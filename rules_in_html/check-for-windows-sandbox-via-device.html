@@ -1,0 +1,42 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>check for Windows sandbox via device</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">check for Windows sandbox via device</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]</p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009]</p>
+    <p><strong>References:</strong> https://github.com/LloydLabs/wsb-detect</p>
+    <p><strong>Examples:</strong> 773290480d5445f11d3dc1b800728966:0x140001140</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: create or open file
+      - string: \\.\GLOBALROOT\device\vmsmb
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

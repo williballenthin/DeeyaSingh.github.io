@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>decompress data via IEncodingFilterFactory</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">decompress data via IEncodingFilterFactory</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/compression</p>
+    <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Decompress Data::IEncodingFilterFactory [C0025.002]</p>
+    <p><strong>References:</strong> https://www.virusbulletin.com/virusbulletin/2012/09/urlzone-reloaded-new-evolution/</p>
+    <p><strong>Examples:</strong> FBBAAF569B63F6398503E4F1979CABEF:0x40691F</p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: ole32.CoCreateInstance
+      - bytes: D0 7C C3 54 44 D9 D0 11 A9 F4 00 60 97 94 23 11 = StdEncodingFilterFac
+      - bytes: 00 DE BD 70 8E C1 D0 11 A9 CE 00 60 97 94 23 11 = IEncodingFilterFactory
+      - count(offset(0x10 = IEncodingFilterFactory.GetDefaultFilter and <filter>.DoDecode)): 2 or more
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

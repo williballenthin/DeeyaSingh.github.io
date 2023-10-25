@@ -1,0 +1,55 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>connect to WMI namespace via WbemLocator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">connect to WMI namespace via WbemLocator</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/wmi</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Execution::Windows Management Instrumentation [T1047]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> al-khaser_x64.exe_:0x14001956e, al-khaser_x86.exe_:0x00445270</p>
+    <pre><strong>Features</strong>
+    - and:
+      - basic block:
+        - and:
+          - api: ole32.CoCreateInstance
+          - bytes: 11 F8 90 45 3A 1D D0 11 89 1F 00 AA 00 4B 2E 24 = CLSID_WbemLocator
+          - bytes: 87 A6 12 DC 7F 73 CF 11 88 4D 00 AA 00 4B 2E 24 = IID_IWbemLocator
+      - or:
+        - and:
+          - arch: i386
+          - offset: 0xC = ppv->ConnectServer
+        - and:
+          - arch: amd64
+          - offset: 0x18 = ppv->ConnectServer
+      - optional:
+        - string: /ROOT\\CIMV2/i
+        - string: /ROOT\\DEFAULT/i
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using HC-128 via WolfSSL</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using HC-128 via WolfSSL</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/hc-128</p>
+    <p><strong>Authors:</strong> blaine.stancill@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05], Cryptography::Encrypt Data::HC-128 [C0027.006]</p>
+    <p><strong>References:</strong> https://github.com/wolfSSL/wolfssl/blob/6694775d4b8c22e7411ec69e8a2b516f107b97ef/wolfcrypt/src/hc128.c</p>
+    <p><strong>Examples:</strong> 91B08896FBDA9EDB8B6F93A6BC811EC6:0x180003562</p>
+    <pre><strong>Features</strong>
+    - and:
+      - characteristic: nzxor
+      - number: 0x17 = 23 from line 153, tem0 = rotrFixed((ctx->T[(v)]),23);
+      - number: 0xA = 10 from line 154, tem1 = rotrFixed((ctx->X[(c)]),10);
+      - number: 0x8 = 8 from line 155, tem2 = rotrFixed((ctx->X[(b)]),8);
+      - number: 0x3FC = Compiler optimized size used in ANDs for the 1024 sized buffer
+      - count(mnemonic(rol)): 48
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

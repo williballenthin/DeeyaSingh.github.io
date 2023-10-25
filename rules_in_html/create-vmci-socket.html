@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>create VMCI socket</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">create VMCI socket</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/socket</p>
+    <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Socket Communication::Create Socket [C0001.003]</p>
+    <p><strong>References:</strong> https://www.vmware.com/products/beta/ws/VMCIsockets.pdf</p>
+    <p><strong>Examples:</strong> 9ed5660c6a442dbba9e2ba795ccc913c1f1517ce89854fe4287c1c8b36b21d52:0x180001241</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - os: windows
+        - or:
+          - api: socket
+          - api: DeviceIoControl
+        - number: 0x81032068 = VMCI_SOCKETS_GET_AF_VALUE
+      - and:
+        - os: linux
+        - or:
+          - api: socket
+          - api: ioctl
+        - number: 0x7B8 = VMCI_SOCKETS_GET_AF_VALUE
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

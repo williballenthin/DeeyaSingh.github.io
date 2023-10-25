@@ -1,0 +1,50 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>compress data via WinAPI</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">compress data via WinAPI</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/compression</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Collection::Archive Collected Data::Archive via Library [T1560.002]</p>
+    <p><strong>MBC:</strong> Data::Compress Data [C0024]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 638dcc3d37b3a574044233c9637d7288:0x401020</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: RtlDecompressBuffer
+      - string: RtlDecompressBuffer
+      - api: RtlDecompressBufferEx
+      - string: RtlDecompressBufferEx
+      - api: RtlDecompressBufferEx2
+      - string: RtlDecompressBufferEx2
+      - api: RtlCompressBuffer
+      - string: RtlCompressBuffer
+      - api: RtlCompressBufferLZNT1
+      - string: RtlCompressBufferLZNT1
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

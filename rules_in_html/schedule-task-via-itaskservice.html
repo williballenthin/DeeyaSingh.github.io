@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>schedule task via ITaskService</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">schedule task via ITaskService</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/scheduled-tasks</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - and:
+      - basic block:
+        - and:
+          - api: ole32.CoCreateInstance
+          - bytes: 9F 36 87 0F E5 A4 FC 4C BD 3E 73 E6 15 45 72 DD = CLSID_TaskScheduler
+          - bytes: C7 A4 AB 2F A9 4D 13 40 96 97 20 CC 3F D4 0F 85 = IID_ITaskService
+      - offset: 0x24 = ppv->NewTask
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

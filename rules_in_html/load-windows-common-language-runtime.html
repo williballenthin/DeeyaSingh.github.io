@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>load Windows Common Language Runtime</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">load Windows Common Language Runtime</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/dotnet</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: mscoree.CorBindToRuntime
+      - api: mscoree.CorBindToRuntimeEx
+      - api: mscoree.CorBindToRuntimeHost
+      - api: mscoree.CorBindToRuntimeByCfg
+      - api: mscoree.CorBindToCurrentRuntime
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

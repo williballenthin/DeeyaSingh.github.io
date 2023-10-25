@@ -1,0 +1,64 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>hash data with MD5</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">hash data with MD5</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/hashing/md5</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, anushka.virgaonkar@mandiant.com, michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Cryptography::Cryptographic Hash::MD5 [C0029.001]</p>
+    <p><strong>References:</strong> https://github.com/rwfpl/rewolf-x86-virtualizer/blob/master/src/test_app/main.cpp</p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 05-01.dll_:0x100108ED</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - description: magic initialization constants from MD4 and MD5
+        - number: 0x67452301 = A, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
+        - number: 0xefcdab89 = B, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
+        - number: 0x98badcfe = C, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
+        - number: 0x10325476 = D, also used in SHA1, RIPEMD-128, RIPEMD-160, RIPEMD-256, and RIPEMD-320
+        - not:
+          - number: 0xc3d2e1f0 = likely SHA1 but also used in RIPEMD-160 and RIPEMD-320
+        - optional:
+          - description: specific compilation from https://github.com/rwfpl/rewolf-x86-virtualizer/blob/master/src/test_app/main.cpp
+          - and:
+            - offset: -680876936
+            - offset: -389564586
+      - basic block:
+        - and:
+          - number: 0x8003 = CALG_MD5
+          - api: advapi32.CryptCreateHash
+      - and:
+        - format: dotnet
+        - or:
+          - api: System.Security.Cryptography.MD5::Create
+          - api: System.Security.Cryptography.MD5CryptoServiceProvider::ctor
+        - optional:
+          - api: System.Security.Cryptography.HashAlgorithm::ComputeHash
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

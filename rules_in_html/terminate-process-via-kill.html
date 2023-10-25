@@ -1,0 +1,50 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>terminate process via kill</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">terminate process via kill</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/terminate</p>
+    <p><strong>Authors:</strong> joakim@intezer.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Process::Terminate Process [C0018]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 7351f8a40c5450557b24622417fc478d:0x402424</p>
+    <pre><strong>Features</strong>
+    - and:
+      - os: linux
+      - api: kill
+      - or:
+        - number: 1 = SIGHUP - controlling terminal closed
+        - number: 2 = SIGINT - interupt process stream, ctrl-C
+        - number: 3 = SIGQUIT - like ctrl-C but with a core dump
+        - number: 6 = SIGABRT
+        - number: 9 = SIGKILL - terminate immediately/hard kill
+        - number: 15 = SIGTERM - terminate whenever/soft kill
+        - number: 19 = SIGSTOP - Pause the process / free command line, ctrl-Z
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

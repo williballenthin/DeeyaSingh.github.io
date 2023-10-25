@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>write process memory</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">write process memory</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> </p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection [T1055]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 2D3EDC218A90F03089CC01715A9F047F:0x4027CF</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: kernel32.WriteProcessMemory
+      - api: ntdll.NtWriteVirtualMemory
+      - api: ntdll.ZwWriteVirtualMemory
+      - api: NtWow64WriteVirtualMemory64
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

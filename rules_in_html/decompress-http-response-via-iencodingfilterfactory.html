@@ -1,0 +1,42 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>decompress HTTP response via IEncodingFilterFactory</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">decompress HTTP response via IEncodingFilterFactory</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/client</p>
+    <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Get Response [C0002.017]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> FBBAAF569B63F6398503E4F1979CABEF:0x4067F0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: get HTTP response content encoding
+      - match: decompress data via IEncodingFilterFactory
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>import public key</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">import public key</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption</p>
+    <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Cryptography::Encryption Key::Import Public Key [C0028.001]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> ffeae4a391a1d5203bd04b4161557227:0x4047A0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: advapi32.CryptAcquireContext
+      - api: crypt32.CryptImportPublicKeyInfo
+      - optional:
+        - and:
+          - api: crypt32.CryptStringToBinary
+          - api: crypt32.CryptDecodeObjectEx
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

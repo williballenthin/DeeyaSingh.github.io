@@ -1,0 +1,53 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>read data from Internet</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">read data from Internet</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/client</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Get Response [C0002.017]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 6f99a2c8944cb02ff28c6f9ced59b161:0x40D590</p>
+    <pre><strong>Features</strong>
+    - and:
+      - optional:
+        - or:
+          - match: connect to HTTP server
+          - match: connect to URL
+      - or:
+        - api: wininet.InternetReadFile
+        - api: wininet.InternetReadFileEx
+        - api: System.Net.WebClient::DownloadString
+        - api: System.Net.WebClient::DownloadStringAsync
+        - api: System.Net.WebClient::DownloadStringTaskAsync
+        - api: System.Net.WebClient::DownloadData
+        - api: System.Net.WebClient::DownloadDataAsync
+        - api: System.Net.WebClient::DownloadDataTaskAsync
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

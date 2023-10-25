@@ -1,0 +1,63 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>connect TCP socket</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">connect TCP socket</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/socket/tcp</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, joakim@intezer.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Socket Communication::Connect Socket [C0001.004]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 01-01.dll_:0x10001010</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: create TCP socket
+      - or:
+        - api: connect
+        - api: ws2_32.connect
+        - api: ws2_32.WSAConnect
+        - api: ConnectEx
+        - and:
+          - basic block:
+            - and:
+              - number: 631375801
+              - number: 1180753395
+              - number: 3849775502
+              - number: 1040610444
+          - basic block:
+            - and:
+              - api: WSAIoctl
+              - number: 0xC8000006 = SIO_GET_EXTENSION_FUNCTION_POINTER
+          - basic block:
+            - and:
+              - api: setsockopt
+              - number: 0xFFFF = SOL_SOCKET
+              - number: 0x7010 = SO_UPDATE_CONNECT_CONTEXT
+          - api: bind
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

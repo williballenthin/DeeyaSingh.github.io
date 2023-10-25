@@ -1,0 +1,48 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>capture microphone audio</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">capture microphone audio</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection/microphone</p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Collection::Audio Capture [T1123]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> a70052c45e907820187c7e6bcdc7ecca:0x405B40</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - api: mciSendString
+        - string: /^open/i
+        - string: /waveaudio/i
+        - string: /^record/i
+      - api: winmm.waveInOpen
+      - api: winmm.waveInAddBuffer
+      - api: winmm.waveInStart
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

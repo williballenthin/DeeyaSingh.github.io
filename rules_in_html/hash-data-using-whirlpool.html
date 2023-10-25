@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>hash data using Whirlpool</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">hash data using Whirlpool</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/hashing/whirlpool</p>
+    <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Cryptography::Cryptographic Hash [C0029]</p>
+    <p><strong>References:</strong> https://github.com/jzelinskie/whirlpool/blob/master/const.go</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - or:
+      - description: the first 16 bytes of the C* constants
+      - bytes: D8 30 78 C0 18 60 18 18 26 46 AF 05 23 8C 23 23 = C0
+      - bytes: 13 A1 4C 87 26 87 87 CB 6D 62 A9 B8 DA B8 B8 11 = C1
+      - bytes: 78 C0 18 60 18 18 D8 30 AF 05 23 8C 23 23 26 46 = C2
+      - bytes: C0 18 60 18 18 D8 30 78 05 23 8C 23 23 26 46 AF = C3
+      - bytes: 18 60 18 18 D8 30 78 C0 23 8C 23 23 26 46 AF 05 = C4
+      - bytes: 60 18 18 D8 30 78 C0 18 8C 23 23 26 46 AF 05 23 = C5
+      - bytes: 18 18 D8 30 78 C0 18 60 23 23 26 46 AF 05 23 8C = C6
+      - bytes: 18 D8 30 78 C0 18 60 18 23 26 46 AF 05 23 8C 23 = C7
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

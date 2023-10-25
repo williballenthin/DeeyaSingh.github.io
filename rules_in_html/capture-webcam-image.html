@@ -1,0 +1,55 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>capture webcam image</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">capture webcam image</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection/webcam</p>
+    <p><strong>Authors:</strong> johnk3r</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Collection::Video Capture [T1125]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> a30101595f6f28ab2f4b0b2cd177c3c4d2ab34a355ab7761a3795d0887c24ada:0x4011C0</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - api: capCreateCaptureWindow
+        - basic block:
+          - and:
+            - api: SendMessage
+            - number: 0x40a = WM_CAP_DRIVER_CONNECT
+        - optional:
+          - basic block:
+            - and:
+              - api: SendMessage
+              - number: 0x40B = WM_CAP_DRIVER_DISCONNECT
+      - basic block:
+        - and:
+          - api: SendMessage
+          - number: 0x419 = WM_CAP_FILE_SAVEDIB
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

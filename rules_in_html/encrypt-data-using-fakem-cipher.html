@@ -1,0 +1,48 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using FAKEM cipher</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using FAKEM cipher</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Cryptography::Decrypt Data [C0031], Cryptography::Encrypt Data [C0027]</p>
+    <p><strong>References:</strong> https://attack.mitre.org/software/S0076/</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - and:
+      - characteristic: tight loop
+      - count(mnemonic(ror)): 5
+      - count(mnemonic(xor)): 5
+      - number: 0x59 = Y
+      - number: 0x48 = H
+      - number: 0x43 = C
+      - number: 0x52 = R
+      - number: 0x41 = A
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

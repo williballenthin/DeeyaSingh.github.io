@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>check for time delay via GetTickCount</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">check for time delay via GetTickCount</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection::Timing/Delay Check GetTickCount [B0001.032]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 16-03.exe_:0x4013d0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - count(api(kernel32.GetTickCount)): 2 or more
+      - basic block:
+        - and:
+          - mnemonic: sub
+          - mnemonic: cmp
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>create registry key via offline registry library</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">create registry key via offline registry library</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/registry</p>
+    <p><strong>Authors:</strong> johnk3r</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Modify Registry [T1112]</p>
+    <p><strong>MBC:</strong> Operating System::Registry::Create Registry Key [C0036.004]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 5fbbfeed28b258c42e0cfeb16718b31c:0x100481A0</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: ORCreateHive
+      - api: ORCreateKey
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

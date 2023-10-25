@@ -1,0 +1,74 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using RC4 KSA</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using RC4 KSA</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/rc4</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Cryptography::Encrypt Data::RC4 [C0027.009], Cryptography::Encryption Key::RC4 KSA [C0028.002]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 34404A3FB9804977C6AB86CB991FB130:0x403D40, 9324D1A8AE37A36AE560C37448C9705A:0x404950, 2B8BEC5BCB1777EAA155D832F7AFC797:0x405C42, 73CE04892E5F39EC82B00C02FC04C70F:0x40646E</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - basic block:
+          - and:
+            - description: initialize S
+            - characteristic: tight loop
+            - or:
+              - number: 255
+              - number: 256
+        - or:
+          - description: modulo 256
+          - match: calculate modulo 256 via x86 assembly
+          - basic block:
+            - and:
+              - description: modulo via zero-extended mov from 8-bit register
+              - count(mnemonic(movzx)): 2 or more
+              - not:
+                - or:
+                  - mnemonic: shl
+                  - mnemonic: rol
+                  - characteristic: nzxor
+        - or:
+          - description: modulo key length
+          - mnemonic: div
+          - mnemonic: idiv
+      - and:
+        - description: write DWORDs instead of bytes
+        - or:
+          - number: 50462976
+          - number: 4294901244
+        - instruction:
+          - or:
+            - mnemonic: add
+            - mnemonic: sub
+          - number: 67372036
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

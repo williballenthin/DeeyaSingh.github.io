@@ -1,0 +1,54 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>delete registry key</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">delete registry key</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/registry/delete</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, michael.hunhoff@mandiant.com, johnk3r</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Modify Registry [T1112]</p>
+    <p><strong>MBC:</strong> Operating System::Registry::Delete Registry Key [C0036.002]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 4f11bdb380dafa2518053c6d20147a05:0x402A36, 493167E85E45363D09495D0841C30648:0x404D60</p>
+    <pre><strong>Features</strong>
+    - and:
+      - optional:
+        - match: create or open registry key
+      - or:
+        - api: advapi32.RegDeleteKey
+        - api: advapi32.RegDeleteTree
+        - api: advapi32.RegDeleteKeyEx
+        - api: advapi32.RegDeleteKeyTransacted
+        - api: ZwDeleteKey
+        - api: NtDeleteKey
+        - api: SHDeleteKey
+        - api: SHDeleteEmptyKey
+        - api: SHRegDeleteEmptyUSKey
+        - api: Microsoft.Win32.RegistryKey::DeleteSubKey
+        - api: Microsoft.Win32.RegistryKey::DeleteSubKeyTree
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

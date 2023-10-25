@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>create mailslot</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">create mailslot</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/mailslot</p>
+    <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Interprocess Communication [C0003]</p>
+    <p><strong>References:</strong> https://learn.microsoft.com/en-us/windows/win32/ipc/mailslots</p>
+    <p><strong>Examples:</strong> af13e7583ed1b27c4ae219e344a37e2b:0x40151D</p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: kernel32.CreateMailslot
+      - optional:
+        - api: kernel32.GetMailslotInfo
+        - api: kernel32.SetMailslotInfo
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

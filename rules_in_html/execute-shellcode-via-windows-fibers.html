@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>execute shellcode via Windows fibers</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">execute shellcode via Windows fibers</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/shellcode</p>
+    <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Defense Evasion::Process Injection::Injection via Windows Fibers [E1055.m05]</p>
+    <p><strong>References:</strong> https://www.ired.team/offensive-security/code-injection-process-injection/executing-shellcode-with-createfiber, https://github.com/S4R1N/AlternativeShellcodeExec/blob/master/FiberContextEdit/Source.cpp</p>
+    <p><strong>Examples:</strong> f03bdb9fa52f7b61ef03141fefff1498ad2612740b1fdbf6941f1c5af5eee70a:0x4026E0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: allocate RWX memory
+      - api: ConvertThreadToFiber
+      - api: CreateFiber
+      - api: SwitchToFiber
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

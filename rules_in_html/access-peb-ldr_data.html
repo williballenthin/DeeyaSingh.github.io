@@ -1,0 +1,60 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>access PEB ldr_data</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">access PEB ldr_data</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/runtime-linking</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb_ldr_data.htm, https://github.com/d35ha/CallObfuscator/blob/5834aff9ff4511f1408ae4ce80b79737af4ae77b/ShellCode/shell_x64.asm#L8</p>
+    <p><strong>Examples:</strong> 3FDFB2D522E7DEECAAAF2F87420F7E75:0x4117B7</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - arch: i386
+        - description: x32
+        - match: PEB access
+        - offset: 0x0C = PEB.LDR_DATA
+        - or:
+          - description: resolve a module list
+          - offset: 0x0C = PEB.LDR_DATA.InLoadOrderModuleList
+          - offset: 0x14 = PEB.LDR_DATA.InMemoryOrderModuleList
+          - offset: 0x1C = PEB.LDR_DATA.InInitializationOrderModuleList
+      - and:
+        - arch: amd64
+        - description: x64
+        - match: PEB access
+        - offset: 0x18 = PEB.LDR_DATA
+        - or:
+          - description: resolve a module list
+          - offset: 0x10 = PEB.LDR_DATA.InLoadOrderModuleList
+          - offset: 0x20 = PEB.LDR_DATA.InMemoryOrderModuleList
+          - offset: 0x30 = PEB.LDR_DATA.InInitializationOrderModuleList
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

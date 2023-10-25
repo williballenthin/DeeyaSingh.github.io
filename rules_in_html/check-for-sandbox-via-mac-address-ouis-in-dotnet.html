@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>check for sandbox via MAC address OUIs in .NET</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">check for sandbox via MAC address OUIs in .NET</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
+    <p><strong>Authors:</strong> jonathanlepore@google.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]</p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009]</p>
+    <p><strong>References:</strong> https://github.com/mdsecactivebreach/SharpShooter/blob/9aea0b7a723b61c01c21f1e4b55409edf39a5a3b/CSharpShooter/CheckPlease.cs</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - and:
+      - format: dotnet
+      - basic block:
+        - and:
+          - 3 or more:
+            - string: /00[:-]?0c[:-]?29/i
+            - string: /00[:-]?1c[:-]?14/i
+            - string: /00[:-]?50[:-]?56/i
+            - description: VMware OUIs
+            - string: /08[:-]?00[:-]?27/i
+            - description: PCS Systemtechnik GmbH OUI, potentially related to VirtualBox
+          - api: System.Net.NetworkInformation.NetworkInterface::GetPhysicalAddress
+          - api: System.Net.NetworkInformation.NetworkInterface::GetAllNetworkInterfaces
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

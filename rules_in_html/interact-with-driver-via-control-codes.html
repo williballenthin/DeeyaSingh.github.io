@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>interact with driver via control codes</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">interact with driver via control codes</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/driver</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Execution::System Services::Service Execution [T1569.002]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 10-03.exe_:0x401000, 9412A66BC81F51A1FA916AC47C77E02AC1A7C9DFF543233ED70AA265EF6A1E76:0x10002DE0</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: DeviceIoControl
+      - api: NtUnloadDriver
+      - api: ZwUnloadDriver
+      - and:
+        - number: 38 = SystemLoadAndCallImage
+        - api: ZwSetSystemInformation
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

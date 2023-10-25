@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>capture screenshot via keybd event</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">capture screenshot via keybd event</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection/screenshot</p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Collection::Screen Capture [T1113]</p>
+    <p><strong>MBC:</strong> Collection::Screen Capture [E1113]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 3f3bbcf8fd90bdcdcdc5494314ed4225:0x402D10</p>
+    <pre><strong>Features</strong>
+    - and:
+      - basic block:
+        - and:
+          - operand[0].number: 0x2C = VK_SNAPSHOT
+          - count(api(user32.keybd_event)): 2
+          - or:
+            - operand[0].number: 0x3 = KEYEVENTF_KEYUP|KEYEVENTF_EXTENDEDKEY
+            - operand[0].number: 0x2 = KEYEVENTF_KEYUP
+      - match: read clipboard data
+      - match: open clipboard
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

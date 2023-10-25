@@ -1,0 +1,47 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>compiled with perl2exe</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">compiled with perl2exe</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> compiler/perl2exe</p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 873275ce8bf88ef66e9fa0c74b5c2a1e:0x4011C9</p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: LoadLibrary
+      - api: FreeLibrary
+      - string: /^p2x[a-z0-9]{1,10}\.dll/i
+      - basic block:
+        - and:
+          - api: GetProcAddress
+          - string: RunPerl
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

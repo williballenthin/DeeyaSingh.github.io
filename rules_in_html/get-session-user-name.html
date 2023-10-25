@@ -1,0 +1,48 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>get session user name</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">get session user name</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/session</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Discovery::System Owner/User Discovery [T1033], Discovery::Account Discovery [T1087]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 14-01.exe_:0x401285</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: advapi32.GetUserName
+      - api: secur32.GetUserNameEx
+      - basic block:
+        - and:
+          - api: wtsapi32.WTSQuerySessionInformation
+          - number: 5 = WTSUserName
+      - api: System.Security.Principal.WindowsIdentity::GetCurrent
+      - property/read: System.Environment::UserName
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>check for software breakpoints</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">check for software breakpoints</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection::Software Breakpoints [B0001.025]</p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/SoftwareBreakpoints.cpp, https://anti-debug.checkpoint.com/techniques/assembly.html</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_:0x431020</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - instruction:
+          - mnemonic: cmp
+          - number: 0xCC = INT3
+        - and:
+          - description: INT3 (long form)
+          - instruction:
+            - mnemonic: cmp
+            - number: 0xCD = INT3 (long form byte 1)
+          - instruction:
+            - mnemonic: cmp
+            - number: 0x03 = INT3 (long form byte 2)
+      - match: contain loop
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

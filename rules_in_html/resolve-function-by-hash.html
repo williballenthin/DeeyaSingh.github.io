@@ -1,0 +1,48 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>resolve function by hash</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">resolve function by hash</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/runtime-linking</p>
+    <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://www.mandiant.com/resources/precalculated-string-hashes-reverse-engineering-shellcode, https://pastebin.com/ci5XYW4P</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - or:
+      - number: 0x6a4abc5b = ROR13(kernel32.dll)
+      - number: 0x3cfa685d = ROR13(ntdll.dll)
+      - number: 0xec0e4e8e = ROR13(LoadLibraryA)
+      - number: 0x7c0dfcaa = ROR13(GetProcAddress)
+      - number: 0x91afca54 = ROR13(VirtualAlloc)
+      - number: 0x534c0ab8 = ROR13(NtFlushInstructionCache)
+      - number: 0xff7f061a = ROR13(RtlExitUserThread)
+      - number: 0x60e0ceef = ROR13(ExitThread)
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>get system information on Windows</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">get system information on Windows</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/os/info</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, joakim@intezer.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Discovery::System Information Discovery [T1082]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x140002280</p>
+    <pre><strong>Features</strong>
+    - and:
+      - os: windows
+      - or:
+        - api: kernel32.GetSystemInfo
+        - api: kernel32.GetNativeSystemInfo
+        - api: NtQuerySystemInformation
+        - api: NtQuerySystemInformationEx
+        - api: ntdll.RtlGetNativeSystemInformation
+        - api: ZwQuerySystemInformation
+        - api: ZwQuerySystemInformationEx
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>linked against Go process enumeration library</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">linked against Go process enumeration library</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/list</p>
+    <p><strong>Authors:</strong> joakim@intezer.com</p>
+    <p><strong>Scope:</strong> file</p>
+    <p><strong>ATT&CK:</strong> Discovery::Process Discovery [T1057], Discovery::Software Discovery [T1518]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://pkg.go.dev/github.com/mitchellh/go-ps</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: compiled with Go
+      - or:
+        - string: github.com/mitchellh/go-ps.FindProcess
+        - string: github.com/mitchellh/go-ps.Processes
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

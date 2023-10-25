@@ -1,0 +1,51 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using OpenSSL ECDSA</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using OpenSSL ECDSA</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/ecdsa</p>
+    <p><strong>Authors:</strong> Ana06</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://github.com/openssl/openssl/blob/fdc5043d58900663b493147298e64f11353b35fe/crypto/objects/obj_dat.h</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - or:
+      - bytes: 2A 86 48 CE 3D 04 02 = ECDSA with recommended
+      - bytes: 2A 86 48 CE 3D 04 03 = ECDSA with specified
+      - bytes: 2A 86 48 CE 3D 04 03 01 = ECDSA-SHA224
+      - bytes: 2A 86 48 CE 3D 04 03 02 = ECDSA-SHA256
+      - bytes: 2A 86 48 CE 3D 04 03 03 = ECDSA-SHA384
+      - bytes: 2A 86 48 CE 3D 04 03 04 = ECDSA-SHA512
+      - bytes: 60 86 48 01 65 03 04 03 09 = ECDSA-SHA3-224
+      - bytes: 60 86 48 01 65 03 04 03 0A = ECDSA-SHA3-256
+      - bytes: 60 86 48 01 65 03 04 03 0B = ECDSA-SHA3-384
+      - bytes: 60 86 48 01 65 03 04 03 0C = ECDSA-SHA3-512
+      - bytes: 2A 86 48 CE 3D 04 01 = ECDSA-SHA1
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

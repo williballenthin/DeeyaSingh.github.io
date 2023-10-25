@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>allocate memory</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">allocate memory</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> </p>
+    <p><strong>Authors:</strong> 0x534a@mailbox.org</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Memory::Allocate Memory [C0007]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 03-03.exe_:0x4010EA, 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x140001ABA</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: kernel32.VirtualAlloc
+      - api: kernel32.VirtualAllocEx
+      - api: kernel32.VirtualAllocExNuma
+      - api: kernel32.VirtualProtect
+      - api: kernel32.VirtualProtectEx
+      - api: NtAllocateVirtualMemory
+      - api: ZwAllocateVirtualMemory
+      - api: NtMapViewOfSection
+      - api: ZwMapViewOfSection
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>disable automatic Windows recovery features</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">disable automatic Windows recovery features</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> impact/inhibit-system-recovery</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> Impact::Inhibit System Recovery [T1490]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - and:
+      - os: windows
+      - or:
+        - string: /bcdedit(\.exe)?\s+/set\s+{default}\s+bootstatuspolicy\s+ignoreallfailures/i
+        - description: ignore errors and boot normally even if there is a failed boot, shutdown, or checkpoint
+        - string: /bcdedit(\.exe)?\s+/set\s+{default}\s+recoveryenabled\s+no/i
+        - description: disable automatic repair
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

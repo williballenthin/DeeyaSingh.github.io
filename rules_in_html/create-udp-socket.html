@@ -1,0 +1,48 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>create UDP socket</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">create UDP socket</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/socket/udp/send</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, joakim@intezer.com, michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Socket Communication::Create UDP Socket [C0001.010]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 203BD48BCC18434314AD60F4C8BC21E3D3422EB0624B22B827410F9BC63B4082:0x401240</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - count(number(2 = AF_INET/SOCK_DGRAM)): 2 or more
+        - or:
+          - api: ws2_32.socket
+          - api: ws2_32.WSASocket
+          - api: socket
+          - api: System.Net.Sockets.Socket::ctor
+      - api: System.Net.Sockets.UdpClient::ctor
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

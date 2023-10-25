@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>empty recycle bin quietly</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">empty recycle bin quietly</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/recycle-bin</p>
+    <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Indicator Removal [T1070]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shemptyrecyclebina</p>
+    <p><strong>Examples:</strong> 276F691A3DF25481F59D79781799E35F:0x1400254E0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: SHEmptyRecycleBin
+      - instruction:
+        - or:
+          - and:
+            - mnemonic: cmp
+            - number: 7 = SHERB_NOSOUND|SHERB_NOPROGRESSUI|SHERB_NOCONFIRMATION
+          - and:
+            - mnemonic: lea
+            - offset: 7 = SHERB_NOSOUND|SHERB_NOPROGRESSUI|SHERB_NOCONFIRMATION
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>check for protected handle exception</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">check for protected handle exception</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection::SetHandleInformation [B0001.024]</p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/SetHandleInformation_API.cpp</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_:0x430D20</p>
+    <pre><strong>Features</strong>
+    - and:
+      - basic block:
+        - and:
+          - count(number(2)): 2 or more
+          - api: SetHandleInformation
+      - api: CloseHandle
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

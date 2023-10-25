@@ -1,0 +1,70 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>check for sandbox and av modules</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">check for sandbox and av modules</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-av</p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009], Anti-Behavioral Analysis::Sandbox Detection [B0007]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> ccbf7cba35bab56563c0fbe4237fdc41:0x0040a4a0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: GetModuleHandle
+      - or:
+        - string: /avghook(x|a)\.dll/i
+        - description: AVG
+        - string: /snxhk\.dll/i
+        - description: Avast
+        - string: /sf2\.dll/i
+        - description: Avast
+        - string: /sbiedll\.dll/i
+        - description: Sandboxie
+        - string: /dbghelp\.dll/i
+        - description: WindBG
+        - string: /api_log\.dll/i
+        - description: iDefense Lab
+        - string: /dir_watch\.dll/i
+        - description: iDefense Lab
+        - string: /pstorec\.dll/i
+        - description: SunBelt Sandbox
+        - string: /vmcheck\.dll/i
+        - description: Virtual PC
+        - string: /wpespy\.dll/i
+        - description: WPE Pro
+        - string: /cmdvrt(64|32).dll/i
+        - description: Comodo Container
+        - string: /sxin.dll/i
+        - description: 360 SOFTWARE
+        - string: /dbghelp\.dll/i
+        - description: WINE
+        - string: /printfhelp\.dll/i
+        - description: Unknown Sandbox
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

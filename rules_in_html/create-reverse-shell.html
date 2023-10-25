@@ -1,0 +1,57 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>create reverse shell</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">create reverse shell</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/c2/shell</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Execution::Command and Scripting Interpreter::Windows Command Shell [T1059.003]</p>
+    <p><strong>MBC:</strong> Impact::Remote Access::Reverse Shell [B0022.001]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> C91887D861D9BD4A5872249B641BC9F9:0x401A77</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - match: create pipe
+        - api: kernel32.PeekNamedPipe
+        - api: kernel32.CreateProcess
+        - api: kernel32.ReadFile
+        - api: kernel32.WriteFile
+      - and:
+        - match: host-interaction/process/create
+        - match: read pipe
+        - match: write pipe
+      - and:
+        - match: create pipe
+        - match: host-interaction/process/create
+        - basic block:
+          - and:
+            - count(api(SetHandleInformation)): 2 or more
+            - number: 1 = HANDLE_FLAG_INHERIT
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

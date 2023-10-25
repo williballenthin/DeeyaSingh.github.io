@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>enumerate processes via NtQuerySystemInformation</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">enumerate processes via NtQuerySystemInformation</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/list</p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> Discovery::Process Discovery [T1057], Discovery::Software Discovery [T1518]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 31bd8dd48ac0de3d4da340bf29f4d280:0x00401be3</p>
+    <pre><strong>Features</strong>
+    - and:
+      - number: 0x5 = SYSTEM_PROCESS_INFORMATION
+      - or:
+        - api: NtQuerySystemInformation
+        - api: NtQuerySystemInformationEx
+        - api: ZwQuerySystemInformation
+        - api: ZwQuerySystemInformationEx
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

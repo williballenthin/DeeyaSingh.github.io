@@ -1,0 +1,59 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>compute adler32 checksum</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">compute adler32 checksum</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/checksum/adler32</p>
+    <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Checksum::Adler [C0032.005]</p>
+    <p><strong>References:</strong> https://en.wikipedia.org/wiki/Adler-32</p>
+    <p><strong>Examples:</strong> 42E81CC1145BA3C1936A6CF9B8DA0CCD:0x10001000</p>
+    <pre><strong>Features</strong>
+    - and:
+      - basic block:
+        - and:
+          - instruction:
+            - mnemonic: shr
+            - operand[1].number: 15
+          - number: 2147975281
+          - mnemonic: mul
+          - instruction:
+            - mnemonic: imul
+            - or:
+              - number: 0xFFFF000F = -65521
+              - number: 0xFFF1 = 65521
+          - or:
+            - mnemonic: add
+            - mnemonic: sub
+      - instruction:
+        - mnemonic: shl
+        - number: 16
+      - count(characteristic(tight loop)): 2 or more
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

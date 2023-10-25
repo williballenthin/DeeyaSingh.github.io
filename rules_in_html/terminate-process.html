@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>terminate process</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">terminate process</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/terminate</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Process::Terminate Process [C0018]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> C91887D861D9BD4A5872249B641BC9F9:0x401A77, 9B7CCAA2AE6A5B96E3110EBCBC4311F6:0x10010307</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: System.Diagnostics.Process::Kill
+      - api: System.Diagnostics.Process::WaitForExit
+      - api: System.Diagnostics.Process::WaitForExitAsync
+      - api: System.Environment::Exit
+      - api: System.Windows.Forms.Application::Exit
+      - and:
+        - optional:
+          - match: open process
+        - or:
+          - api: kernel32.TerminateProcess
+          - api: ntdll.NtTerminateProcess
+          - api: kernel32.ExitProcess
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

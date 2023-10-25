@@ -1,0 +1,57 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>execute shellcode via Windows callback function</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">execute shellcode via Windows callback function</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/shellcode</p>
+    <p><strong>Authors:</strong> ervin.ocampo@mandiant.com, jakub.jozwiak@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Reflective Code Loading [T1620]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Hijack Execution Flow::Abuse Windows Function Calls [F0015.006]</p>
+    <p><strong>References:</strong> https://github.com/ChaitanyaHaritash/Callback_Shellcode_Injection, https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html, http://ropgadget.com/posts/abusing_win_functions.html, https://github.com/aahmad097/AlternativeShellcodeExec/</p>
+    <p><strong>Examples:</strong> 10cd7afd580ee9c222b0a87ff241d306:0x10008BE0, 268d61837aa248c1d49a973612a129ce:0x1000CEC0, 4a2992b4c7a1573bf7c74065e3bf5b0d:0x1000D050, 43db867967c71bd3aaba9a9a3084e7fa:0x140001000</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: allocate RWX memory
+      - or:
+        - api: EnumDateFormats
+        - api: GrayString
+        - api: LineDDA
+        - api: EnumChildWindows
+        - api: EnumDesktops
+        - api: EnumDesktopWindows
+        - api: EnumSystemCodePages
+        - api: EnumSystemGeoID
+        - api: EnumSystemLanguageGroups
+        - api: EnumSystemLocales
+        - api: EnumThreadWindows
+        - api: EnumUILanguages
+        - api: EnumWindows
+        - api: EnumChildWindows
+        - api: EnumTimeFormats
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

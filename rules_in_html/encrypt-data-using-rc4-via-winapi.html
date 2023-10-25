@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using RC4 via WinAPI</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using RC4 via WinAPI</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/rc4</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05], Cryptography::Encrypt Data::RC4 [C0027.009]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 2A584DFC657348D164274A12BFF9BBD8:0x404D42, 32BB43F8847ECF158C1E96891ED9A28C:0x10003A88</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - number: 0x6801 = CALG_RC4
+      - or:
+        - api: CryptGenKey
+        - api: CryptDeriveKey
+        - api: CryptImportKey
+      - optional:
+        - or:
+          - number: 1 = PROV_RSA_FULL
+          - api: CryptAcquireContext
+          - api: CryptEncrypt
+          - api: CryptDecrypt
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>send HTTP response</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">send HTTP response</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/server</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Send Response [C0002.016]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x10001B20</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: httpapi.HttpSendHttpResponse
+      - api: httpapi.HttpSendResponseEntityBody
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

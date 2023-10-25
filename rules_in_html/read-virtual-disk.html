@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>read virtual disk</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">read virtual disk</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system/read</p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> File System::Read Virtual Disk [C0056]</p>
+    <p><strong>References:</strong> https://github.com/vxunderground/VXUG-Papers/blob/main/Weaponizing%20Windows%20Virtualization/src.cpp, https://github.com/vxunderground/VXUG-Papers/blob/main/Weaponizing%20Windows%20Virtualization/WeaponizingWindowsVirtualization.pdf</p>
+    <p><strong>Examples:</strong> 3265b2b0afc6d2ad0bdd55af8edb9b37:0x00410637</p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: OpenVirtualDisk
+      - api: AttachVirtualDisk
+      - api: GetVirtualDiskPhysicalPath
+      - optional:
+        - and:
+          - number: 3969403628
+          - number: 1206493433
+          - number: 1097932688
+          - number: 1530160730
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

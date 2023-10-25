@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>bypass Mark of the Web</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">bypass Mark of the Web</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system</p>
+    <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Subvert Trust Controls::Mark-of-the-Web Bypass [T1553.005]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 48c7ad2d9d482cb11898f2719638ceed:0x405B10</p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: DeleteFile
+      - or:
+        - string: :Zone.Identifier
+        - description: NTFS ADS name recognized by Windows Defender SmartScreen
+        - string: %s:Zone.Identifier
+        - description: NTFS ADS name recognized by Windows Defender SmartScreen
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

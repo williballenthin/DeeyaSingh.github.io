@@ -1,0 +1,71 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>query or enumerate registry value</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">query or enumerate registry value</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/registry</p>
+    <p><strong>Authors:</strong> william.ballenthin@mandiant.com, michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Discovery::Query Registry [T1012]</p>
+    <p><strong>MBC:</strong> Operating System::Registry::Query Registry Value [C0036.006]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> BFB9B5391A13D0AFD787E87AB90F14F5:0x13145B5A, Practical Malware Analysis Lab 03-02.dll_:0x100047AD</p>
+    <pre><strong>Features</strong>
+    - and:
+      - optional:
+        - match: create or open registry key
+      - or:
+        - api: advapi32.RegGetValue
+        - api: advapi32.RegEnumValue
+        - api: advapi32.RegQueryValue
+        - api: advapi32.RegQueryValueEx
+        - api: advapi32.RegQueryMultipleValues
+        - api: ZwQueryValueKey
+        - api: ZwEnumerateValueKey
+        - api: NtQueryValueKey
+        - api: NtEnumerateValueKey
+        - api: RtlQueryRegistryValues
+        - api: SHGetValue
+        - api: SHEnumValue
+        - api: SHRegGetInt
+        - api: SHRegGetPath
+        - api: SHRegGetValue
+        - api: SHQueryValueEx
+        - api: SHRegGetUSValue
+        - api: SHOpenRegStream
+        - api: SHRegEnumUSValue
+        - api: SHOpenRegStream2
+        - api: SHRegQueryUSValue
+        - api: SHRegGetBoolUSValue
+        - api: SHRegGetValueFromHKCUHKLM
+        - api: SHRegGetBoolValueFromHKCUHKLM
+        - api: Microsoft.Win32.RegistryKey::GetValue
+        - api: Microsoft.Win32.RegistryKey::GetValueKind
+        - api: Microsoft.Win32.RegistryKey::GetValueNames
+        - api: Microsoft.Win32.Registry::GetValue
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

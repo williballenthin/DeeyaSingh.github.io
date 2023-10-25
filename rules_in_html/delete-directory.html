@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>delete directory</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">delete directory</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system/delete</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> File System::Delete Directory [C0048]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 05-01.dll_:0x10009236, AFB6EC3D721A5CB67863487B0E51A34C167F629CF701F8BC7A038C117B4DDA44:0x429AA0</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: RemoveDirectory
+      - api: RemoveDirectoryTransacted
+      - api: _rmdir
+      - api: _wrmdir
+      - api: System.IO.DirectoryInfo::Delete
+      - api: System.IO.Directory::Delete
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

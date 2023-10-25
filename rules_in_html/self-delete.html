@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>self delete</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">self delete</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-forensic/self-deletion</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Indicator Removal::File Deletion [T1070.004]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Self Deletion::COMSPEC Environment Variable [F0007.001]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 14-02.exe_:0x401880</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - match: get COMSPEC environment variable
+        - string: cmd.exe
+      - match: host-interaction/process/create
+      - string: /\/c\s*del\s*/
+      - description: /c del
+      - optional:
+        - string: /\s*>\s*nul\s*/i
+        - description: > nul
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

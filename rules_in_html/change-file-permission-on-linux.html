@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>change file permission on Linux</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">change file permission on Linux</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system</p>
+    <p><strong>Authors:</strong> joakim@intezer.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> File System::Set File Attributes [C0050]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 7351f8a40c5450557b24622417fc478d:0x407C68</p>
+    <pre><strong>Features</strong>
+    - and:
+      - os: linux
+      - or:
+        - api: chown
+        - api: fchown
+        - api: lchown
+        - api: fchownat
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

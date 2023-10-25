@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>write pipe</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">write pipe</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/named-pipe/write</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Interprocess Communication::Write Pipe [C0003.004]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> C91887D861D9BD4A5872249B641BC9F9:0x401A77</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - or:
+          - match: create pipe
+          - match: connect pipe
+        - api: kernel32.WriteFile
+      - api: kernel32.TransactNamedPipe
+      - description: writes and reads pipe in single operation
+      - api: kernel32.CallNamedPipe
+      - description: connects, writes, and reads pipe in single operation
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

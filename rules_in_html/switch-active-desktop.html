@@ -1,0 +1,42 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>switch active desktop</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">switch active desktop</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/gui</p>
+    <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Debugger Evasion [T1622]</p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Evasion [B0002]</p>
+    <p><strong>References:</strong> https://anti-debug.checkpoint.com/techniques/interactive.html#switchdesktop</p>
+    <p><strong>Examples:</strong> 26beba7352a32b803aa19e0782011a383a1df19549910e7b2f2f244e49678524:0x10001670</p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: user32.CreateDesktop
+      - api: user32.SwitchDesktop
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

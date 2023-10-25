@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>link many functions at runtime</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">link many functions at runtime</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/runtime-linking</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, joakim@intezer.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> b7b5e1253710d8927cbe07d52d2d2e10:0x401000</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - os: windows
+        - match: link function at runtime on Windows
+        - or:
+          - count(api(kernel32.GetProcAddress)): 5 or more
+          - count(api(ntdll.LdrGetProcedureAddress)): 5 or more
+      - and:
+        - os: linux
+        - match: link function at runtime on Linux
+        - or:
+          - count(api(dlsym)): 5 or more
+          - count(api(dlvsym)): 5 or more
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

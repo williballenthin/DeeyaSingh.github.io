@@ -1,0 +1,58 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>check HTTP status code</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">check HTTP status code</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/client</p>
+    <p><strong>Authors:</strong> @mr-tz</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Read Header [C0002.014]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 54ac78733552a62d1d05ea4ba3fc604bb49fe000d7fc948da45335b726e64d75:0x10001a20, Practical Malware Analysis Lab 03-02.dll_:0x10004452</p>
+    <pre><strong>Features</strong>
+    - and:
+      - os: windows
+      - or:
+        - number: 0x20000013 = HTTP_QUERY_FLAG_NUMBER | HTTP_QUERY_STATUS_CODE
+        - number: 0x13 = HTTP_QUERY_STATUS_CODE
+      - optional:
+        - api: atoi
+        - api: wininet.HttpQueryInfo
+      - instruction:
+        - and:
+          - or:
+            - mnemonic: cmp
+            - mnemonic: test
+          - or:
+            - number: 200 = OK
+            - number: 400 = Bad Request
+            - number: 401 = Unauthorized
+            - number: 403 = Forbidden
+            - number: 404 = Not Found
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

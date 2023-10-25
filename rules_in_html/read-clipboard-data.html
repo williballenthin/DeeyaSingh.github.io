@@ -1,0 +1,60 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>read clipboard data</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">read clipboard data</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/clipboard</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Collection::Clipboard Data [T1115]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://learn.microsoft.com/en-us/windows/win32/dataxchg/using-the-clipboard</p>
+    <p><strong>Examples:</strong> C91887D861D9BD4A5872249B641BC9F9:0x40156F, 93dfc146f60bd796eb28d4e4f348f2e4:0x401050</p>
+    <pre><strong>Features</strong>
+    - and:
+      - optional:
+        - match: open clipboard
+        - match: contain loop
+        - api: kernel32.GlobalAlloc
+        - api: kernel32.GlobalLock
+        - api: kernel32.GlobalUnlock
+      - or:
+        - basic block:
+          - and:
+            - api: user32.GetClipboardData
+            - optional:
+              - number: 0x1 = CF_TEXT
+              - number: 0x7 = CF_OEMTEXT
+              - number: 0xD = CF_UNICODETEXT
+        - api: System.Windows.Forms.Clipboard::GetAudioStream
+        - api: System.Windows.Forms.Clipboard::GetData
+        - api: System.Windows.Forms.Clipboard::GetDataObject
+        - api: System.Windows.Forms.Clipboard::GetFileDropList
+        - api: System.Windows.Forms.Clipboard::GetImage
+        - api: System.Windows.Forms.Clipboard::GetText
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

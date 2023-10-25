@@ -1,0 +1,43 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>enumerate files recursively</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">enumerate files recursively</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system/files/list</p>
+    <p><strong>Authors:</strong> @_re_fox, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Discovery::File and Directory Discovery [T1083]</p>
+    <p><strong>MBC:</strong> Discovery::File and Directory Discovery [E1083]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 5f66b82558ca92e54e77f216ef4c066c:0x40640E</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - match: enumerate files on Windows
+      - characteristic: recursive call
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

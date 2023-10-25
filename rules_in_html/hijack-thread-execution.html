@@ -1,0 +1,51 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>hijack thread execution</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">hijack thread execution</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/inject</p>
+    <p><strong>Authors:</strong> 0x534a@mailbox.org, michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection::Thread Execution Hijacking [T1055.003], Defense Evasion::Reflective Code Loading [T1620]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 77d87e9937546aebc1595039d730352b15fab32c72a76913f04262c6802d098f:0x401000</p>
+    <pre><strong>Features</strong>
+    - and:
+      - optional:
+        - or:
+          - match: open thread
+          - match: create thread
+      - match: suspend thread
+      - api: kernel32.GetThreadContext
+      - optional:
+        - match: allocate RWX memory
+        - match: write process memory
+      - api: kernel32.SetThreadContext
+      - match: resume thread
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

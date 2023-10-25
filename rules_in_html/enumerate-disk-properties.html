@@ -1,0 +1,48 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>enumerate disk properties</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">enumerate disk properties</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/hardware/storage</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Discovery::System Information Discovery [T1082]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/Generic.cpp#L518</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_:0x4369B0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - basic block:
+        - and:
+          - api: setupapi.SetupDiGetClassDevs
+          - bytes: 67 E9 36 4D 25 E3 CE 11 BF C1 08 00 2B E1 03 18 = GUID_DEVCLASS_DISKDRIVE
+      - api: setupapi.SetupDiEnumDeviceInfo
+      - api: setupapi.SetupDiGetDeviceRegistryProperty
+      - optional:
+        - api: setupapi.SetupDiDestroyDeviceInfoList
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

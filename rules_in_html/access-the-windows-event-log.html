@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>access the Windows event log</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">access the Windows event log</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/log/winevt/access</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Discovery::File and Directory Discovery::Log File [E1083.m01]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> mimikatz.exe_:0x45228B</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: OpenEventLog
+      - api: ClearEventLog
+      - api: OpenBackupEventLog
+      - api: ReportEvent
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

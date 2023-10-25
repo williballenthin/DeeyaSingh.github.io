@@ -1,0 +1,53 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>simulate CTRL ALT DEL</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">simulate CTRL ALT DEL</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/hardware/keyboard</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, johnk3r</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Hardware::Simulate Hardware::Ctrl-Alt-Del [C0057.001]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> b766cc43d649d30e9f27aff8f7ee7de0:0x406153</p>
+    <pre><strong>Features</strong>
+    - and:
+      - optional:
+        - basic block:
+          - and:
+            - or:
+              - api: OpenDesktop
+              - api: OpenInputDesktop
+            - string: Winlogon
+      - basic block:
+        - and:
+          - api: PostMessage
+          - number: 0x2E0003 = (MOD_ALT | MOD_CONTROL | VK_DELETE)
+          - number: 0x312 = WM_HOTKEY
+          - number: 0xFFFF = HWND_BROADCAST
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

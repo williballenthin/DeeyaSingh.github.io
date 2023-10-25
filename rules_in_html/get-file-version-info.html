@@ -1,0 +1,50 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>get file version info</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">get file version info</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system/meta</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Discovery::File and Directory Discovery [T1083]</p>
+    <p><strong>MBC:</strong> Discovery::File and Directory Discovery [E1083]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> mimikatz.exe_:0x45E308</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - api: version.GetFileVersionInfo
+        - api: version.GetFileVersionInfoEx
+        - api: System.Diagnostics.FileVersionInfo::GetVersionInfo
+      - optional:
+        - description: retrieve specified version information from the version-information resource
+        - api: version.VerQueryValue
+        - or:
+          - api: version.GetFileVersionInfoSize
+          - api: version.GetFileVersionInfoSizeEx
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

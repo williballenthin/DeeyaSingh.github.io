@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>persist via rc script</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">persist via rc script</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/service</p>
+    <p><strong>Authors:</strong> joakim@intezer.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Persistence::Boot or Logon Initialization Scripts::RC Scripts [T1037.004]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 7351f8a40c5450557b24622417fc478d:0x407D11</p>
+    <pre><strong>Features</strong>
+    - and:
+      - os: linux
+      - match: host-interaction/file-system/write
+      - or:
+        - substring: /etc/init.d/
+        - string: /\/etc\/rc[0-9].d\//
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

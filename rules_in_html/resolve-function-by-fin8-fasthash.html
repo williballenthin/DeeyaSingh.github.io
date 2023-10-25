@@ -1,0 +1,62 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>resolve function by FIN8 fasthash</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">resolve function by FIN8 fasthash</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/runtime-linking</p>
+    <p><strong>Authors:</strong> @r3c0nst (Frank Boldewin)</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Cryptography::Cryptographic Hash [C0029]</p>
+    <p><strong>References:</strong> https://www.bitdefender.com/files/News/CaseStudies/study/394/Bitdefender-PR-Whitepaper-BADHATCH-creat5237-en-EN.pdf, https://raw.githubusercontent.com/fboldewin/YARA-rules/master/Shellcode.APIHashing.FIN8.yar</p>
+    <p><strong>Examples:</strong> B43FCA5283BFC7022553EFF663683834:0x12F, 4BF70EA92979DD88C9761EE848370050:0x28b</p>
+    <pre><strong>Features</strong>
+    - or:
+      - basic block:
+        - and:
+          - description: 64-bit constants
+          - mnemonic: mov
+          - number: 9800771712469244261
+          - number: 2388976653695081527
+          - mnemonic: add
+      - basic block:
+        - and:
+          - description: 32-bit constants
+          - mnemonic: push
+          - number: 2281919986
+          - number: 510466405
+          - mnemonic: shr
+          - mnemonic: xor
+      - basic block:
+        - and:
+          - mnemonic: push
+          - number: 556226971
+          - mnemonic: shr
+          - mnemonic: xor
+          - number: 4096941111
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

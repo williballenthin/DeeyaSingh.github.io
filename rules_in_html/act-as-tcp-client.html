@@ -1,0 +1,42 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>act as TCP client</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">act as TCP client</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/tcp/client</p>
+    <p><strong>Authors:</strong> william.ballenthin@mandiant.com, michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Socket Communication::TCP Client [C0001.008]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 01-01.dll_:0x10001010</p>
+    <pre><strong>Features</strong>
+    - or:
+      - match: connect TCP socket
+      - api: System.Net.Sockets.TcpClient::ctor
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>send file using FTP</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">send file using FTP</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/ftp/send</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::FTP Communication::Send File [C0004.001], Communication::FTP Communication::WinINet [C0004.002]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 20-02.exe_:0x401380</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - api: wininet.FtpPutFile
+        - optional:
+          - or:
+            - api: wininet.FtpSetCurrentDirectory
+            - and:
+              - api: wininet.InternetConnect
+              - number: 0x15 = IPPORT_FTP
+      - and:
+        - api: System.Net.WebRequest::Create
+        - string: STOR
+        - property/write: System.Net.WebRequest::Method
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

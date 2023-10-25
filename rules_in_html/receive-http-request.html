@@ -1,0 +1,51 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>receive HTTP request</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">receive HTTP request</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/server</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Receive Request [C0002.015]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x10001D30, 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x100027D0</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - api: httpapi.HttpReceiveHttpRequest
+        - or:
+          - number: 0
+          - number: 1 = HTTP_RECEIVE_REQUEST_FLAG_COPY_BODY
+          - number: 2 = HTTP_RECEIVE_REQUEST_FLAG_FLUSH_BODY
+      - and:
+        - api: httpapi.HttpReceiveRequestEntityBody
+        - or:
+          - number: 0 = Must be zero on Windows Server 2003 with SP1 and Windows XP with SP2
+          - number: 1 = HTTP_RECEIVE_REQUEST_ENTITY_BODY_FLAG_FILL_BUFFER
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

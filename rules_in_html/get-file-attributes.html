@@ -1,0 +1,53 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>get file attributes</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">get file attributes</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system/meta</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> File System::Get File Attributes [C0049]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 03B236B23B1EC37C663527C1F53AF3FE:0x180019824, B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4028B6, B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4029E0</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: kernel32.GetFileAttributes
+      - api: ZwQueryDirectoryFile
+      - api: ZwQueryInformationFile
+      - api: NtQueryDirectoryFile
+      - api: NtQueryInformationFile
+      - api: System.IO.File::GetAttributes
+      - api: System.IO.File::GetCreationTime
+      - api: System.IO.File::GetCreationTimeUtc
+      - api: System.IO.File::GetLastAccessTime
+      - api: System.IO.File::GetLastAccessTimeUtc
+      - api: System.IO.File::GetLastWriteTime
+      - api: System.IO.File::GetLastWriteTimeUtc
+      - property/read: System.IO.FileSystemInfo::Attributes
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

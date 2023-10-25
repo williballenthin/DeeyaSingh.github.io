@@ -1,0 +1,57 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>get geographical location</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">get geographical location</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection</p>
+    <p><strong>Authors:</strong> moritz.raabe, michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Discovery::System Location Discovery [T1614]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 9879D201DC5ACA863F357184CD1F170E:0x10001A99</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: GetLocaleInfo
+      - api: GetLocaleInfoEx
+      - api: kernel32.GetUserGeoID
+      - api: kernel32.GetGeoInfo
+      - string: /geolocation/i
+      - string: /geo-location/i
+      - string: /^city/i
+      - string: /region_code/i
+      - string: /region_name/i
+      - string: /^country/i
+      - string: /country_code/i
+      - string: /countrycode/i
+      - string: /country_name/i
+      - string: /continent_code/i
+      - string: /continent_name/i
+      - string: /^latitude/i
+      - string: /^longitude/i
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>start HTTP server</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">start HTTP server</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/server</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, jakub.jozwiak@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Start Server [C0002.018]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x10001970, 039a6336d0802a2255669e6867a5679c7eb83313dbc61fb1c7232147379bd304:0x6000026</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - api: httpapi.HttpInitialize
+        - optional:
+          - api: httpapi.HttpTerminate
+      - api: System.Net.HttpListener::Start
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

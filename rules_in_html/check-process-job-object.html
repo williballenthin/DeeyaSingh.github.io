@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>check process job object</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">check process job object</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection [B0001]</p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/ProcessJob.cpp</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_:0x426730</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: contain loop
+      - basic block:
+        - and:
+          - api: kernel32.QueryInformationJobObject
+          - number: 0x3 = JobObjectBasicProcessIdList
+      - basic block:
+        - and:
+          - api: kernel32.OpenProcess
+          - number: 0x400 = PROCESS_QUERY_INFORMATION
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

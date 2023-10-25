@@ -1,0 +1,68 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>decompress data using LZO</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">decompress data using LZO</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/compression</p>
+    <p><strong>Authors:</strong> david@edeca.net, david.cannings@pwc.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Decompress Data [C0025]</p>
+    <p><strong>References:</strong> https://github.com/zenzhang/msgclient/blob/f7c346287022dd41b21aedc8664a281b32e4a1f1/src/framework/string/Compress.cpp</p>
+    <p><strong>Examples:</strong> ee3b869b668abec332d07c66d1a39f6dbf3a598cc1325b57a0504f8d24ac2e28.dll_:0x1000BB90</p>
+    <pre><strong>Features</strong>
+    - and:
+      - instruction:
+        - description: t += 255;
+        - mnemonic: add
+        - number: 255
+      - or:
+        - instruction:
+          - or:
+            - mnemonic: and
+            - mnemonic: add
+          - number: 4294967292
+        - instruction:
+          - mnemonic: sub
+          - number: 4
+      - instruction:
+        - description: t &= 31;
+        - mnemonic: and
+        - number: 31
+      - instruction:
+        - description: m_pos -= 0x4000;
+        - mnemonic: sub
+        - number: 16384
+      - instruction:
+        - description: m_pos -= t >> 2;
+        - mnemonic: shr
+        - number: 2
+      - or:
+        - characteristic: loop
+        - characteristic: tight loop
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

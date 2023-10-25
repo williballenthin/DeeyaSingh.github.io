@@ -1,0 +1,61 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>compress data via ZLIB inflate or deflate</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">compress data via ZLIB inflate or deflate</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/compression</p>
+    <p><strong>Authors:</strong> blas.kojusner@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Compress Data [C0024]</p>
+    <p><strong>References:</strong> https://github.com/madler/zlib/blob/cacf7f1d4e3d44d871b605da3b647f07d718623f/inflate.c#L622, https://github.com/madler/zlib/blob/cacf7f1d4e3d44d871b605da3b647f07d718623f/deflate.c#L763</p>
+    <p><strong>Examples:</strong> 6EE9BB8B897C2D69F797646D5F94DE0F:0x65C0, 6EE9BB8B897C2D69F797646D5F94DE0F:0x7930</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - description: Captures artifacts in ZLIB inflate
+        - bytes: 10 05 01 00 17 05 01 01 13 05 11 00 1B 05 01 10 = Distance of fixed Huffman table
+        - bytes: 60 07 00 00 00 08 50 00 00 08 10 00 14 08 73 00 = Length of fixed Huffman table
+      - and:
+        - description: Captures artifacts in ZLIB deflate
+        - operand[1].number: 0x2A = INIT_STATE
+        - basic block:
+          - and:
+            - description: Write ZLIB Header
+            - instruction:
+              - mnemonic: shl
+              - operand[1].number: 0xC = Shift s->w_bits
+            - instruction:
+              - mnemonic: sub
+              - operand[1].number: 0x7800 = Offset to header
+        - operand[1].number: 0x08 = Z_DEFLATED
+        - operand[1].number: 0x06 = level_flags
+        - operand[1].number: 0x20 = PRESET_DICT
+        - operand[1].number: 0x49 = NAME_STATE
+        - characteristic: loop
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

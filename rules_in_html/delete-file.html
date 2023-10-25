@@ -1,0 +1,58 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>delete file</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">delete file</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system/delete</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> File System::Delete File [C0047]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 946A99F36A46D335DEC080D9A4371940:0x100015F0, 31600AD0D1A7EA615690DF111AE36C73:0x401A15, 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x140001E04</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: kernel32.DeleteFile
+      - api: DeleteFileTransacted
+      - api: NtDeleteFile
+      - api: ZwDeleteFile
+      - api: remove
+      - api: _wremove
+      - api: System.IO.File::Delete
+      - api: System.IO.FileSystemInfo::Delete
+      - basic block:
+        - and:
+          - number: 3 = FO_DELETE
+          - or:
+            - api: kernel32.SHFileOperation
+      - basic block:
+        - and:
+          - number: 4 = MOVEFILE_DELAY_UNTIL_REBOOT
+          - number: 0 = NULL
+          - api: MoveFileEx
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

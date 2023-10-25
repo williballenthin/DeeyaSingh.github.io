@@ -1,0 +1,49 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>create TCP socket</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">create TCP socket</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/socket/tcp</p>
+    <p><strong>Authors:</strong> william.ballenthin@mandiant.com, joakim@intezer.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Socket Communication::Create TCP Socket [C0001.011]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 01-01.dll_:0x10001010</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - number: 6 = IPPROTO_TCP
+        - number: 1 = SOCK_STREAM
+        - number: 2 = AF_INET
+        - or:
+          - api: ws2_32.socket
+          - api: ws2_32.WSASocket
+          - api: socket
+      - property/read: System.Net.Sockets.TcpClient::Client
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

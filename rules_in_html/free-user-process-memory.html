@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>free user process memory</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">free user process memory</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/inject</p>
+    <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection [T1055]</p>
+    <p><strong>MBC:</strong> Memory::Free Memory [C0044]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 493167E85E45363D09495D0841C30648:0x404B00</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: attach user process memory
+      - number: 0xFFFFFFFF = NtCurrentProcess()
+      - api: ZwFreeVirtualMemory
+      - optional:
+        - match: find process by PID
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

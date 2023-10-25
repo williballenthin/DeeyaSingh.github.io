@@ -1,0 +1,53 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using DES via WinAPI</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using DES via WinAPI</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/des</p>
+    <p><strong>Authors:</strong> @_re_fox</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05], Cryptography::Encrypt Data::3DES [C0027.004]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 5f66b82558ca92e54e77f216ef4c066c:0x403377</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - number: 0x6601 = CALG_DES
+        - number: 0x6603 = CALG_3DES
+        - number: 0x6609 = CALG_3DES_112
+      - or:
+        - api: CryptGenKey
+        - api: CryptDeriveKey
+        - api: CryptImportKey
+      - optional:
+        - or:
+          - api: CryptAcquireContext
+          - api: CryptEncrypt
+          - api: CryptDecrypt
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>download and write a file</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">download and write a file</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/c2/file-transfer</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Command and Control::Ingress Tool Transfer [T1105]</p>
+    <p><strong>MBC:</strong> Command and Control::C2 Communication::Server to Client File Transfer [B0030.003]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 5D7C34B6854D48D3DA4F96B71550A221:0x401346</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: receive data
+      - match: host-interaction/file-system/write
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

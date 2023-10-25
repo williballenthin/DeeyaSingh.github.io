@@ -1,0 +1,45 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>convert IP address from string</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">convert IP address from string</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/ip</p>
+    <p><strong>Authors:</strong> @mr-tz</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 0796F1C1EA0A142FC1EB7109A44C86CB:0x405D20</p>
+    <pre><strong>Features</strong>
+    - and:
+      - api: inet_pton
+      - optional:
+        - or:
+          - number: 2 = AF_INET
+          - number: 23 = AF_INET6
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

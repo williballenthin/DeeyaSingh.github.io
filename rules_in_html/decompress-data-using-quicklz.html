@@ -1,0 +1,75 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>decompress data using QuickLZ</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">decompress data using QuickLZ</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/compression</p>
+    <p><strong>Authors:</strong> david@edeca.net</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Decompress Data::QuickLZ [C0025.001]</p>
+    <p><strong>References:</strong> http://www.quicklz.com/</p>
+    <p><strong>Examples:</strong> 64d9f7d96b99467f36e22fada623c3bb:0x10001510, 234c8034e88b2d097d2da51a85253825:0x100015B0, f54a09e966bb929e68f5c01fa3087a3a:0x10001590, d115f4b2ec8579be33fe883219c00ae2:0x1800015E0, 831083e1614090dbb5815dba36faa2f3:0x1800016E0, 7e0b974f004e4e0523fe4d9b9d89e5ad:0x1800016B0, 6a352c3e55e8ae5ed39dc1be7fb964b1:0x10010DE0</p>
+    <pre><strong>Features</strong>
+    - or:
+      - basic block:
+        - and:
+          - description: Mode 1 decompression
+          - mnemonic: xor
+          - mnemonic: shr
+          - mnemonic: and
+          - number: 12
+          - number: 4095
+          - or:
+            - offset: 16384
+            - offset: 32768
+      - basic block:
+        - and:
+          - description: Mode 2 decompression
+          - mnemonic: shr
+          - mnemonic: and
+          - mnemonic: mov
+          - number: 5
+          - number: 1
+          - number: 2047
+      - and:
+        - description: Mode 3 decompression
+        - basic block:
+          - and:
+            - mnemonic: shr
+            - mnemonic: and
+            - mnemonic: mov
+            - number: 2
+            - number: 3
+            - number: 16383
+        - basic block:
+          - and:
+            - mnemonic: shr
+            - mnemonic: and
+            - number: 1023
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

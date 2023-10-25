@@ -1,0 +1,43 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>use process replacement</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">use process replacement</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/inject</p>
+    <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection::Process Hollowing [T1055.012], Defense Evasion::Reflective Code Loading [T1620]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> http://www.autosectools.com/process-hollowing.pdf, https://www.andreafortuna.org/2017/10/09/understanding-process-hollowing/</p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 12-02.exe_:0x4010EA</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: create process suspended
+      - match: write process memory
+      - match: resume thread
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

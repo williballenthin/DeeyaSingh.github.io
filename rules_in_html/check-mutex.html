@@ -1,0 +1,50 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>check mutex</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">check mutex</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/mutex</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, anushka.virgaonkar@mandiant.com</p>
+    <p><strong>Scope:</strong> basic block</p>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Process::Check Mutex [C0043]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 01-01.dll_:0x10001010</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - api: kernel32.OpenMutex
+        - match: create mutex
+        - api: System.Threading.Mutex::OpenExisting
+        - api: System.Threading.Mutex::TryOpenExisting
+      - optional:
+        - or:
+          - api: kernel32.GetLastError
+          - number: 2 = ERROR_FILE_NOT_FOUND
+          - number: 0xB7 = ERROR_ALREADY_EXISTS
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+    <!DOCTYPE html>
+<html>
+<head>
+  <title>log keystrokes</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="logo.png" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+  
+    <div id="rule-name-container">
+    <h1 id="rule-name">log keystrokes</h1>
+    </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection/keylog</p>
+    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+    <p><strong>Scope:</strong> function</p>
+    <p><strong>ATT&CK:</strong> Collection::Input Capture::Keylogging [T1056.001]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> C91887D861D9BD4A5872249B641BC9F9:0x4015FD</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - api: SetWindowsHookEx
+        - api: GetKeyState
+      - and:
+        - api: RegisterHotKey
+        - api: user32.keybd_event
+        - api: UnregisterHotKey
+      - and:
+        - api: CallNextHookEx
+        - api: user32.GetKeyNameText
+        - api: user32.GetAsyncKeyState
+        - api: user32.GetForgroundWindow
+      - api: user32.AttachThreadInput
+      - api: user32.MapVirtualKey
+</pre>
+
+
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>
