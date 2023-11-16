@@ -73,22 +73,16 @@ def convert_yaml_to_html(yaml_file, output_dir)
         <pre><strong>Features</strong>\n#{features_html}</pre>
       </div>
       
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
+    <footer>
+    </footer>
+    <script>
+      var currentUrl = window.location.href;
+      var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+      history.replaceState({}, document.title, newUrl);
+      </script>
     </body>
     </html>
   HTML
-
-  # Save to output directory
   output_file = File.join(output_dir, File.basename(yaml_file, '.yml') + '.html')
   File.write(output_file, html_content)
 end
