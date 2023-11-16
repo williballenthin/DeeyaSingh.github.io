@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>packed with Huan</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">packed with Huan</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>packed with Huan</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> anti-analysis/packer/huan</p>
-        <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-        <p><strong>Scope:</strong> file</p>
-        <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]</p>
-        <p><strong>MBC:</strong> Anti-Static Analysis::Software Packing [F0001]</p>
-        <p><strong>References:</strong> https://github.com/frkngksl/Huan</p>
-        <p><strong>Examples:</strong> 378ecc1b2e60129c9f06bb6bb8042f2b95feca5f526a4c26a5c39707807fa259:0x140048000</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">packed with Huan</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> anti-analysis/packer/huan</p>
+      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
+      <p><strong>Scope:</strong> file</p>
+      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]</p>
+      <p><strong>MBC:</strong> Anti-Static Analysis::Software Packing [F0001]</p>
+      <p><strong>References:</strong> https://github.com/frkngksl/Huan</p>
+      <p><strong>Examples:</strong> 378ecc1b2e60129c9f06bb6bb8042f2b95feca5f526a4c26a5c39707807fa259:0x140048000</p>
+      <pre><strong>Features</strong>
     - or:
       - section: .huan
       - string: [+] IAT Fix starts...
@@ -39,18 +39,14 @@
       - string: [+] All headers are copied
       - string: [+] All sections are copied
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

@@ -1,51 +1,47 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>initialize IWebBrowser2</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">initialize IWebBrowser2</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>initialize IWebBrowser2</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> communication/http</p>
-        <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
-        <p><strong>Scope:</strong> basic block</p>
-        <p><strong>ATT&CK:</strong> </p>
-        <p><strong>MBC:</strong> Communication::HTTP Communication::IWebBrowser [C0002.010]</p>
-        <p><strong>References:</strong> https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752127(v%3Dvs.85)</p>
-        <p><strong>Examples:</strong> 395EB0DDD99D2C9E37B6D0B73485EE9C:0x402130</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">initialize IWebBrowser2</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> communication/http</p>
+      <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
+      <p><strong>Scope:</strong> basic block</p>
+      <p><strong>ATT&CK:</strong> </p>
+      <p><strong>MBC:</strong> Communication::HTTP Communication::IWebBrowser [C0002.010]</p>
+      <p><strong>References:</strong> https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752127(v%3Dvs.85)</p>
+      <p><strong>Examples:</strong> 395EB0DDD99D2C9E37B6D0B73485EE9C:0x402130</p>
+      <pre><strong>Features</strong>
     - and:
       - api: ole32.CoCreateInstance
       - bytes: 01 DF 02 00 00 00 00 00 C0 00 00 00 00 00 00 46 = CLSID_InternetExplorer
       - bytes: 61 16 0C D3 AF CD D0 11 8A 3E 00 C0 4F C9 E2 6E = IID_IWebBrowser2
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

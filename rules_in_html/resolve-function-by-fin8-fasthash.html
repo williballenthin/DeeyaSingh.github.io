@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>resolve function by FIN8 fasthash</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">resolve function by FIN8 fasthash</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>resolve function by FIN8 fasthash</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> linking/runtime-linking</p>
-        <p><strong>Authors:</strong> @r3c0nst (Frank Boldewin)</p>
-        <p><strong>Scope:</strong> function</p>
-        <p><strong>ATT&CK:</strong> </p>
-        <p><strong>MBC:</strong> Cryptography::Cryptographic Hash [C0029]</p>
-        <p><strong>References:</strong> https://www.bitdefender.com/files/News/CaseStudies/study/394/Bitdefender-PR-Whitepaper-BADHATCH-creat5237-en-EN.pdf, https://raw.githubusercontent.com/fboldewin/YARA-rules/master/Shellcode.APIHashing.FIN8.yar</p>
-        <p><strong>Examples:</strong> B43FCA5283BFC7022553EFF663683834:0x12F, 4BF70EA92979DD88C9761EE848370050:0x28b</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">resolve function by FIN8 fasthash</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> linking/runtime-linking</p>
+      <p><strong>Authors:</strong> @r3c0nst (Frank Boldewin)</p>
+      <p><strong>Scope:</strong> function</p>
+      <p><strong>ATT&CK:</strong> </p>
+      <p><strong>MBC:</strong> Cryptography::Cryptographic Hash [C0029]</p>
+      <p><strong>References:</strong> https://www.bitdefender.com/files/News/CaseStudies/study/394/Bitdefender-PR-Whitepaper-BADHATCH-creat5237-en-EN.pdf, https://raw.githubusercontent.com/fboldewin/YARA-rules/master/Shellcode.APIHashing.FIN8.yar</p>
+      <p><strong>Examples:</strong> B43FCA5283BFC7022553EFF663683834:0x12F, 4BF70EA92979DD88C9761EE848370050:0x28b</p>
+      <pre><strong>Features</strong>
     - or:
       - basic block:
         - and:
@@ -53,18 +53,14 @@
           - mnemonic: xor
           - number: 4096941111
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

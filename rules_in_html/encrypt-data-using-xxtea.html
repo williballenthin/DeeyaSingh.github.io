@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>encrypt data using XXTEA</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">encrypt data using XXTEA</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using XXTEA</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> data-manipulation/encryption/xxtea</p>
-        <p><strong>Authors:</strong> raymond.leong@mandiant.com</p>
-        <p><strong>Scope:</strong> function</p>
-        <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-        <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]</p>
-        <p><strong>References:</strong> https://en.wikipedia.org/wiki/XXTEA</p>
-        <p><strong>Examples:</strong> C3699D0C7BD1276184249A487C1F0D7F:0x0040D370, 2F9FF544D5CC945B453356F9B20C07D8:0x0040AA10</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">encrypt data using XXTEA</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> data-manipulation/encryption/xxtea</p>
+      <p><strong>Authors:</strong> raymond.leong@mandiant.com</p>
+      <p><strong>Scope:</strong> function</p>
+      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+      <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]</p>
+      <p><strong>References:</strong> https://en.wikipedia.org/wiki/XXTEA</p>
+      <p><strong>Examples:</strong> C3699D0C7BD1276184249A487C1F0D7F:0x0040D370, 2F9FF544D5CC945B453356F9B20C07D8:0x0040AA10</p>
+      <pre><strong>Features</strong>
     - and:
       - basic block:
         - and:
@@ -59,18 +59,14 @@
       - not:
         - number: 0xC6EF3720 = tea sum, not used in xxtea
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

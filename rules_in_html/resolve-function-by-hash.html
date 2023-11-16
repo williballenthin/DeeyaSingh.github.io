@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>resolve function by hash</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">resolve function by hash</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>resolve function by hash</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> linking/runtime-linking</p>
-        <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-        <p><strong>Scope:</strong> function</p>
-        <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]</p>
-        <p><strong>MBC:</strong> </p>
-        <p><strong>References:</strong> https://www.mandiant.com/resources/precalculated-string-hashes-reverse-engineering-shellcode, https://pastebin.com/ci5XYW4P</p>
-        <p><strong>Examples:</strong> </p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">resolve function by hash</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> linking/runtime-linking</p>
+      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
+      <p><strong>Scope:</strong> function</p>
+      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]</p>
+      <p><strong>MBC:</strong> </p>
+      <p><strong>References:</strong> https://www.mandiant.com/resources/precalculated-string-hashes-reverse-engineering-shellcode, https://pastebin.com/ci5XYW4P</p>
+      <p><strong>Examples:</strong> </p>
+      <pre><strong>Features</strong>
     - or:
       - number: 0x6a4abc5b = ROR13(kernel32.dll)
       - number: 0x3cfa685d = ROR13(ntdll.dll)
@@ -39,18 +39,14 @@
       - number: 0xff7f061a = ROR13(RtlExitUserThread)
       - number: 0x60e0ceef = ROR13(ExitThread)
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

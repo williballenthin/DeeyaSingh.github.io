@@ -1,50 +1,46 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>install driver</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">install driver</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>install driver</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> host-interaction/driver</p>
-        <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-        <p><strong>Scope:</strong> basic block</p>
-        <p><strong>ATT&CK:</strong> Persistence::Create or Modify System Process::Windows Service [T1543.003]</p>
-        <p><strong>MBC:</strong> Hardware::Install Driver [C0037]</p>
-        <p><strong>References:</strong> </p>
-        <p><strong>Examples:</strong> af60700383b75727f5256a0000c1476f:0x1127E</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">install driver</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> host-interaction/driver</p>
+      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+      <p><strong>Scope:</strong> basic block</p>
+      <p><strong>ATT&CK:</strong> Persistence::Create or Modify System Process::Windows Service [T1543.003]</p>
+      <p><strong>MBC:</strong> Hardware::Install Driver [C0037]</p>
+      <p><strong>References:</strong> </p>
+      <p><strong>Examples:</strong> af60700383b75727f5256a0000c1476f:0x1127E</p>
+      <pre><strong>Features</strong>
     - or:
       - api: ntdll.NtLoadDriver
       - api: ZwLoadDriver
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

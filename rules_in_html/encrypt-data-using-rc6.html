@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>encrypt data using RC6</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">encrypt data using RC6</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>encrypt data using RC6</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> data-manipulation/encryption/rc6</p>
-        <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-        <p><strong>Scope:</strong> function</p>
-        <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-        <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05], Cryptography::Encrypt Data::RC6 [C0027.010]</p>
-        <p><strong>References:</strong> https://github.com/stamparm/cryptospecs/blob/master/symmetrical/sources/rc6.c#L66</p>
-        <p><strong>Examples:</strong> D87BA0BFCE1CDB17FD243B8B1D247E88:0x402390</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">encrypt data using RC6</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> data-manipulation/encryption/rc6</p>
+      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
+      <p><strong>Scope:</strong> function</p>
+      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+      <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05], Cryptography::Encrypt Data::RC6 [C0027.010]</p>
+      <p><strong>References:</strong> https://github.com/stamparm/cryptospecs/blob/master/symmetrical/sources/rc6.c#L66</p>
+      <p><strong>Examples:</strong> D87BA0BFCE1CDB17FD243B8B1D247E88:0x402390</p>
+      <pre><strong>Features</strong>
     - and:
       - or:
         - description: P, used by both RC5 and RC6 (more common)
@@ -41,18 +41,14 @@
           - number: 0x61C88647 = Q (32-bit), encrypt via subtract an unsigned
         - number: 0x9E3779B97F4A7C15 = Q (64-bit)
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

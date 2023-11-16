@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>authenticate HMAC</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">authenticate HMAC</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>authenticate HMAC</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> data-manipulation/hmac</p>
-        <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-        <p><strong>Scope:</strong> function</p>
-        <p><strong>ATT&CK:</strong> </p>
-        <p><strong>MBC:</strong> Cryptography::Hashed Message Authentication Code [C0061]</p>
-        <p><strong>References:</strong> https://tools.ietf.org/html/rfc2104, https://tools.ietf.org/html/rfc4634, https://github.com/ogay/hmac</p>
-        <p><strong>Examples:</strong> mimikatz.exe_:0x403408</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">authenticate HMAC</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> data-manipulation/hmac</p>
+      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+      <p><strong>Scope:</strong> function</p>
+      <p><strong>ATT&CK:</strong> </p>
+      <p><strong>MBC:</strong> Cryptography::Hashed Message Authentication Code [C0061]</p>
+      <p><strong>References:</strong> https://tools.ietf.org/html/rfc2104, https://tools.ietf.org/html/rfc4634, https://github.com/ogay/hmac</p>
+      <p><strong>Examples:</strong> mimikatz.exe_:0x403408</p>
+      <pre><strong>Features</strong>
     - and:
       - number: 0x36 = inner padding byte value
       - number: 0x5C = outer padding byte value
@@ -39,18 +39,14 @@
         - number: 64 = MD5, SHA-1, SHA-224, or SHA-256
         - number: 128 = SHA-384 or SHA-512
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

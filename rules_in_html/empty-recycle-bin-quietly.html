@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>empty recycle bin quietly</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">empty recycle bin quietly</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>empty recycle bin quietly</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> host-interaction/recycle-bin</p>
-        <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
-        <p><strong>Scope:</strong> basic block</p>
-        <p><strong>ATT&CK:</strong> Defense Evasion::Indicator Removal [T1070]</p>
-        <p><strong>MBC:</strong> </p>
-        <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shemptyrecyclebina</p>
-        <p><strong>Examples:</strong> 276F691A3DF25481F59D79781799E35F:0x1400254E0</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">empty recycle bin quietly</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> host-interaction/recycle-bin</p>
+      <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
+      <p><strong>Scope:</strong> basic block</p>
+      <p><strong>ATT&CK:</strong> Defense Evasion::Indicator Removal [T1070]</p>
+      <p><strong>MBC:</strong> </p>
+      <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shemptyrecyclebina</p>
+      <p><strong>Examples:</strong> 276F691A3DF25481F59D79781799E35F:0x1400254E0</p>
+      <pre><strong>Features</strong>
     - and:
       - api: SHEmptyRecycleBin
       - instruction:
@@ -40,18 +40,14 @@
             - mnemonic: lea
             - offset: 7 = SHERB_NOSOUND|SHERB_NOPROGRESSUI|SHERB_NOCONFIRMATION
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

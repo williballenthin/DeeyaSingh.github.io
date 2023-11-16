@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>capture network configuration via ipconfig</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">capture network configuration via ipconfig</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>capture network configuration via ipconfig</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> collection/network</p>
-        <p><strong>Authors:</strong> @_re_fox</p>
-        <p><strong>Scope:</strong> basic block</p>
-        <p><strong>ATT&CK:</strong> Discovery::System Network Configuration Discovery [T1016]</p>
-        <p><strong>MBC:</strong> </p>
-        <p><strong>References:</strong> </p>
-        <p><strong>Examples:</strong> 7204e3efc2434012e13ca939db0d0b02:0x403028</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">capture network configuration via ipconfig</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> collection/network</p>
+      <p><strong>Authors:</strong> @_re_fox</p>
+      <p><strong>Scope:</strong> basic block</p>
+      <p><strong>ATT&CK:</strong> Discovery::System Network Configuration Discovery [T1016]</p>
+      <p><strong>MBC:</strong> </p>
+      <p><strong>References:</strong> </p>
+      <p><strong>Examples:</strong> 7204e3efc2434012e13ca939db0d0b02:0x403028</p>
+      <pre><strong>Features</strong>
     - and:
       - string: /ipconfig(\.exe)?/i
       - api: msvcr100.system
@@ -38,18 +38,14 @@
           - substring: [Windows IP Configuration]
           - description: Arkei Stealer Filename and Banner
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>compiled with ExeScript</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">compiled with ExeScript</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>compiled with ExeScript</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> compiler/exescript</p>
-        <p><strong>Authors:</strong> jonathanlepore@google.com</p>
-        <p><strong>Scope:</strong> file</p>
-        <p><strong>ATT&CK:</strong> </p>
-        <p><strong>MBC:</strong> </p>
-        <p><strong>References:</strong> https://www.hide-folder.com/overview/hf_7.html</p>
-        <p><strong>Examples:</strong> </p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">compiled with ExeScript</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> compiler/exescript</p>
+      <p><strong>Authors:</strong> jonathanlepore@google.com</p>
+      <p><strong>Scope:</strong> file</p>
+      <p><strong>ATT&CK:</strong> </p>
+      <p><strong>MBC:</strong> </p>
+      <p><strong>References:</strong> https://www.hide-folder.com/overview/hf_7.html</p>
+      <p><strong>Examples:</strong> </p>
+      <pre><strong>Features</strong>
     - and:
       - format: pe
       - section: .rsrc
@@ -46,18 +46,14 @@
         - string:  -Command -
       - match: execute VBScript Javascript or JScript in memory
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

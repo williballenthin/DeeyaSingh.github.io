@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>resolve function by djb2 hash</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">resolve function by djb2 hash</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>resolve function by djb2 hash</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> linking/runtime-linking</p>
-        <p><strong>Authors:</strong> still@teamt5.org</p>
-        <p><strong>Scope:</strong> function</p>
-        <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]</p>
-        <p><strong>MBC:</strong> Data::Non-Cryptographic Hash [C0030]</p>
-        <p><strong>References:</strong> </p>
-        <p><strong>Examples:</strong> </p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">resolve function by djb2 hash</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> linking/runtime-linking</p>
+      <p><strong>Authors:</strong> still@teamt5.org</p>
+      <p><strong>Scope:</strong> function</p>
+      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]</p>
+      <p><strong>MBC:</strong> Data::Non-Cryptographic Hash [C0030]</p>
+      <p><strong>References:</strong> </p>
+      <p><strong>Examples:</strong> </p>
+      <pre><strong>Features</strong>
     - or:
       - number: 0x5FBFF0FB = djb2(LoadLibraryA)
       - number: 0x3870CA07 = djb2(CloseHandle)
@@ -40,18 +40,14 @@
       - number: 0x71019921 = djb2(ReadFile)
       - number: 0x0E19E5FE = djb2(Sleep)
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

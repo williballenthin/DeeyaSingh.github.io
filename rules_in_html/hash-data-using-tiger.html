@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>hash data using tiger</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">hash data using tiger</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>hash data using tiger</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> data-manipulation/hashing/tiger</p>
-        <p><strong>Authors:</strong> @_re_fox</p>
-        <p><strong>Scope:</strong> basic block</p>
-        <p><strong>ATT&CK:</strong> </p>
-        <p><strong>MBC:</strong> Cryptography::Cryptographic Hash::Tiger [C0029.005]</p>
-        <p><strong>References:</strong> </p>
-        <p><strong>Examples:</strong> 0761142efbda6c4b1e801223de723578:0x65471B97</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">hash data using tiger</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> data-manipulation/hashing/tiger</p>
+      <p><strong>Authors:</strong> @_re_fox</p>
+      <p><strong>Scope:</strong> basic block</p>
+      <p><strong>ATT&CK:</strong> </p>
+      <p><strong>MBC:</strong> Cryptography::Cryptographic Hash::Tiger [C0029.005]</p>
+      <p><strong>References:</strong> </p>
+      <p><strong>Examples:</strong> 0761142efbda6c4b1e801223de723578:0x65471B97</p>
+      <pre><strong>Features</strong>
     - or:
       - bytes: 5e 0c e9 f7 7c b1 aa 02 ec a8 43 e2 03 4b 42 ac d3 fc d5 0d e3 5b cd 72 3a 7f f9 f6 93 9b 01 6d 93 91 1f d2 ff 78 99 cd e2 29 80 70 c9 a1 73 75 c3 83 2a 92 6b 32 64 b1 70 58 91 04 ee 3e 88 46 e6 ec 03 71 05 e3 ac ea 5c 53 a3 08 b8 69 41 c5 7c c4 de 8d 91 54 e7 4c 0c f4 0d dc df f4 a2 0a fa be 4d a7 18 6f b7 10 6a ab d1 5a 23 b6 cc c6 ff e2 2f 57 21 61 72 13 1e 92 9d 19 6f 8c 48 1a ca 07 00 da f4 f9 c9 4b c7 41 52 e8 f6 e6 f5 26 b6 47 59 ea db 79 90 85 92 8c 9e c9 c5 85 18 4f 4b 86 6f a9 1e 76 8e d7 7d c1 b5 = sbox1
       - bytes: 38 21 a1 05 5a be a6 e6 98 7c f8 b4 a5 22 a1 b5 90 69 0b 14 89 60 3c 56 d5 5d 1f 39 2e cb 46 4c 34 94 b7 c9 db ad 32 d9 f5 af 15 20 e4 70 ea 08 f1 8c 47 3e 67 a6 65 d7 99 8d 27 ab 7e 75 fb c4 92 06 6e 2d 86 c6 11 df 16 3b 7f 0d f1 84 eb dd 04 ea 65 a6 04 f6 2e 6f b3 df e0 f0 0f 0f 8e 4a 51 ba bc 3d f8 ee ed a5 1e 37 a4 0e 2a 0a 4f fc 29 84 b3 5c a8 1d 3e e8 e2 1c 1b ba 82 f8 8f dc 0d e8 53 83 5e 50 45 cd 17 07 db d4 00 9a d1 18 01 81 f3 a5 ed cf a0 34 f2 ca 87 88 51 7e e7 0b 36 51 c4 b3 38 14 34 1e f9 cc 89 = sbox2
@@ -44,18 +44,14 @@
         - count(mnemonic(shl)): 2 or more
         - characteristic: nzxor
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

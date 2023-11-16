@@ -1,50 +1,46 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>spoof parent PID</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">spoof parent PID</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>spoof parent PID</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> anti-analysis/anti-forensic</p>
-        <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-        <p><strong>Scope:</strong> basic block</p>
-        <p><strong>ATT&CK:</strong> Defense Evasion::Access Token Manipulation::Parent PID Spoofing [T1134.004]</p>
-        <p><strong>MBC:</strong> </p>
-        <p><strong>References:</strong> https://blog.f-secure.com/detecting-parent-pid-spoofing/</p>
-        <p><strong>Examples:</strong> 2ebadd04f0ada89c36c1409b6e96423a68dd77b513db8db3da203c36d3753e5f:0x140002291</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">spoof parent PID</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> anti-analysis/anti-forensic</p>
+      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+      <p><strong>Scope:</strong> basic block</p>
+      <p><strong>ATT&CK:</strong> Defense Evasion::Access Token Manipulation::Parent PID Spoofing [T1134.004]</p>
+      <p><strong>MBC:</strong> </p>
+      <p><strong>References:</strong> https://blog.f-secure.com/detecting-parent-pid-spoofing/</p>
+      <p><strong>Examples:</strong> 2ebadd04f0ada89c36c1409b6e96423a68dd77b513db8db3da203c36d3753e5f:0x140002291</p>
+      <pre><strong>Features</strong>
     - and:
       - api: kernel32.UpdateProcThreadAttribute
       - number: 0x20000 = PROC_THREAD_ATTRIBUTE_PARENT_PROCESS
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

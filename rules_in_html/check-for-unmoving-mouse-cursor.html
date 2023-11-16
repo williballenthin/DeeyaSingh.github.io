@@ -1,49 +1,45 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>check for unmoving mouse cursor</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">check for unmoving mouse cursor</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>check for unmoving mouse cursor</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
-        <p><strong>Authors:</strong> BitsOfBinary</p>
-        <p><strong>Scope:</strong> function</p>
-        <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::User Activity Based Checks [T1497.002]</p>
-        <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection::Human User Check [B0009.012]</p>
-        <p><strong>References:</strong> https://www.joesecurity.org/blog/5852460122427342172</p>
-        <p><strong>Examples:</strong> d7ff81ff775d4ab50d31ac1e962c8c4dea7ff9f280aa2b42ddd06760a5665002:0x401118</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">check for unmoving mouse cursor</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
+      <p><strong>Authors:</strong> BitsOfBinary</p>
+      <p><strong>Scope:</strong> function</p>
+      <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::User Activity Based Checks [T1497.002]</p>
+      <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection::Human User Check [B0009.012]</p>
+      <p><strong>References:</strong> https://www.joesecurity.org/blog/5852460122427342172</p>
+      <p><strong>Examples:</strong> d7ff81ff775d4ab50d31ac1e962c8c4dea7ff9f280aa2b42ddd06760a5665002:0x401118</p>
+      <pre><strong>Features</strong>
     - and:
       - count(api(user32.GetCursorPos)): 2 or more
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

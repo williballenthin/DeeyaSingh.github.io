@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>hash data using SHA512</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">hash data using SHA512</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>hash data using SHA512</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> data-manipulation/hashing/sha512</p>
-        <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-        <p><strong>Scope:</strong> function</p>
-        <p><strong>ATT&CK:</strong> </p>
-        <p><strong>MBC:</strong> </p>
-        <p><strong>References:</strong> https://www.rfc-editor.org/rfc/rfc6234</p>
-        <p><strong>Examples:</strong> 1195d0d18be9362fb8dd9e1738404c9d:0x404FC0, 44d40faf3f1fe4ed969befab7afcd2f0:0x1003D2F0</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">hash data using SHA512</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> data-manipulation/hashing/sha512</p>
+      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
+      <p><strong>Scope:</strong> function</p>
+      <p><strong>ATT&CK:</strong> </p>
+      <p><strong>MBC:</strong> </p>
+      <p><strong>References:</strong> https://www.rfc-editor.org/rfc/rfc6234</p>
+      <p><strong>Examples:</strong> 1195d0d18be9362fb8dd9e1738404c9d:0x404FC0, 44d40faf3f1fe4ed969befab7afcd2f0:0x1003D2F0</p>
+      <pre><strong>Features</strong>
     - or:
       - and:
         - number: 0x6a09e667f3bcc908 = H(0)0
@@ -82,18 +82,14 @@
             - number: 3664609560
       - bytes: 08 C9 BC F3 67 E6 09 6A 3B A7 CA 84 85 AE 67 BB 2B F8 94 FE 72 F3 6E 3C F1 36 1D 5F 3A F5 4F A5 D1 82 E6 AD 7F 52 0E 51 1F 6C 3E 2B 8C 68 05 9B 6B BD 41 FB AB D9 83 1F 79 21 7E 13 19 CD E0 5B = H(0)
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

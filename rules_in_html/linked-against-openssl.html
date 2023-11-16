@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>linked against OpenSSL</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">linked against OpenSSL</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>linked against OpenSSL</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> linking/static/openssl</p>
-        <p><strong>Authors:</strong> william.ballenthin@mandiant.com, michael.hunhoff@mandiant.com</p>
-        <p><strong>Scope:</strong> file</p>
-        <p><strong>ATT&CK:</strong> </p>
-        <p><strong>MBC:</strong> Cryptography::Crypto Library [C0059]</p>
-        <p><strong>References:</strong> </p>
-        <p><strong>Examples:</strong> 6cc148363200798a12091b97a17181a1</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">linked against OpenSSL</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> linking/static/openssl</p>
+      <p><strong>Authors:</strong> william.ballenthin@mandiant.com, michael.hunhoff@mandiant.com</p>
+      <p><strong>Scope:</strong> file</p>
+      <p><strong>ATT&CK:</strong> </p>
+      <p><strong>MBC:</strong> Cryptography::Crypto Library [C0059]</p>
+      <p><strong>References:</strong> </p>
+      <p><strong>Examples:</strong> 6cc148363200798a12091b97a17181a1</p>
+      <pre><strong>Features</strong>
     - or:
       - string: RC4 for x86_64, CRYPTOGAMS by <appro@openssl.org>
       - string: AES for x86_64, CRYPTOGAMS by <appro@openssl.org>
@@ -36,18 +36,14 @@
       - string: OpenSSL DH Method
       - string: Eric Young's PKCS#1 RSA
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

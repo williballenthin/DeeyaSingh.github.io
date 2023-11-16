@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>connect to WMI namespace via WbemLocator</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">connect to WMI namespace via WbemLocator</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>connect to WMI namespace via WbemLocator</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> host-interaction/wmi</p>
-        <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-        <p><strong>Scope:</strong> function</p>
-        <p><strong>ATT&CK:</strong> Execution::Windows Management Instrumentation [T1047]</p>
-        <p><strong>MBC:</strong> </p>
-        <p><strong>References:</strong> </p>
-        <p><strong>Examples:</strong> al-khaser_x64.exe_:0x14001956e, al-khaser_x86.exe_:0x00445270</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">connect to WMI namespace via WbemLocator</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> host-interaction/wmi</p>
+      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+      <p><strong>Scope:</strong> function</p>
+      <p><strong>ATT&CK:</strong> Execution::Windows Management Instrumentation [T1047]</p>
+      <p><strong>MBC:</strong> </p>
+      <p><strong>References:</strong> </p>
+      <p><strong>Examples:</strong> al-khaser_x64.exe_:0x14001956e, al-khaser_x86.exe_:0x00445270</p>
+      <pre><strong>Features</strong>
     - and:
       - basic block:
         - and:
@@ -46,18 +46,14 @@
         - string: /ROOT\\CIMV2/i
         - string: /ROOT\\DEFAULT/i
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

@@ -1,34 +1,34 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>query or enumerate registry key</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">query or enumerate registry key</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>query or enumerate registry key</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> host-interaction/registry</p>
-        <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-        <p><strong>Scope:</strong> function</p>
-        <p><strong>ATT&CK:</strong> Discovery::Query Registry [T1012]</p>
-        <p><strong>MBC:</strong> Operating System::Registry::Query Registry Key [C0036.005]</p>
-        <p><strong>References:</strong> </p>
-        <p><strong>Examples:</strong> 493167E85E45363D09495D0841C30648:0x404930, B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x402608</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">query or enumerate registry key</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> host-interaction/registry</p>
+      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
+      <p><strong>Scope:</strong> function</p>
+      <p><strong>ATT&CK:</strong> Discovery::Query Registry [T1012]</p>
+      <p><strong>MBC:</strong> Operating System::Registry::Query Registry Key [C0036.005]</p>
+      <p><strong>References:</strong> </p>
+      <p><strong>Examples:</strong> 493167E85E45363D09495D0841C30648:0x404930, B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x402608</p>
+      <pre><strong>Features</strong>
     - and:
       - optional:
         - match: create or open registry key
@@ -50,18 +50,14 @@
         - api: Microsoft.Win32.RegistryKey::OpenRemoteBaseKey
         - api: Microsoft.Win32.RegistryKey::OpenSubKey
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>

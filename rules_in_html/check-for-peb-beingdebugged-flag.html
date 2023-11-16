@@ -1,50 +1,46 @@
-  
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>check for PEB BeingDebugged flag</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
-  </head>
-  <body>
-    <header>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
-        </div>
-      </nav>
-    </header>
 
-      <div id="rule-name-container">
-        <h1 id="rule-name">check for PEB BeingDebugged flag</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>check for PEB BeingDebugged flag</title>
+  <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+  <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+          <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+        </a>
       </div>
-      <div id="rule-details">
-        <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
-        <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-        <p><strong>Scope:</strong> basic block</p>
-        <p><strong>ATT&CK:</strong> </p>
-        <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection::Process Environment Block BeingDebugged [B0001.035]</p>
-        <p><strong>References:</strong> Practical Malware Analysis, Chapter 16, p. 353</p>
-        <p><strong>Examples:</strong> Practical Malware Analysis Lab 16-01.exe_:0x403530</p>
-        <pre><strong>Features</strong>
+    </nav>
+  </header>
+
+    <div id="rule-name-container">
+      <h1 id="rule-name">check for PEB BeingDebugged flag</h1>
+    </div>
+    <div id="rule-details">
+      <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
+      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+      <p><strong>Scope:</strong> basic block</p>
+      <p><strong>ATT&CK:</strong> </p>
+      <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection::Process Environment Block BeingDebugged [B0001.035]</p>
+      <p><strong>References:</strong> Practical Malware Analysis, Chapter 16, p. 353</p>
+      <p><strong>Examples:</strong> Practical Malware Analysis Lab 16-01.exe_:0x403530</p>
+      <pre><strong>Features</strong>
     - and:
       - match: PEB access
       - offset: 2 = PEB.BeingDebugged
 </pre>
-      </div>
-      
-
-
-      <footer>
-      </footer>
-      <script>
-  // Remove 'rules_in_html' from the URL
-  var currentUrl = window.location.href;
-  var newUrl = currentUrl.replace('/rules_in_html/', '/');
-  history.replaceState({}, document.title, newUrl);
-</script>
-
-    </body>
-    </html>
+    </div>
+    
+  <footer>
+  </footer>
+  <script>
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
+    history.replaceState({}, document.title, newUrl);
+    </script>
+  </body>
+  </html>
