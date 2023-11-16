@@ -1,34 +1,34 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>obfuscated with vs-obfuscation</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">obfuscated with vs-obfuscation</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> anti-analysis/obfuscation</p>
-    <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-    <p><strong>Scope:</strong> file</p>
-    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-    <p><strong>MBC:</strong> Anti-Static Analysis::Executable Code Obfuscation [B0032]</p>
-    <p><strong>References:</strong> https://github.com/Tai7sy/vs-obfuscation</p>
-    <p><strong>Examples:</strong> efd1a86330cecba5d8d038fba65ac8e76955ed724986aa87cd6ca9f72f6941c7</p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>obfuscated with vs-obfuscation</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">obfuscated with vs-obfuscation</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> anti-analysis/obfuscation</p>
+        <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
+        <p><strong>Scope:</strong> file</p>
+        <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+        <p><strong>MBC:</strong> Anti-Static Analysis::Executable Code Obfuscation [B0032]</p>
+        <p><strong>References:</strong> https://github.com/Tai7sy/vs-obfuscation</p>
+        <p><strong>Examples:</strong> efd1a86330cecba5d8d038fba65ac8e76955ed724986aa87cd6ca9f72f6941c7</p>
+        <pre><strong>Features</strong>
     - or:
       - string: DefWindowProcW1222_test
       - and:
@@ -38,10 +38,18 @@
         - string: Hash: %u
         - string: Can't find function
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

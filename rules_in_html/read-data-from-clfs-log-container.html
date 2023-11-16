@@ -1,34 +1,34 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>read data from CLFS log container</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">read data from CLFS log container</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> host-interaction/log/clfs/read</p>
-    <p><strong>Authors:</strong> blaine.stancill@mandiant.com</p>
-    <p><strong>Scope:</strong> function</p>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> Discovery::File and Directory Discovery::Log File [E1083.m01]</p>
-    <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/clfsw32/, https://github.com/libyal/libfsclfs/blob/main/documenation/Common%20Log%20File%20System%20(CLFS).asciidoc</p>
-    <p><strong>Examples:</strong> 91B08896FBDA9EDB8B6F93A6BC811EC6:0x1800018F6</p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>read data from CLFS log container</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">read data from CLFS log container</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> host-interaction/log/clfs/read</p>
+        <p><strong>Authors:</strong> blaine.stancill@mandiant.com</p>
+        <p><strong>Scope:</strong> function</p>
+        <p><strong>ATT&CK:</strong> </p>
+        <p><strong>MBC:</strong> Discovery::File and Directory Discovery::Log File [E1083.m01]</p>
+        <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/clfsw32/, https://github.com/libyal/libfsclfs/blob/main/documenation/Common%20Log%20File%20System%20(CLFS).asciidoc</p>
+        <p><strong>Examples:</strong> 91B08896FBDA9EDB8B6F93A6BC811EC6:0x1800018F6</p>
+        <pre><strong>Features</strong>
     - and:
       - api: clfsw32.CreateLogFile
       - api: clfsw32.CreateLogMarshallingArea
@@ -36,10 +36,18 @@
         - api: clfsw32.ReadLogRecord
         - api: clfsw32.ReadNextLogRecord
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

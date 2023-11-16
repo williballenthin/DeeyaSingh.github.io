@@ -1,44 +1,52 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>reference public RSA key</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">reference public RSA key</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> data-manipulation/encryption/rsa</p>
-    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-    <p><strong>Scope:</strong> function</p>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> Cryptography::Encryption Key [C0028]</p>
-    <p><strong>References:</strong> https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/ns-wincrypt-publickeystruc, https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/ns-wincrypt-rsapubkey</p>
-    <p><strong>Examples:</strong> b7b5e1253710d8927cbe07d52d2d2e10:0x417DF0</p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>reference public RSA key</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">reference public RSA key</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> data-manipulation/encryption/rsa</p>
+        <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+        <p><strong>Scope:</strong> function</p>
+        <p><strong>ATT&CK:</strong> </p>
+        <p><strong>MBC:</strong> Cryptography::Encryption Key [C0028]</p>
+        <p><strong>References:</strong> https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/ns-wincrypt-publickeystruc, https://learn.microsoft.com/en-us/windows/win32/api/wincrypt/ns-wincrypt-rsapubkey</p>
+        <p><strong>Examples:</strong> b7b5e1253710d8927cbe07d52d2d2e10:0x417DF0</p>
+        <pre><strong>Features</strong>
     - or:
       - bytes: 06 02 00 00 00 A4 00 00 52 53 41 31
       - number: 0x040031415352 = RSA1 bitlen 1024
       - number: 0x080031415352 = RSA1 bitlen 2048
       - number: 0x100031415352 = RSA1 bitlen 4096
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

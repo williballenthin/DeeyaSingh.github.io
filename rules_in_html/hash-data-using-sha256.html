@@ -1,34 +1,34 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>hash data using SHA256</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">hash data using SHA256</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> data-manipulation/hashing/sha256</p>
-    <p><strong>Authors:</strong> moritz.raabe@mandiant.com, anushka.virgaonkar@mandiant.com, william.ballenthin@mandiant.com</p>
-    <p><strong>Scope:</strong> function</p>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> Cryptography::Cryptographic Hash::SHA256 [C0029.003]</p>
-    <p><strong>References:</strong> https://www.rfc-editor.org/rfc/rfc6234</p>
-    <p><strong>Examples:</strong> C0CFFCF211035A839E28D542DE300298:0x180011400, 6CC148363200798A12091B97A17181A1:0x140120240, 44d40faf3f1fe4ed969befab7afcd2f0:0x10033570</p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>hash data using SHA256</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">hash data using SHA256</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> data-manipulation/hashing/sha256</p>
+        <p><strong>Authors:</strong> moritz.raabe@mandiant.com, anushka.virgaonkar@mandiant.com, william.ballenthin@mandiant.com</p>
+        <p><strong>Scope:</strong> function</p>
+        <p><strong>ATT&CK:</strong> </p>
+        <p><strong>MBC:</strong> Cryptography::Cryptographic Hash::SHA256 [C0029.003]</p>
+        <p><strong>References:</strong> https://www.rfc-editor.org/rfc/rfc6234</p>
+        <p><strong>Examples:</strong> C0CFFCF211035A839E28D542DE300298:0x180011400, 6CC148363200798A12091B97A17181A1:0x140120240, 44d40faf3f1fe4ed969befab7afcd2f0:0x10033570</p>
+        <pre><strong>Features</strong>
     - or:
       - and:
         - number: 0x6A09E667 = H(0)0
@@ -62,10 +62,18 @@
           - api: System.Security.Cryptography.SHA256Managed::ctor
         - api: System.Security.Cryptography.HashAlgorithm::ComputeHash
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

@@ -1,43 +1,51 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>extract HTTP body</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">extract HTTP body</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> communication/http/client</p>
-    <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
-    <p><strong>Scope:</strong> function</p>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> Communication::HTTP Communication::Extract Body [C0002.011]</p>
-    <p><strong>References:</strong> https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752574(v=vs.85)</p>
-    <p><strong>Examples:</strong> 395EB0DDD99D2C9E37B6D0B73485EE9C:0x4020A9</p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>extract HTTP body</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">extract HTTP body</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> communication/http/client</p>
+        <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
+        <p><strong>Scope:</strong> function</p>
+        <p><strong>ATT&CK:</strong> </p>
+        <p><strong>MBC:</strong> Communication::HTTP Communication::Extract Body [C0002.011]</p>
+        <p><strong>References:</strong> https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752574(v=vs.85)</p>
+        <p><strong>Examples:</strong> 395EB0DDD99D2C9E37B6D0B73485EE9C:0x4020A9</p>
+        <pre><strong>Features</strong>
     - and:
       - bytes: 25 44 2C 33 CB 26 D0 11 B4 83 00 C0 4F D9 01 19 = CLSID_IHTMLDocument2
       - offset: 0x24 = IHTMLDocument2Vtbl.get_body
       - offset: 0xF0 = IHTMLElementVtbl.get_innerText
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

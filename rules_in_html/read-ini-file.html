@@ -1,34 +1,34 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>read .ini file</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">read .ini file</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> host-interaction/file-system/read</p>
-    <p><strong>Authors:</strong> @_re_fox, michael.hunhoff@mandiant.com</p>
-    <p><strong>Scope:</strong> function</p>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> File System::Read File [C0051]</p>
-    <p><strong>References:</strong> </p>
-    <p><strong>Examples:</strong> 1d8fd13c890060464019c0f07b928b1a:0x401070, E6234FB98F17201C232F4502015B47B3:0x701312FA</p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>read .ini file</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">read .ini file</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> host-interaction/file-system/read</p>
+        <p><strong>Authors:</strong> @_re_fox, michael.hunhoff@mandiant.com</p>
+        <p><strong>Scope:</strong> function</p>
+        <p><strong>ATT&CK:</strong> </p>
+        <p><strong>MBC:</strong> File System::Read File [C0051]</p>
+        <p><strong>References:</strong> </p>
+        <p><strong>Examples:</strong> 1d8fd13c890060464019c0f07b928b1a:0x401070, E6234FB98F17201C232F4502015B47B3:0x701312FA</p>
+        <pre><strong>Features</strong>
     - and:
       - or:
         - api: GetPrivateProfileInt
@@ -40,10 +40,18 @@
         - string: /\.ini/i
         - api: GetFullPathName
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

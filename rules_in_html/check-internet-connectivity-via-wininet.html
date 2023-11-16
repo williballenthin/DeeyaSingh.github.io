@@ -1,34 +1,34 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>check Internet connectivity via WinINet</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">check Internet connectivity via WinINet</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> host-interaction/network/connectivity</p>
-    <p><strong>Authors:</strong> matthew.williams@mandiant.com, michael.hunhoff@mandiant.com</p>
-    <p><strong>Scope:</strong> basic block</p>
-    <p><strong>ATT&CK:</strong> Discovery::System Network Configuration Discovery::Internet Connection Discovery [T1016.001]</p>
-    <p><strong>MBC:</strong> </p>
-    <p><strong>References:</strong> </p>
-    <p><strong>Examples:</strong> 648FC498110B11B4313A47A776E6BA40:0x6633F0</p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>check Internet connectivity via WinINet</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">check Internet connectivity via WinINet</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> host-interaction/network/connectivity</p>
+        <p><strong>Authors:</strong> matthew.williams@mandiant.com, michael.hunhoff@mandiant.com</p>
+        <p><strong>Scope:</strong> basic block</p>
+        <p><strong>ATT&CK:</strong> Discovery::System Network Configuration Discovery::Internet Connection Discovery [T1016.001]</p>
+        <p><strong>MBC:</strong> </p>
+        <p><strong>References:</strong> </p>
+        <p><strong>Examples:</strong> 648FC498110B11B4313A47A776E6BA40:0x6633F0</p>
+        <pre><strong>Features</strong>
     - or:
       - and:
         - or:
@@ -42,10 +42,18 @@
               - number: 1 = TRUE
       - api: wininet.InternetAttemptConnect
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

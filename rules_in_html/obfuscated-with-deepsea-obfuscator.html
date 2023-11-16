@@ -1,42 +1,50 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>obfuscated with DeepSea Obfuscator</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">obfuscated with DeepSea Obfuscator</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> anti-analysis/obfuscation</p>
-    <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-    <p><strong>Scope:</strong> file</p>
-    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-    <p><strong>MBC:</strong> Anti-Static Analysis::Executable Code Obfuscation [B0032]</p>
-    <p><strong>References:</strong> https://marketplace.visualstudio.com/items?itemName=DeepSeaObfuscator.DeepSeaObfuscator</p>
-    <p><strong>Examples:</strong> 354a5de061795f8d961aae8e668ba9968083b1af09eeb9caed0111e7503974b5</p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>obfuscated with DeepSea Obfuscator</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">obfuscated with DeepSea Obfuscator</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> anti-analysis/obfuscation</p>
+        <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
+        <p><strong>Scope:</strong> file</p>
+        <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+        <p><strong>MBC:</strong> Anti-Static Analysis::Executable Code Obfuscation [B0032]</p>
+        <p><strong>References:</strong> https://marketplace.visualstudio.com/items?itemName=DeepSeaObfuscator.DeepSeaObfuscator</p>
+        <p><strong>Examples:</strong> 354a5de061795f8d961aae8e668ba9968083b1af09eeb9caed0111e7503974b5</p>
+        <pre><strong>Features</strong>
     - and:
       - match: compiled to the .NET platform
       - string: DeepSeaObfuscator
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

@@ -1,43 +1,51 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>interact with iptables</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">interact with iptables</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> host-interaction/firewall</p>
-    <p><strong>Authors:</strong> joakim@intezer.com</p>
-    <p><strong>Scope:</strong> basic block</p>
-    <p><strong>ATT&CK:</strong> Discovery::Software Discovery::Security Software Discovery [T1518.001], Defense Evasion::Impair Defenses::Disable or Modify System Firewall [T1562.004]</p>
-    <p><strong>MBC:</strong> </p>
-    <p><strong>References:</strong> </p>
-    <p><strong>Examples:</strong> </p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>interact with iptables</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">interact with iptables</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> host-interaction/firewall</p>
+        <p><strong>Authors:</strong> joakim@intezer.com</p>
+        <p><strong>Scope:</strong> basic block</p>
+        <p><strong>ATT&CK:</strong> Discovery::Software Discovery::Security Software Discovery [T1518.001], Defense Evasion::Impair Defenses::Disable or Modify System Firewall [T1562.004]</p>
+        <p><strong>MBC:</strong> </p>
+        <p><strong>References:</strong> </p>
+        <p><strong>Examples:</strong> </p>
+        <pre><strong>Features</strong>
     - and:
       - os: linux
       - api: system
       - substring: iptables
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

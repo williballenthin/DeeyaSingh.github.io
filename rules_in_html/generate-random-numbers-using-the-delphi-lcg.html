@@ -1,44 +1,52 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>generate random numbers using the Delphi LCG</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">generate random numbers using the Delphi LCG</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> data-manipulation/prng/lcg</p>
-    <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-    <p><strong>Scope:</strong> basic block</p>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> Cryptography::Generate Pseudo-random Sequence [C0021]</p>
-    <p><strong>References:</strong> https://en.wikipedia.org/wiki/Linear_congruential_generator, https://community.osr.com/discussion/130410/generating-random-numbers</p>
-    <p><strong>Examples:</strong> </p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>generate random numbers using the Delphi LCG</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">generate random numbers using the Delphi LCG</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> data-manipulation/prng/lcg</p>
+        <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
+        <p><strong>Scope:</strong> basic block</p>
+        <p><strong>ATT&CK:</strong> </p>
+        <p><strong>MBC:</strong> Cryptography::Generate Pseudo-random Sequence [C0021]</p>
+        <p><strong>References:</strong> https://en.wikipedia.org/wiki/Linear_congruential_generator, https://community.osr.com/discussion/130410/generating-random-numbers</p>
+        <p><strong>Examples:</strong> </p>
+        <pre><strong>Features</strong>
     - and:
       - instruction:
         - mnemonic: imul
         - number: 0x8088405 = multiplier a
       - mnemonic: inc = increment c
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

@@ -1,34 +1,34 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>encrypt data using OpenSSL RSA</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">encrypt data using OpenSSL RSA</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> data-manipulation/encryption/rsa</p>
-    <p><strong>Authors:</strong> Ana06</p>
-    <p><strong>Scope:</strong> function</p>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> Cryptography::Encrypt Data::RSA [C0027.011]</p>
-    <p><strong>References:</strong> https://github.com/openssl/openssl/blob/fdc5043d58900663b493147298e64f11353b35fe/crypto/objects/obj_dat.h</p>
-    <p><strong>Examples:</strong> </p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>encrypt data using OpenSSL RSA</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">encrypt data using OpenSSL RSA</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> data-manipulation/encryption/rsa</p>
+        <p><strong>Authors:</strong> Ana06</p>
+        <p><strong>Scope:</strong> function</p>
+        <p><strong>ATT&CK:</strong> </p>
+        <p><strong>MBC:</strong> Cryptography::Encrypt Data::RSA [C0027.011]</p>
+        <p><strong>References:</strong> https://github.com/openssl/openssl/blob/fdc5043d58900663b493147298e64f11353b35fe/crypto/objects/obj_dat.h</p>
+        <p><strong>Examples:</strong> </p>
+        <pre><strong>Features</strong>
     - or:
       - bytes: 2A 86 48 86 F7 0D 01 01 01 = RSA
       - bytes: 2A 86 48 86 F7 0D 01 01 02 = RSA-MD2
@@ -50,10 +50,18 @@
       - bytes: 60 86 48 01 65 03 04 03 0F = RSA-SHA3-384
       - bytes: 60 86 48 01 65 03 04 03 10 = RSA-SHA3-512
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

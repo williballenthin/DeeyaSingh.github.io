@@ -1,34 +1,34 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>get memory information</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">get memory information</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> host-interaction/hardware/memory</p>
-    <p><strong>Authors:</strong> joakim@intezer.com</p>
-    <p><strong>Scope:</strong> function</p>
-    <p><strong>ATT&CK:</strong> Discovery::System Information Discovery [T1082]</p>
-    <p><strong>MBC:</strong> </p>
-    <p><strong>References:</strong> </p>
-    <p><strong>Examples:</strong> 7351f8a40c5450557b24622417fc478d:0x405438</p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>get memory information</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">get memory information</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> host-interaction/hardware/memory</p>
+        <p><strong>Authors:</strong> joakim@intezer.com</p>
+        <p><strong>Scope:</strong> function</p>
+        <p><strong>ATT&CK:</strong> Discovery::System Information Discovery [T1082]</p>
+        <p><strong>MBC:</strong> </p>
+        <p><strong>References:</strong> </p>
+        <p><strong>Examples:</strong> 7351f8a40c5450557b24622417fc478d:0x405438</p>
+        <pre><strong>Features</strong>
     - or:
       - and:
         - os: linux
@@ -41,10 +41,18 @@
           - substring: /proc/meminfo
           - string: /^free/
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

@@ -1,34 +1,34 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>access PEB ldr_data</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">access PEB ldr_data</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> linking/runtime-linking</p>
-    <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-    <p><strong>Scope:</strong> basic block</p>
-    <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
-    <p><strong>MBC:</strong> </p>
-    <p><strong>References:</strong> https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb_ldr_data.htm, https://github.com/d35ha/CallObfuscator/blob/5834aff9ff4511f1408ae4ce80b79737af4ae77b/ShellCode/shell_x64.asm#L8</p>
-    <p><strong>Examples:</strong> 3FDFB2D522E7DEECAAAF2F87420F7E75:0x4117B7</p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>access PEB ldr_data</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">access PEB ldr_data</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> linking/runtime-linking</p>
+        <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
+        <p><strong>Scope:</strong> basic block</p>
+        <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
+        <p><strong>MBC:</strong> </p>
+        <p><strong>References:</strong> https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb_ldr_data.htm, https://github.com/d35ha/CallObfuscator/blob/5834aff9ff4511f1408ae4ce80b79737af4ae77b/ShellCode/shell_x64.asm#L8</p>
+        <p><strong>Examples:</strong> 3FDFB2D522E7DEECAAAF2F87420F7E75:0x4117B7</p>
+        <pre><strong>Features</strong>
     - or:
       - and:
         - arch: i386
@@ -51,10 +51,18 @@
           - offset: 0x20 = PEB.LDR_DATA.InMemoryOrderModuleList
           - offset: 0x30 = PEB.LDR_DATA.InInitializationOrderModuleList
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>

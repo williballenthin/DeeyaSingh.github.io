@@ -1,34 +1,34 @@
-
-    <!DOCTYPE html>
-<html>
-<head>
-  <title>compiled with ps2exe</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <link rel="icon" type="image/png" href="favicon.png">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="logo.png" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
   
-    <div id="rule-name-container">
-    <h1 id="rule-name">compiled with ps2exe</h1>
-    </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> compiler/ps2exe</p>
-    <p><strong>Authors:</strong> @_re_fox, jakub.jozwiak@mandiant.com</p>
-    <p><strong>Scope:</strong> file</p>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> </p>
-    <p><strong>References:</strong> https://github.com/ikarstein/ps2exe, https://github.com/MScholtes/PS2EXE</p>
-    <p><strong>Examples:</strong> 8775ed26068788279726e08ff9665aab, 805f79e57e4ce24b95a04541e4ea55dd2ce9ba314ab2c43491328204bc25d017</p>
-    <pre><strong>Features</strong>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>compiled with ps2exe</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
+            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
+          </a>
+        </div>
+      </nav>
+    </header>
+
+      <div id="rule-name-container">
+        <h1 id="rule-name">compiled with ps2exe</h1>
+      </div>
+      <div id="rule-details">
+        <p><strong>Namespace:</strong> compiler/ps2exe</p>
+        <p><strong>Authors:</strong> @_re_fox, jakub.jozwiak@mandiant.com</p>
+        <p><strong>Scope:</strong> file</p>
+        <p><strong>ATT&CK:</strong> </p>
+        <p><strong>MBC:</strong> </p>
+        <p><strong>References:</strong> https://github.com/ikarstein/ps2exe, https://github.com/MScholtes/PS2EXE</p>
+        <p><strong>Examples:</strong> 8775ed26068788279726e08ff9665aab, 805f79e57e4ce24b95a04541e4ea55dd2ce9ba314ab2c43491328204bc25d017</p>
+        <pre><strong>Features</strong>
     - and:
       - match: compiled to the .NET platform
       - or:
@@ -40,10 +40,18 @@
           - string: If you spzzcify thzz -zzxtract option you nzzed to add a filzz for zzxtraction in this way
           - string:    -zzxtract:"<filzznamzz>"
 </pre>
+      </div>
+      
 
 
-  </div>
-  <footer>
-  </footer>
-</body>
-</html>
+      <footer>
+      </footer>
+      <script>
+  // Remove 'rules_in_html' from the URL
+  var currentUrl = window.location.href;
+  var newUrl = currentUrl.replace('/rules_in_html/', '/');
+  history.replaceState({}, document.title, newUrl);
+</script>
+
+    </body>
+    </html>
