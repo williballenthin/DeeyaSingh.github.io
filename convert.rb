@@ -40,21 +40,27 @@ def convert_yaml_to_html(yaml_file, output_dir)
   features_html = render_features(features, 4)
 
   html_content = <<~HTML
-  
+  ---
+  permalink: "/#{rule.fetch('name', '').gsub(' ', '-').downcase}/"
+
+  ---
   <!DOCTYPE html>
   <html>
   <head>
     <title>#{rule.fetch('name', '')}</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css"> <!-- Adjusted path for CSS -->
-    <link rel="icon" type="image/png" href="./favicon.png"> <!-- Adjusted path for favicon -->
+    <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+    <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+    <link data-pagefind-meta="url[href]" rel="canonical" href="/#{rule.fetch('name', '').gsub(' ', '-').downcase}/">
+
   </head>
   <body>
     <header>
       <nav class="navbar bg-body-tertiary">
         <div class="container">
-          <a class="navbar-brand" href="./index.html"> <!-- Adjusted path for index.html -->
-            <img src="./logo.png" alt="CAPA" width="170" height="60"> <!-- Adjusted path for logo.png -->
-          </a>
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+        <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      
         </div>
       </nav>
     </header>
@@ -75,11 +81,7 @@ def convert_yaml_to_html(yaml_file, output_dir)
       
     <footer>
     </footer>
-    <script>
-      var currentUrl = window.location.href;
-      var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
-      history.replaceState({}, document.title, newUrl);
-      </script>
+    
     </body>
     </html>
   HTML

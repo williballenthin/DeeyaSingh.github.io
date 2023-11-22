@@ -1,18 +1,24 @@
+---
+permalink: "/get-file-size/"
 
+---
 <!DOCTYPE html>
 <html>
 <head>
   <title>get file size</title>
-  <link rel="stylesheet" type="text/css" href="./styles.css"> 
-  <link rel="icon" type="image/png" href="./favicon.png"> 
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/get-file-size/">
+
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-        <a class="navbar-brand" href="./index.html"> 
-          <img src="./logo.png" alt="CAPA" width="170" height="60"> 
-        </a>
+      <a class="navbar-brand" href="{{ "/" | relative_url }}">
+      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+      </a>
+    
       </div>
     </nav>
   </header>
@@ -38,10 +44,6 @@
     
   <footer>
   </footer>
-  <script>
-    var currentUrl = window.location.href;
-    var newUrl = currentUrl.replace('/rules_in_html/', '/').replace('.html', '');
-    history.replaceState({}, document.title, newUrl);
-    </script>
+  
   </body>
   </html>

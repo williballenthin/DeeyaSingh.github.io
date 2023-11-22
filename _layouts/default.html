@@ -2,15 +2,16 @@
 <html>
 <head>
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" type="text/css" href="assets\styles.css">
-  <link rel="icon" type="image/png" href="assets\img\favicon.png">
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png" href="{{ "/assets/img/favicon.png" | relative_url }}">
+  
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="assets\img\logo.png" alt="CAPA" width="170" height="60">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "/assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
         </a>
       </div>
     </nav>
