@@ -1,9 +1,11 @@
-name: Deploy Jekyll site to Pages
+name: Deploy Jekyll site to Pages and Update Submodule
 
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour
 
 permissions:
   contents: read
@@ -18,9 +20,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        
+      - name: Checkout repository with submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.146.0
         with:
@@ -30,10 +34,29 @@ jobs:
 
       - name: Add Linux platform to Gemfile.lock
         run: bundle lock --add-platform x86_64-linux
-      
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
+
+      - name: Update submodule
+        run: git submodule update --remote --recursive
+
+      - name: Run Ruby command
+        run: ruby convert.rb
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Run Pagefind
+        run: npm_config_yes=true npx pagefind --site "rules_in_html"
+
+      - name: Setup Ruby and Install Jekyll
+        run: |
+          bundle install
+          gem install jekyll
 
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
