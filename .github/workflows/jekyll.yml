@@ -22,20 +22,39 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2  # Updated to v2 for submodule support
-        
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.146.0
         with:
           ruby-version: '3.1'
           bundler-cache: true
           cache-version: 0
-      
+
       - name: Add Linux platform to Gemfile.lock
         run: bundle lock --add-platform x86_64-linux
-      
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
+
+      - name: Checkout repository with submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+
+      - name: Update submodule
+        run: git submodule update --remote --recursive
+
+      - name: Run Ruby command
+        run: ruby convert.rb
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Run Pagefind
+        run: npm_config_yes=true npx pagefind --site "rules_in_html"
 
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
@@ -55,31 +74,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-
-      - name: Checkout repository with submodules
-        uses: actions/checkout@v2
-        with:
-          submodules: 'recursive'
-
-      - name: Update submodule
-        run: git submodule update --remote --recursive
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1.146.0
-        with:
-          ruby-version: '3.1'
-          bundler-cache: true
-          cache-version: 0
-
-      - name: Run Ruby command
-        run: ruby convert.rb
-
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-
-      - name: Run Pagefind
-        run: npm_config_yes=true npx pagefind --site "rules_in_html"
-
-
