@@ -1,7 +1,7 @@
 ---
 permalink: "/get-http-content-length/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,40 +9,43 @@ permalink: "/get-http-content-length/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/get-http-content-length/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">get HTTP content length</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/http</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::HTTP Communication [C0002]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 0596c4ea5aa8def47f22c85d75aaca95:0x1079C70</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">get HTTP content length</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication [C0002]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 0596c4ea5aa8def47f22c85d75aaca95:0x1079C70</p>
+    <pre><strong>Features</strong>
     - and:
       - api: wininet.HttpQueryInfo
       - number: 0x20000005 = HTTP_QUERY_FLAG_NUMBER | HTTP_QUERY_CONTENT_LENGTH
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

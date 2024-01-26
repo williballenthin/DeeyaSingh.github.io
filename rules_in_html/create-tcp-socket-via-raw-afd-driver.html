@@ -1,7 +1,7 @@
 ---
 permalink: "/create-tcp-socket-via-raw-afd-driver/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/create-tcp-socket-via-raw-afd-driver/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/create-tcp-socket-via-raw-afd-driver/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">create TCP socket via raw AFD driver</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/socket/tcp</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::Socket Communication::Create TCP Socket [C0001.011]</p>
-      <p><strong>References:</strong> https://www.x86matthew.com/view_post?id=ntsockets</p>
-      <p><strong>Examples:</strong> 0fd8330e00aa48676d6d0c4f36e9a80b:0x1400132B0</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">create TCP socket via raw AFD driver</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/socket/tcp</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Socket Communication::Create TCP Socket [C0001.011]</p>
+    <p><strong>References:</strong> https://www.x86matthew.com/view_post?id=ntsockets</p>
+    <p><strong>Examples:</strong> 0fd8330e00aa48676d6d0c4f36e9a80b:0x1400132B0</p>
+    <pre><strong>Features</strong>
     - and:
       - api: kernel32.CreateEvent
       - string: \Device\Afd\Endpoint
@@ -92,10 +92,13 @@ permalink: "/create-tcp-socket-via-raw-afd-driver/"
         - number: 0x12017 = IOCTL_AFD_RECV
         - number: 0x1201F = IOCTL_AFD_SEND
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

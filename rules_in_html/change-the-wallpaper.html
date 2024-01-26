@@ -1,7 +1,7 @@
 ---
 permalink: "/change-the-wallpaper/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,41 +9,44 @@ permalink: "/change-the-wallpaper/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/change-the-wallpaper/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">change the wallpaper</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/gui/session</p>
-      <p><strong>Authors:</strong> @_re_fox</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Operating System::Wallpaper [C0035]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 5dd0b130d5c3d40c69e3972f39fd7d62:0x45AC6F</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">change the wallpaper</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/gui/session</p>
+    <p><strong>Authors:</strong> ["@_re_fox"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Operating System::Wallpaper [C0035]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 5dd0b130d5c3d40c69e3972f39fd7d62:0x45AC6F</p>
+    <pre><strong>Features</strong>
     - and:
       - api: SystemParametersInfo
       - number: 0x14 = SPI_SETDESKWALLPAPER
       - number: 0x3 = SPIF_SENDWININICHANGE | SPIF_UPDATEINIFILE
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+   
+  <span data-pagefind-filter="MBC: Operating System"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

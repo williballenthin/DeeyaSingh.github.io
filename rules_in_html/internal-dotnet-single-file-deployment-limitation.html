@@ -1,0 +1,50 @@
+---
+permalink: "/(internal)-.net-single-file-deployment-limitation/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>(internal) .NET single file deployment limitation</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/(internal)-.net-single-file-deployment-limitation/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">(internal) .NET single file deployment limitation</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> internal/limitation/file</p>
+    <p><strong>Authors:</strong> ["sara.rincon@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 0da87fccbf7687a6c7ab38087dea8b8f32c2b1fb6546101485b7167d18d9c406</p>
+    <pre><strong>Features</strong>
+    - or:
+      - match: executable/dotnet-singlefile
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: internal"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: sara.rincon@mandiant.com"></span>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,55 @@
+---
+permalink: "/get-uefi-variable/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>get UEFI variable</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/get-uefi-variable/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">get UEFI variable</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/bootloader</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Pre-OS Boot::System Firmware [T1542.001]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://learn.microsoft.com/en-us/windows/win32/sysinfo/access-uefi-firmware-variables-from-a-universal-windows-app</p>
+    <p><strong>Examples:</strong> b761e060c7114448d6a5fe276d4ca882c4bd702c12c4d73f6ad79b8dfac33448:0x14000138F</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: ntdll.NtEnumerateSystemEnvironmentValuesEx
+      - api: ntdll.NtQuerySystemEnvironmentValueEx
+      - api: ntdll.NtQuerySystemEnvironmentValue
+      - api: kernel32.GetFirmwareEnvironmentVariable
+      - api: kernel32.GetFirmwareEnvironmentVariableEx
+      - api: ntoskrnl.ExGetFirmwareEnvironmentVariable
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
+  <footer>
+  </footer>
+</body>
+</html>

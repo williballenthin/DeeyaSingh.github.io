@@ -1,7 +1,7 @@
 ---
 permalink: "/obfuscated-with-vs-obfuscation/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/obfuscated-with-vs-obfuscation/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/obfuscated-with-vs-obfuscation/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">obfuscated with vs-obfuscation</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/obfuscation</p>
-      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-      <p><strong>MBC:</strong> Anti-Static Analysis::Executable Code Obfuscation [B0032]</p>
-      <p><strong>References:</strong> https://github.com/Tai7sy/vs-obfuscation</p>
-      <p><strong>Examples:</strong> efd1a86330cecba5d8d038fba65ac8e76955ed724986aa87cd6ca9f72f6941c7</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">obfuscated with vs-obfuscation</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/obfuscation</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Anti-Static Analysis::Executable Code Obfuscation [B0032]</p>
+    <p><strong>References:</strong> https://github.com/Tai7sy/vs-obfuscation</p>
+    <p><strong>Examples:</strong> efd1a86330cecba5d8d038fba65ac8e76955ed724986aa87cd6ca9f72f6941c7</p>
+    <pre><strong>Features</strong>
     - or:
       - string: DefWindowProcW1222_test
       - and:
@@ -44,10 +44,13 @@ permalink: "/obfuscated-with-vs-obfuscation/"
         - string: Hash: %u
         - string: Can't find function
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Anti-Static Analysis"></span>
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

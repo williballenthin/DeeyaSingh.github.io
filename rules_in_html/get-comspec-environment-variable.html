@@ -1,7 +1,7 @@
 ---
 permalink: "/get-comspec-environment-variable/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,42 +9,45 @@ permalink: "/get-comspec-environment-variable/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/get-comspec-environment-variable/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">get COMSPEC environment variable</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/environment-variable</p>
-      <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Discovery::System Information Discovery [T1082]</p>
-      <p><strong>MBC:</strong> Operating System::Environment Variable [C0034]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 14-02.exe_:0x401880</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">get COMSPEC environment variable</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/environment-variable</p>
+    <p><strong>Authors:</strong> ["matthew.williams@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Discovery::System Information Discovery [T1082]</p>
+    <p><strong>MBC:</strong> Operating System::Environment Variable [C0034]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 14-02.exe_:0x401880</p>
+    <pre><strong>Features</strong>
     - and:
       - match: query environment variable
       - or:
         - string: COMSPEC
         - string: %COMSPEC%
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Discovery"></span> 
+  <span data-pagefind-filter="MBC: Operating System"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: matthew.williams@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

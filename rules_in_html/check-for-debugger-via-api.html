@@ -1,7 +1,7 @@
 ---
 permalink: "/check-for-debugger-via-api/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,43 +9,48 @@ permalink: "/check-for-debugger-via-api/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/check-for-debugger-via-api/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">check for debugger via API</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection::CheckRemoteDebuggerPresent [B0001.002], Anti-Behavioral Analysis::Debugger Detection::WudfIsAnyDebuggerPresent [B0001.031]</p>
-      <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/CheckRemoteDebuggerPresent.cpp</p>
-      <p><strong>Examples:</strong> al-khaser_x86.exe_:0x420000</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">check for debugger via API</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com", "anushka.virgaonkar@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection::CheckRemoteDebuggerPresent [B0001.002]</p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/CheckRemoteDebuggerPresent.cpp</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_:0x420000</p>
+    <pre><strong>Features</strong>
     - or:
       - api: kernel32.CheckRemoteDebuggerPresent
       - api: WUDFPlatform.WudfIsAnyDebuggerPresent
       - api: WUDFPlatform.WudfIsKernelDebuggerPresent
       - api: WUDFPlatform.WudfIsUserDebuggerPresent
       - property/read: System.Diagnostics.Debugger::IsAttached
+      - api: System.Diagnostics.Debugger::IsLogging
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+   
+  <span data-pagefind-filter="MBC: Anti-Behavioral Analysis"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

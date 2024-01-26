@@ -1,7 +1,7 @@
 ---
 permalink: "/append-data-to-clfs-log-container/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/append-data-to-clfs-log-container/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/append-data-to-clfs-log-container/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">append data to CLFS log container</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/log/clfs/append</p>
-      <p><strong>Authors:</strong> blaine.stancill@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/clfsw32/, https://github.com/libyal/libfsclfs/blob/main/documenation/Common%20Log%20File%20System%20(CLFS).asciidoc</p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">append data to CLFS log container</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/log/clfs/append</p>
+    <p><strong>Authors:</strong> ["blaine.stancill@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/clfsw32/, https://github.com/libyal/libfsclfs/blob/main/documenation/Common%20Log%20File%20System%20(CLFS).asciidoc</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - and:
       - api: clfsw32.CreateLogFile
       - api: clfsw32.CreateLogMarshallingArea
@@ -42,10 +42,13 @@ permalink: "/append-data-to-clfs-log-container/"
         - api: clfsw32.ReserveAndAppendLog
         - api: clfsw32.ReserveAndAppendLogAligned
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: blaine.stancill@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

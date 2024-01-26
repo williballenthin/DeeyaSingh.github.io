@@ -1,7 +1,7 @@
 ---
 permalink: "/parse-credit-card-information/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/parse-credit-card-information/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/parse-credit-card-information/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">parse credit card information</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> collection/credit-card</p>
-      <p><strong>Authors:</strong> @_re_fox</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Data::Check String [C0019]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 1d8fd13c890060464019c0f07b928b1a:0x402860</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">parse credit card information</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection/credit-card</p>
+    <p><strong>Authors:</strong> ["@_re_fox"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Check String [C0019]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 1d8fd13c890060464019c0f07b928b1a:0x402860</p>
+    <pre><strong>Features</strong>
     - and:
       - 3 or more:
         - instruction:
@@ -74,10 +74,13 @@ permalink: "/parse-credit-card-information/"
             - mnemonic: cmp
             - number: 0x70 = 'p'
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: collection"></span>  
+   
+  <span data-pagefind-filter="MBC: Data"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

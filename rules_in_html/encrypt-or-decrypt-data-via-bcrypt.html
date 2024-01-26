@@ -1,7 +1,7 @@
 ---
 permalink: "/encrypt-or-decrypt-data-via-bcrypt/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/encrypt-or-decrypt-data-via-bcrypt/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/encrypt-or-decrypt-data-via-bcrypt/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">encrypt or decrypt data via BCrypt</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/encryption</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-      <p><strong>MBC:</strong> Cryptography::Decrypt Data [C0031], Cryptography::Encrypt Data [C0027]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">encrypt or decrypt data via BCrypt</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Cryptography::Decrypt Data [C0031]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - and:
       - or:
         - api: BCryptDecrypt
@@ -48,10 +48,13 @@ permalink: "/encrypt-or-decrypt-data-via-bcrypt/"
         - api: BCryptGenerateSymmetricKey
         - api: BCryptDestroyKey
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Cryptography"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

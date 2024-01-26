@@ -1,7 +1,7 @@
 ---
 permalink: "/create-a-process-with-modified-i/o-handles-and-window/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/create-a-process-with-modified-i/o-handles-and-window/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/create-a-process-with-modified-i/o-handles-and-window/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">create a process with modified I/O handles and window</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/process/create</p>
-      <p><strong>Authors:</strong> matthew.williams@mandiant.com, anushka.virgaonkar@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Process::Create Process [C0017]</p>
-      <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/ns-processthreadsapi-startupinfoa</p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 14-02.exe_:0x4011C0</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">create a process with modified I/O handles and window</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/create</p>
+    <p><strong>Authors:</strong> ["matthew.williams@mandiant.com", "anushka.virgaonkar@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Process::Create Process [C0017]</p>
+    <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/ns-processthreadsapi-startupinfoa</p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 14-02.exe_:0x4011C0</p>
+    <pre><strong>Features</strong>
     - or:
       - and:
         - or:
@@ -69,10 +69,14 @@ permalink: "/create-a-process-with-modified-i/o-handles-and-window/"
           - property/read: System.Diagnostics.Process::StandardOutput
           - property/read: System.Diagnostics.Process::StandardInput
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+   
+  <span data-pagefind-filter="MBC: Process"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: matthew.williams@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

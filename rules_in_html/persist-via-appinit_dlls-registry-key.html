@@ -1,0 +1,59 @@
+---
+permalink: "/persist-via-appinit_dlls-registry-key/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>persist via AppInit_DLLs registry key</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/persist-via-appinit_dlls-registry-key/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">persist via AppInit_DLLs registry key</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/registry/appinitdlls</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@fireye.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Event Triggered Execution::AppInit DLLs [T1546.010]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/win7appqual/appinit-dlls-in-windows-7-and-windows-server-2008-r2</p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 11-02.dll_:0x1000158b</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - match: set registry value
+        - number: 0x80000002 = HKEY_LOCAL_MACHINE
+      - or:
+        - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
+        - string: /Software\\Wow6432Node\\Microsoft\\Windows NT\\CurrentVersion\\Windows/i
+      - string: /AppInit_DLLs/i
+      - optional:
+        - string: /LoadAppInit_DLLs/i
+        - description: enable AppInit DLLs feature
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@fireye.com"></span>
+  <footer>
+  </footer>
+</body>
+</html>

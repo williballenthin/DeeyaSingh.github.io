@@ -1,7 +1,7 @@
 ---
 permalink: "/packed-with-gopacker/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/packed-with-gopacker/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/packed-with-gopacker/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">packed with GoPacker</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/packer/gopacker</p>
-      <p><strong>Authors:</strong> jared.wilson@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]</p>
-      <p><strong>MBC:</strong> Anti-Static Analysis::Software Packing::Standard Compression [F0001.002]</p>
-      <p><strong>References:</strong> https://github.com/nirhaas/gopacker</p>
-      <p><strong>Examples:</strong> 4122acca2f9ea98fc3f3ad040688e4ce</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">packed with GoPacker</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/packer/gopacker</p>
+    <p><strong>Authors:</strong> ["jared.wilson@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]</p>
+    <p><strong>MBC:</strong> Anti-Static Analysis::Software Packing::Standard Compression [F0001.002]</p>
+    <p><strong>References:</strong> https://github.com/nirhaas/gopacker</p>
+    <p><strong>Examples:</strong> 4122acca2f9ea98fc3f3ad040688e4ce</p>
+    <pre><strong>Features</strong>
     - and:
       - string: main.packedPath
       - string: main.unpackedPath
@@ -44,10 +44,13 @@ permalink: "/packed-with-gopacker/"
         - string: LALALALA
         - description: LALALALA is the default magic footer; however, it can be changed.
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Anti-Static Analysis"></span>
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: jared.wilson@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

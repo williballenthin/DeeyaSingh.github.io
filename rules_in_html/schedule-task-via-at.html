@@ -1,7 +1,7 @@
 ---
 permalink: "/schedule-task-via-at/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/schedule-task-via-at/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/schedule-task-via-at/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">schedule task via at</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> persistence/scheduled-tasks</p>
-      <p><strong>Authors:</strong> joren485</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Persistence::Scheduled Task/Job::At [T1053.002]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 0ce3bfa972ced61884ae7c1d77c7d4c45e17c7d767e669610cf2ef72b636b464:0x4051AF</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">schedule task via at</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/scheduled-tasks</p>
+    <p><strong>Authors:</strong> ["joren485"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Scheduled Task/Job::At [T1053.002]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 0ce3bfa972ced61884ae7c1d77c7d4c45e17c7d767e669610cf2ef72b636b464:0x4051AF</p>
+    <pre><strong>Features</strong>
     - and:
       - match: host-interaction/process/create
       - string: /at(|\.exe)/i
@@ -43,10 +43,13 @@ permalink: "/schedule-task-via-at/"
         - string: //next:/i
         - string: /\d:\d/i
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: joren485"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

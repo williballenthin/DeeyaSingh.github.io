@@ -1,7 +1,7 @@
 ---
 permalink: "/extract-http-body/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,41 +9,44 @@ permalink: "/extract-http-body/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/extract-http-body/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">extract HTTP body</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/http/client</p>
-      <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::HTTP Communication::Extract Body [C0002.011]</p>
-      <p><strong>References:</strong> https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752574(v=vs.85)</p>
-      <p><strong>Examples:</strong> 395EB0DDD99D2C9E37B6D0B73485EE9C:0x4020A9</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">extract HTTP body</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/client</p>
+    <p><strong>Authors:</strong> ["matthew.williams@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Extract Body [C0002.011]</p>
+    <p><strong>References:</strong> https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752574(v=vs.85)</p>
+    <p><strong>Examples:</strong> 395EB0DDD99D2C9E37B6D0B73485EE9C:0x4020A9</p>
+    <pre><strong>Features</strong>
     - and:
       - bytes: 25 44 2C 33 CB 26 D0 11 B4 83 00 C0 4F D9 01 19 = CLSID_IHTMLDocument2
       - offset: 0x24 = IHTMLDocument2Vtbl.get_body
       - offset: 0xF0 = IHTMLElementVtbl.get_innerText
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: matthew.williams@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/delete-registry-value/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/delete-registry-value/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/delete-registry-value/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">delete registry value</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/registry/delete</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Modify Registry [T1112]</p>
-      <p><strong>MBC:</strong> Operating System::Registry::Delete Registry Value [C0036.007]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4041A0</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">delete registry value</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/registry/delete</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com", "anushka.virgaonkar@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Modify Registry [T1112]</p>
+    <p><strong>MBC:</strong> Operating System::Registry::Delete Registry Value [C0036.007]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4041A0</p>
+    <pre><strong>Features</strong>
     - and:
       - optional:
         - match: create or open registry key
@@ -48,10 +48,14 @@ permalink: "/delete-registry-value/"
         - api: SHRegDeleteUSValue
         - api: Microsoft.Win32.RegistryKey::DeleteValue
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Operating System"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

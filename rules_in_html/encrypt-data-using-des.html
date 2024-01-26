@@ -1,7 +1,7 @@
 ---
 permalink: "/encrypt-data-using-des/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/encrypt-data-using-des/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/encrypt-data-using-des/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">encrypt data using DES</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/encryption/des</p>
-      <p><strong>Authors:</strong> @_re_fox, william.ballenthin@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-      <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05], Cryptography::Encrypt Data::3DES [C0027.004]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 91a12a4cf437589ba70b1687f5acad19:0x47F5E8</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using DES</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/des</p>
+    <p><strong>Authors:</strong> ["@_re_fox", "william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 91a12a4cf437589ba70b1687f5acad19:0x47F5E8</p>
+    <pre><strong>Features</strong>
     - or:
       - bytes: 0e 04 0d 01 02 0f 0b 08 03 0a 06 0c 05 09 00 07 00 0f 07 04 0e 02 0d 01 0a 06 0c 0b 09 05 03 08 04 01 0e 08 0d 06 02 0b 0f 0c 09 07 03 0a 05 00 0f 0c 08 02 04 09 01 07 05 0b 03 0e 0a 00 06 0d = SBOX S1
       - bytes: 0f 01 08 0e 06 0b 03 04 09 07 02 0d 0c 00 05 0a 03 0d 04 07 0f 02 08 0e 0c 00 01 0a 06 09 0b 05 00 0e 07 0b 0a 04 0d 01 05 08 0c 06 09 03 02 0f 0d 08 0a 01 03 0f 04 02 0b 06 07 0c 00 05 0e 09 = SBOX S2
@@ -72,10 +72,14 @@ permalink: "/encrypt-data-using-des/"
         - bytes: 00 00 20 00 02 00 20 04 02 08 00 04 00 00 00 00 00 08 00 00 02 08 00 04 02 08 20 00 00 08 20 04 02 08 20 04 00 00 20 00 00 00 00 00 02 00 00 04 02 00 00 00 00 00 00 04 02 00 20 04 02 08 00 00 00 08 00 04 02 08 20 00 02 00 20 00 00 08 00 04 02 00 00 04 00 00 20 04 00 08 20 04 02 00 20 00 00 00 20 04 00 08 00 00 02 08 00 00 02 08 20 04 00 08 20 00 02 00 00 00 00 00 00 04 00 08 20 00 00 00 00 04 00 08 20 00 00 00 20 00 02 08 00 04 02 08 00 04 02 00 20 04 02 00 20 04 02 00 00 00 02 00 20 00 00 00 00 04 00 08 00 04 00 00 20 00 00 08 20 04 02 08 00 00 02 08 20 00 00 08 20 04 02 08 00 00 02 00 00 04 02 08 20 04 00 00 20 04 00 08 20 00 00 00 00 00 02 00 00 00 02 08 20 04 00 00 00 00 02 08 20 00 00 00 20 04 00 08 00 00 02 00 00 04 00 08 00 04 00 08 00 00 02 00 20 00 = SP7
         - bytes: 40 10 00 10 00 10 00 00 00 00 04 00 40 10 04 10 00 00 00 10 40 10 00 10 40 00 00 00 00 00 00 10 40 00 04 00 00 00 04 10 40 10 04 10 00 10 04 00 00 10 04 10 40 10 04 00 00 10 00 00 40 00 00 00 00 00 04 10 40 00 00 10 00 10 00 10 40 10 00 00 00 10 04 00 40 00 04 00 40 00 04 10 00 10 04 10 40 10 00 00 00 00 00 00 00 00 00 00 40 00 04 10 40 00 00 10 00 10 00 10 40 10 04 00 00 00 04 00 40 10 04 00 00 00 04 00 00 10 04 10 00 10 00 00 40 00 00 00 40 00 04 10 00 10 00 00 40 10 04 00 00 10 00 10 40 00 00 00 40 00 00 10 00 00 04 10 40 00 04 10 00 00 00 10 00 00 04 00 40 10 00 10 00 00 00 00 40 10 04 10 40 00 04 00 40 00 00 10 00 00 04 10 00 10 00 10 40 10 00 10 00 00 00 00 40 10 04 10 00 10 04 00 00 10 04 00 40 10 00 00 40 10 00 00 40 00 04 00 00 00 00 10 00 10 04 10 = SP8
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
+<span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

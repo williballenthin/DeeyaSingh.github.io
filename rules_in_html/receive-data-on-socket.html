@@ -1,7 +1,7 @@
 ---
 permalink: "/receive-data-on-socket/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/receive-data-on-socket/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/receive-data-on-socket/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">receive data on socket</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/socket/receive</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com, joakim@intezer.com, michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::Socket Communication::Receive Data [C0001.006]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 01-01.dll_:0x10001010</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">receive data on socket</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/socket/receive</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "joakim@intezer.com", "michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Socket Communication::Receive Data [C0001.006]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 01-01.dll_:0x10001010</p>
+    <pre><strong>Features</strong>
     - or:
       - api: ws2_32.recv
       - api: ws2_32.recvfrom
@@ -56,11 +56,17 @@ permalink: "/receive-data-on-socket/"
       - api: System.Net.Sockets.Socket::EndReceive
       - api: System.Net.Sockets.Socket::EndReceiveFrom
       - api: System.Net.Sockets.Socket::EndReceiveMessageFrom
+      - api: recvmsg
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: joakim@intezer.com"></span>
+<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

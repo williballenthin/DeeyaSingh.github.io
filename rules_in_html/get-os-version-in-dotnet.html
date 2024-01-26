@@ -1,7 +1,7 @@
 ---
 permalink: "/get-os-version-in-.net/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/get-os-version-in-.net/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/get-os-version-in-.net/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">get OS version in .NET</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/os/version</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> Discovery::System Information Discovery [T1082]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">get OS version in .NET</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/os/version</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Discovery::System Information Discovery [T1082]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - or:
       - property/read: System.Environment::OSVersion
       - property/read: System.Environment::Is64BitOperatingSystem
@@ -42,10 +42,13 @@ permalink: "/get-os-version-in-.net/"
       - property/read: Microsoft.VisualBasic.Devices.ComputerInfo::OSFullName
       - property/read: System.Runtime.InteropServices.RuntimeInformation::OSDescription
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Discovery"></span> 
+  
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

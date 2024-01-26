@@ -1,7 +1,7 @@
 ---
 permalink: "/encrypt-data-using-hc-128/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/encrypt-data-using-hc-128/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/encrypt-data-using-hc-128/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">encrypt data using HC-128</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/encryption/hc-128</p>
-      <p><strong>Authors:</strong> awillia2@cisco.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-      <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05], Cryptography::Encrypt Data::HC-128 [C0027.006]</p>
-      <p><strong>References:</strong> https://download.bitdefender.com/resources/files/News/CaseStudies/study/318/Bitdefender-TRR-Whitepaper-Maze-creat4351-en-EN-GenericUse.pdf, https://github.com/rost1993/hc128/blob/master/hc128.c</p>
-      <p><strong>Examples:</strong> e69a8eb94f65480980deaf1ff5a431a6:0x405D0D</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using HC-128</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/hc-128</p>
+    <p><strong>Authors:</strong> ["awillia2@cisco.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]</p>
+    <p><strong>References:</strong> https://download.bitdefender.com/resources/files/News/CaseStudies/study/318/Bitdefender-TRR-Whitepaper-Maze-creat4351-en-EN-GenericUse.pdf, https://github.com/rost1993/hc128/blob/master/hc128.c</p>
+    <p><strong>Examples:</strong> e69a8eb94f65480980deaf1ff5a431a6:0x405D0D</p>
+    <pre><strong>Features</strong>
     - and:
       - instruction:
         - mnemonic: shl
@@ -71,10 +71,13 @@ permalink: "/encrypt-data-using-hc-128/"
       - count(mnemonic(or)): 4
       - count(characteristic(nzxor)): 4
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: awillia2@cisco.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/access-firewall-settings-via-inetfwmgr/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,41 +9,44 @@ permalink: "/access-firewall-settings-via-inetfwmgr/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/access-firewall-settings-via-inetfwmgr/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">access firewall settings via INetFwMgr</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/firewall/modify</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Discovery::Software Discovery::Security Software Discovery [T1518.001], Defense Evasion::Impair Defenses::Disable or Modify System Firewall [T1562.004]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> EB355BD63BDDCE02955792B4CD6539FB:0x10003927</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">access firewall settings via INetFwMgr</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/firewall/modify</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Discovery::Software Discovery::Security Software Discovery [T1518.001]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> EB355BD63BDDCE02955792B4CD6539FB:0x10003927</p>
+    <pre><strong>Features</strong>
     - and:
       - api: ole32.CoCreateInstance
       - bytes: 42 E9 4C 30 39 6E D8 40 94 3A B9 13 C4 0C 9C D4 = CLSID_NetFwMgr
       - bytes: F5 8A 89 F7 C4 CA 32 46 A2 EC DA 06 E5 11 1A F2 = IID_INetFwMgr
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Discovery"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

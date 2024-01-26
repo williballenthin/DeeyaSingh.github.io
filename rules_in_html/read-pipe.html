@@ -1,7 +1,7 @@
 ---
 permalink: "/read-pipe/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/read-pipe/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/read-pipe/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">read pipe</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/named-pipe/read</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com, michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::Interprocess Communication::Read Pipe [C0003.003]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 14-02.exe_:0x4014C0</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">read pipe</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/named-pipe/read</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Interprocess Communication::Read Pipe [C0003.003]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 14-02.exe_:0x4014C0</p>
+    <pre><strong>Features</strong>
     - or:
       - and:
         - api: kernel32.PeekNamedPipe
@@ -44,10 +44,14 @@ permalink: "/read-pipe/"
       - api: kernel32.CallNamedPipe
       - description: connects, writes, and reads pipe in single operation
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/hash-data-using-djb2/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/hash-data-using-djb2/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/hash-data-using-djb2/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">hash data using djb2</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/hashing/djb2</p>
-      <p><strong>Authors:</strong> awillia2@cisco.com, still@teamt5.org</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Data::Non-Cryptographic Hash::djb2 [C0030.006]</p>
-      <p><strong>References:</strong> https://twitter.com/r3c0nst/status/1392405576131436546, http://www.cse.yorku.ca/~oz/hash.html</p>
-      <p><strong>Examples:</strong> 6be0ae5cb7c3155f70d608fc7670d2d9:0x41DD19</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">hash data using djb2</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/hashing/djb2</p>
+    <p><strong>Authors:</strong> ["awillia2@cisco.com", "still@teamt5.org"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Non-Cryptographic Hash::djb2 [C0030.006]</p>
+    <p><strong>References:</strong> https://twitter.com/r3c0nst/status/1392405576131436546, http://www.cse.yorku.ca/~oz/hash.html</p>
+    <p><strong>Examples:</strong> 6be0ae5cb7c3155f70d608fc7670d2d9:0x41DD19</p>
+    <pre><strong>Features</strong>
     - and:
       - instruction:
         - description: hash = 5381
@@ -52,10 +52,14 @@ permalink: "/hash-data-using-djb2/"
             - mnemonic: imul
           - number: 33
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+   
+  <span data-pagefind-filter="MBC: Data"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: awillia2@cisco.com"></span>
+<span data-pagefind-filter="author: still@teamt5.org"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/parse-pe-header/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/parse-pe-header/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/parse-pe-header/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">parse PE header</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> load-code/pe</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 9324D1A8AE37A36AE560C37448C9705A:0x403DD0</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">parse PE header</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/pe</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 9324D1A8AE37A36AE560C37448C9705A:0x403DD0</p>
+    <pre><strong>Features</strong>
     - and:
       - os: windows
       - and:
@@ -80,10 +80,13 @@ permalink: "/parse-pe-header/"
                     - operand[1].offset: 0x30 = IMAGE_NT_HEADERS.OptionalHeader.ImageBase
                     - operand[1].offset: 0x50 = IMAGE_NT_HEADERS64.OptionalHeader.SizeOfImage
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: load-code"></span>  
+  <span data-pagefind-filter="ATT&CK: Execution"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

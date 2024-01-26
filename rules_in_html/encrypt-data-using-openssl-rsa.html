@@ -1,7 +1,7 @@
 ---
 permalink: "/encrypt-data-using-openssl-rsa/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/encrypt-data-using-openssl-rsa/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/encrypt-data-using-openssl-rsa/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">encrypt data using OpenSSL RSA</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/encryption/rsa</p>
-      <p><strong>Authors:</strong> Ana06</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Cryptography::Encrypt Data::RSA [C0027.011]</p>
-      <p><strong>References:</strong> https://github.com/openssl/openssl/blob/fdc5043d58900663b493147298e64f11353b35fe/crypto/objects/obj_dat.h</p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using OpenSSL RSA</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/rsa</p>
+    <p><strong>Authors:</strong> ["ana06"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Cryptography::Encrypt Data::RSA [C0027.011]</p>
+    <p><strong>References:</strong> https://github.com/openssl/openssl/blob/fdc5043d58900663b493147298e64f11353b35fe/crypto/objects/obj_dat.h</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - or:
       - bytes: 2A 86 48 86 F7 0D 01 01 01 = RSA
       - bytes: 2A 86 48 86 F7 0D 01 01 02 = RSA-MD2
@@ -56,10 +56,13 @@ permalink: "/encrypt-data-using-openssl-rsa/"
       - bytes: 60 86 48 01 65 03 04 03 0F = RSA-SHA3-384
       - bytes: 60 86 48 01 65 03 04 03 10 = RSA-SHA3-512
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+   
+  <span data-pagefind-filter="MBC: Cryptography"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: ana06"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

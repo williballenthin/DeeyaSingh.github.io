@@ -1,7 +1,7 @@
 ---
 permalink: "/execute-.net-assembly-via-clr-host/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/execute-.net-assembly-via-clr-host/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/execute-.net-assembly-via-clr-host/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">execute .NET assembly via CLR host</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> load-code/dotnet</p>
-      <p><strong>Authors:</strong> blas.kojusner@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://github.com/TheWover/donut/blob/master/DonutTest/rundotnet.cpp</p>
-      <p><strong>Examples:</strong> 6CD1315F6F2FA4F8EE2B98BB3CA0A994:0x140001030</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">execute .NET assembly via CLR host</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/dotnet</p>
+    <p><strong>Authors:</strong> ["blas.kojusner@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: 
+      dynamic: </pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://github.com/TheWover/donut/blob/master/DonutTest/rundotnet.cpp</p>
+    <p><strong>Examples:</strong> 6CD1315F6F2FA4F8EE2B98BB3CA0A994:0x140001030</p>
+    <pre><strong>Features</strong>
     - and:
       - bytes: 23 67 2F CB 3A AB D2 11 9C 40 00 C0 4F A3 0A 3E = CLSID_CorRuntimeHost
       - bytes: 22 67 2F CB 3A AB D2 11 9C 40 00 C0 4F A3 0A 3E = IID_ICorRuntimeHost
@@ -50,10 +50,13 @@ permalink: "/execute-.net-assembly-via-clr-host/"
               - characteristic: indirect call
       - api: SafeArrayCreate
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: load-code"></span>  
+   
+  
+  
+  <span data-pagefind-filter="author: blas.kojusner@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

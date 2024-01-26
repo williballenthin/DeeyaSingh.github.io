@@ -1,0 +1,56 @@
+---
+permalink: "/encode-data-using-add-xor-sub-operations/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>encode data using ADD XOR SUB operations</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/encode-data-using-add-xor-sub-operations/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">encode data using ADD XOR SUB operations</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encoding</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encoding-Custom Algorithm [E1027.m03]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> df814d4b55912e4ba404c62080b3a7eda70a3c6283ea740f8a14a9116d803259:0x1000100F</p>
+    <pre><strong>Features</strong>
+    - and:
+      - count(basic blocks): 6 or fewer
+      - basic block:
+        - and:
+          - characteristic: tight loop
+          - characteristic: nzxor
+          - count(mnemonic(add)): 1
+          - count(mnemonic(sub)): 1
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
+  <footer>
+  </footer>
+</body>
+</html>

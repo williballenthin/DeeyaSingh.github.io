@@ -1,0 +1,58 @@
+---
+permalink: "/persist-via-winlogon-helper-dll-registry-key/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>persist via Winlogon Helper DLL registry key</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/persist-via-winlogon-helper-dll-registry-key/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">persist via Winlogon Helper DLL registry key</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/registry/winlogon-helper</p>
+    <p><strong>Authors:</strong> ["0x534a@mailbox.org"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Boot or Logon Autostart Execution::Winlogon Helper DLL [T1547.004]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 9ff8e68343cc29c1036650fc153e69f7:0x47f818</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - match: set registry value
+        - number: 0x80000001 = HKEY_CURRENT_USER
+        - number: 0x80000002 = HKEY_LOCAL_MACHINE
+      - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon/i
+      - or:
+        - string: /Notify/i
+        - string: /Userinit/i
+        - string: /Shell/i
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: 0x534a@mailbox.org"></span>
+  <footer>
+  </footer>
+</body>
+</html>

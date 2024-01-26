@@ -1,7 +1,7 @@
 ---
 permalink: "/inject-dll/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,38 +9,38 @@ permalink: "/inject-dll/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/inject-dll/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">inject dll</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/process/inject</p>
-      <p><strong>Authors:</strong> 0x534a@mailbox.org</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection::Dynamic-link Library Injection [T1055.001]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> Practical Malware Analysis, p. 676, https://www.researchgate.net/publication/279155742_A_Novel_Approach_to_Detect_Malware_Based_on_API_Call_Sequence_Analysis, https://www.welivesecurity.com/wp-content/uploads/2016/10/eset-sednit-part3.pdf, https://www.accenture.com/t20180127T003755Z_w_/us-en/_acnmedia/PDF-46/Accenture-Security-Dragonfish-Threat-Analysis.pdf, https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/, https://www.welivesecurity.com/wp-content/uploads/2018/10/ESET_GreyEnergy.pdf, https://www.welivesecurity.com/2019/05/29/turla-powershell-usage/</p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 17-02.dll_:0x1000D10D</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">inject dll</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/inject</p>
+    <p><strong>Authors:</strong> ["0x534a@mailbox.org"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection::Dynamic-link Library Injection [T1055.001]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> Practical Malware Analysis, p. 676, https://www.researchgate.net/publication/279155742_A_Novel_Approach_to_Detect_Malware_Based_on_API_Call_Sequence_Analysis, https://www.welivesecurity.com/wp-content/uploads/2016/10/eset-sednit-part3.pdf, https://www.accenture.com/t20180127T003755Z_w_/us-en/_acnmedia/PDF-46/Accenture-Security-Dragonfish-Threat-Analysis.pdf, https://unit42.paloaltonetworks.com/unit42-kazuar-multiplatform-espionage-backdoor-api-access/, https://www.welivesecurity.com/wp-content/uploads/2018/10/ESET_GreyEnergy.pdf, https://www.welivesecurity.com/2019/05/29/turla-powershell-usage/</p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 17-02.dll_:0x1000D10D</p>
+    <pre><strong>Features</strong>
     - and:
       - optional:
         - or:
           - match: open process
           - match: host-interaction/process/create
-      - match: allocate RW memory
+      - match: allocate or change RW memory
       - match: write process memory
       - and:
         - or:
@@ -49,10 +49,13 @@ permalink: "/inject-dll/"
         - string: /LoadLibrary[AW]/
       - match: create thread
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: 0x534a@mailbox.org"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

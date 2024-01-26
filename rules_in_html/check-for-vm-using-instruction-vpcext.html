@@ -1,7 +1,7 @@
 ---
 permalink: "/check-for-vm-using-instruction-vpcext/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,38 +9,41 @@ permalink: "/check-for-vm-using-instruction-vpcext/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/check-for-vm-using-instruction-vpcext/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">check for VM using instruction VPCEXT</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
-      <p><strong>Authors:</strong> richard.weiss@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion [T1497]</p>
-      <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection::Instruction Testing [B0009.029]</p>
-      <p><strong>References:</strong> https://unprotect.it/technique/vpcext/, https://research.nccgroup.com/2017/12/13/hidden-cobra-volgmer-a-technical-analysis/, https://shasaurabh.blogspot.com/2017/07/virtual-machine-detection-techniques.html</p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">check for VM using instruction VPCEXT</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
+    <p><strong>Authors:</strong> ["richard.weiss@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion [T1497]</p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection::Instruction Testing [B0009.029]</p>
+    <p><strong>References:</strong> https://unprotect.it/technique/vpcext/, https://research.nccgroup.com/2017/12/13/hidden-cobra-volgmer-a-technical-analysis/, https://shasaurabh.blogspot.com/2017/07/virtual-machine-detection-techniques.html</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - mnemonic: vpcext
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Anti-Behavioral Analysis"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: richard.weiss@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,14 +1,17 @@
+---
 rule:
   meta:
     name: decrypt data via SSPI
     namespace: data-manipulation/encryption
     authors:
-      - matthew.williams@mandiant.com
-    scope: basic block
+    - matthew.williams@mandiant.com
+    scopes:
+      static: basic block
+      dynamic: call
     att&ck:
-      - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
+    - Defense Evasion::Deobfuscate/Decode Files or Information [T1140]
     references:
-      - https://docs.microsoft.com/en-us/windows/win32/api/sspi/nf-sspi-decryptmessage
+    - https://docs.microsoft.com/en-us/windows/win32/api/sspi/nf-sspi-decryptmessage
   features:
-    - and:
-      - api: secur32.DecryptMessage
+  - and:
+    - api: secur32.DecryptMessage

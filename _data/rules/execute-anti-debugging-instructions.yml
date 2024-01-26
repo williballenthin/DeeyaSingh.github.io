@@ -1,15 +1,18 @@
+---
 rule:
   meta:
     name: execute anti-debugging instructions
     namespace: anti-analysis/anti-debugging/debugger-detection
     authors:
-      - moritz.raabe@mandiant.com
-    scope: function
+    - moritz.raabe@mandiant.com
+    scopes:
+      static: function
+      dynamic: unsupported
     mbc:
-      - Anti-Behavioral Analysis::Debugger Detection::Anti-debugging Instructions [B0001.034]
+    - Anti-Behavioral Analysis::Debugger Detection::Anti-debugging Instructions [B0001.034]
     examples:
-      - Practical Malware Analysis Lab 16-03.exe_:0x401300
+    - Practical Malware Analysis Lab 16-03.exe_:0x401300
   features:
-    - or:
-      - count(mnemonic(rdtsc)): 2 or more
-      - mnemonic: icebp
+  - or:
+    - count(mnemonic(rdtsc)): 2 or more
+    - mnemonic: icebp

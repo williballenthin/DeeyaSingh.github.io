@@ -1,7 +1,7 @@
 ---
 permalink: "/encrypt-data-using-aes/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/encrypt-data-using-aes/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/encrypt-data-using-aes/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">encrypt data using AES</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/encryption/aes</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com, Ivan Kwiatkowski (@JusticeRage)</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-      <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05], Cryptography::Encrypt Data::AES [C0027.001]</p>
-      <p><strong>References:</strong> https://github.com/JusticeRage/Manalyze/blob/8e77642c911d5d82b5f43b198667ab8c77a88763/bin/yara_rules/findcrypt.yara#L351, https://github.com/creaktive/tsh/blob/53b822b9a07d8cc65f1f31c915cf834a2944e833/aes.c</p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using AES</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/aes</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com", "ivan kwiatkowski (@justicerage)"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]</p>
+    <p><strong>References:</strong> https://github.com/JusticeRage/Manalyze/blob/8e77642c911d5d82b5f43b198667ab8c77a88763/bin/yara_rules/findcrypt.yara#L351, https://github.com/creaktive/tsh/blob/53b822b9a07d8cc65f1f31c915cf834a2944e833/aes.c</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - or:
       - bytes: 63 7c 77 7b f2 6b 6f c5 30 01 67 2b fe d7 ab 76 = AES_SBOX_ENC
       - bytes: 63 00 00 00 00 00 00 00 7c 00 00 00 00 00 00 00 77 00 00 00 00 00 00 00 7b 00 00 00 00 00 00 00 f2 00 00 00 00 00 00 00 6b 00 00 00 00 00 00 00 6f 00 00 00 00 00 00 00 c5 00 00 00 00 00 00 00 30 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 67 00 00 00 00 00 00 00 2b 00 00 00 00 00 00 00 fe 00 00 00 00 00 00 00 d7 00 00 00 00 00 00 00 ab 00 00 00 00 00 00 00 76 = AES_SBOX_ENC
@@ -59,10 +59,14 @@ permalink: "/encrypt-data-using-aes/"
       - bytes: 51 50 a7 f4 00 00 00 00 7e 53 65 41 00 00 00 00 1a c3 a4 17 00 00 00 00 3a 96 5e 27 = AES_T3_DEC
       - bytes: 52 52 52 52 09 09 09 09 6a 6a 6a 6a d5 d5 d5 d5 = AES_T4_DEC
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
+<span data-pagefind-filter="author: ivan kwiatkowski (@justicerage)"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

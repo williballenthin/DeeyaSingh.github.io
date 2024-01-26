@@ -1,0 +1,54 @@
+---
+permalink: "/persist-via-active-setup-registry-key/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>persist via Active Setup registry key</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/persist-via-active-setup-registry-key/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">persist via Active Setup registry key</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/registry</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Boot or Logon Autostart Execution::Active Setup [T1547.014]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://www.fireeye.com/blog/threat-research/2017/02/spear_phishing_techn.html</p>
+    <p><strong>Examples:</strong> c335a9d41185a32ad918c5389ee54235:0x4028F0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - match: set registry value
+        - number: 0x80000002 = HKEY_LOCAL_MACHINE
+      - string: /Software\\Microsoft\\Active Setup\\Installed Components/i
+      - string: StubPath
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+  <footer>
+  </footer>
+</body>
+</html>

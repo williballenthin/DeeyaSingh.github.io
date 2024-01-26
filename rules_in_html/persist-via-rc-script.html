@@ -1,7 +1,7 @@
 ---
 permalink: "/persist-via-rc-script/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/persist-via-rc-script/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/persist-via-rc-script/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">persist via rc script</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> persistence/service</p>
-      <p><strong>Authors:</strong> joakim@intezer.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Persistence::Boot or Logon Initialization Scripts::RC Scripts [T1037.004]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 7351f8a40c5450557b24622417fc478d:0x407D11</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">persist via rc script</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/service</p>
+    <p><strong>Authors:</strong> ["joakim@intezer.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Boot or Logon Initialization Scripts::RC Scripts [T1037.004]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 7351f8a40c5450557b24622417fc478d:0x407D11</p>
+    <pre><strong>Features</strong>
     - and:
       - os: linux
       - match: host-interaction/file-system/write
@@ -42,10 +42,13 @@ permalink: "/persist-via-rc-script/"
         - substring: /etc/init.d/
         - string: /\/etc\/rc[0-9].d\//
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: joakim@intezer.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

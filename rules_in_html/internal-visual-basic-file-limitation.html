@@ -1,7 +1,7 @@
 ---
 permalink: "/(internal)-visual-basic-file-limitation/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,39 +9,42 @@ permalink: "/(internal)-visual-basic-file-limitation/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/(internal)-visual-basic-file-limitation/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">(internal) Visual Basic file limitation</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> internal/limitation/file</p>
-      <p><strong>Authors:</strong> @mr-tz</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 9bca6b99e7981208af4c7925b96fb9cf</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">(internal) Visual Basic file limitation</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> internal/limitation/file</p>
+    <p><strong>Authors:</strong> ["@mr-tz"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 9bca6b99e7981208af4c7925b96fb9cf</p>
+    <pre><strong>Features</strong>
     - or:
       - match: compiler/vb
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: internal"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: @mr-tz"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/contain-an-embedded-pe-file/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,40 +9,43 @@ permalink: "/contain-an-embedded-pe-file/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/contain-an-embedded-pe-file/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">contain an embedded PE file</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> executable/subfile/pe</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Execution::Install Additional Program [B0023]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 01-04.exe_:0x4060</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">contain an embedded PE file</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> executable/subfile/pe</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Execution::Install Additional Program [B0023]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 01-04.exe_:0x4060</p>
+    <pre><strong>Features</strong>
     - or:
       - count(characteristic(embedded pe)): 1 or more
       - count(string(This program cannot be run in DOS mode.)): 2 or more
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: executable"></span>  
+   
+  <span data-pagefind-filter="MBC: Execution"></span>
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

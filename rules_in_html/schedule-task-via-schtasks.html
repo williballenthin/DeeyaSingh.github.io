@@ -1,7 +1,7 @@
 ---
 permalink: "/schedule-task-via-schtasks/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/schedule-task-via-schtasks/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/schedule-task-via-schtasks/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">schedule task via schtasks</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> persistence/scheduled-tasks</p>
-      <p><strong>Authors:</strong> 0x534a@mailbox.org</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 79cde1aa711e321b4939805d27e160be:0x401440</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">schedule task via schtasks</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/scheduled-tasks</p>
+    <p><strong>Authors:</strong> ["0x534a@mailbox.org"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Scheduled Task/Job::Scheduled Task [T1053.005]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 79cde1aa711e321b4939805d27e160be:0x401440</p>
+    <pre><strong>Features</strong>
     - and:
       - match: host-interaction/process/create
       - or:
@@ -43,10 +43,13 @@ permalink: "/schedule-task-via-schtasks/"
           - string: /\/create /i
         - string: /Register-ScheduledTask /i
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: 0x534a@mailbox.org"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/link-function-at-runtime-on-windows/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/link-function-at-runtime-on-windows/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/link-function-at-runtime-on-windows/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">link function at runtime on Windows</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> linking/runtime-linking</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com, michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 9324D1A8AE37A36AE560C37448C9705A:0x404130, Practical Malware Analysis Lab 01-04.exe_:0x401350</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">link function at runtime on Windows</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/runtime-linking</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 9324D1A8AE37A36AE560C37448C9705A:0x404130, Practical Malware Analysis Lab 01-04.exe_:0x401350</p>
+    <pre><strong>Features</strong>
     - and:
       - os: windows
       - or:
@@ -47,10 +47,14 @@ permalink: "/link-function-at-runtime-on-windows/"
         - api: kernel32.GetModuleHandleEx
         - api: ntdll.LdrLoadDll
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: linking"></span>  
+  <span data-pagefind-filter="ATT&CK: Execution"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/protect-spawned-processes-with-mitigation-policies/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/protect-spawned-processes-with-mitigation-policies/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/protect-spawned-processes-with-mitigation-policies/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">protect spawned processes with mitigation policies</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-av</p>
-      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]</p>
-      <p><strong>MBC:</strong> Defense Evasion::Disable or Evade Security Tools::Modify Policy [F0004.005]</p>
-      <p><strong>References:</strong> https://blog.xpnsec.com/protecting-your-malware/, https://github.com/byt3bl33d3r/OffensiveNim/blob/master/src/blockdlls_acg_ppid_spoof_bin.nim</p>
-      <p><strong>Examples:</strong> 2ebadd04f0ada89c36c1409b6e96423a68dd77b513db8db3da203c36d3753e5f:0x140002120</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">protect spawned processes with mitigation policies</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-av</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Disable or Evade Security Tools::Modify Policy [F0004.005]</p>
+    <p><strong>References:</strong> https://blog.xpnsec.com/protecting-your-malware/, https://github.com/byt3bl33d3r/OffensiveNim/blob/master/src/blockdlls_acg_ppid_spoof_bin.nim</p>
+    <p><strong>Examples:</strong> 2ebadd04f0ada89c36c1409b6e96423a68dd77b513db8db3da203c36d3753e5f:0x140002120</p>
+    <pre><strong>Features</strong>
     - and:
       - api: UpdateProcThreadAttribute
       - number: 0x20007 = PROC_THREAD_ATTRIBUTE_MITIGATION_POLICY
@@ -45,10 +45,13 @@ permalink: "/protect-spawned-processes-with-mitigation-policies/"
         - number: 17660905521152
         - number: 52845277609984
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

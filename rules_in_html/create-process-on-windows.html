@@ -1,7 +1,7 @@
 ---
 permalink: "/create-process-on-windows/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/create-process-on-windows/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/create-process-on-windows/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">create process on Windows</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/process/create</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Process::Create Process [C0017]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 9324D1A8AE37A36AE560C37448C9705A:0x406DB0, Practical Malware Analysis Lab 01-04.exe_:0x4011FC, 692f7fd6d198e804d6af98eb9e390d61:0x6000003</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">create process on Windows</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/create</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Process::Create Process [C0017]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 9324D1A8AE37A36AE560C37448C9705A:0x406DB0, Practical Malware Analysis Lab 01-04.exe_:0x4011FC, 692f7fd6d198e804d6af98eb9e390d61:0x6000003</p>
+    <pre><strong>Features</strong>
     - or:
       - api: kernel32.WinExec
       - api: kernel32.CreateProcess
@@ -53,10 +53,13 @@ permalink: "/create-process-on-windows/"
       - api: ntdll.RtlCreateUserProcess
       - api: System.Diagnostics.Process::Start
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+   
+  <span data-pagefind-filter="MBC: Process"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

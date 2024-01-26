@@ -1,7 +1,7 @@
 ---
 permalink: "/terminate-process/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,38 +9,40 @@ permalink: "/terminate-process/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/terminate-process/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">terminate process</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/process/terminate</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com, michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Process::Terminate Process [C0018]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> C91887D861D9BD4A5872249B641BC9F9:0x401A77, 9B7CCAA2AE6A5B96E3110EBCBC4311F6:0x10010307</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">terminate process</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/terminate</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "michael.hunhoff@mandiant.com", "anushka.virgaonkar@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Process::Terminate Process [C0018]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> C91887D861D9BD4A5872249B641BC9F9:0x401A77, 9B7CCAA2AE6A5B96E3110EBCBC4311F6:0x10010307</p>
+    <pre><strong>Features</strong>
     - or:
       - api: System.Diagnostics.Process::Kill
       - api: System.Diagnostics.Process::WaitForExit
       - api: System.Diagnostics.Process::WaitForExitAsync
       - api: System.Environment::Exit
       - api: System.Windows.Forms.Application::Exit
+      - api: exit
+      - api: Exit
       - and:
         - optional:
           - match: open process
@@ -49,10 +51,15 @@ permalink: "/terminate-process/"
           - api: ntdll.NtTerminateProcess
           - api: kernel32.ExitProcess
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+   
+  <span data-pagefind-filter="MBC: Process"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/enumerate-processes-via-ntquerysysteminformation/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/enumerate-processes-via-ntquerysysteminformation/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/enumerate-processes-via-ntquerysysteminformation/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">enumerate processes via NtQuerySystemInformation</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/process/list</p>
-      <p><strong>Authors:</strong> @_re_fox</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> Discovery::Process Discovery [T1057], Discovery::Software Discovery [T1518]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 31bd8dd48ac0de3d4da340bf29f4d280:0x00401be3</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">enumerate processes via NtQuerySystemInformation</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/list</p>
+    <p><strong>Authors:</strong> ["@_re_fox"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> Discovery::Process Discovery [T1057]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 31bd8dd48ac0de3d4da340bf29f4d280:0x00401be3</p>
+    <pre><strong>Features</strong>
     - and:
       - number: 0x5 = SYSTEM_PROCESS_INFORMATION
       - or:
@@ -43,10 +43,13 @@ permalink: "/enumerate-processes-via-ntquerysysteminformation/"
         - api: ZwQuerySystemInformation
         - api: ZwQuerySystemInformationEx
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Discovery"></span> 
+  
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/patch-event-tracing-for-windows-function/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,41 +9,34 @@ permalink: "/patch-event-tracing-for-windows-function/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/patch-event-tracing-for-windows-function/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">patch Event Tracing for Windows function</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-av</p>
-      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Impair Defenses::Indicator Blocking [T1562.006]</p>
-      <p><strong>MBC:</strong> Defense Evasion::Disable or Evade Security Tools [F0004]</p>
-      <p><strong>References:</strong> https://unprotect.it/technique/disabling-event-tracing-for-windows-etw/, https://github.com/Mr-Un1k0d3r/AMSI-ETW-Patch/blob/main/patch-etw-x64.c</p>
-      <p><strong>Examples:</strong> 15835b6dd703e69d22d4ab941ccd5f6e78c3abc22ae123366da5e950eaa62e2b:0x180001D70</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">patch Event Tracing for Windows function</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-av</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Impair Defenses::Disable or Modify Tools [T1562.001]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Disable or Evade Security Tools [F0004]</p>
+    <p><strong>References:</strong> https://unprotect.it/technique/disabling-event-tracing-for-windows-etw/, https://github.com/Mr-Un1k0d3r/AMSI-ETW-Patch/blob/main/patch-etw-x64.c</p>
+    <p><strong>Examples:</strong> 15835b6dd703e69d22d4ab941ccd5f6e78c3abc22ae123366da5e950eaa62e2b:0x180001D70</p>
+    <pre><strong>Features</strong>
     - and:
-      - match: link function at runtime on Windows
-      - or:
-        - api: kernel32.VirtualProtect
-        - api: ntdll.NtProtectVirtualMemory
-        - api: ZwProtectVirtualMemory
-        - string: VirtualProtect
-        - string: NtProtectVirtualMemory
-        - string: ZwProtectVirtualMemory
+      - match: change memory protection
       - or:
         - string: EventWrite
         - string: EtwEventWrite
@@ -56,10 +49,13 @@ permalink: "/patch-event-tracing-for-windows-function/"
       - optional:
         - match: write process memory
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/gather-firefox-profile-information/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,36 +9,36 @@ permalink: "/gather-firefox-profile-information/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/gather-firefox-profile-information/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">gather firefox profile information</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> collection/browser</p>
-      <p><strong>Authors:</strong> @_re_fox</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 7204e3efc2434012e13ca939db0d0b02:0x4073c0</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">gather firefox profile information</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection/browser</p>
+    <p><strong>Authors:</strong> ["@_re_fox", "still@teamt5.org"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 7204e3efc2434012e13ca939db0d0b02:0x4073c0, 54390bda109aab7fc006b8b4ead5b6c2:0x1006e58b</p>
+    <pre><strong>Features</strong>
     - and:
       - 2 or more:
         - string: /\\Mozilla\\Firefox\\profiles(\.ini)?/i
-        - string: /\\signons\.sqlite/i
+        - string: /\\(signons|cookies)\.sqlite/i
         - string: /SELECT\s+[a-z,\s]{5,}FROM moz_(logins|cookies)/i
         - string: /FROM moz_(logins|cookies)/i
         - substring: WHERE moz_cookies.host LIKE
@@ -55,10 +55,14 @@ permalink: "/gather-firefox-profile-information/"
           - string: timePasswordChanged
           - string: timesUsed
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: collection"></span>  
+  <span data-pagefind-filter="ATT&CK: Credential Access"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
+<span data-pagefind-filter="author: still@teamt5.org"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

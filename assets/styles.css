@@ -158,8 +158,6 @@ pre {
   white-space: pre-wrap; 
 }
 
-
-
 .rule-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -199,15 +197,8 @@ pre {
   padding-right: 40%; 
 }
 
-.dropdown-container {
-  position: absolute;
-  right: 0; 
-  top: 0; 
-  width: 40%; 
-}
-
 .search-container {
   flex: 1; 
   position: relative; 
-  margin-left: 2%
+  margin-left: 4%
 }

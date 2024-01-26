@@ -1,0 +1,59 @@
+---
+permalink: "/enumerate-files-in-.net/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>enumerate files in .NET</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/enumerate-files-in-.net/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">enumerate files in .NET</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system/files/list</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "anushka.virgaonkar@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Discovery::File and Directory Discovery [T1083]</p>
+    <p><strong>MBC:</strong> Discovery::File and Directory Discovery [E1083]</p>
+    <p><strong>References:</strong> https://github.com/hfiref0x/TDL/blob/cc4b46ae1c939b14a22a734a727b163f873a41b</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: System.IO.DirectoryInfo::GetFiles
+      - api: System.IO.DirectoryInfo::EnumerateFiles
+      - api: System.IO.Directory::GetFiles
+      - api: System.IO.Directory::EnumerateFiles
+      - api: System.IO.Directory::EnumerateFileSystemEntries
+      - api: System.IO.DirectoryInfo::GetDirectories
+      - api: System.IO.DirectoryInfo::EnumerateDirectories
+      - api: System.IO.Directory::GetDirectories
+      - api: System.IO.Directory::EnumerateDirectories
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Discovery"></span> 
+  <span data-pagefind-filter="MBC: Discovery"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
+  <footer>
+  </footer>
+</body>
+</html>

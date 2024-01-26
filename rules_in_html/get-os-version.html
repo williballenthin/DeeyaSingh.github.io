@@ -1,7 +1,7 @@
 ---
 permalink: "/get-os-version/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/get-os-version/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/get-os-version/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">get OS version</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> </p>
-      <p><strong>Authors:</strong> @mr-tz</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 493167E85E45363D09495D0841C30648:0x401000, 5f66b82558ca92e54e77f216ef4c066c:0x44580A</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">get OS version</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> </p>
+    <p><strong>Authors:</strong> ["@mr-tz"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 493167E85E45363D09495D0841C30648:0x401000, 5f66b82558ca92e54e77f216ef4c066c:0x44580A</p>
+    <pre><strong>Features</strong>
     - or:
       - api: RtlGetVersion
       - api: ntoskrnl.PsGetVersion
@@ -44,11 +44,29 @@ permalink: "/get-os-version/"
       - api: VerSetConditionMask
       - api: RtlGetNtVersionNumbers
       - api: GetProductInfo
+      - and:
+        - match: PEB access
+        - or:
+          - and:
+            - arch: i386
+            - or:
+              - offset: 0xA4 = PEB->OSMajorVersion
+              - offset: 0xA8 = PEB->OSMinorVersion
+              - offset: 0xAC = PEB->OSBuildNumber
+          - and:
+            - arch: amd64
+            - or:
+              - offset: 0x118 = PEB->OSMajorVersion
+              - offset: 0x11C = PEB->OSMinorVersion
+              - offset: 0x120 = PEB->OSBuildNumber
 </pre>
-    </div>
+  </div>
     
+   
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: @mr-tz"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

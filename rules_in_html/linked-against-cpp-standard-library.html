@@ -1,7 +1,7 @@
 ---
 permalink: "/linked-against-cpp-standard-library/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,40 +9,43 @@ permalink: "/linked-against-cpp-standard-library/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/linked-against-cpp-standard-library/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">linked against CPP standard library</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> linking/static</p>
-      <p><strong>Authors:</strong> @mr-tz</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://en.wikipedia.org/wiki/P._J._Plauger, https://www.dinkumware.com/</p>
-      <p><strong>Examples:</strong> 03b236b23b1ec37c663527c1f53af3fe</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">linked against CPP standard library</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/static</p>
+    <p><strong>Authors:</strong> ["@mr-tz"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://en.wikipedia.org/wiki/P._J._Plauger, https://www.dinkumware.com/</p>
+    <p><strong>Examples:</strong> 03b236b23b1ec37c663527c1f53af3fe</p>
+    <pre><strong>Features</strong>
     - or:
       - string: Copyright (c) by P.J. Plauger, licensed by Dinkumware, Ltd. ALL RIGHTS RESERVED.
       - string: Copyright (c) 1992-2004 by P.J. Plauger, licensed by Dinkumware, Ltd. ALL RIGHTS RESERVED.
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: linking"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: @mr-tz"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

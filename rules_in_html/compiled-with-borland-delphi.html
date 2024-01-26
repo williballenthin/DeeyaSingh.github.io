@@ -1,7 +1,7 @@
 ---
 permalink: "/compiled-with-borland-delphi/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/compiled-with-borland-delphi/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/compiled-with-borland-delphi/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">compiled with Borland Delphi</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> compiler/delphi</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com, @mr-tz</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 4BDD67FF852C221112337FECD0681EAC</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">compiled with Borland Delphi</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> compiler/delphi</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com", "@mr-tz"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 4BDD67FF852C221112337FECD0681EAC</p>
+    <pre><strong>Features</strong>
     - or:
       - string: Borland C++ - Copyright 2002 Borland Corporation
       - string: Sysutils::Exception
@@ -43,10 +43,14 @@ permalink: "/compiled-with-borland-delphi/"
       - substring: SOFTWARE\Borland\Delphi\RTL
       - substring: Embarcadero Delphi for Win32 compiler
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: compiler"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
+<span data-pagefind-filter="author: @mr-tz"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

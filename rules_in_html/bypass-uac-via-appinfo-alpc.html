@@ -1,7 +1,7 @@
 ---
 permalink: "/bypass-uac-via-appinfo-alpc/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/bypass-uac-via-appinfo-alpc/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/bypass-uac-via-appinfo-alpc/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">bypass UAC via AppInfo ALPC</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/uac/bypass</p>
-      <p><strong>Authors:</strong> richard.cole@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Abuse Elevation Control Mechanism::Bypass User Account Control [T1548.002]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://github.com/hfiref0x/UACME/blob/0a4d2bd67f4872c595f0217ef6ebdcf135186945/Source/Akagi/methods/tyranid.c#L597</p>
-      <p><strong>Examples:</strong> 2f43138aa75fb12ac482b486cbc98569:0x180002304</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">bypass UAC via AppInfo ALPC</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/uac/bypass</p>
+    <p><strong>Authors:</strong> ["richard.cole@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Abuse Elevation Control Mechanism::Bypass User Account Control [T1548.002]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://github.com/hfiref0x/UACME/blob/0a4d2bd67f4872c595f0217ef6ebdcf135186945/Source/Akagi/methods/tyranid.c#L597</p>
+    <p><strong>Examples:</strong> 2f43138aa75fb12ac482b486cbc98569:0x180002304</p>
+    <pre><strong>Features</strong>
     - and:
       - string: winver.exe
       - string: WinSta0\Default
@@ -43,10 +43,13 @@ permalink: "/bypass-uac-via-appinfo-alpc/"
       - api: ContinueDebugEvent
       - api: TerminateProcess
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: richard.cole@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

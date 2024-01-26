@@ -1,7 +1,7 @@
 ---
 permalink: "/rebuild-import-table/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/rebuild-import-table/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/rebuild-import-table/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">rebuild import table</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> load-code/pe</p>
-      <p><strong>Authors:</strong> @Ana06</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Defense Evasion::Hijack Execution Flow::Import Address Table Hooking [F0015.003]</p>
-      <p><strong>References:</strong> https://0x00sec.org/t/reflective-dll-injection/3080, https://www.ired.team/offensive-security/code-injection-process-injection/reflective-dll-injection</p>
-      <p><strong>Examples:</strong> E4C33AC3638EEF68311F8AC0D72483C7:0x401510</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">rebuild import table</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/pe</p>
+    <p><strong>Authors:</strong> ["@ana06"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Defense Evasion::Hijack Execution Flow::Import Address Table Hooking [F0015.003]</p>
+    <p><strong>References:</strong> https://0x00sec.org/t/reflective-dll-injection/3080, https://www.ired.team/offensive-security/code-injection-process-injection/reflective-dll-injection</p>
+    <p><strong>Examples:</strong> E4C33AC3638EEF68311F8AC0D72483C7:0x401510</p>
+    <pre><strong>Features</strong>
     - and:
       - os: windows
       - offset: 0x7C = IMAGE_NT_HEADERS.OptionalHeader.DataDirectory.Size
@@ -57,10 +57,13 @@ permalink: "/rebuild-import-table/"
           - number: 0xFFFF = IMAGE_ORDINAL
           - number: 0x2 = thunk->u1.AddressOfData
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: load-code"></span>  
+   
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: @ana06"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

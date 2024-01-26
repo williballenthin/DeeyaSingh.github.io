@@ -1,7 +1,7 @@
 ---
 permalink: "/check-mutex-and-exit/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/check-mutex-and-exit/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/check-mutex-and-exit/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">check mutex and exit</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/mutex</p>
-      <p><strong>Authors:</strong> @_re_fox, moritz.raabe@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Process::Check Mutex [C0043], Process::Terminate Process [C0018]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 1d8fd13c890060464019c0f07b928b1a:0x402eb0, Practical Malware Analysis Lab 11-03.dll_:0x10001410</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">check mutex and exit</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/mutex</p>
+    <p><strong>Authors:</strong> ["@_re_fox", "moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Process::Check Mutex [C0043]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 1d8fd13c890060464019c0f07b928b1a:0x402eb0, Practical Malware Analysis Lab 11-03.dll_:0x10001410</p>
+    <pre><strong>Features</strong>
     - and:
       - match: create mutex
       - or:
@@ -51,10 +51,14 @@ permalink: "/check-mutex-and-exit/"
               - number: 0xB7 = ERROR_ALREADY_EXISTS
               - number: 5 = ERROR_ACCESS_DENIED
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+   
+  <span data-pagefind-filter="MBC: Process"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
+<span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

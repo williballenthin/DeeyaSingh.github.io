@@ -1,7 +1,7 @@
 ---
 permalink: "/execute-via-.net-startup-hook/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,40 +9,43 @@ permalink: "/execute-via-.net-startup-hook/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/execute-via-.net-startup-hook/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">execute via .NET startup hook</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> runtime/dotnet</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://rastamouse.me/net-startup-hooks/, https://github.com/dotnet/runtime/blob/main/docs/design/features/host-startup-hook.md</p>
-      <p><strong>Examples:</strong> 1ee70f829fa4f21b97fea53412383b4c83be1aaf8bab2f4b692549f8ceb4388f</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">execute via .NET startup hook</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> runtime/dotnet</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://rastamouse.me/net-startup-hooks/, https://github.com/dotnet/runtime/blob/main/docs/design/features/host-startup-hook.md</p>
+    <p><strong>Examples:</strong> 1ee70f829fa4f21b97fea53412383b4c83be1aaf8bab2f4b692549f8ceb4388f</p>
+    <pre><strong>Features</strong>
     - and:
       - format: dotnet
       - function-name: StartupHook::Initialize
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: runtime"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/authenticate-hmac/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/authenticate-hmac/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/authenticate-hmac/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">authenticate HMAC</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/hmac</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Cryptography::Hashed Message Authentication Code [C0061]</p>
-      <p><strong>References:</strong> https://tools.ietf.org/html/rfc2104, https://tools.ietf.org/html/rfc4634, https://github.com/ogay/hmac</p>
-      <p><strong>Examples:</strong> mimikatz.exe_:0x403408</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">authenticate HMAC</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/hmac</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Cryptography::Hashed Message Authentication Code [C0061]</p>
+    <p><strong>References:</strong> https://tools.ietf.org/html/rfc2104, https://tools.ietf.org/html/rfc4634, https://github.com/ogay/hmac</p>
+    <p><strong>Examples:</strong> mimikatz.exe_:0x403408</p>
+    <pre><strong>Features</strong>
     - and:
       - number: 0x36 = inner padding byte value
       - number: 0x5C = outer padding byte value
@@ -45,10 +45,13 @@ permalink: "/authenticate-hmac/"
         - number: 64 = MD5, SHA-1, SHA-224, or SHA-256
         - number: 128 = SHA-384 or SHA-512
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+   
+  <span data-pagefind-filter="MBC: Cryptography"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

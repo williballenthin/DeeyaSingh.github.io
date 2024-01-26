@@ -1,24 +1,27 @@
+---
 rule:
   meta:
     name: encrypt or decrypt via WinCrypt
     namespace: data-manipulation/encryption
     authors:
-      - moritz.raabe@mandiant.com
-    scope: function
+    - moritz.raabe@mandiant.com
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information [T1027]
+    - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
-      - Cryptography::Decrypt Data [C0031]
-      - Cryptography::Encrypt Data [C0027]
+    - Cryptography::Decrypt Data [C0031]
+    - Cryptography::Encrypt Data [C0027]
     examples:
-      - A45E377DBB98A6B44FD4034BC3FFF9B0:0x4017A0
+    - A45E377DBB98A6B44FD4034BC3FFF9B0:0x4017A0
   features:
-    - and:
+  - and:
+    - or:
+      - api: CryptEncrypt
+      - api: CryptDecrypt
+    - optional:
       - or:
-        - api: CryptEncrypt
-        - api: CryptDecrypt
-      - optional:
-        - or:
-          - api: CryptAcquireContext
-          - api: CryptGenKey
-          - api: CryptImportKey
+        - api: CryptAcquireContext
+        - api: CryptGenKey
+        - api: CryptImportKey

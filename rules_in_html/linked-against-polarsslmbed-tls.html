@@ -1,7 +1,7 @@
 ---
 permalink: "/linked-against-polarssl/mbed-tls/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/linked-against-polarssl/mbed-tls/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/linked-against-polarssl/mbed-tls/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">linked against PolarSSL/mbed TLS</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> linking/static/polarssl</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Cryptography::Crypto Library [C0059]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 232b0a8546035d9017fadf68398826edb0a1e055566bc1d356d6c9fdf1d7e485</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">linked against PolarSSL/mbed TLS</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/static/polarssl</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Cryptography::Crypto Library [C0059]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 232b0a8546035d9017fadf68398826edb0a1e055566bc1d356d6c9fdf1d7e485</p>
+    <pre><strong>Features</strong>
     - or:
       - string: PolarSSLTest
       - string: mbedtls_cipher_setup
@@ -42,10 +42,13 @@ permalink: "/linked-against-polarssl/mbed-tls/"
       - string: mbedtls_ssl_write_record
       - string: mbedtls_ssl_fetch_input
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: linking"></span>  
+   
+  <span data-pagefind-filter="MBC: Cryptography"></span>
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

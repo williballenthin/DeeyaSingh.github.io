@@ -1,7 +1,7 @@
 ---
 permalink: "/hash-data-using-jshash/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/hash-data-using-jshash/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/hash-data-using-jshash/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">hash data using jshash</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/hashing/jshash</p>
-      <p><strong>Authors:</strong> @_re_fox</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Data::Non-Cryptographic Hash [C0030]</p>
-      <p><strong>References:</strong> https://www.partow.net/programming/hashfunctions/</p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">hash data using jshash</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/hashing/jshash</p>
+    <p><strong>Authors:</strong> ["@_re_fox"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Non-Cryptographic Hash [C0030]</p>
+    <p><strong>References:</strong> https://www.partow.net/programming/hashfunctions/</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - and:
       - number: 1315423911
       - instruction:
@@ -48,10 +48,13 @@ permalink: "/hash-data-using-jshash/"
       - characteristic: nzxor
       - characteristic: loop
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+   
+  <span data-pagefind-filter="MBC: Data"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/send-icmp-echo-request/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/send-icmp-echo-request/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/send-icmp-echo-request/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">send ICMP echo request</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/icmp</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::ICMP Communication::Echo Request [C0014.002]</p>
-      <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/icmpapi/</p>
-      <p><strong>Examples:</strong> al-khaser_x86.exe_:0x449510</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">send ICMP echo request</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/icmp</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::ICMP Communication::Echo Request [C0014.002]</p>
+    <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/icmpapi/</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_:0x449510</p>
+    <pre><strong>Features</strong>
     - and:
       - or:
         - api: IcmpSendEcho
@@ -47,10 +47,13 @@ permalink: "/send-icmp-echo-request/"
           - api: Icmp6CreateFile
         - api: IcmpCloseHandle
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

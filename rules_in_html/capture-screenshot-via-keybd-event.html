@@ -1,7 +1,7 @@
 ---
 permalink: "/capture-screenshot-via-keybd-event/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,47 +9,58 @@ permalink: "/capture-screenshot-via-keybd-event/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/capture-screenshot-via-keybd-event/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">capture screenshot via keybd event</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> collection/screenshot</p>
-      <p><strong>Authors:</strong> @_re_fox</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Collection::Screen Capture [T1113]</p>
-      <p><strong>MBC:</strong> Collection::Screen Capture [E1113]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 3f3bbcf8fd90bdcdcdc5494314ed4225:0x402D10</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">capture screenshot via keybd event</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection/screenshot</p>
+    <p><strong>Authors:</strong> ["@_re_fox"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Collection::Screen Capture [T1113]</p>
+    <p><strong>MBC:</strong> Collection::Screen Capture [E1113]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 3f3bbcf8fd90bdcdcdc5494314ed4225:0x402D10</p>
+    <pre><strong>Features</strong>
     - and:
-      - basic block:
-        - and:
-          - operand[0].number: 0x2C = VK_SNAPSHOT
-          - count(api(user32.keybd_event)): 2
-          - or:
-            - operand[0].number: 0x3 = KEYEVENTF_KEYUP|KEYEVENTF_EXTENDEDKEY
-            - operand[0].number: 0x2 = KEYEVENTF_KEYUP
+      - or:
+        - basic block:
+          - and:
+            - number: 0x2C = VK_SNAPSHOT
+            - count(api(user32.keybd_event)): 2
+            - or:
+              - number: 0x3 = KEYEVENTF_KEYUP|KEYEVENTF_EXTENDEDKEY
+              - number: 0x2 = KEYEVENTF_KEYUP
+        - call:
+          - and:
+            - number: 0x2C = VK_SNAPSHOT
+            - count(api(user32.keybd_event)): 2
+            - or:
+              - number: 0x3 = KEYEVENTF_KEYUP|KEYEVENTF_EXTENDEDKEY
+              - number: 0x2 = KEYEVENTF_KEYUP
       - match: read clipboard data
       - match: open clipboard
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: collection"></span>  
+  <span data-pagefind-filter="ATT&CK: Collection"></span> 
+  <span data-pagefind-filter="MBC: Collection"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

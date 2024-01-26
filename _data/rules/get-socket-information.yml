@@ -1,12 +1,15 @@
+---
 rule:
   meta:
     name: get socket information
     namespace: communication/socket
     authors:
-      - michael.hunhoff@mandiant.com
-    scope: function
+    - michael.hunhoff@mandiant.com
+    scopes:
+      static: function
+      dynamic: call
     att&ck:
-      - Discovery::System Network Configuration Discovery [T1016]
+    - Discovery::System Network Configuration Discovery [T1016]
   features:
-    - and:
-      - api: ws2_32.getsockname
+  - and:
+    - api: ws2_32.getsockname

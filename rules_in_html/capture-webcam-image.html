@@ -1,7 +1,7 @@
 ---
 permalink: "/capture-webcam-image/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/capture-webcam-image/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/capture-webcam-image/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">capture webcam image</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> collection/webcam</p>
-      <p><strong>Authors:</strong> johnk3r</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Collection::Video Capture [T1125]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> a30101595f6f28ab2f4b0b2cd177c3c4d2ab34a355ab7761a3795d0887c24ada:0x4011C0</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">capture webcam image</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection/webcam</p>
+    <p><strong>Authors:</strong> ["johnk3r"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Collection::Video Capture [T1125]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> a30101595f6f28ab2f4b0b2cd177c3c4d2ab34a355ab7761a3795d0887c24ada:0x4011C0</p>
+    <pre><strong>Features</strong>
     - or:
       - and:
         - api: capCreateCaptureWindow
@@ -51,11 +51,29 @@ permalink: "/capture-webcam-image/"
         - and:
           - api: SendMessage
           - number: 0x419 = WM_CAP_FILE_SAVEDIB
+      - and:
+        - api: capCreateCaptureWindow
+        - call:
+          - and:
+            - api: SendMessage
+            - number: 0x40a = WM_CAP_DRIVER_CONNECT
+        - optional:
+          - call:
+            - and:
+              - api: SendMessage
+              - number: 0x40B = WM_CAP_DRIVER_DISCONNECT
+      - call:
+        - and:
+          - api: SendMessage
+          - number: 0x419 = WM_CAP_FILE_SAVEDIB
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: collection"></span>  
+  <span data-pagefind-filter="ATT&CK: Collection"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: johnk3r"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

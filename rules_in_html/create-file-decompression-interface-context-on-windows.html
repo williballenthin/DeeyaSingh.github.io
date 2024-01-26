@@ -1,0 +1,50 @@
+---
+permalink: "/create-file-decompression-interface-context-on-windows/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>create File Decompression Interface context on Windows</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/create-file-decompression-interface-context-on-windows/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">create File Decompression Interface context on Windows</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> </p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/msi/cabinet-files</p>
+    <p><strong>Examples:</strong> 44bad2e2a9e387b86870f009d01833ea4618d2a7cda5f64fa84a19f3bdf4efaf:0x1400028E0</p>
+    <pre><strong>Features</strong>
+    - or:
+      - api: cabinet.FDICreate
+</pre>
+  </div>
+    
+   
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
+  <footer>
+  </footer>
+</body>
+</html>

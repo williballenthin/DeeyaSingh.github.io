@@ -1,7 +1,7 @@
 ---
 permalink: "/read-file-via-mapping/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,54 +9,75 @@ permalink: "/read-file-via-mapping/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/read-file-via-mapping/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">read file via mapping</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/file-system/read</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> File System::Read File [C0051]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 01-01.exe_:0x401440</p>
-      <pre><strong>Features</strong>
-    - and:
-      - basic block:
-        - and:
-          - api: kernel32.MapViewOfFile
-          - or:
-            - number: 4 = FILE_MAP_READ
-            - number: 6 = FILE_MAP_WRITE | FILE_MAP_READ
-      - optional:
-        - api: kernel32.UnmapViewOfFile
-        - and:
-          - match: get file size
+  <div id="rule-name-container">
+    <h1 id="rule-name">read file via mapping</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system/read</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> File System::Read File [C0051]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 01-01.exe_:0x401440</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
         - basic block:
           - and:
-            - api: kernel32.CreateFileMapping
+            - api: kernel32.MapViewOfFile
             - or:
-              - number: 2 = PAGE_READONLY
-              - number: 4 = PAGE_READWRITE
+              - number: 4 = FILE_MAP_READ
+              - number: 6 = FILE_MAP_WRITE | FILE_MAP_READ
+        - optional:
+          - api: kernel32.UnmapViewOfFile
+          - and:
+            - match: get file size
+          - basic block:
+            - and:
+              - api: kernel32.CreateFileMapping
+              - or:
+                - number: 2 = PAGE_READONLY
+                - number: 4 = PAGE_READWRITE
+      - and:
+        - call:
+          - and:
+            - api: kernel32.MapViewOfFile
+            - or:
+              - number: 4 = FILE_MAP_READ
+              - number: 6 = FILE_MAP_WRITE | FILE_MAP_READ
+        - optional:
+          - api: kernel32.UnmapViewOfFile
+          - and:
+            - match: get file size
+          - call:
+            - and:
+              - api: kernel32.CreateFileMapping
+              - or:
+                - number: 2 = PAGE_READONLY
+                - number: 4 = PAGE_READWRITE
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+   
+  <span data-pagefind-filter="MBC: File System"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

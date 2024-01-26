@@ -1,14 +1,17 @@
+---
 rule:
   meta:
     name: get session information
     namespace: host-interaction/session
     authors:
-      - michael.hunhoff@mandiant.com
-    scope: function
+    - michael.hunhoff@mandiant.com
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
-      - Discovery::System Owner/User Discovery [T1033]
+    - Discovery::System Owner/User Discovery [T1033]
   features:
-    - and:
-      - api: wtsapi32.WTSQuerySessionInformation
-      - optional:
-        - api: wtsapi32.WTSFreeMemory
+  - and:
+    - api: wtsapi32.WTSQuerySessionInformation
+    - optional:
+      - api: wtsapi32.WTSFreeMemory

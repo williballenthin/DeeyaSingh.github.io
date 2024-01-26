@@ -1,7 +1,7 @@
 ---
 permalink: "/check-process-job-object/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,47 +9,60 @@ permalink: "/check-process-job-object/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/check-process-job-object/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">check process job object</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection [B0001]</p>
-      <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/ProcessJob.cpp</p>
-      <p><strong>Examples:</strong> al-khaser_x86.exe_:0x426730</p>
-      <pre><strong>Features</strong>
-    - and:
-      - match: contain loop
-      - basic block:
-        - and:
-          - api: kernel32.QueryInformationJobObject
-          - number: 0x3 = JobObjectBasicProcessIdList
-      - basic block:
-        - and:
-          - api: kernel32.OpenProcess
-          - number: 0x400 = PROCESS_QUERY_INFORMATION
+  <div id="rule-name-container">
+    <h1 id="rule-name">check process job object</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection [B0001]</p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/ProcessJob.cpp</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_:0x426730</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - match: contain loop
+        - basic block:
+          - and:
+            - api: kernel32.QueryInformationJobObject
+            - number: 0x3 = JobObjectBasicProcessIdList
+        - basic block:
+          - and:
+            - api: kernel32.OpenProcess
+            - number: 0x400 = PROCESS_QUERY_INFORMATION
+      - and:
+        - call:
+          - and:
+            - api: kernel32.QueryInformationJobObject
+            - number: 0x3 = JobObjectBasicProcessIdList
+        - call:
+          - and:
+            - api: kernel32.OpenProcess
+            - number: 0x400 = PROCESS_QUERY_INFORMATION
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+   
+  <span data-pagefind-filter="MBC: Anti-Behavioral Analysis"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

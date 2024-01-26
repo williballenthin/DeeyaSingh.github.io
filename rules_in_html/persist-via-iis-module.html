@@ -1,7 +1,7 @@
 ---
 permalink: "/persist-via-iis-module/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,42 +9,45 @@ permalink: "/persist-via-iis-module/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/persist-via-iis-module/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">persist via IIS module</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> persistence</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Persistence::Server Software Component::IIS Components [T1505.004]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 22d0a2e4c9c2163b2bf5f0e41a2e1762</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">persist via IIS module</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Server Software Component::IIS Components [T1505.004]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 22d0a2e4c9c2163b2bf5f0e41a2e1762</p>
+    <pre><strong>Features</strong>
     - and:
       - os: windows
       - export: RegisterModule
       - substring: CHttpModule
       - description: C++ super class provided by Microsoft
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

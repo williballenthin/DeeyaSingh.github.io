@@ -1,7 +1,7 @@
 ---
 permalink: "/get-http-document-via-iwebbrowser2/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/get-http-document-via-iwebbrowser2/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/get-http-document-via-iwebbrowser2/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">get HTTP document via IWebBrowser2</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/http/client</p>
-      <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::HTTP Communication::Get Response [C0002.017], Communication::HTTP Communication::IWebBrowser [C0002.010]</p>
-      <p><strong>References:</strong> https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752127(v%3Dvs.85)</p>
-      <p><strong>Examples:</strong> 395EB0DDD99D2C9E37B6D0B73485EE9C:0x402000</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">get HTTP document via IWebBrowser2</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/client</p>
+    <p><strong>Authors:</strong> ["matthew.williams@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Get Response [C0002.017]</p>
+    <p><strong>References:</strong> https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752127(v%3Dvs.85)</p>
+    <p><strong>Examples:</strong> 395EB0DDD99D2C9E37B6D0B73485EE9C:0x402000</p>
+    <pre><strong>Features</strong>
     - and:
       - api: oleaut32.SysAllocString
       - api: oleaut32.VariantInit
@@ -43,10 +43,13 @@ permalink: "/get-http-document-via-iwebbrowser2/"
       - offset: 0x80 = pBrowser2->Quit
       - count(characteristic(indirect call)): 3 or more
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: matthew.williams@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/compiled-with-py2exe/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,40 +9,43 @@ permalink: "/compiled-with-py2exe/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/compiled-with-py2exe/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">compiled with py2exe</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> compiler/py2exe</p>
-      <p><strong>Authors:</strong> @_re_fox</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> ed888dc2f04f5eac83d6d14088d002de:0x40194A</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">compiled with py2exe</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> compiler/py2exe</p>
+    <p><strong>Authors:</strong> ["@_re_fox"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> ed888dc2f04f5eac83d6d14088d002de:0x40194A</p>
+    <pre><strong>Features</strong>
     - and:
       - string: PY2EXE_VERBOSE
       - api: getenv
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: compiler"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/get-startup-folder/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/get-startup-folder/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/get-startup-folder/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">get startup folder</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> persistence/startup-folder</p>
-      <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 07F7846BBCDA782E5639292AD93907EB:0x40121A</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">get startup folder</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/startup-folder</p>
+    <p><strong>Authors:</strong> ["matthew.williams@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 07F7846BBCDA782E5639292AD93907EB:0x40121A</p>
+    <pre><strong>Features</strong>
     - and:
       - or:
         - number: 0x07 = CSIDL_STARTUP
@@ -45,10 +45,13 @@ permalink: "/get-startup-folder/"
         - api: shell32.SHGetSpecialFolderPath
         - api: shell32.SHGetSpecialFolderLocation
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: matthew.williams@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

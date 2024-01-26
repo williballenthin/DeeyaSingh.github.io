@@ -1,7 +1,7 @@
 ---
 permalink: "/search-for-credit-card-data/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/search-for-credit-card-data/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/search-for-credit-card-data/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">search for credit card data</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> collection/credit-card</p>
-      <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">search for credit card data</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection/credit-card</p>
+    <p><strong>Authors:</strong> ["matthew.williams@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - and:
       - instruction:
         - mnemonic: cmp
@@ -47,10 +47,13 @@ permalink: "/search-for-credit-card-data/"
         - number: 0x44 = 'D' (Unknown separator)
       - match: read process memory
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: collection"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: matthew.williams@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/extract-resource-via-kernel32-functions/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/extract-resource-via-kernel32-functions/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/extract-resource-via-kernel32-functions/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">extract resource via kernel32 functions</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> executable/resource</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> BF88E1BD4A3BDE10B419A622278F1FF7:0x401000, Practical Malware Analysis Lab 01-04.exe_:0x4011FC, 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x140001ABA</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">extract resource via kernel32 functions</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> executable/resource</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> BF88E1BD4A3BDE10B419A622278F1FF7:0x401000, Practical Malware Analysis Lab 01-04.exe_:0x4011FC, 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x140001ABA</p>
+    <pre><strong>Features</strong>
     - or:
       - and:
         - or:
@@ -51,10 +51,13 @@ permalink: "/extract-resource-via-kernel32-functions/"
           - api: kernel32.SizeofResource
           - api: kernel32.FreeResource
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: executable"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

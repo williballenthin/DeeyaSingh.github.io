@@ -1,7 +1,7 @@
 ---
 permalink: "/resolve-function-by-fin8-fasthash/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/resolve-function-by-fin8-fasthash/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/resolve-function-by-fin8-fasthash/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">resolve function by FIN8 fasthash</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> linking/runtime-linking</p>
-      <p><strong>Authors:</strong> @r3c0nst (Frank Boldewin)</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Cryptography::Cryptographic Hash [C0029]</p>
-      <p><strong>References:</strong> https://www.bitdefender.com/files/News/CaseStudies/study/394/Bitdefender-PR-Whitepaper-BADHATCH-creat5237-en-EN.pdf, https://raw.githubusercontent.com/fboldewin/YARA-rules/master/Shellcode.APIHashing.FIN8.yar</p>
-      <p><strong>Examples:</strong> B43FCA5283BFC7022553EFF663683834:0x12F, 4BF70EA92979DD88C9761EE848370050:0x28b</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">resolve function by FIN8 fasthash</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/runtime-linking</p>
+    <p><strong>Authors:</strong> ["@r3c0nst (frank boldewin)"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Cryptography::Cryptographic Hash [C0029]</p>
+    <p><strong>References:</strong> https://www.bitdefender.com/files/News/CaseStudies/study/394/Bitdefender-PR-Whitepaper-BADHATCH-creat5237-en-EN.pdf, https://raw.githubusercontent.com/fboldewin/YARA-rules/master/Shellcode.APIHashing.FIN8.yar</p>
+    <p><strong>Examples:</strong> B43FCA5283BFC7022553EFF663683834:0x12F, 4BF70EA92979DD88C9761EE848370050:0x28b</p>
+    <pre><strong>Features</strong>
     - or:
       - basic block:
         - and:
@@ -59,10 +59,13 @@ permalink: "/resolve-function-by-fin8-fasthash/"
           - mnemonic: xor
           - number: 4096941111
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: linking"></span>  
+   
+  <span data-pagefind-filter="MBC: Cryptography"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: @r3c0nst (frank boldewin)"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

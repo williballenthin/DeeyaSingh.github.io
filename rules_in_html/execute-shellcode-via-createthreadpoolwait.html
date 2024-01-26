@@ -1,7 +1,7 @@
 ---
 permalink: "/execute-shellcode-via-createthreadpoolwait/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,34 +9,34 @@ permalink: "/execute-shellcode-via-createthreadpoolwait/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/execute-shellcode-via-createthreadpoolwait/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">execute shellcode via CreateThreadpoolWait</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> load-code/shellcode</p>
-      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://github.com/S4R1N/AlternativeShellcodeExec/blob/master/CreateThreadPoolWait/CreateThreadPoolWait.cpp</p>
-      <p><strong>Examples:</strong> a4f1f09a2b9bc87de90891da6c0fca28e2f88fd67034648060cef9862af9a3bf:0x10001010</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">execute shellcode via CreateThreadpoolWait</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/shellcode</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://github.com/S4R1N/AlternativeShellcodeExec/blob/master/CreateThreadPoolWait/CreateThreadPoolWait.cpp</p>
+    <p><strong>Examples:</strong> a4f1f09a2b9bc87de90891da6c0fca28e2f88fd67034648060cef9862af9a3bf:0x10001010</p>
+    <pre><strong>Features</strong>
     - and:
-      - match: allocate RWX memory
+      - match: allocate or change RWX memory
       - api: CreateEvent
       - api: CreateThreadpoolWait
       - api: SetThreadpoolWait
@@ -44,10 +44,13 @@ permalink: "/execute-shellcode-via-createthreadpoolwait/"
         - api: WaitForSingleObject
         - api: WaitForThreadpoolWaitCallbacks
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: load-code"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

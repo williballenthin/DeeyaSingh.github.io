@@ -1,7 +1,7 @@
 ---
 permalink: "/reference-anti-vm-strings-targeting-virtualpc/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,42 +9,45 @@ permalink: "/reference-anti-vm-strings-targeting-virtualpc/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/reference-anti-vm-strings-targeting-virtualpc/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">reference anti-VM strings targeting VirtualPC</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]</p>
-      <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009]</p>
-      <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/VirtualPC.cpp</p>
-      <p><strong>Examples:</strong> al-khaser_x86.exe_</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">reference anti-VM strings targeting VirtualPC</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]</p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009]</p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/VirtualPC.cpp</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_</p>
+    <pre><strong>Features</strong>
     - or:
       - string: /VirtualPC/i
       - string: /VMSrvc.exe/i
       - string: /VMUSrvc.exe/i
       - string: /SOFTWARE\\Microsoft\\Virtual Machine\\Guest\\Parameters/i
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Anti-Behavioral Analysis"></span>
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

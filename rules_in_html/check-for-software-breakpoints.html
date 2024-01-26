@@ -1,7 +1,7 @@
 ---
 permalink: "/check-for-software-breakpoints/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/check-for-software-breakpoints/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/check-for-software-breakpoints/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">check for software breakpoints</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection::Software Breakpoints [B0001.025]</p>
-      <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/SoftwareBreakpoints.cpp, https://anti-debug.checkpoint.com/techniques/assembly.html</p>
-      <p><strong>Examples:</strong> al-khaser_x86.exe_:0x431020</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">check for software breakpoints</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection::Software Breakpoints [B0001.025]</p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiDebug/SoftwareBreakpoints.cpp, https://anti-debug.checkpoint.com/techniques/assembly.html</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_:0x431020</p>
+    <pre><strong>Features</strong>
     - and:
       - or:
         - instruction:
@@ -50,10 +50,13 @@ permalink: "/check-for-software-breakpoints/"
             - number: 0x03 = INT3 (long form byte 2)
       - match: contain loop
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+   
+  <span data-pagefind-filter="MBC: Anti-Behavioral Analysis"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

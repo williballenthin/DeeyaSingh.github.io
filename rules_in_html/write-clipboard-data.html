@@ -1,7 +1,7 @@
 ---
 permalink: "/write-clipboard-data/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/write-clipboard-data/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/write-clipboard-data/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">write clipboard data</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/clipboard</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Impact::Clipboard Modification [E1510]</p>
-      <p><strong>References:</strong> https://learn.microsoft.com/en-us/windows/win32/dataxchg/using-the-clipboard</p>
-      <p><strong>Examples:</strong> 6F99A2C8944CB02FF28C6F9CED59B161:0x403180</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">write clipboard data</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/clipboard</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com", "anushka.virgaonkar@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Impact::Clipboard Modification [E1510]</p>
+    <p><strong>References:</strong> https://learn.microsoft.com/en-us/windows/win32/dataxchg/using-the-clipboard</p>
+    <p><strong>Examples:</strong> 6F99A2C8944CB02FF28C6F9CED59B161:0x403180</p>
+    <pre><strong>Features</strong>
     - and:
       - optional:
         - match: open clipboard
@@ -49,10 +49,14 @@ permalink: "/write-clipboard-data/"
         - api: System.Windows.Forms.Clipboard::SetImage
         - api: System.Windows.Forms.Clipboard::SetText
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+   
+  <span data-pagefind-filter="MBC: Impact"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/linked-against-aplib/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,39 +9,42 @@ permalink: "/linked-against-aplib/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/linked-against-aplib/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">linked against aPLib</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> linking/static/aplib</p>
-      <p><strong>Authors:</strong> still@teamt5.org</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Data::Compression Library [C0060]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 72c8e3c8049927fa1dd53b61d9b67b9d74ab5b6c030bc38dfbe9a338a32438c9</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">linked against aPLib</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/static/aplib</p>
+    <p><strong>Authors:</strong> ["still@teamt5.org"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Compression Library [C0060]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 72c8e3c8049927fa1dd53b61d9b67b9d74ab5b6c030bc38dfbe9a338a32438c9</p>
+    <pre><strong>Features</strong>
     - or:
       - string: /aPLib v.* the smaller the better/
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: linking"></span>  
+   
+  <span data-pagefind-filter="MBC: Data"></span>
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: still@teamt5.org"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

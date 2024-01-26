@@ -1,18 +1,21 @@
+---
 rule:
   meta:
     name: send file via HTTP
     namespace: communication/http/client
     authors:
-      - matthew.williams@mandiant.com
-    scope: basic block
+    - matthew.williams@mandiant.com
+    scopes:
+      static: basic block
+      dynamic: thread
     mbc:
-      - Communication::HTTP Communication::Send Data [C0002.005]
+    - Communication::HTTP Communication::Send Data [C0002.005]
     examples:
-      - 3d760b6fc84571c928bed835863fc302:0x403687
+    - 3d760b6fc84571c928bed835863fc302:0x403687
   features:
-    - and:
-      - api: wininet.InternetWriteFile
-      - optional:
-        - or:
-          - match: connect to HTTP server
-          - match: connect to URL
+  - and:
+    - api: wininet.InternetWriteFile
+    - optional:
+      - or:
+        - match: connect to HTTP server
+        - match: connect to URL

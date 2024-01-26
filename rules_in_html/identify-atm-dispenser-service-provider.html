@@ -1,7 +1,7 @@
 ---
 permalink: "/identify-atm-dispenser-service-provider/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/identify-atm-dispenser-service-provider/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/identify-atm-dispenser-service-provider/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">identify ATM dispenser service provider</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> targeting/automated-teller-machine</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://doc.axxonsoft.com/confluence/display/atm70en/Configuring+the+connection+to+the+dispenser+service+provider</p>
-      <p><strong>Examples:</strong> b2ad4409323147b63e370745e5209996, 1f094dd65be477d15d871e72f0fdce5e</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">identify ATM dispenser service provider</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> targeting/automated-teller-machine</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://doc.axxonsoft.com/confluence/display/atm70en/Configuring+the+connection+to+the+dispenser+service+provider</p>
+    <p><strong>Examples:</strong> b2ad4409323147b63e370745e5209996, 1f094dd65be477d15d871e72f0fdce5e</p>
+    <pre><strong>Features</strong>
     - or:
       - string: CurrencyDispenser1
       - description: NCR
@@ -43,10 +43,13 @@ permalink: "/identify-atm-dispenser-service-provider/"
       - string: DBD_AdvFuncDisp
       - description: Diebold
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: targeting"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

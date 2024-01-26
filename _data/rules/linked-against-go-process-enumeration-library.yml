@@ -1,19 +1,22 @@
+---
 rule:
   meta:
     name: linked against Go process enumeration library
     namespace: host-interaction/process/list
     authors:
-      - joakim@intezer.com
+    - joakim@intezer.com
     description: Enumerating processes using a Go library
-    scope: file
+    scopes:
+      static: file
+      dynamic: file
     att&ck:
-      - Discovery::Process Discovery [T1057]
-      - Discovery::Software Discovery [T1518]
+    - Discovery::Process Discovery [T1057]
+    - Discovery::Software Discovery [T1518]
     references:
-      - https://pkg.go.dev/github.com/mitchellh/go-ps
+    - https://pkg.go.dev/github.com/mitchellh/go-ps
   features:
-    - and:
-      - match: compiled with Go
-      - or:
-        - string: "github.com/mitchellh/go-ps.FindProcess"
-        - string: "github.com/mitchellh/go-ps.Processes"
+  - and:
+    - match: compiled with Go
+    - or:
+      - string: github.com/mitchellh/go-ps.FindProcess
+      - string: github.com/mitchellh/go-ps.Processes

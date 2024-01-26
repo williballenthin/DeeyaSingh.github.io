@@ -1,7 +1,7 @@
 ---
 permalink: "/encrypt-data-using-rc4-with-custom-key-via-winapi/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/encrypt-data-using-rc4-with-custom-key-via-winapi/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/encrypt-data-using-rc4-with-custom-key-via-winapi/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">encrypt data using RC4 with custom key via WinAPI</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/encryption/rc4</p>
-      <p><strong>Authors:</strong> blaine.stancill@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-      <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05], Cryptography::Encrypt Data::RC4 [C0027.009]</p>
-      <p><strong>References:</strong> https://www.phdcc.com/cryptorc4.htm</p>
-      <p><strong>Examples:</strong> 4E9C546A54E40D0DA89BB4616DD7F8C4:0x140007B70, A563C50C5FA0FD541248ACAF72CC4E7D:0x401AF0</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using RC4 with custom key via WinAPI</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/rc4</p>
+    <p><strong>Authors:</strong> ["blaine.stancill@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]</p>
+    <p><strong>References:</strong> https://www.phdcc.com/cryptorc4.htm</p>
+    <p><strong>Examples:</strong> 4E9C546A54E40D0DA89BB4616DD7F8C4:0x140007B70, A563C50C5FA0FD541248ACAF72CC4E7D:0x401AF0</p>
+    <pre><strong>Features</strong>
     - and:
       - api: CryptImportKey
       - number: 0x4C = SimpleBlobRC4KeyTemplate size
@@ -48,10 +48,13 @@ permalink: "/encrypt-data-using-rc4-with-custom-key-via-winapi/"
           - api: CryptAcquireContext
           - api: CryptEncrypt
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: blaine.stancill@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

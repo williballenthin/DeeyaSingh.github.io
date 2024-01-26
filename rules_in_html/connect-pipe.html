@@ -1,7 +1,7 @@
 ---
 permalink: "/connect-pipe/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/connect-pipe/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/connect-pipe/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">connect pipe</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/named-pipe/connect</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com, michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::Interprocess Communication::Connect Pipe [C0003.002]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 152d4c9f63efb332ccb134c6953c0104:0x42e400</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">connect pipe</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/named-pipe/connect</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Interprocess Communication::Connect Pipe [C0003.002]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 152d4c9f63efb332ccb134c6953c0104:0x42e400</p>
+    <pre><strong>Features</strong>
     - or:
       - api: kernel32.ConnectNamedPipe
       - api: kernel32.CallNamedPipe
@@ -42,10 +42,14 @@ permalink: "/connect-pipe/"
       - api: System.IO.Pipes.NamedPipeClientStream::Connect
       - api: System.IO.Pipes.NamedPipeClientStream::ConnectAsync
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

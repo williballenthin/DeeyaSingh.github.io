@@ -1,7 +1,7 @@
 ---
 permalink: "/create-udp-socket/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/create-udp-socket/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/create-udp-socket/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">create UDP socket</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/socket/udp/send</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com, joakim@intezer.com, michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::Socket Communication::Create UDP Socket [C0001.010]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 203BD48BCC18434314AD60F4C8BC21E3D3422EB0624B22B827410F9BC63B4082:0x401240</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">create UDP socket</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/socket/udp/send</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "joakim@intezer.com", "michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Socket Communication::Create UDP Socket [C0001.010]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 203BD48BCC18434314AD60F4C8BC21E3D3422EB0624B22B827410F9BC63B4082:0x401240</p>
+    <pre><strong>Features</strong>
     - or:
       - and:
         - count(number(2 = AF_INET/SOCK_DGRAM)): 2 or more
@@ -45,10 +45,15 @@ permalink: "/create-udp-socket/"
           - api: System.Net.Sockets.Socket::ctor
       - api: System.Net.Sockets.UdpClient::ctor
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: joakim@intezer.com"></span>
+<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

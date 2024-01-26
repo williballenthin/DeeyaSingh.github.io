@@ -1,7 +1,7 @@
 ---
 permalink: "/compiled-with-dmd/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,42 +9,45 @@ permalink: "/compiled-with-dmd/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/compiled-with-dmd/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">compiled with dmd</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> compiler/d</p>
-      <p><strong>Authors:</strong> @_re_fox</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://github.com/dlang/dmd</p>
-      <p><strong>Examples:</strong> 321338196a46b600ea330fc5d98d0699</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">compiled with dmd</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> compiler/d</p>
+    <p><strong>Authors:</strong> ["@_re_fox"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://github.com/dlang/dmd</p>
+    <p><strong>Examples:</strong> 321338196a46b600ea330fc5d98d0699</p>
+    <pre><strong>Features</strong>
     - and:
       - section: ._deh
       - section: .tp
       - section: .dp
       - section: .minfo
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: compiler"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

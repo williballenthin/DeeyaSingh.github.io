@@ -1,7 +1,7 @@
 ---
 permalink: "/validate-payment-card-number-using-luhn-algorithm-with-no-lookup-table/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/validate-payment-card-number-using-luhn-algorithm-with-no-lookup-ta
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/validate-payment-card-number-using-luhn-algorithm-with-no-lookup-table/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">validate payment card number using luhn algorithm with no lookup table</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> </p>
-      <p><strong>Authors:</strong> @_re_fox</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Data::Checksum::Luhn [C0032.002]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 6fcc13563aad936c7d0f3165351cb453:0x4026C0</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">validate payment card number using luhn algorithm with no lookup table</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> </p>
+    <p><strong>Authors:</strong> ["@_re_fox"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Checksum::Luhn [C0032.002]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 6fcc13563aad936c7d0f3165351cb453:0x4026C0</p>
+    <pre><strong>Features</strong>
     - and:
       - characteristic: loop
       - description: Iterate over CC digits
@@ -99,10 +99,13 @@ permalink: "/validate-payment-card-number-using-luhn-algorithm-with-no-lookup-ta
               - mnemonic: neg
             - description: Compiler optimized returning checkum % 10
 </pre>
-    </div>
+  </div>
     
+   
+  <span data-pagefind-filter="MBC: Data"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

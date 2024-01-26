@@ -1,7 +1,7 @@
 ---
 permalink: "/check-for-windows-sandbox-via-subdirectory/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,42 +9,45 @@ permalink: "/check-for-windows-sandbox-via-subdirectory/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/check-for-windows-sandbox-via-subdirectory/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">check for windows sandbox via subdirectory</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
-      <p><strong>Authors:</strong> echernofsky@google.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]</p>
-      <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009]</p>
-      <p><strong>References:</strong> https://www.elastic.co/security-labs/qbot-malware-analysis</p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">check for windows sandbox via subdirectory</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
+    <p><strong>Authors:</strong> ["echernofsky@google.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]</p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009]</p>
+    <p><strong>References:</strong> https://www.elastic.co/security-labs/qbot-malware-analysis</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - and:
       - or:
         - match: create or open file
         - api: GetFileAttributes
       - string: C:\INTERNAL\__empty
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Anti-Behavioral Analysis"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: echernofsky@google.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

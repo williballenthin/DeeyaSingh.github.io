@@ -1,7 +1,7 @@
 ---
 permalink: "/set-file-attributes/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/set-file-attributes/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/set-file-attributes/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">set file attributes</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/file-system/meta</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com, michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::File and Directory Permissions Modification [T1222]</p>
-      <p><strong>MBC:</strong> File System::Set File Attributes [C0050]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 946A99F36A46D335DEC080D9A4371940:0x100015f0, B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4028B6</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">set file attributes</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/file-system/meta</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "michael.hunhoff@mandiant.com", "anushka.virgaonkar@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::File and Directory Permissions Modification [T1222]</p>
+    <p><strong>MBC:</strong> File System::Set File Attributes [C0050]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 946A99F36A46D335DEC080D9A4371940:0x100015f0, B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4028B6</p>
+    <pre><strong>Features</strong>
     - or:
       - api: kernel32.SetFileAttributes
       - api: ZwSetInformationFile
@@ -47,11 +47,18 @@ permalink: "/set-file-attributes/"
       - api: System.IO.File::SetLastWriteTime
       - api: System.IO.File::SetLastWriteTimeUtc
       - property/write: System.IO.FileSystemInfo::Attributes
+      - api: utime
+      - api: utimes
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: File System"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

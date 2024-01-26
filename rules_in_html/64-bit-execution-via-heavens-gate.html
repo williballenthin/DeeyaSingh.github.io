@@ -1,7 +1,7 @@
 ---
 permalink: "/64-bit-execution-via-heavens-gate/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/64-bit-execution-via-heavens-gate/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/64-bit-execution-via-heavens-gate/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">64-bit execution via heavens gate</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-disasm</p>
-      <p><strong>Authors:</strong> awillia2@cisco.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Defense Evasion::Disable or Evade Security Tools::Heavens Gate [F0004.008]</p>
-      <p><strong>References:</strong> https://download.bitdefender.com/resources/files/News/CaseStudies/study/318/Bitdefender-TRR-Whitepaper-Maze-creat4351-en-EN-GenericUse.pdf, https://www.malwaretech.com/2014/02/the-0x33-segment-selector-heavens-gate.html</p>
-      <p><strong>Examples:</strong> 79abd17391adc6251ecdc58d13d76baf:0x10002385</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">64-bit execution via heavens gate</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-disasm</p>
+    <p><strong>Authors:</strong> ["awillia2@cisco.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Defense Evasion::Disable or Evade Security Tools::Heavens Gate [F0004.008]</p>
+    <p><strong>References:</strong> https://download.bitdefender.com/resources/files/News/CaseStudies/study/318/Bitdefender-TRR-Whitepaper-Maze-creat4351-en-EN-GenericUse.pdf, https://www.malwaretech.com/2014/02/the-0x33-segment-selector-heavens-gate.html</p>
+    <p><strong>Examples:</strong> 79abd17391adc6251ecdc58d13d76baf:0x10002385</p>
+    <pre><strong>Features</strong>
     - and:
       - or:
         - description: set up retf to push 0x33 to CS indicating 64-bit mode
@@ -51,10 +51,13 @@ permalink: "/64-bit-execution-via-heavens-gate/"
         - number: 0x5 = length of add + retf insn bytes
       - mnemonic: retf = set EIP = [ESP] and CS = [ESP+4]
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+   
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: awillia2@cisco.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/create-or-open-registry-key/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/create-or-open-registry-key/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/create-or-open-registry-key/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">create or open registry key</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> </p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Operating System::Registry::Create Registry Key [C0036.004], Operating System::Registry::Open Registry Key [C0036.003]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 03-02.dll_:0x10004706, Practical Malware Analysis Lab 11-01.exe_:0x401000, 493167E85E45363D09495D0841C30648:0x404D60, B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4045F2, B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x40433E, 692f7fd6d198e804d6af98eb9e390d61:0x6000003</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">create or open registry key</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> </p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com", "anushka.virgaonkar@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Operating System::Registry::Create Registry Key [C0036.004]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 03-02.dll_:0x10004706, Practical Malware Analysis Lab 11-01.exe_:0x401000, 493167E85E45363D09495D0841C30648:0x404D60, B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x4045F2, B5F85C26D7AA5A1FB4AF5821B6B5AB9B:0x40433E, 692f7fd6d198e804d6af98eb9e390d61:0x6000003</p>
+    <pre><strong>Features</strong>
     - or:
       - api: advapi32.RegOpenKey
       - api: advapi32.RegOpenKeyEx
@@ -60,10 +60,14 @@ permalink: "/create-or-open-registry-key/"
       - api: Microsoft.Win32.RegistryKey::OpenRemoteBaseKey
       - api: Microsoft.Win32.RegistryKey::CreateSubKey
 </pre>
-    </div>
+  </div>
     
+   
+  <span data-pagefind-filter="MBC: Operating System"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

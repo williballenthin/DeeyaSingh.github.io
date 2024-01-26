@@ -1,7 +1,7 @@
 ---
 permalink: "/act-as-dhcp-server-callout-dll/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,39 +9,42 @@ permalink: "/act-as-dhcp-server-callout-dll/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/act-as-dhcp-server-callout-dll/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">act as DHCP server callout DLL</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> persistence</p>
-      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Persistence::Server Software Component [T1505]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://learn.microsoft.com/en-gb/previous-versions/windows/desktop/dhcp/how-the-dhcp-server-api-operates</p>
-      <p><strong>Examples:</strong> 36f506a34b99bf4c199b3c9ec8aa02bd631feafdca20e69e33e714c269ddb8c5</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">act as DHCP server callout DLL</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Server Software Component [T1505]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://learn.microsoft.com/en-gb/previous-versions/windows/desktop/dhcp/how-the-dhcp-server-api-operates</p>
+    <p><strong>Examples:</strong> 36f506a34b99bf4c199b3c9ec8aa02bd631feafdca20e69e33e714c269ddb8c5</p>
+    <pre><strong>Features</strong>
     - or:
       - export: DhcpServerCalloutEntry
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

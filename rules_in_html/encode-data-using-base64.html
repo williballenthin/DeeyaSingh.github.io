@@ -1,7 +1,7 @@
 ---
 permalink: "/encode-data-using-base64/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/encode-data-using-base64/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/encode-data-using-base64/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">encode data using Base64</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/encoding/base64</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com, anushka.virgaonkar@mandiant.com, michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-      <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02], Data::Encode Data::Base64 [C0026.001]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> BFB9B5391A13D0AFD787E87AB90F14F5:0x1314889C, 074072B261FC27B65C72671F13510C05:0x100049B2, 5DB2D2BE20D59AA0BE6709A6850F1775:0x18001CC30, 08AC667C65D36D6542917655571E61C8:0x406EAA</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">encode data using Base64</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encoding/base64</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "anushka.virgaonkar@mandiant.com", "michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> BFB9B5391A13D0AFD787E87AB90F14F5:0x1314889C, 074072B261FC27B65C72671F13510C05:0x100049B2, 5DB2D2BE20D59AA0BE6709A6850F1775:0x18001CC30, 08AC667C65D36D6542917655571E61C8:0x406EAA</p>
+    <pre><strong>Features</strong>
     - or:
       - and:
         - mnemonic: shl
@@ -55,10 +55,15 @@ permalink: "/encode-data-using-base64/"
       - api: System.Convert::ToBase64CharArray
       - api: System.Convert::TryToBase64Chars
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
+<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

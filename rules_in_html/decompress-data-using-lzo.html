@@ -1,7 +1,7 @@
 ---
 permalink: "/decompress-data-using-lzo/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/decompress-data-using-lzo/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/decompress-data-using-lzo/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">decompress data using LZO</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/compression</p>
-      <p><strong>Authors:</strong> david@edeca.net, david.cannings@pwc.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Data::Decompress Data [C0025]</p>
-      <p><strong>References:</strong> https://github.com/zenzhang/msgclient/blob/f7c346287022dd41b21aedc8664a281b32e4a1f1/src/framework/string/Compress.cpp</p>
-      <p><strong>Examples:</strong> ee3b869b668abec332d07c66d1a39f6dbf3a598cc1325b57a0504f8d24ac2e28.dll_:0x1000BB90</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">decompress data using LZO</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/compression</p>
+    <p><strong>Authors:</strong> ["david@edeca.net", "david.cannings@pwc.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Decompress Data [C0025]</p>
+    <p><strong>References:</strong> https://github.com/zenzhang/msgclient/blob/f7c346287022dd41b21aedc8664a281b32e4a1f1/src/framework/string/Compress.cpp</p>
+    <p><strong>Examples:</strong> ee3b869b668abec332d07c66d1a39f6dbf3a598cc1325b57a0504f8d24ac2e28.dll_:0x1000BB90</p>
+    <pre><strong>Features</strong>
     - and:
       - instruction:
         - description: t += 255;
@@ -65,10 +65,14 @@ permalink: "/decompress-data-using-lzo/"
         - characteristic: loop
         - characteristic: tight loop
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+   
+  <span data-pagefind-filter="MBC: Data"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: david@edeca.net"></span>
+<span data-pagefind-filter="author: david.cannings@pwc.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/packed-with-vprotect/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,39 +9,42 @@ permalink: "/packed-with-vprotect/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/packed-with-vprotect/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">packed with VProtect</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/packer/vprotect</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]</p>
-      <p><strong>MBC:</strong> Anti-Static Analysis::Software Packing [F0001]</p>
-      <p><strong>References:</strong> https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/</p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">packed with VProtect</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/packer/vprotect</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]</p>
+    <p><strong>MBC:</strong> Anti-Static Analysis::Software Packing [F0001]</p>
+    <p><strong>References:</strong> https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - or:
       - section: VProtect
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Anti-Static Analysis"></span>
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

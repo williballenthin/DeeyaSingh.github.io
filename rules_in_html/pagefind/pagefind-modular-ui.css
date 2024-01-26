@@ -188,12 +188,11 @@
 }
 
 .pagefind-modular-filter-pill {
+    flex-grow: 1;
+    flex-shrink: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: none;
-    appearance: none;
-    padding: 0 calc(24px * var(--pagefind-ui-scale));
     background-color: var(--pagefind-ui-background);
     color: var(--pagefind-ui-fade);
     border: var(--pagefind-ui-border-width) solid var(--pagefind-ui-border);

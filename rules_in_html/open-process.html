@@ -1,7 +1,7 @@
 ---
 permalink: "/open-process/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,41 +9,44 @@ permalink: "/open-process/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/open-process/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">open process</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> </p>
-      <p><strong>Authors:</strong> 0x534a@mailbox.org</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Process::Open Process [C0065]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 17-02.dll_:0x1000D10D</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">open process</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> </p>
+    <p><strong>Authors:</strong> ["0x534a@mailbox.org"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Process::Open Process [C0065]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 17-02.dll_:0x1000D10D</p>
+    <pre><strong>Features</strong>
     - or:
       - api: kernel32.OpenProcess
       - api: NtOpenProcess
       - api: ZwOpenProcess
 </pre>
-    </div>
+  </div>
     
+   
+  <span data-pagefind-filter="MBC: Process"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: 0x534a@mailbox.org"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

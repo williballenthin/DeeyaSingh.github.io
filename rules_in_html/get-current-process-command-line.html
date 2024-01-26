@@ -1,0 +1,53 @@
+---
+permalink: "/get-current-process-command-line/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>get current process command line</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/get-current-process-command-line/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">get current process command line</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interation/process</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - and:
+      - os: linux
+      - api: open
+      - string: /proc/self/cmdline
+      - api: read
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: host-interation"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
+  <footer>
+  </footer>
+</body>
+</html>

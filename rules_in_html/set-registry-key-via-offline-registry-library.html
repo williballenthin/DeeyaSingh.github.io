@@ -1,7 +1,7 @@
 ---
 permalink: "/set-registry-key-via-offline-registry-library/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,41 +9,44 @@ permalink: "/set-registry-key-via-offline-registry-library/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/set-registry-key-via-offline-registry-library/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">set registry key via offline registry library</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/registry</p>
-      <p><strong>Authors:</strong> johnk3r</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Modify Registry [T1112]</p>
-      <p><strong>MBC:</strong> Operating System::Registry::Set Registry Key [C0036.001]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 5fbbfeed28b258c42e0cfeb16718b31c:0x43A6C8</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">set registry key via offline registry library</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/registry</p>
+    <p><strong>Authors:</strong> ["johnk3r"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Modify Registry [T1112]</p>
+    <p><strong>MBC:</strong> Operating System::Registry::Set Registry Key [C0036.001]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 5fbbfeed28b258c42e0cfeb16718b31c:0x43A6C8</p>
+    <pre><strong>Features</strong>
     - and:
       - api: ORSetValue
       - optional:
         - api: ORSaveHive
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Operating System"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: johnk3r"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

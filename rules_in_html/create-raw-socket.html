@@ -1,7 +1,7 @@
 ---
 permalink: "/create-raw-socket/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/create-raw-socket/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/create-raw-socket/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">create raw socket</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/socket</p>
-      <p><strong>Authors:</strong> blas.kojusner@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::Socket Communication::Create Socket [C0001.003]</p>
-      <p><strong>References:</strong> https://learn.microsoft.com/en-us/windows/win32/winsock/tcp-ip-raw-sockets-2, https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-socket, https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-wsasocketa</p>
-      <p><strong>Examples:</strong> 10EBCF8C20403457A08762200015B151:0x140001000</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">create raw socket</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/socket</p>
+    <p><strong>Authors:</strong> ["blas.kojusner@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::Socket Communication::Create Socket [C0001.003]</p>
+    <p><strong>References:</strong> https://learn.microsoft.com/en-us/windows/win32/winsock/tcp-ip-raw-sockets-2, https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-socket, https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-wsasocketa</p>
+    <p><strong>Examples:</strong> 10EBCF8C20403457A08762200015B151:0x140001000</p>
+    <pre><strong>Features</strong>
     - and:
       - or:
         - api: socket
@@ -44,10 +44,13 @@ permalink: "/create-raw-socket/"
         - number: 23 = AF_INET6
       - number: 3 = SOCK_RAW
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: blas.kojusner@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/patch-process-command-line/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/patch-process-command-line/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/patch-process-command-line/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">patch process command line</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-forensic</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com, @_re_fox</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection [T1055]</p>
-      <p><strong>MBC:</strong> Defense Evasion::Process Injection::Patch Process Command Line [E1055.m04]</p>
-      <p><strong>References:</strong> https://stackoverflow.com/q/24754844/87207, https://blog.xpnsec.com/how-to-argue-like-cobalt-strike/</p>
-      <p><strong>Examples:</strong> e353d3fbfb5c3738a77a622adff9a416:0x401626</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">patch process command line</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-forensic</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com", "@_re_fox"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection [T1055]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Process Injection::Patch Process Command Line [E1055.m04]</p>
+    <p><strong>References:</strong> https://stackoverflow.com/q/24754844/87207, https://blog.xpnsec.com/how-to-argue-like-cobalt-strike/</p>
+    <p><strong>Examples:</strong> e353d3fbfb5c3738a77a622adff9a416:0x401626</p>
+    <pre><strong>Features</strong>
     - or:
       - and:
         - basic block:
@@ -61,10 +61,14 @@ permalink: "/patch-process-command-line/"
             - offset: 0x20 = PEB->ProcessParameters
             - offset: 0x70 = PEB->ProcessParameters->CommandLine
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
+<span data-pagefind-filter="author: @_re_fox"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

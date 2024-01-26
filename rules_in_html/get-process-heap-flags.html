@@ -1,7 +1,7 @@
 ---
 permalink: "/get-process-heap-flags/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/get-process-heap-flags/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/get-process-heap-flags/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">get process heap flags</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/process</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> Discovery::Process Discovery [T1057]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/bed03d2f849d9060c68f8d5905bd204d0cb3f593/al-khaser/AntiDebug/ProcessHeap_Flags.cpp#L13</p>
-      <p><strong>Examples:</strong> al-khaser_x86.exe_:0x425470</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">get process heap flags</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Discovery::Process Discovery [T1057]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/bed03d2f849d9060c68f8d5905bd204d0cb3f593/al-khaser/AntiDebug/ProcessHeap_Flags.cpp#L13</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_:0x425470</p>
+    <pre><strong>Features</strong>
     - and:
       - match: PEB access
       - or:
@@ -51,10 +51,13 @@ permalink: "/get-process-heap-flags/"
             - number: 0x70 = ProcessHeap->HeapFlags >= Vista
             - number: 0x14 = ProcessHeap->HeapFlags < Vista
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Discovery"></span> 
+  
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

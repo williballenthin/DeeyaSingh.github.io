@@ -1,7 +1,7 @@
 ---
 permalink: "/check-for-windows-sandbox-via-genuine-state/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,45 +9,57 @@ permalink: "/check-for-windows-sandbox-via-genuine-state/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/check-for-windows-sandbox-via-genuine-state/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">check for Windows sandbox via genuine state</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
-      <p><strong>Authors:</strong> @_re_fox</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]</p>
-      <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009]</p>
-      <p><strong>References:</strong> https://github.com/LloydLabs/wsb-detect</p>
-      <p><strong>Examples:</strong> 773290480d5445f11d3dc1b800728966:0x140001140</p>
-      <pre><strong>Features</strong>
-    - and:
-      - basic block:
-        - and:
-          - api: SLIsGenuineLocal
-      - basic block:
-        - and:
-          - api: UuidFromString
-          - string: 55c92734-d682-4d71-983e-d6ec3f16059f
+  <div id="rule-name-container">
+    <h1 id="rule-name">check for Windows sandbox via genuine state</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
+    <p><strong>Authors:</strong> ["@_re_fox"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]</p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009]</p>
+    <p><strong>References:</strong> https://github.com/LloydLabs/wsb-detect</p>
+    <p><strong>Examples:</strong> 773290480d5445f11d3dc1b800728966:0x140001140</p>
+    <pre><strong>Features</strong>
+    - or:
+      - and:
+        - basic block:
+          - and:
+            - api: SLIsGenuineLocal
+        - basic block:
+          - and:
+            - api: UuidFromString
+            - string: 55c92734-d682-4d71-983e-d6ec3f16059f
+      - and:
+        - call:
+          - and:
+            - api: SLIsGenuineLocal
+        - call:
+          - and:
+            - api: UuidFromString
+            - string: 55c92734-d682-4d71-983e-d6ec3f16059f
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Anti-Behavioral Analysis"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

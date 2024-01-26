@@ -1,7 +1,7 @@
 ---
 permalink: "/encrypt-data-using-xxtea/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/encrypt-data-using-xxtea/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/encrypt-data-using-xxtea/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">encrypt data using XXTEA</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/encryption/xxtea</p>
-      <p><strong>Authors:</strong> raymond.leong@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-      <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]</p>
-      <p><strong>References:</strong> https://en.wikipedia.org/wiki/XXTEA</p>
-      <p><strong>Examples:</strong> C3699D0C7BD1276184249A487C1F0D7F:0x0040D370, 2F9FF544D5CC945B453356F9B20C07D8:0x0040AA10</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using XXTEA</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/xxtea</p>
+    <p><strong>Authors:</strong> ["raymond.leong@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]</p>
+    <p><strong>References:</strong> https://en.wikipedia.org/wiki/XXTEA</p>
+    <p><strong>Examples:</strong> C3699D0C7BD1276184249A487C1F0D7F:0x0040D370, 2F9FF544D5CC945B453356F9B20C07D8:0x0040AA10</p>
+    <pre><strong>Features</strong>
     - and:
       - basic block:
         - and:
@@ -65,10 +65,13 @@ permalink: "/encrypt-data-using-xxtea/"
       - not:
         - number: 0xC6EF3720 = tea sum, not used in xxtea
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: raymond.leong@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

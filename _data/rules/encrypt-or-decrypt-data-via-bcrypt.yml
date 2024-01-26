@@ -1,25 +1,28 @@
+---
 rule:
   meta:
     name: encrypt or decrypt data via BCrypt
     namespace: data-manipulation/encryption
     authors:
-      - michael.hunhoff@mandiant.com
-    scope: function
+    - michael.hunhoff@mandiant.com
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information [T1027]
+    - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
-      - Cryptography::Decrypt Data [C0031]
-      - Cryptography::Encrypt Data [C0027]
+    - Cryptography::Decrypt Data [C0031]
+    - Cryptography::Encrypt Data [C0027]
   features:
-    - and:
-      - or:
-        - api: BCryptDecrypt
-        - api: BCryptEncrypt
-      - optional:
-        - api: BCryptOpenAlgorithmProvider
-        - api: BCryptCloseAlgorithmProvider
-        - api: BCryptImportKey
-        - api: BCryptImportKeyPair
-        - api: BCryptGenerateKeyPair
-        - api: BCryptGenerateSymmetricKey
-        - api: BCryptDestroyKey
+  - and:
+    - or:
+      - api: BCryptDecrypt
+      - api: BCryptEncrypt
+    - optional:
+      - api: BCryptOpenAlgorithmProvider
+      - api: BCryptCloseAlgorithmProvider
+      - api: BCryptImportKey
+      - api: BCryptImportKeyPair
+      - api: BCryptGenerateKeyPair
+      - api: BCryptGenerateSymmetricKey
+      - api: BCryptDestroyKey

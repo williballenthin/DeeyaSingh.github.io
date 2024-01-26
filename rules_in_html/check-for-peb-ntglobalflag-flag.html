@@ -1,7 +1,7 @@
 ---
 permalink: "/check-for-peb-ntglobalflag-flag/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/check-for-peb-ntglobalflag-flag/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/check-for-peb-ntglobalflag-flag/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">check for PEB NtGlobalFlag flag</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection::Process Environment Block NtGlobalFlag [B0001.036]</p>
-      <p><strong>References:</strong> Practical Malware Analysis, Chapter 16, p. 355, https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb/index.htm</p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 16-01.exe_:0x403530</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">check for PEB NtGlobalFlag flag</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-debugging/debugger-detection</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Debugger Detection::Process Environment Block NtGlobalFlag [B0001.036]</p>
+    <p><strong>References:</strong> Practical Malware Analysis, Chapter 16, p. 355, https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb/index.htm</p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 16-01.exe_:0x403530</p>
+    <pre><strong>Features</strong>
     - and:
       - basic block:
         - and:
@@ -56,10 +56,13 @@ permalink: "/check-for-peb-ntglobalflag-flag/"
               - offset: 0xBC = PEB.NtGlobalFlag
       - number: 0x70 = (FLG_HEAP_ENABLE_TAIL_CHECK | FLG_HEAP_ENABLE_FREE_CHECK | FLG_HEAP_VALIDATE_PARAMETERS)
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+   
+  <span data-pagefind-filter="MBC: Anti-Behavioral Analysis"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

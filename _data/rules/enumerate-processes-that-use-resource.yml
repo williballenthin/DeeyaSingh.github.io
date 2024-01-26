@@ -1,0 +1,18 @@
+---
+rule:
+  meta:
+    name: enumerate processes that use resource
+    namespace: host-interaction/process
+    authors:
+    - "@Ana06"
+    scopes:
+      static: function
+      dynamic: thread
+    references:
+    - https://www.malwarebytes.com/blog/threat-intelligence/2021/07/avoslocker-enters-the-ransomware-scene-asks-for-partners
+  features:
+  - and:
+    - api: rstrtmgr.RmRegisterResources
+    - api: rstrtmgr.RmGetList
+    - optional:
+      - api: RmStartSession

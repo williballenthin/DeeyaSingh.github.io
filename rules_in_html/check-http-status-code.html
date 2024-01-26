@@ -1,7 +1,7 @@
 ---
 permalink: "/check-http-status-code/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/check-http-status-code/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/check-http-status-code/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">check HTTP status code</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/http/client</p>
-      <p><strong>Authors:</strong> @mr-tz</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::HTTP Communication::Read Header [C0002.014]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 54ac78733552a62d1d05ea4ba3fc604bb49fe000d7fc948da45335b726e64d75:0x10001a20, Practical Malware Analysis Lab 03-02.dll_:0x10004452</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">check HTTP status code</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/client</p>
+    <p><strong>Authors:</strong> ["@mr-tz"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Read Header [C0002.014]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 54ac78733552a62d1d05ea4ba3fc604bb49fe000d7fc948da45335b726e64d75:0x10001a20, Practical Malware Analysis Lab 03-02.dll_:0x10004452</p>
+    <pre><strong>Features</strong>
     - and:
       - os: windows
       - or:
@@ -55,10 +55,13 @@ permalink: "/check-http-status-code/"
             - number: 403 = Forbidden
             - number: 404 = Not Found
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: @mr-tz"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

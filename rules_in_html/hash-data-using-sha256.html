@@ -1,7 +1,7 @@
 ---
 permalink: "/hash-data-using-sha256/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/hash-data-using-sha256/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/hash-data-using-sha256/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">hash data using SHA256</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/hashing/sha256</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com, anushka.virgaonkar@mandiant.com, william.ballenthin@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Cryptography::Cryptographic Hash::SHA256 [C0029.003]</p>
-      <p><strong>References:</strong> https://www.rfc-editor.org/rfc/rfc6234</p>
-      <p><strong>Examples:</strong> C0CFFCF211035A839E28D542DE300298:0x180011400, 6CC148363200798A12091B97A17181A1:0x140120240, 44d40faf3f1fe4ed969befab7afcd2f0:0x10033570</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">hash data using SHA256</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/hashing/sha256</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "anushka.virgaonkar@mandiant.com", "william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Cryptography::Cryptographic Hash::SHA256 [C0029.003]</p>
+    <p><strong>References:</strong> https://www.rfc-editor.org/rfc/rfc6234</p>
+    <p><strong>Examples:</strong> C0CFFCF211035A839E28D542DE300298:0x180011400, 6CC148363200798A12091B97A17181A1:0x140120240, 44d40faf3f1fe4ed969befab7afcd2f0:0x10033570</p>
+    <pre><strong>Features</strong>
     - or:
       - and:
         - number: 0x6A09E667 = H(0)0
@@ -68,10 +68,15 @@ permalink: "/hash-data-using-sha256/"
           - api: System.Security.Cryptography.SHA256Managed::ctor
         - api: System.Security.Cryptography.HashAlgorithm::ComputeHash
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+   
+  <span data-pagefind-filter="MBC: Cryptography"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
+<span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

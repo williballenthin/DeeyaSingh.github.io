@@ -1,7 +1,7 @@
 ---
 permalink: "/inject-pe/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,39 +9,39 @@ permalink: "/inject-pe/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/inject-pe/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">inject pe</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/process/inject</p>
-      <p><strong>Authors:</strong> 0x534a@mailbox.org</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection::Portable Executable Injection [T1055.002], Defense Evasion::Reflective Code Loading [T1620]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://www.elastic.co/de/blog/ten-process-injection-techniques-technical-survey-common-and-trending-process</p>
-      <p><strong>Examples:</strong> ce8d7590182db2e51372a4a04d6a0927a65b2640739f9ec01cfd6c143b1110da:0x4014E0</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">inject pe</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/inject</p>
+    <p><strong>Authors:</strong> ["0x534a@mailbox.org"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection::Portable Executable Injection [T1055.002]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://www.elastic.co/de/blog/ten-process-injection-techniques-technical-survey-common-and-trending-process</p>
+    <p><strong>Examples:</strong> ce8d7590182db2e51372a4a04d6a0927a65b2640739f9ec01cfd6c143b1110da:0x4014E0</p>
+    <pre><strong>Features</strong>
     - and:
       - characteristic: loop
       - optional:
         - or:
           - match: open process
           - match: host-interaction/process/create
-      - match: allocate RWX memory
+      - match: allocate or change RWX memory
       - basic block:
         - description: virtual address offset calculation
         - and:
@@ -50,10 +50,13 @@ permalink: "/inject-pe/"
       - match: write process memory
       - match: create thread
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: 0x534a@mailbox.org"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

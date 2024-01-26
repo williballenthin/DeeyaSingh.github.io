@@ -1,7 +1,7 @@
 ---
 permalink: "/act-as-exchange-transport-agent/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/act-as-exchange-transport-agent/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/act-as-exchange-transport-agent/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">act as Exchange transport agent</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> persistence/exchange</p>
-      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Persistence::Server Software Component::Transport Agent [T1505.002]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://learn.microsoft.com/en-us/exchange/mail-flow/transport-agents/transport-agents?view=exchserver-2019, https://learn.microsoft.com/en-us/exchange/client-developer/transport-agents/how-to-create-a-deliveryagent-transport-agent-for-exchange-2013</p>
-      <p><strong>Examples:</strong> a301eadd2b665b696803e143dd4d657d71c56bbded2a3a1b96c5bcb83cc6796a:0x600000E</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">act as Exchange transport agent</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/exchange</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Server Software Component::Transport Agent [T1505.002]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://learn.microsoft.com/en-us/exchange/mail-flow/transport-agents/transport-agents?view=exchserver-2019, https://learn.microsoft.com/en-us/exchange/client-developer/transport-agents/how-to-create-a-deliveryagent-transport-agent-for-exchange-2013</p>
+    <p><strong>Examples:</strong> a301eadd2b665b696803e143dd4d657d71c56bbded2a3a1b96c5bcb83cc6796a:0x600000E</p>
+    <pre><strong>Features</strong>
     - and:
       - format: dotnet
       - or:
@@ -65,10 +65,13 @@ permalink: "/act-as-exchange-transport-agent/"
         - api: Microsoft.Exchange.Data.Transport.Delivery.DeliveryAgent::add_OnDeliverMailItem
         - api: Microsoft.Exchange.Data.Transport.Delivery.DeliveryAgent::add_OnOpenConnection
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

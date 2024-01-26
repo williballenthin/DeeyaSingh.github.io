@@ -1,7 +1,7 @@
 ---
 permalink: "/compiled-with-autoit/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/compiled-with-autoit/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/compiled-with-autoit/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">compiled with AutoIt</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> compiler/autoit</p>
-      <p><strong>Authors:</strong> william.ballenthin@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Execution::Command and Scripting Interpreter [T1059]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://fumik0.com/2019/03/25/lets-play-with-qulab-an-exotic-malware-developed-in-autoit/</p>
-      <p><strong>Examples:</strong> 55D77AB16377A8A314982F723FCC6FAE</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">compiled with AutoIt</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> compiler/autoit</p>
+    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> Execution::Command and Scripting Interpreter [T1059]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://fumik0.com/2019/03/25/lets-play-with-qulab-an-exotic-malware-developed-in-autoit/</p>
+    <p><strong>Examples:</strong> 55D77AB16377A8A314982F723FCC6FAE</p>
+    <pre><strong>Features</strong>
     - or:
       - string: AutoIt has detected the stack has become corrupt.
 
@@ -47,10 +47,13 @@ AutoIt supports the __stdcall (WINAPI) and __cdecl calling conventions.  The __s
       - string: #requireadmin
       - string: #OnAutoItStartRegister
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: compiler"></span>  
+  <span data-pagefind-filter="ATT&CK: Execution"></span> 
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

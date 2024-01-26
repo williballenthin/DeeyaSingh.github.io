@@ -1,7 +1,7 @@
 ---
 permalink: "/run-powershell-expression/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/run-powershell-expression/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/run-powershell-expression/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">run PowerShell expression</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> load-code/powershell/</p>
-      <p><strong>Authors:</strong> anamaria.martinezgom@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Execution::Command and Scripting Interpreter::PowerShell [T1059.001]</p>
-      <p><strong>MBC:</strong> Execution::Command and Scripting Interpreter [E1059]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 692f7fd6d198e804d6af98eb9e390d61:0x6000004</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">run PowerShell expression</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/powershell/</p>
+    <p><strong>Authors:</strong> ["anamaria.martinezgom@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Execution::Command and Scripting Interpreter::PowerShell [T1059.001]</p>
+    <p><strong>MBC:</strong> Execution::Command and Scripting Interpreter [E1059]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 692f7fd6d198e804d6af98eb9e390d61:0x6000004</p>
+    <pre><strong>Features</strong>
     - and:
       - or:
         - string: / iex\(/i
@@ -46,10 +46,13 @@ permalink: "/run-powershell-expression/"
       - optional:
         - substring: powershell.exe 
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: load-code"></span>  
+  <span data-pagefind-filter="ATT&CK: Execution"></span> 
+  <span data-pagefind-filter="MBC: Execution"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: anamaria.martinezgom@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

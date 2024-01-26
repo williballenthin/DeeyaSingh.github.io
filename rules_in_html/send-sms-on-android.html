@@ -1,0 +1,60 @@
+---
+permalink: "/send-sms-on-android/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>send SMS on Android</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/send-sms-on-android/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">send SMS on Android</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/sms</p>
+    <p><strong>Authors:</strong> ["@mr-tz"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - and:
+      - os: android
+      - string: android/telephony/SmsManager
+      - optional:
+        - or:
+          - and:
+            - arch: i386
+            - offset: 0x30 = (*env)->FindClass
+          - and:
+            - arch: amd64
+            - offset: 0x1C = (*env)->FindClass
+      - string: sendTextMessage
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: @mr-tz"></span>
+  <footer>
+  </footer>
+</body>
+</html>

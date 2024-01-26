@@ -1,7 +1,7 @@
 ---
 permalink: "/reference-anti-vm-strings-targeting-vmware/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/reference-anti-vm-strings-targeting-vmware/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/reference-anti-vm-strings-targeting-vmware/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">reference anti-VM strings targeting VMWare</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, @johnk3r</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]</p>
-      <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009]</p>
-      <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/VMWare.cpp</p>
-      <p><strong>Examples:</strong> al-khaser_x86.exe_, b83480162ede09d4aa6d4850f9faa0a4c3834152752fd04cfdb22d647aa1f825:0x17D80</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">reference anti-VM strings targeting VMWare</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com", "@johnk3r"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::System Checks [T1497.001]</p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection [B0009]</p>
+    <p><strong>References:</strong> https://github.com/LordNoteworthy/al-khaser/blob/master/al-khaser/AntiVM/VMWare.cpp</p>
+    <p><strong>Examples:</strong> al-khaser_x86.exe_, b83480162ede09d4aa6d4850f9faa0a4c3834152752fd04cfdb22d647aa1f825:0x17D80</p>
+    <pre><strong>Features</strong>
     - or:
       - string: /VMWare/i
       - string: /VMTools/i
@@ -84,10 +84,14 @@ permalink: "/reference-anti-vm-strings-targeting-vmware/"
       - string: /VmGuestLibJava\.dll/i
       - string: /vmscsi\.sys/i
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Anti-Behavioral Analysis"></span>
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
+<span data-pagefind-filter="author: @johnk3r"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

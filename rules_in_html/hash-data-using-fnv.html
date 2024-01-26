@@ -1,7 +1,7 @@
 ---
 permalink: "/hash-data-using-fnv/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/hash-data-using-fnv/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/hash-data-using-fnv/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">hash data using fnv</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/hashing/fnv</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com, @_re_fox, michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Data::Non-Cryptographic Hash::FNV [C0030.005]</p>
-      <p><strong>References:</strong> https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function, http://isthe.com/chongo/tech/comp/fnv/, https://create.stephan-brumme.com/fnv-hash/</p>
-      <p><strong>Examples:</strong> ad4229879180e267f431ac6666b6a0a2:0x14007B4D4, 09BF850BE5DA44A1C3629A1F62813A83:0x10006010</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">hash data using fnv</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/hashing/fnv</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "@_re_fox", "michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Non-Cryptographic Hash::FNV [C0030.005]</p>
+    <p><strong>References:</strong> https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function, http://isthe.com/chongo/tech/comp/fnv/, https://create.stephan-brumme.com/fnv-hash/</p>
+    <p><strong>Examples:</strong> ad4229879180e267f431ac6666b6a0a2:0x14007B4D4, 09BF850BE5DA44A1C3629A1F62813A83:0x10006010</p>
+    <pre><strong>Features</strong>
     - and:
       - optional:
         - characteristic: loop
@@ -57,10 +57,15 @@ permalink: "/hash-data-using-fnv/"
             - mnemonic: mul
             - api: _allmul
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+   
+  <span data-pagefind-filter="MBC: Data"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: @_re_fox"></span>
+<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/persist-via-windows-service/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,38 +9,43 @@ permalink: "/persist-via-windows-service/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/persist-via-windows-service/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">persist via Windows service</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> persistence/service</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Persistence::Create or Modify System Process::Windows Service [T1543.003], Execution::System Services::Service Execution [T1569.002]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 03-02.dll_:0x10004706, 9f012d7e3ae8f62370278e372691eb73b878fe2280b6083e1be637b278021855:0x40113A</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">persist via Windows service</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/service</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Create or Modify System Process::Windows Service [T1543.003]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 03-02.dll_:0x10004706, 9f012d7e3ae8f62370278e372691eb73b878fe2280b6083e1be637b278021855:0x40113A</p>
+    <pre><strong>Features</strong>
     - or:
       - and:
-        - basic block:
-          - and:
-            - number: 2 = SERVICE_AUTO_START
-            - api: advapi32.CreateService
+        - or:
+          - basic block:
+            - and:
+              - number: 2 = SERVICE_AUTO_START
+              - api: advapi32.CreateService
+          - call:
+            - and:
+              - number: 2 = SERVICE_AUTO_START
+              - api: advapi32.CreateService
         - optional:
           - or:
             - api: advapi32.OpenService
@@ -57,10 +62,13 @@ permalink: "/persist-via-windows-service/"
         - match: set registry value
         - string: /System\\(CurrentControlSet|ControlSet001)\\Services/i
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

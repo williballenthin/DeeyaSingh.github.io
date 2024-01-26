@@ -1,0 +1,55 @@
+---
+permalink: "/check-for-foreground-window-switch/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>check for foreground window switch</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/check-for-foreground-window-switch/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">check for foreground window switch</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-vm/vm-detection</p>
+    <p><strong>Authors:</strong> ["ervin.ocampo@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Virtualization/Sandbox Evasion::User Activity Based Checks [T1497.002]</p>
+    <p><strong>MBC:</strong> Anti-Behavioral Analysis::Virtual Machine Detection::Human User Check [B0009.012]</p>
+    <p><strong>References:</strong> https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html, https://unprotect.it/technique/getforegroundwindow/</p>
+    <p><strong>Examples:</strong> 2855ba06b90e7c64d9bce888e47baf6d:0x4112A3</p>
+    <pre><strong>Features</strong>
+    - and:
+      - count(api(GetForegroundWindow)): 2 or more
+      - api: Sleep
+      - mnemonic: cmp
+      - or:
+        - characteristic: loop
+        - characteristic: tight loop
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Anti-Behavioral Analysis"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: ervin.ocampo@mandiant.com"></span>
+  <footer>
+  </footer>
+</body>
+</html>

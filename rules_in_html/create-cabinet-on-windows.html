@@ -1,0 +1,56 @@
+---
+permalink: "/create-cabinet-on-windows/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>create Cabinet on Windows</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/create-cabinet-on-windows/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">create Cabinet on Windows</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/compression</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com", "jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Collection::Archive Collected Data::Archive via Library [T1560.002]</p>
+    <p><strong>MBC:</strong> Data::Compress Data [C0024]</p>
+    <p><strong>References:</strong> https://learn.microsoft.com/en-us/windows/win32/devnotes/creating-a-cabinet</p>
+    <p><strong>Examples:</strong> 44bad2e2a9e387b86870f009d01833ea4618d2a7cda5f64fa84a19f3bdf4efaf:0x1400028E0</p>
+    <pre><strong>Features</strong>
+    - and:
+      - match: create File Compression Interface context on Windows
+      - or:
+        - api: cabinet.FCIAddFile = add file to Cabinet
+        - api: cabinet.FCIFlushFolder = flush current folder under construction
+        - api: cabinet.FCIFlushCabinet = complete current cabinet
+        - api: cabinet.FCIDestroy = delete an open FCI context
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+  <span data-pagefind-filter="ATT&CK: Collection"></span> 
+  <span data-pagefind-filter="MBC: Data"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
+<span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/create-process-on-linux/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/create-process-on-linux/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/create-process-on-linux/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">create process on Linux</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/process/create</p>
-      <p><strong>Authors:</strong> joakim@intezer.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Process::Create Process [C0017]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 7351f8a40c5450557b24622417fc478d:0x40236D</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">create process on Linux</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/process/create</p>
+    <p><strong>Authors:</strong> ["joakim@intezer.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Process::Create Process [C0017]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 7351f8a40c5450557b24622417fc478d:0x40236D</p>
+    <pre><strong>Features</strong>
     - and:
       - os: linux
       - or:
@@ -49,10 +49,13 @@ permalink: "/create-process-on-linux/"
         - api: posix_spawnp
         - api: popen
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+   
+  <span data-pagefind-filter="MBC: Process"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: joakim@intezer.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

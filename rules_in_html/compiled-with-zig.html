@@ -1,7 +1,7 @@
 ---
 permalink: "/compiled-with-zig/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/compiled-with-zig/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/compiled-with-zig/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">compiled with Zig</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> compiler/zig</p>
-      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://ziglang.org, https://github.com/ziglang/zig</p>
-      <p><strong>Examples:</strong> 74e0758e469ab87f38cda7925d696ea41a122364891860e1ae30fc9ff2f68e7d</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">compiled with Zig</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> compiler/zig</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://ziglang.org, https://github.com/ziglang/zig</p>
+    <p><strong>Examples:</strong> 74e0758e469ab87f38cda7925d696ea41a122364891860e1ae30fc9ff2f68e7d</p>
+    <pre><strong>Features</strong>
     - 2 or more:
       - string: ZIG_DEBUG_COLOR
       - string: Panicked during a panic. Aborting.
@@ -46,10 +46,13 @@ permalink: "/compiled-with-zig/"
       - string: _std.os.getenv
       - string: \\.\pipe\zig-childprocess-{d}-{d}
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: compiler"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

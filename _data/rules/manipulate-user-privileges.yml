@@ -1,10 +1,13 @@
+---
 rule:
   meta:
     name: manipulate user privileges
     namespace: host-interaction/user
     authors:
-      - michael.hunhoff@mandiant.com
-    scope: function
+    - michael.hunhoff@mandiant.com
+    scopes:
+      static: function
+      dynamic: call
   features:
-    - and:
-      - api: advapi32.LsaAddAccountRights
+  - and:
+    - api: advapi32.LsaAddAccountRights

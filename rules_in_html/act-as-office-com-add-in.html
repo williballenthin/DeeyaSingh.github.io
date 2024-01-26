@@ -1,7 +1,7 @@
 ---
 permalink: "/act-as-office-com-add-in/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/act-as-office-com-add-in/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/act-as-office-com-add-in/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">act as Office COM add-in</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> persistence/office</p>
-      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Persistence::Office Application Startup::Add-ins [T1137.006]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://labs.withsecure.com/publications/add-in-opportunities-for-office-persistence, https://learn.microsoft.com/en-us/dotnet/api/extensibility.idtextensibility2?view=visualstudiosdk-2022</p>
-      <p><strong>Examples:</strong> 0831bb382211a67c57a392955138808526aa15e55531091841706aae2cb89613</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">act as Office COM add-in</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/office</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Office Application Startup::Add-ins [T1137.006]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://labs.withsecure.com/publications/add-in-opportunities-for-office-persistence, https://learn.microsoft.com/en-us/dotnet/api/extensibility.idtextensibility2?view=visualstudiosdk-2022</p>
+    <p><strong>Examples:</strong> 0831bb382211a67c57a392955138808526aa15e55531091841706aae2cb89613</p>
+    <pre><strong>Features</strong>
     - and:
       - format: dotnet
       - class: Extensibility.IDTExtensibility2
@@ -46,10 +46,13 @@ permalink: "/act-as-office-com-add-in/"
         - string: OnDisconnection
         - string: OnStartupComplete
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

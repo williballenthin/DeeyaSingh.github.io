@@ -1,17 +1,20 @@
+---
 rule:
   meta:
     name: execute command
     namespace: host-interaction/process/create
     authors:
-      - "@mr-tz"
-    scope: function
+    - "@mr-tz"
+    scopes:
+      static: function
+      dynamic: call
     mbc:
-      - Process::Create Process [C0017]
+    - Process::Create Process [C0017]
     examples:
-      - e353d3fbfb5c3738a77a622adff9a416:0x401626
+    - e353d3fbfb5c3738a77a622adff9a416:0x401626
   features:
-    - or:
-      - api: system
-      - api: _system
-      - api: wsystem
-      - api: _wsystem
+  - or:
+    - api: system
+    - api: _system
+    - api: wsystem
+    - api: _wsystem

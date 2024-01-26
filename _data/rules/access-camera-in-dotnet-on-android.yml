@@ -1,0 +1,13 @@
+---
+rule:
+  meta:
+    name: access camera in .NET on Android
+    namespace: host-interaction/hardware/camera
+    authors:
+    - michael.hunhoff@mandiant.com
+    scopes:
+      static: function
+      dynamic: unsupported
+  features:
+  - or:
+    - api: Android.Hardware.Camera::Open

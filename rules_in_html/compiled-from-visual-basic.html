@@ -1,7 +1,7 @@
 ---
 permalink: "/compiled-from-visual-basic/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,40 +9,43 @@ permalink: "/compiled-from-visual-basic/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/compiled-from-visual-basic/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">compiled from Visual Basic</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> compiler/vb</p>
-      <p><strong>Authors:</strong> @williballenthin</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 9bca6b99e7981208af4c7925b96fb9cf</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">compiled from Visual Basic</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> compiler/vb</p>
+    <p><strong>Authors:</strong> ["@williballenthin"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 9bca6b99e7981208af4c7925b96fb9cf</p>
+    <pre><strong>Features</strong>
     - and:
       - string: /VB5!.*/
       - import: msvbvm60.ThunRTMain
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: compiler"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: @williballenthin"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

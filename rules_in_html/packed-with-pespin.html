@@ -1,7 +1,7 @@
 ---
 permalink: "/packed-with-pespin/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,40 +9,43 @@ permalink: "/packed-with-pespin/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/packed-with-pespin/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">packed with PESpin</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/packer/pespin</p>
-      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]</p>
-      <p><strong>MBC:</strong> Anti-Static Analysis::Software Packing [F0001]</p>
-      <p><strong>References:</strong> https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/</p>
-      <p><strong>Examples:</strong> 23e19068ecba68d4396bc097e0278b8eca7e7dcaa4978e34d683231ad2219ae3, 4b796a64abe7675254cd6f8a6c9b83949673158840a4a04c36e7c9068ec14cc8</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">packed with PESpin</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/packer/pespin</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Software Packing [T1027.002]</p>
+    <p><strong>MBC:</strong> Anti-Static Analysis::Software Packing [F0001]</p>
+    <p><strong>References:</strong> https://www.hexacorn.com/blog/2016/12/15/pe-section-names-re-visited/</p>
+    <p><strong>Examples:</strong> 23e19068ecba68d4396bc097e0278b8eca7e7dcaa4978e34d683231ad2219ae3, 4b796a64abe7675254cd6f8a6c9b83949673158840a4a04c36e7c9068ec14cc8</p>
+    <pre><strong>Features</strong>
     - or:
       - section: .taz
       - section: .x64
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Anti-Static Analysis"></span>
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

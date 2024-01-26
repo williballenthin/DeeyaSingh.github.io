@@ -1,7 +1,7 @@
 ---
 permalink: "/hash-data-using-ripemd320/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/hash-data-using-ripemd320/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/hash-data-using-ripemd320/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">hash data using RIPEMD320</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/hashing/ripemd320</p>
-      <p><strong>Authors:</strong> raymond.leong@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://en.wikipedia.org/wiki/RIPEMD-320</p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">hash data using RIPEMD320</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/hashing/ripemd320</p>
+    <p><strong>Authors:</strong> ["raymond.leong@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://en.wikipedia.org/wiki/RIPEMD-320</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - or:
       - and:
         - description: Magic initialization constants used in RIPEMD-320
@@ -50,10 +50,13 @@ permalink: "/hash-data-using-ripemd320/"
         - number: 0x3C2D1E0F = unique to RIPEMD-320
       - bytes: 01 23 45 67 89 AB CD EF FE DC BA 98 76 54 32 10 F0 E1 D2 C3 10 32 54 76 98 BA DC FE EF CD AB 89 67 45 23 01 0F 1E 2D 3C
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: raymond.leong@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

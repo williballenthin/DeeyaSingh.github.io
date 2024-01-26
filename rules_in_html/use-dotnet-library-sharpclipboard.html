@@ -1,7 +1,7 @@
 ---
 permalink: "/use-.net-library-sharpclipboard/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,40 +9,43 @@ permalink: "/use-.net-library-sharpclipboard/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/use-.net-library-sharpclipboard/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">use .NET library SharpClipboard</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> collection</p>
-      <p><strong>Authors:</strong> @johnk3r</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Collection::Clipboard Data [T1115]</p>
-      <p><strong>MBC:</strong> Collection::Input Capture [E1056]</p>
-      <p><strong>References:</strong> https://www.welivesecurity.com/2021/04/06/janeleiro-time-traveler-new-old-banking-trojan-brazil/</p>
-      <p><strong>Examples:</strong> 387f15043f0198fd3a637b0758c2b6dde9ead795c3ed70803426fc355731b173</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">use .NET library SharpClipboard</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection</p>
+    <p><strong>Authors:</strong> ["@johnk3r"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> Collection::Clipboard Data [T1115]</p>
+    <p><strong>MBC:</strong> Collection::Input Capture [E1056]</p>
+    <p><strong>References:</strong> https://www.welivesecurity.com/2021/04/06/janeleiro-time-traveler-new-old-banking-trojan-brazil/</p>
+    <p><strong>Examples:</strong> 387f15043f0198fd3a637b0758c2b6dde9ead795c3ed70803426fc355731b173</p>
+    <pre><strong>Features</strong>
     - and:
       - match: compiled to the .NET platform
       - string: SharpClipboard
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: collection"></span>  
+  <span data-pagefind-filter="ATT&CK: Collection"></span> 
+  <span data-pagefind-filter="MBC: Collection"></span>
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: @johnk3r"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/linked-against-microsoft-detours/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,40 +9,43 @@ permalink: "/linked-against-microsoft-detours/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/linked-against-microsoft-detours/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">linked against Microsoft Detours</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> linking/static/msdetours</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Hijack Execution Flow [T1574]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://github.com/microsoft/Detours</p>
-      <p><strong>Examples:</strong> 071F2D1C4C2201EE95FFE2AA965000F5F615A11A12D345E33B9FB060E5597740</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">linked against Microsoft Detours</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/static/msdetours</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Hijack Execution Flow [T1574]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://github.com/microsoft/Detours</p>
+    <p><strong>Examples:</strong> 071F2D1C4C2201EE95FFE2AA965000F5F615A11A12D345E33B9FB060E5597740</p>
+    <pre><strong>Features</strong>
     - or:
       - section: .detourc
       - section: .detourd
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: linking"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

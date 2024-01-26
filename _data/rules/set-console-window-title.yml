@@ -1,14 +1,17 @@
+---
 rule:
   meta:
     name: set console window title
     namespace: host-interaction/gui/console
     authors:
-      - michael.hunhoff@mandiant.com
-    scope: function
+    - michael.hunhoff@mandiant.com
+    scopes:
+      static: function
+      dynamic: call
     mbc:
-      - Operating System::Console [C0033]
+    - Operating System::Console [C0033]
     examples:
-      - mimikatz.exe_:0x44570F
+    - mimikatz.exe_:0x44570F
   features:
-    - or:
-      - api: kernel32.SetConsoleTitle
+  - or:
+    - api: kernel32.SetConsoleTitle

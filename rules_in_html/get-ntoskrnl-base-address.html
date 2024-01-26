@@ -1,0 +1,60 @@
+---
+permalink: "/get-ntoskrnl-base-address/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>get ntoskrnl base address</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/get-ntoskrnl-base-address/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">get ntoskrnl base address</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/runtime-linking</p>
+    <p><strong>Authors:</strong> ["@mr-tz"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://github.com/hfiref0x/TDL/blob/cc4b46ae1c939b14a22a734a727b163f873a41b5/Source/Furutaka/sup.c#L76, https://www.geoffchappell.com/studies/windows/km/ntoskrnl/api/ex/sysinfo/query.htm</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
+    - and:
+      - basic block:
+        - and:
+          - description: returns RTL_PROCESS_MODULES structure
+          - number: 0xB = SystemModuleInformation
+          - match: get system information on Windows
+      - and:
+        - arch: i386
+        - offset: 0xC = RTL_PROCESS_MODULES.Modules[0].ImageBase
+      - and:
+        - arch: amd64
+        - offset: 0x18 = RTL_PROCESS_MODULES.Modules[0].ImageBase
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: linking"></span>  
+  <span data-pagefind-filter="ATT&CK: Execution"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: @mr-tz"></span>
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/encrypt-data-using-hc-128-via-wolfssl/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/encrypt-data-using-hc-128-via-wolfssl/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/encrypt-data-using-hc-128-via-wolfssl/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">encrypt data using HC-128 via WolfSSL</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/encryption/hc-128</p>
-      <p><strong>Authors:</strong> blaine.stancill@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-      <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05], Cryptography::Encrypt Data::HC-128 [C0027.006]</p>
-      <p><strong>References:</strong> https://github.com/wolfSSL/wolfssl/blob/6694775d4b8c22e7411ec69e8a2b516f107b97ef/wolfcrypt/src/hc128.c</p>
-      <p><strong>Examples:</strong> 91B08896FBDA9EDB8B6F93A6BC811EC6:0x180003562</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">encrypt data using HC-128 via WolfSSL</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/encryption/hc-128</p>
+    <p><strong>Authors:</strong> ["blaine.stancill@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]</p>
+    <p><strong>References:</strong> https://github.com/wolfSSL/wolfssl/blob/6694775d4b8c22e7411ec69e8a2b516f107b97ef/wolfcrypt/src/hc128.c</p>
+    <p><strong>Examples:</strong> 91B08896FBDA9EDB8B6F93A6BC811EC6:0x180003562</p>
+    <pre><strong>Features</strong>
     - and:
       - characteristic: nzxor
       - number: 0x17 = 23 from line 153, tem0 = rotrFixed((ctx->T[(v)]),23);
@@ -43,10 +43,13 @@ permalink: "/encrypt-data-using-hc-128-via-wolfssl/"
       - number: 0x3FC = Compiler optimized size used in ANDs for the 1024 sized buffer
       - count(mnemonic(rol)): 48
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: blaine.stancill@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

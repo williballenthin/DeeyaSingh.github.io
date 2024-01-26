@@ -1,7 +1,7 @@
 ---
 permalink: "/inject-dll-reflectively/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/inject-dll-reflectively/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/inject-dll-reflectively/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">inject DLL reflectively</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> load-code/pe</p>
-      <p><strong>Authors:</strong> @Ana06</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection::Dynamic-link Library Injection [T1055.001], Defense Evasion::Reflective Code Loading [T1620]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://0x00sec.org/t/reflective-dll-injection/3080, https://www.ired.team/offensive-security/code-injection-process-injection/reflective-dll-injection</p>
-      <p><strong>Examples:</strong> E4C33AC3638EEF68311F8AC0D72483C7:0x401510</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">inject DLL reflectively</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/pe</p>
+    <p><strong>Authors:</strong> ["@ana06"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Process Injection::Dynamic-link Library Injection [T1055.001]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://0x00sec.org/t/reflective-dll-injection/3080, https://www.ired.team/offensive-security/code-injection-process-injection/reflective-dll-injection</p>
+    <p><strong>Examples:</strong> E4C33AC3638EEF68311F8AC0D72483C7:0x401510</p>
+    <pre><strong>Features</strong>
     - and:
       - os: windows
       - match: enumerate PE sections
@@ -47,10 +47,13 @@ permalink: "/inject-dll-reflectively/"
       - optional:
         - match: inspect section memory permissions
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: load-code"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: @ana06"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

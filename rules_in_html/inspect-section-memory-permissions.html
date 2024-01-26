@@ -1,7 +1,7 @@
 ---
 permalink: "/inspect-section-memory-permissions/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/inspect-section-memory-permissions/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/inspect-section-memory-permissions/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">inspect section memory permissions</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> load-code/pe</p>
-      <p><strong>Authors:</strong> @Ana06</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Discovery::Code Discovery::Inspect Section Memory Permissions [B0046.002]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> E4C33AC3638EEF68311F8AC0D72483C7:0x401480</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">inspect section memory permissions</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code/pe</p>
+    <p><strong>Authors:</strong> ["@ana06"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Discovery::Code Discovery::Inspect Section Memory Permissions [B0046.002]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> E4C33AC3638EEF68311F8AC0D72483C7:0x401480</p>
+    <pre><strong>Features</strong>
     - and:
       - os: windows
       - 3 or more:
@@ -69,10 +69,13 @@ permalink: "/inspect-section-memory-permissions/"
       - optional:
         - number: 0x1 = PAGE_NOACCESS
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: load-code"></span>  
+   
+  <span data-pagefind-filter="MBC: Discovery"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: @ana06"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

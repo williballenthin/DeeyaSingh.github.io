@@ -1,0 +1,58 @@
+---
+permalink: "/allocate-or-change-rw-memory/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>allocate or change RW memory</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/allocate-or-change-rw-memory/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">allocate or change RW memory</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> </p>
+    <p><strong>Authors:</strong> ["0x534a@mailbox.org", "@mr-tz"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Memory::Allocate Memory [C0007]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 17-02.dll_:0x1000D10D</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - match: allocate memory
+        - match: change memory protection
+      - or:
+        - number: 0x4 = PAGE_READWRITE
+        - instruction:
+          - mnemonic: lea
+          - offset: 0x4 = PAGE_READWRITE
+</pre>
+  </div>
+    
+   
+  <span data-pagefind-filter="MBC: Memory"></span>
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: 0x534a@mailbox.org"></span>
+<span data-pagefind-filter="author: @mr-tz"></span>
+  <footer>
+  </footer>
+</body>
+</html>

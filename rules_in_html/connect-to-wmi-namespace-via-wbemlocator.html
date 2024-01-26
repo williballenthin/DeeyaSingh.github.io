@@ -1,7 +1,7 @@
 ---
 permalink: "/connect-to-wmi-namespace-via-wbemlocator/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,38 +9,38 @@ permalink: "/connect-to-wmi-namespace-via-wbemlocator/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/connect-to-wmi-namespace-via-wbemlocator/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">connect to WMI namespace via WbemLocator</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/wmi</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Execution::Windows Management Instrumentation [T1047]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> al-khaser_x64.exe_:0x14001956e, al-khaser_x86.exe_:0x00445270</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">connect to WMI namespace via WbemLocator</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/wmi</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Execution::Windows Management Instrumentation [T1047]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> al-khaser_x64.exe_:0x14001956e, al-khaser_x86.exe_:0x00445270</p>
+    <pre><strong>Features</strong>
     - and:
       - basic block:
         - and:
           - api: ole32.CoCreateInstance
-          - bytes: 11 F8 90 45 3A 1D D0 11 89 1F 00 AA 00 4B 2E 24 = CLSID_WbemLocator
-          - bytes: 87 A6 12 DC 7F 73 CF 11 88 4D 00 AA 00 4B 2E 24 = IID_IWbemLocator
+          - com/class: WbemLocator
+          - com/interface: IWbemLocator
       - or:
         - and:
           - arch: i386
@@ -52,10 +52,13 @@ permalink: "/connect-to-wmi-namespace-via-wbemlocator/"
         - string: /ROOT\\CIMV2/i
         - string: /ROOT\\DEFAULT/i
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Execution"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

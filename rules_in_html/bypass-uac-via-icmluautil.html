@@ -1,7 +1,7 @@
 ---
 permalink: "/bypass-uac-via-icmluautil/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/bypass-uac-via-icmluautil/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/bypass-uac-via-icmluautil/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">bypass UAC via ICMLuaUtil</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> host-interaction/uac/bypass</p>
-      <p><strong>Authors:</strong> anamaria.martinezgom@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Abuse Elevation Control Mechanism::Bypass User Account Control [T1548.002]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://gist.github.com/hfiref0x/196af729106b780db1c73428b5a5d68d</p>
-      <p><strong>Examples:</strong> 08ac667c65d36d6542917655571e61c8.exe_:0x406831</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">bypass UAC via ICMLuaUtil</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> host-interaction/uac/bypass</p>
+    <p><strong>Authors:</strong> ["anamaria.martinezgom@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Abuse Elevation Control Mechanism::Bypass User Account Control [T1548.002]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://gist.github.com/hfiref0x/196af729106b780db1c73428b5a5d68d</p>
+    <p><strong>Examples:</strong> 08ac667c65d36d6542917655571e61c8.exe_:0x406831</p>
+    <pre><strong>Features</strong>
     - and:
       - or:
         - string: {3E5FC7F9-9A51-4367-9063-A120244FBEC7}
@@ -48,10 +48,13 @@ permalink: "/bypass-uac-via-icmluautil/"
             - description: IID_ICMLuaUtil
             - bytes: 74 6D DD 6E 07 C0 75 4E B7 6A E5 74 09 95 E2 4C = IID_ICMLuaUtil
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: host-interaction"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: anamaria.martinezgom@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

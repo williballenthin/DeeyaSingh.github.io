@@ -1,7 +1,7 @@
 ---
 permalink: "/decompress-data-using-aplib/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/decompress-data-using-aplib/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/decompress-data-using-aplib/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">decompress data using aPLib</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/compression</p>
-      <p><strong>Authors:</strong> @r3c0nst (Frank Boldewin), moritz.raabe@mandiant.com, cdong49@gatech.edu</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Data::Decompress Data::aPLib [C0025.003]</p>
-      <p><strong>References:</strong> https://ibsensoftware.com/files/aPLib-1.1.1.zip</p>
-      <p><strong>Examples:</strong> DAA13AE302FE8B618DDBF590537443EF:0x419F50, B43FCA5283BFC7022553EFF663683834:0x424, 757139E76FAE876AE50DD2C3AC11D5D8:0x413074</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">decompress data using aPLib</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/compression</p>
+    <p><strong>Authors:</strong> ["@r3c0nst (frank boldewin)", "moritz.raabe@mandiant.com", "cdong49@gatech.edu"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Decompress Data::aPLib [C0025.003]</p>
+    <p><strong>References:</strong> https://ibsensoftware.com/files/aPLib-1.1.1.zip</p>
+    <p><strong>Examples:</strong> DAA13AE302FE8B618DDBF590537443EF:0x419F50, B43FCA5283BFC7022553EFF663683834:0x424, 757139E76FAE876AE50DD2C3AC11D5D8:0x413074</p>
+    <pre><strong>Features</strong>
     - and:
       - description: aP_depack
       - match: contain loop
@@ -60,10 +60,15 @@ permalink: "/decompress-data-using-aplib/"
         - count(characteristic(calls from)): 2 or more
         - description: calls aP_getbit and aP_getgamma
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+   
+  <span data-pagefind-filter="MBC: Data"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: @r3c0nst (frank boldewin)"></span>
+<span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+<span data-pagefind-filter="author: cdong49@gatech.edu"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

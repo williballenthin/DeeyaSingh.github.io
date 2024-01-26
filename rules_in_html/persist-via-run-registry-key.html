@@ -1,0 +1,64 @@
+---
+permalink: "/persist-via-run-registry-key/"
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>persist via Run registry key</title>
+  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
+  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
+  <link data-pagefind-meta="url[href]" rel="canonical" href="/persist-via-run-registry-key/">
+</head>
+<body>
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container">
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div id="rule-name-container">
+    <h1 id="rule-name">persist via Run registry key</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> persistence/registry/run</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Persistence::Boot or Logon Autostart Execution::Registry Run Keys / Startup Folder [T1547.001]</p>
+    <p><strong>MBC:</strong> Persistence::Registry Run Keys / Startup Folder [F0012]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 06-03.exe_:0x401130, b87e9dd18a5533a09d3e48a7a1efbcf6:0x1400070E0, 9ff8e68343cc29c1036650fc153e69f7:0x470624</p>
+    <pre><strong>Features</strong>
+    - and:
+      - or:
+        - match: set registry value
+        - number: 0x80000001 = HKEY_CURRENT_USER
+        - number: 0x80000002 = HKEY_LOCAL_MACHINE
+      - or:
+        - and:
+          - string: /Software\\Microsoft\\Windows\\CurrentVersion/i
+          - or:
+            - string: /Run/i
+            - string: /Explorer\\Shell Folders/i
+            - string: /User Shell Folders/i
+            - string: /RunServices/i
+            - string: /Policies\\Explorer\\Run/i
+        - string: /Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\load/i
+        - string: /System\\CurrentControlSet\\Control\\Session Manager\\BootExecute/i
+</pre>
+  </div>
+  <span data-pagefind-filter="namespace: persistence"></span>  
+  <span data-pagefind-filter="ATT&CK: Persistence"></span> 
+  <span data-pagefind-filter="MBC: Persistence"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
+  <footer>
+  </footer>
+</body>
+</html>

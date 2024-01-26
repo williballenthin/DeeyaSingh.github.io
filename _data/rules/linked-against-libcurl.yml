@@ -1,13 +1,16 @@
+---
 rule:
   meta:
     name: linked against libcurl
     namespace: linking/static/libcurl
     authors:
-      - moritz.raabe@mandiant.com
-    scope: file
+    - moritz.raabe@mandiant.com
+    scopes:
+      static: file
+      dynamic: file
     examples:
-      - A90E5B3454AA71D9700B2EA54615F44B
+    - A90E5B3454AA71D9700B2EA54615F44B
   features:
-    - or:
-      - substring: "CLIENT libcurl"
-      - substring: "curl.haxx.se"
+  - or:
+    - substring: CLIENT libcurl
+    - substring: curl.haxx.se

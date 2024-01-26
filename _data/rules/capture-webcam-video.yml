@@ -1,14 +1,18 @@
+---
 rule:
   meta:
     name: capture webcam video
     namespace: collection/webcam
     authors:
-      - "@johnk3r"
+    - "@johnk3r"
     description: Rule that detects a system's webcam being used to capture video
-    scope: function
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
-      - Collection::Video Capture [T1125]
+    - Collection::Video Capture [T1125]
   features:
+  - or:
     - and:
       - os: windows
       - api: capCreateCaptureWindow
@@ -22,6 +26,22 @@ rule:
             - api: SendMessage
             - number: 0x417 = WM_CAP_FILE_SAVEAS
         - basic block:
+          - and:
+            - api: SendMessage
+            - number: 0x414 = WM_CAP_FILE_SET_CAPTURE_FILE
+    - and:
+      - os: windows
+      - api: capCreateCaptureWindow
+      - call:
+        - and:
+          - api: SendMessage
+          - number: 0x43E = WM_CAP_SEQUENCE
+      - or:
+        - call:
+          - and:
+            - api: SendMessage
+            - number: 0x417 = WM_CAP_FILE_SAVEAS
+        - call:
           - and:
             - api: SendMessage
             - number: 0x414 = WM_CAP_FILE_SET_CAPTURE_FILE

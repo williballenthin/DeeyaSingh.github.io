@@ -1,15 +1,18 @@
+---
 rule:
   meta:
     name: obfuscated with KoiVM
     namespace: anti-analysis/obfuscation
     authors:
-      - michael.hunhoff@mandiant.com
-    scope: file
+    - michael.hunhoff@mandiant.com
+    scopes:
+      static: file
+      dynamic: unsupported
     att&ck:
-      - Defense Evasion::Obfuscated Files or Information [T1027]
+    - Defense Evasion::Obfuscated Files or Information [T1027]
     mbc:
-      - Anti-Static Analysis::Executable Code Obfuscation [B0032]
+    - Anti-Static Analysis::Executable Code Obfuscation [B0032]
   features:
-    - or:
-      - namespace: KoiVM.Runtime
-      - class: KoiVM.Runtime.VMEntry
+  - or:
+    - namespace: KoiVM.Runtime
+    - class: KoiVM.Runtime.VMEntry

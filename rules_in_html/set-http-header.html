@@ -1,7 +1,7 @@
 ---
 permalink: "/set-http-header/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/set-http-header/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/set-http-header/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">set HTTP header</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/http</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::HTTP Communication::Set Header [C0002.013]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x1000E230</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">set HTTP header</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com", "anushka.virgaonkar@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Set Header [C0002.013]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 6A352C3E55E8AE5ED39DC1BE7FB964B1:0x1000E230</p>
+    <pre><strong>Features</strong>
     - or:
       - api: winhttp.WinHttpAddRequestHeaders
       - property/write: System.Net.WebClient::Headers
@@ -43,10 +43,14 @@ permalink: "/set-http-header/"
         - optional:
           - property/read: System.Net.WebClient::Headers
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

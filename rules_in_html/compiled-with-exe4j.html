@@ -1,7 +1,7 @@
 ---
 permalink: "/compiled-with-exe4j/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/compiled-with-exe4j/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/compiled-with-exe4j/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">compiled with exe4j</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> compiler/exe4j</p>
-      <p><strong>Authors:</strong> johnk3r</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> 6b25f1e754ef486bbb28a66d46bababe:0x404EDE</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">compiled with exe4j</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> compiler/exe4j</p>
+    <p><strong>Authors:</strong> ["johnk3r"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> 6b25f1e754ef486bbb28a66d46bababe:0x404EDE</p>
+    <pre><strong>Features</strong>
     - or:
       - string: exe4j_log
       - string: install4j_log
@@ -49,10 +49,13 @@ permalink: "/compiled-with-exe4j/"
       - string: INSTALL4J
       - string: EXE4J.ISINSTALL4J
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: compiler"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: johnk3r"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

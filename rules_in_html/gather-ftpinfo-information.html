@@ -1,7 +1,7 @@
 ---
 permalink: "/gather-ftpinfo-information/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/gather-ftpinfo-information/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/gather-ftpinfo-information/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">gather ftpinfo information</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> collection/file-managers</p>
-      <p><strong>Authors:</strong> @_re_fox</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Credential Access::Credentials from Password Stores [T1555]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://www.ftpinfo.ru/</p>
-      <p><strong>Examples:</strong> 5a2f620f29ca2f44fc22df67b674198f:0x40DF62</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">gather ftpinfo information</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> collection/file-managers</p>
+    <p><strong>Authors:</strong> ["@_re_fox"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Credential Access::Credentials from Password Stores [T1555]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://www.ftpinfo.ru/</p>
+    <p><strong>Examples:</strong> 5a2f620f29ca2f44fc22df67b674198f:0x40DF62</p>
+    <pre><strong>Features</strong>
     - and:
       - string: ServerList.xml
       - string: DataDir
@@ -42,10 +42,13 @@ permalink: "/gather-ftpinfo-information/"
         - substring: Software\MAS-Soft\FTPInfo\Setup
         - substring: FTPInfo
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: collection"></span>  
+  <span data-pagefind-filter="ATT&CK: Credential Access"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: @_re_fox"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

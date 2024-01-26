@@ -1,7 +1,7 @@
 ---
 permalink: "/reference-dns-over-https-endpoints/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/reference-dns-over-https-endpoints/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/reference-dns-over-https-endpoints/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">reference DNS over HTTPS endpoints</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/dns</p>
-      <p><strong>Authors:</strong> markus.neis@swisscom.com / @markus_neis</p>
-      <p><strong>Scope:</strong> file</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::DNS Communication::Server Connect [C0011.002]</p>
-      <p><strong>References:</strong> https://github.com/curl/curl/wiki/DNS-over-HTTPS</p>
-      <p><strong>Examples:</strong> 749e7becf00fccc6dff324a83976dc0d:0x00004589, 749e7becf00fccc6dff324a83976dc0d:0x000045d6</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">reference DNS over HTTPS endpoints</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/dns</p>
+    <p><strong>Authors:</strong> ["markus.neis@swisscom.com / @markus_neis"]</p>
+    <pre><strong>Scope:</strong>
+      static: file
+      dynamic: file</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::DNS Communication::Server Connect [C0011.002]</p>
+    <p><strong>References:</strong> https://github.com/curl/curl/wiki/DNS-over-HTTPS</p>
+    <p><strong>Examples:</strong> 749e7becf00fccc6dff324a83976dc0d:0x00004589, 749e7becf00fccc6dff324a83976dc0d:0x000045d6</p>
+    <pre><strong>Features</strong>
     - or:
       - string: /https://doh.seby.io:8443/dns-query.*/i
       - string: /https://family.cloudflare-dns.com/dns-query.*/i
@@ -100,10 +100,13 @@ permalink: "/reference-dns-over-https-endpoints/"
       - string: /https://resolver-eu.lelux.fi/dns-query.*/i
       - string: /https://doh-jp.blahdns.com/dns-query.*/i
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
+  <span data-pagefind-filter="author: markus.neis@swisscom.com / @markus_neis"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 permalink: "/reference-http-user-agent-string/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,42 +9,45 @@ permalink: "/reference-http-user-agent-string/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/reference-http-user-agent-string/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">reference HTTP User-Agent string</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/http</p>
-      <p><strong>Authors:</strong> @mr-tz</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::HTTP Communication [C0002]</p>
-      <p><strong>References:</strong> https://www.useragents.me/, https://www.whatismybrowser.com/guides/the-latest-user-agent/</p>
-      <p><strong>Examples:</strong> 0796F1C1EA0A142FC1EB7109A44C86CB:0x4043F0</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">reference HTTP User-Agent string</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http</p>
+    <p><strong>Authors:</strong> ["@mr-tz"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication [C0002]</p>
+    <p><strong>References:</strong> https://www.useragents.me/, https://www.whatismybrowser.com/guides/the-latest-user-agent/</p>
+    <p><strong>Examples:</strong> 0796F1C1EA0A142FC1EB7109A44C86CB:0x4043F0</p>
+    <pre><strong>Features</strong>
     - or:
       - substring: Mozilla/5.0
       - substring: like Gecko
       - api: urlmon.ObtainUserAgentString
       - property/read: System.Net.HttpWebRequest::UserAgent
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: @mr-tz"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

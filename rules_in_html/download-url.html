@@ -1,7 +1,7 @@
 ---
 permalink: "/download-url/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/download-url/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/download-url/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">download URL</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> communication/http/client</p>
-      <p><strong>Authors:</strong> matthew.williams@mandiant.com, michael.hunhoff@mandiant.com, anushka.virgaonkar@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Communication::HTTP Communication::Download URL [C0002.006]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> F5C93AC768C8206E87544DDD76B3277C:0x100020F0, Practical Malware Analysis Lab 20-01.exe_:0x401040</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">download URL</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> communication/http/client</p>
+    <p><strong>Authors:</strong> ["matthew.williams@mandiant.com", "michael.hunhoff@mandiant.com", "anushka.virgaonkar@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: call</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Communication::HTTP Communication::Download URL [C0002.006]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> F5C93AC768C8206E87544DDD76B3277C:0x100020F0, Practical Malware Analysis Lab 20-01.exe_:0x401040</p>
+    <pre><strong>Features</strong>
     - or:
       - api: urlmon.URLDownloadToFile
       - api: urlmon.URLDownloadToCacheFile
@@ -46,10 +46,15 @@ permalink: "/download-url/"
       - api: System.Net.WebClient::DownloadFileTaskAsync
       - api: Microsoft.VisualBasic.Devices.Network::DownloadFile
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: communication"></span>  
+   
+  <span data-pagefind-filter="MBC: Communication"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): call"></span>
+  <span data-pagefind-filter="author: matthew.williams@mandiant.com"></span>
+<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
+<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

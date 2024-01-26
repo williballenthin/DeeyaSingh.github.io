@@ -1,11 +1,14 @@
+---
 rule:
   meta:
     name: send keystrokes
     namespace: host-interaction/hardware/keyboard
     authors:
-      - anushka.virgaonkar@mandiant.com
-    scope: function
+    - anushka.virgaonkar@mandiant.com
+    scopes:
+      static: function
+      dynamic: call
   features:
-    - or:
-      - api: System.Windows.Forms.SendKeys::Send
-      - api: System.Windows.Forms.SendKeys::SendWait
+  - or:
+    - api: System.Windows.Forms.SendKeys::Send
+    - api: System.Windows.Forms.SendKeys::SendWait

@@ -1,7 +1,7 @@
 ---
 permalink: "/resolve-function-by-brute-ratel-badger-hash/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/resolve-function-by-brute-ratel-badger-hash/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/resolve-function-by-brute-ratel-badger-hash/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">resolve function by Brute Ratel Badger hash</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> linking/runtime-linking</p>
-      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Dynamic API Resolution [T1027.007]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://bruteratel.com/release_notes/releases.txt</p>
-      <p><strong>Examples:</strong> 64ce9ab801d9bef5284b408c3373dd30ba2dc6952c0950c8049be067b5f24530:0x6DB42430</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">resolve function by Brute Ratel Badger hash</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/runtime-linking</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Dynamic API Resolution [T1027.007]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information [E1027]</p>
+    <p><strong>References:</strong> https://bruteratel.com/release_notes/releases.txt</p>
+    <p><strong>Examples:</strong> 64ce9ab801d9bef5284b408c3373dd30ba2dc6952c0950c8049be067b5f24530:0x6DB42430</p>
+    <pre><strong>Features</strong>
     - or:
       - basic block:
         - and:
@@ -59,10 +59,13 @@ permalink: "/resolve-function-by-brute-ratel-badger-hash/"
             - mnemonic: or
             - operand[1].number: 41943040
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: linking"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

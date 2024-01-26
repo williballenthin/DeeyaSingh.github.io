@@ -1,19 +1,22 @@
+---
 rule:
   meta:
     name: gather cyberduck information
     namespace: collection/file-managers
     authors:
-      - "@_re_fox"
-    scope: function
+    - "@_re_fox"
+    scopes:
+      static: function
+      dynamic: thread
     att&ck:
-      - Credential Access::Credentials from Password Stores [T1555]
+    - Credential Access::Credentials from Password Stores [T1555]
     references:
-      - https://cyberduck.io/ftp/
+    - https://cyberduck.io/ftp/
     examples:
-      - 5a2f620f29ca2f44fc22df67b674198f:0x40D965
+    - 5a2f620f29ca2f44fc22df67b674198f:0x40D965
   features:
-    - and:
-      - substring: "\\Cyberduck"
-      - or:
-        - string: "user.config"
-        - string: ".duck"
+  - and:
+    - substring: "\\Cyberduck"
+    - or:
+      - string: user.config
+      - string: ".duck"

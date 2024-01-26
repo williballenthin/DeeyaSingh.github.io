@@ -1,7 +1,7 @@
 ---
 permalink: "/self-delete/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,47 +9,54 @@ permalink: "/self-delete/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/self-delete/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">self delete</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> anti-analysis/anti-forensic/self-deletion</p>
-      <p><strong>Authors:</strong> michael.hunhoff@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Indicator Removal::File Deletion [T1070.004]</p>
-      <p><strong>MBC:</strong> Defense Evasion::Self Deletion::COMSPEC Environment Variable [F0007.001]</p>
-      <p><strong>References:</strong> </p>
-      <p><strong>Examples:</strong> Practical Malware Analysis Lab 14-02.exe_:0x401880</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">self delete</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> anti-analysis/anti-forensic/self-deletion</p>
+    <p><strong>Authors:</strong> ["michael.hunhoff@mandiant.com", "@mr-tz"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Indicator Removal::File Deletion [T1070.004]</p>
+    <p><strong>MBC:</strong> Defense Evasion::Self Deletion::COMSPEC Environment Variable [F0007.001]</p>
+    <p><strong>References:</strong> </p>
+    <p><strong>Examples:</strong> Practical Malware Analysis Lab 14-02.exe_:0x401880</p>
+    <pre><strong>Features</strong>
     - and:
       - or:
         - match: get COMSPEC environment variable
         - string: cmd.exe
-      - match: host-interaction/process/create
-      - string: /\/c\s*del\s*/
-      - description: /c del
+        - match: host-interaction/process/create
+      - or:
+        - string: /\/c\s*del\s*/
+        - description: /c del
+        - string: /del\s*\S/
+        - description: del "%s"
       - optional:
         - string: /\s*>\s*nul\s*/i
         - description: > nul
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: anti-analysis"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  <span data-pagefind-filter="MBC: Defense Evasion"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
+<span data-pagefind-filter="author: @mr-tz"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

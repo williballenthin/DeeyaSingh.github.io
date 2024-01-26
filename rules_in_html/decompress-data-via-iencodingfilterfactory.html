@@ -1,7 +1,7 @@
 ---
 permalink: "/decompress-data-via-iencodingfilterfactory/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,42 +9,45 @@ permalink: "/decompress-data-via-iencodingfilterfactory/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/decompress-data-via-iencodingfilterfactory/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">decompress data via IEncodingFilterFactory</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/compression</p>
-      <p><strong>Authors:</strong> matthew.williams@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Data::Decompress Data::IEncodingFilterFactory [C0025.002]</p>
-      <p><strong>References:</strong> https://www.virusbulletin.com/virusbulletin/2012/09/urlzone-reloaded-new-evolution/</p>
-      <p><strong>Examples:</strong> FBBAAF569B63F6398503E4F1979CABEF:0x40691F</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">decompress data via IEncodingFilterFactory</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/compression</p>
+    <p><strong>Authors:</strong> ["matthew.williams@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Decompress Data::IEncodingFilterFactory [C0025.002]</p>
+    <p><strong>References:</strong> https://www.virusbulletin.com/virusbulletin/2012/09/urlzone-reloaded-new-evolution/</p>
+    <p><strong>Examples:</strong> FBBAAF569B63F6398503E4F1979CABEF:0x40691F</p>
+    <pre><strong>Features</strong>
     - and:
       - api: ole32.CoCreateInstance
       - bytes: D0 7C C3 54 44 D9 D0 11 A9 F4 00 60 97 94 23 11 = StdEncodingFilterFac
       - bytes: 00 DE BD 70 8E C1 D0 11 A9 CE 00 60 97 94 23 11 = IEncodingFilterFactory
       - count(offset(0x10 = IEncodingFilterFactory.GetDefaultFilter and <filter>.DoDecode)): 2 or more
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+   
+  <span data-pagefind-filter="MBC: Data"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: matthew.williams@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

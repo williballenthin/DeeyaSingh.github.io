@@ -1,7 +1,7 @@
 ---
 permalink: "/resolve-function-by-fnv-1a-hash/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/resolve-function-by-fnv-1a-hash/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/resolve-function-by-fnv-1a-hash/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">resolve function by FNV-1a hash</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> linking/runtime-linking</p>
-      <p><strong>Authors:</strong> still@teamt5.org</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://blog.xorhex.com/blog/reddeltaplugxchangeup/</p>
-      <p><strong>Examples:</strong> </p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">resolve function by FNV-1a hash</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/runtime-linking</p>
+    <p><strong>Authors:</strong> ["still@teamt5.org"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: thread</pre>
+    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information::Indicator Removal from Tools [T1027.005]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://blog.xorhex.com/blog/reddeltaplugxchangeup/</p>
+    <p><strong>Examples:</strong> </p>
+    <pre><strong>Features</strong>
     - or:
       - number: 0x53b2070f = FNV(LoadLibraryA)
       - number: 0xfaba0065 = FNV(CloseHandle)
@@ -46,10 +46,13 @@ permalink: "/resolve-function-by-fnv-1a-hash/"
       - number: 0x54fcc943 = FNV(ReadFile)
       - number: 0x2fa62ca8 = FNV(Sleep)
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: linking"></span>  
+  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
+  <span data-pagefind-filter="author: still@teamt5.org"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

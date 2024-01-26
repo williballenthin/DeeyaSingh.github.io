@@ -1,7 +1,7 @@
 ---
 permalink: "/execute-vbscript-javascript-or-jscript-in-memory/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/execute-vbscript-javascript-or-jscript-in-memory/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/execute-vbscript-javascript-or-jscript-in-memory/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">execute VBScript Javascript or JScript in memory</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> load-code</p>
-      <p><strong>Authors:</strong> blas.kojusner@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://gist.github.com/odzhan/d18145b9538a3653be2f9a580b53b063</p>
-      <p><strong>Examples:</strong> 65B1EA6E5254D458C602504CEEDA5E05:0x401160</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">execute VBScript Javascript or JScript in memory</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> load-code</p>
+    <p><strong>Authors:</strong> ["blas.kojusner@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://gist.github.com/odzhan/d18145b9538a3653be2f9a580b53b063</p>
+    <p><strong>Examples:</strong> 65B1EA6E5254D458C602504CEEDA5E05:0x401160</p>
+    <pre><strong>Features</strong>
     - and:
       - api: CoCreateInstance
       - bytes: E1 2A 1A BB F9 A4 CF 11 8F 20 00 80 5F 2C D0 64 = IID_IActiveScript
@@ -42,10 +42,13 @@ permalink: "/execute-vbscript-javascript-or-jscript-in-memory/"
       - operand[0].number: 0x2 = SCRIPTSTATE_CONNECTED
       - operand[1].offset: 0x14 = ParseScriptText
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: load-code"></span>  
+   
+  
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: blas.kojusner@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

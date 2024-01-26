@@ -1,7 +1,7 @@
 ---
 permalink: "/decompress-data-using-ucl/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/decompress-data-using-ucl/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/decompress-data-using-ucl/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">decompress data using UCL</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> data-manipulation/compression</p>
-      <p><strong>Authors:</strong> jakub.jozwiak@mandiant.com</p>
-      <p><strong>Scope:</strong> function</p>
-      <p><strong>ATT&CK:</strong> </p>
-      <p><strong>MBC:</strong> Data::Decompress Data [C0025]</p>
-      <p><strong>References:</strong> http://www.oberhumer.com/opensource/ucl/</p>
-      <p><strong>Examples:</strong> 3d0d79c4715e5b6dd2f8704e4878d57646d5a92e1116aec2ef81a5679ba45cd8:0x14005BB40</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">decompress data using UCL</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> data-manipulation/compression</p>
+    <p><strong>Authors:</strong> ["jakub.jozwiak@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: function
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> </p>
+    <p><strong>MBC:</strong> Data::Decompress Data [C0025]</p>
+    <p><strong>References:</strong> http://www.oberhumer.com/opensource/ucl/</p>
+    <p><strong>Examples:</strong> 3d0d79c4715e5b6dd2f8704e4878d57646d5a92e1116aec2ef81a5679ba45cd8:0x14005BB40</p>
+    <pre><strong>Features</strong>
     - and:
       - match: contain loop
       - or:
@@ -58,10 +58,13 @@ permalink: "/decompress-data-using-ucl/"
         - number: 0xFFFFFF33 = UCL_E_INPUT_NOT_CONSUMED
         - number: 0xFFFFFF32 = UCL_E_OVERLAP_OVERRUN
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: data-manipulation"></span>  
+   
+  <span data-pagefind-filter="MBC: Data"></span>
+  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: jakub.jozwiak@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>

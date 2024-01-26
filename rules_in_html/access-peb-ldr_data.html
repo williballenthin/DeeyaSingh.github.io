@@ -1,7 +1,7 @@
 ---
 permalink: "/access-peb-ldr_data/"
-
 ---
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,32 +9,32 @@ permalink: "/access-peb-ldr_data/"
   <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
   <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
   <link data-pagefind-meta="url[href]" rel="canonical" href="/access-peb-ldr_data/">
-
 </head>
 <body>
   <header>
     <nav class="navbar bg-body-tertiary">
       <div class="container">
-      <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-      </a>
-    
+        <a class="navbar-brand" href="{{ "/" | relative_url }}">
+          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+        </a>
       </div>
     </nav>
   </header>
 
-    <div id="rule-name-container">
-      <h1 id="rule-name">access PEB ldr_data</h1>
-    </div>
-    <div id="rule-details">
-      <p><strong>Namespace:</strong> linking/runtime-linking</p>
-      <p><strong>Authors:</strong> moritz.raabe@mandiant.com</p>
-      <p><strong>Scope:</strong> basic block</p>
-      <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
-      <p><strong>MBC:</strong> </p>
-      <p><strong>References:</strong> https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb_ldr_data.htm, https://github.com/d35ha/CallObfuscator/blob/5834aff9ff4511f1408ae4ce80b79737af4ae77b/ShellCode/shell_x64.asm#L8</p>
-      <p><strong>Examples:</strong> 3FDFB2D522E7DEECAAAF2F87420F7E75:0x4117B7</p>
-      <pre><strong>Features</strong>
+  <div id="rule-name-container">
+    <h1 id="rule-name">access PEB ldr_data</h1>
+  </div>
+  <div id="rule-details">
+    <p><strong>Namespace:</strong> linking/runtime-linking</p>
+    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
+    <pre><strong>Scope:</strong>
+      static: basic block
+      dynamic: unsupported</pre>
+    <p><strong>ATT&CK:</strong> Execution::Shared Modules [T1129]</p>
+    <p><strong>MBC:</strong> </p>
+    <p><strong>References:</strong> https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/peb_ldr_data.htm, https://github.com/d35ha/CallObfuscator/blob/5834aff9ff4511f1408ae4ce80b79737af4ae77b/ShellCode/shell_x64.asm#L8</p>
+    <p><strong>Examples:</strong> 3FDFB2D522E7DEECAAAF2F87420F7E75:0x4117B7</p>
+    <pre><strong>Features</strong>
     - or:
       - and:
         - arch: i386
@@ -57,10 +57,13 @@ permalink: "/access-peb-ldr_data/"
           - offset: 0x20 = PEB.LDR_DATA.InMemoryOrderModuleList
           - offset: 0x30 = PEB.LDR_DATA.InInitializationOrderModuleList
 </pre>
-    </div>
-    
+  </div>
+  <span data-pagefind-filter="namespace: linking"></span>  
+  <span data-pagefind-filter="ATT&CK: Execution"></span> 
+  
+  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
+  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
   <footer>
   </footer>
-  
-  </body>
-  </html>
+</body>
+</html>
