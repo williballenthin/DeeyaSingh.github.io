@@ -79,9 +79,7 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install Pagefind
-        run: npm install -g pagefind
-
       - name: Run Pagefind
-        run: npx pagefind --site rules_in_html --serve
+        run: npm_config_yes=true npx pagefind --site "rules_in_html"
+
 
