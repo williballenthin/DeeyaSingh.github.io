@@ -82,5 +82,6 @@ jobs:
       - name: Install Pagefind
         run: npm install -g pagefind
 
-      - name: Run Node.js command
-        run: npx -y pagefind --site rules_in_html --serve
+      - name: Run Pagefind
+        run: npx pagefind index --site rules_in_html --serve
+
