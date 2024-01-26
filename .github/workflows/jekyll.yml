@@ -20,6 +20,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository with submodules
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.146.0
@@ -35,11 +39,6 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
 
-      - name: Checkout repository with submodules
-        uses: actions/checkout@v2
-        with:
-          submodules: 'recursive'
-
       - name: Update submodule
         run: git submodule update --remote --recursive
 
@@ -54,7 +53,6 @@ jobs:
       - name: Run Pagefind
         run: npm_config_yes=true npx pagefind --site "rules_in_html"
 
-
       - name: Setup Ruby and Install Jekyll
         run: |
           bundle install
@@ -64,7 +62,6 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
