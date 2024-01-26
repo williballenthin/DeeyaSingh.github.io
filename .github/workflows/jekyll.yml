@@ -56,10 +56,17 @@ jobs:
       - name: Run Pagefind
         run: npm_config_yes=true npx pagefind --site "rules_in_html"
 
+
+      - name: Setup Ruby and Install Jekyll
+        run: |
+          bundle install
+          gem install jekyll
+
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
