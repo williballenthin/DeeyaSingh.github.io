@@ -4,6 +4,8 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour
 
 permissions:
   contents: read
@@ -53,3 +55,29 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+
+      - name: Update submodule
+        run: git submodule update --remote --recursive
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.146.0
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
+          cache-version: 0
+
+      - name: Run Ruby command
+        run: ruby convert.rb
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Run Node.js command
+        run: npx -y pagefind --site rules_in_html --serve
