@@ -34,9 +34,11 @@ permalink: /rule-library/
   {% endif %}
   <script src="/rules_in_html/pagefind/pagefind-ui.js" type="text/javascript"></script>
   <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      new PagefindUI({ element: "#search" });
-    });
+    new PagefindUI({
+    element: "#search",
+    showEmptyFilters: false,
+    excerptLength: 15
+});
   </script>
   
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
