@@ -71,10 +71,12 @@ def convert_yaml_to_html(yaml_file, output_dir)
   scope_filters = ''
   scope_filters += "<span data-pagefind-filter=\"scope(static): #{scopes_static}\"></span>" unless scopes_static.to_s.empty?
   scope_filters += "<span data-pagefind-filter=\"scope(dynamic): #{scopes_dynamic}\"></span>" unless scopes_dynamic.to_s.empty?
-
+  permalink_namespace = "#{namespace.downcase.gsub(' ', '-')}/" unless namespace.empty?
+  permalink = "/#{permalink_namespace}#{rule.fetch('name', '').gsub(' ', '-').downcase}/"
+  
   html_content = <<~HTML
   ---
-  permalink: "/#{rule.fetch('name', '').gsub(' ', '-').downcase}/"
+  permalink: "#{permalink}"
   ---
 
   <!DOCTYPE html>
@@ -83,7 +85,7 @@ def convert_yaml_to_html(yaml_file, output_dir)
     <title>#{rule.fetch('name', '')}</title>
     <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
     <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-    <link data-pagefind-meta="url[href]" rel="canonical" href="/#{rule.fetch('name', '').gsub(' ', '-').downcase}/">
+    <link data-pagefind-meta="url[href]" rel="canonical" href="#{permalink}">
   </head>
   <body>
     <header>
