@@ -19,9 +19,11 @@ permalink: /rule-library/
   {% for rule_file in site.data.rules %}
     {% assign rule = rule_file[1].rule %}
     <div class="rule-card" data-namespace="{{ rule.meta.namespace }}" data-scope="{{ rule.meta.scope }}" data-mbc="{{ rule.meta.mbc | join: ','}}" data-attck="{{ rule.meta['att&ck'] | join: ',' }}">
-      <h3><a href="/{{ rule.meta.name | replace: ' ', '-' | downcase | url_encode }}/">{{ rule.meta.name }}</a></h3>
-
-
+       {% if rule.meta.namespace %}
+       <a href="/{{ rule.meta.namespace | replace: ' ', '-' | downcase }}/{{ rule.meta.name | replace: ' ', '-' | downcase }}">{{ rule.meta.name }}</a>
+       {% else %}
+       <a href="/{{ rule.meta.name | replace: ' ', '-' | downcase }}/">{{ rule.meta.name }}</a>
+       {% endif %}
       <p>{{ rule.meta.namespace }}</p>
       <p>Authors: <span class="card-author">{{ rule.meta.authors | join: ", " }}</span></p>
     </div>
