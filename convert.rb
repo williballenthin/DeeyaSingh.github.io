@@ -1,10 +1,10 @@
+require 'yaml'
+require 'fileutils'
+
 def convert_yaml_to_html(yaml_file, output_dir)
   data = YAML.load_file(yaml_file)
 
   rule = data.fetch('rule', {}).fetch('meta', {})
-  
-  # Extract last modified date of the YAML file
-  last_modified_date = File.mtime(yaml_file).strftime("%Y-%m-%d")
 
   namespace = rule.fetch('namespace', '')
   authors = rule.fetch('authors', []).join(', ')
@@ -67,20 +67,16 @@ def convert_yaml_to_html(yaml_file, output_dir)
   namespace_filters = "<span data-pagefind-filter=\"namespace: #{namespace_first_word}\"></span>" unless namespace.to_s.empty?
   attack_filters = "<span data-pagefind-filter=\"ATT&CK: #{attack_first_word}\"></span>" unless attack.to_s.empty?
   mbc_filters = "<span data-pagefind-filter=\"MBC: #{mbc_first_word}\"></span>" unless mbc.to_s.empty?
-  namespace_sort = "<span data-pagefind-sort=\"namespace: #{namespace_first_word}\"></span>" unless namespace.to_s.empty?
-  attack_sort = "<span data-pagefind-sort=\"ATT&CK: #{attack_first_word}\"></span>" unless attack.to_s.empty?
-  mbc_sort = "<span data-pagefind-sort=\"MBC: #{mbc_first_word}\"></span>" unless mbc.to_s.empty?
+
   scope_filters = ''
   scope_filters += "<span data-pagefind-filter=\"scope(static): #{scopes_static}\"></span>" unless scopes_static.to_s.empty?
   scope_filters += "<span data-pagefind-filter=\"scope(dynamic): #{scopes_dynamic}\"></span>" unless scopes_dynamic.to_s.empty?
   permalink_namespace = "#{namespace.downcase.gsub(' ', '-')}/" unless namespace.empty?
   permalink = "/#{permalink_namespace}#{rule.fetch('name', '').gsub(' ', '-').downcase}/"
-
+  
   html_content = <<~HTML
   ---
-  layout: default
   permalink: "#{permalink}"
-  last_modified_date: #{last_modified_date}  # Include last modified date of YAML file here
   ---
 
   <!DOCTYPE html>
@@ -91,10 +87,19 @@ def convert_yaml_to_html(yaml_file, output_dir)
     <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
     <link data-pagefind-meta="url[href]" rel="canonical" href="#{permalink}">
   </head>
-  <body style="background: #E1EBEE">
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="{{ "/" | relative_url }}">
+            <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
+          </a>
+        </div>
+      </nav>
+    </header>
 
     <div id="rule-name-container">
-      <h1 id="rule-name">#{rule.fetch('name', '')}#{' <span class="badge badge-secondary">New</span>' if last_modified_date >= Date.today.prev_day(10).strftime("%Y-%m-%d")}</h1>
+      <h1 id="rule-name">#{rule.fetch('name', '')}</h1>
     </div>
     <div id="rule-details">
       <p><strong>Namespace:</strong> #{namespace}</p>
@@ -106,19 +111,48 @@ def convert_yaml_to_html(yaml_file, output_dir)
       <p><strong>Examples:</strong> #{examples}</p>
       <pre><strong>Features</strong>\n#{features_html}</pre>
     </div>
-    #{namespace_filters} 
-    #{namespace_sort} 
+    #{namespace_filters}  
     #{attack_filters} 
     #{mbc_filters}
     #{scope_filters}
-    #{attack_sort} 
-    #{mbc_sort}
     #{authors.map { |author| "<span data-pagefind-filter=\"author: #{author}\"></span>" }.join("\n")}
-   
+    <footer>
+    </footer>
   </body>
   </html>
   HTML
 
   output_file = File.join(output_dir, File.basename(yaml_file, '.yml') + '.html')
   File.write(output_file, html_content)
+end
+
+def main
+  # Convert YAML to HTML
+  input_dir = '_data/rules'  # Change the input directory to 'capa-rules'
+  output_dir = 'rules_in_html'
+  Dir.glob(File.join(input_dir, '*.yml')).each do |yaml_file|
+    convert_yaml_to_html(yaml_file, output_dir)
+  end
+
+  # Write individual YAML files
+  capa_rules_path = "capa-rules"
+  output_folder = "_data/rules"
+  FileUtils.mkdir_p(output_folder)
+  yaml_files = Dir[File.join(capa_rules_path, '**/*.yml')]
+
+  yaml_files.each_with_index do |file_path, index|
+    rule_data = YAML.safe_load(File.read(file_path))
+    rule_name = File.basename(file_path, ".yml")
+    filename = "#{rule_name.downcase.gsub(' ', '_')}.yml"
+    output_file_path = File.join(output_folder, filename)
+    File.open(output_file_path, 'w') do |file|
+      file.puts YAML.dump(rule_data)
+    end
+  end
+
+  puts "Individual YAML files written to #{output_folder}"
+end
+
+if __FILE__ == $PROGRAM_NAME
+  main
 end
