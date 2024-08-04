@@ -3,17 +3,18 @@ name: Update Modified Dates
 on:
   schedule:
     - cron: '0 0 * * *'
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   update-dates:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout the repository
+      - name: Check out the repository
         uses: actions/checkout@v3
         with:
-          submodules: true  
+          ssh-key: ${{ secrets.PRIVSSH }}
+          submodules: true  # Initialize and update submodules if any
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -23,12 +24,15 @@ jobs:
       - name: Run the modified-dates script
         run: python modified-dates.py
 
-      - name: Commit and push changes
-        env:
-          PAT: ${{ secrets.PRIVSSH }}
+      - name: Configure Git
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
+
+      - name: Commit and push changes
+        env:
+          GIT_SSH_COMMAND: "ssh -i ${{ secrets.PRIVSSH }} -o StrictHostKeyChecking=no"
+        run: |
           git add file_modification_dates.txt
           git commit -m "Update file modification dates"
-          git push https://x-access-token:${{ secrets.PRIVSSH }}@github.com/DeeyaSingh/DeeyaSingh.github.io.git
+          git push origin main
