@@ -13,7 +13,7 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v3
         with:
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-key: ${{ secrets.SSH }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
