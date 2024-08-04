@@ -13,7 +13,7 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v3
         with:
-          ssh-key: ${{ secrets.SSH }}
+          ssh-key: ${{ secrets.PRIVSSH }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -23,20 +23,10 @@ jobs:
       - name: Run the modified-dates script
         run: python modified-dates.py
 
-      - name: Configure SSH and Git
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-
-      - name: Change remote to use SSH
-        run: git remote set-url origin git@github.com:DeeyaSingh/DeeyaSingh.github.io.git
-
       - name: Commit and push changes
         run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
           git add file_modification_dates.txt
           git commit -m "Update file modification dates"
           git push origin main
