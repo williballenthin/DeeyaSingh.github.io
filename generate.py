@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 
 start_dir = 'capa-rules'
-txt_file_path = r'C:\Users\deeya\OneDrive\Desktop\tgbbd\file_modification_dates.txt'
+txt_file_path = 'file_modification_dates.txt'
 output_html_path = 'output.html'
 
 
