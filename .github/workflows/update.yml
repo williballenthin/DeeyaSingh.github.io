@@ -41,9 +41,4 @@ jobs:
           git commit -m "Update file modification dates and regenerate HTML"
           git push origin main
 
-      - name: Serve HTML 
-        run: |
-          mkdir -p output_dir
-          mv output.html output_dir/
-          cd output_dir
-          python3 -m http.server 8000
+      
