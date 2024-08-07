@@ -1,54 +1,67 @@
----
-permalink: "/collection/network/capture-network-configuration-via-ipconfig/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>capture network configuration via ipconfig</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/collection/network/capture-network-configuration-via-ipconfig/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">capture network configuration via ipconfig</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> collection/network</p>
-    <p><strong>Authors:</strong> ["@_re_fox"]</p>
-    <pre><strong>Scope:</strong>
-      static: basic block
-      dynamic: thread</pre>
-    <p><strong>ATT&CK:</strong> Discovery::System Network Configuration Discovery [T1016]</p>
-    <p><strong>MBC:</strong> </p>
-    <p><strong>References:</strong> </p>
-    <p><strong>Examples:</strong> 7204e3efc2434012e13ca939db0d0b02:0x403028</p>
-    <pre><strong>Features</strong>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>capture network configuration via ipconfig</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>capture network configuration via ipconfig</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> collection/network</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - @_re_fox
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> basic block<br><b>Dynamic:</b> thread</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box">  - Discovery::System Network Configuration Discovery [T1016]
+</div>
+                <div><b>MBC:</b></div><div class="grey-box"></div>
+                <div><b>References:</b> </div>
+                <div><b>Examples:</b></div><div class="grey-box">  - 7204e3efc2434012e13ca939db0d0b02:0x403028
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- and:
+  - string: /ipconfig(\.exe)?/i
+  - api: msvcr100.system
+  - optional:
     - and:
-      - string: /ipconfig(\.exe)?/i
-      - api: msvcr100.system
-      - optional:
-        - and:
-          - string: ipconfig.txt
-          - substring: [Windows IP Configuration]
-          - description: Arkei Stealer Filename and Banner
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: collection"></span>  
-  <span data-pagefind-filter="ATT&CK: Discovery"></span> 
-  
-  <span data-pagefind-filter="scope(static): basic block"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
-  <span data-pagefind-filter="author: @_re_fox"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+      - string: ipconfig.txt
+      - substring: [Windows IP Configuration]
+      - description: Arkei Stealer Filename and Banner
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

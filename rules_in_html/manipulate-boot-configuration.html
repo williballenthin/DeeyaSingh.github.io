@@ -1,60 +1,72 @@
----
-permalink: "/host-interaction/bootloader/manipulate-boot-configuration/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>manipulate boot configuration</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/host-interaction/bootloader/manipulate-boot-configuration/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">manipulate boot configuration</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> host-interaction/bootloader</p>
-    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com"]</p>
-    <pre><strong>Scope:</strong>
-      static: function
-      dynamic: thread</pre>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> </p>
-    <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcdedit-command-line-options</p>
-    <p><strong>Examples:</strong> 7FBC17A09CF5320C515FC1C5BA42C8B3:0x40CA00</p>
-    <pre><strong>Features</strong>
-    - or:
-      - and:
-        - string: /bcdedit.exe/i
-        - optional:
-          - string: /deletevalue safeboot
-      - and:
-        - string: /boot.ini/i
-        - optional:
-          - api: kernel32.GetPrivateProfileStringA
-          - api: kernel32.WritePrivateProfileString
-          - or:
-            - string: /default/i
-            - string: /boot loader/i
-            - string: /operating systems/i
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: host-interaction"></span>  
-   
-  
-  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
-  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>manipulate boot configuration</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>manipulate boot configuration</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> host-interaction/bootloader</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - william.ballenthin@mandiant.com
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> thread</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box"></div>
+                <div><b>MBC:</b></div><div class="grey-box"></div>
+                <div><b>References:</b> https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcdedit-command-line-options</div>
+                <div><b>Examples:</b></div><div class="grey-box">  - 7FBC17A09CF5320C515FC1C5BA42C8B3:0x40CA00
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- or:
+  - and:
+    - string: /bcdedit.exe/i
+    - optional:
+      - string: /deletevalue safeboot
+  - and:
+    - string: /boot.ini/i
+    - optional:
+      - api: kernel32.GetPrivateProfileStringA
+      - api: kernel32.WritePrivateProfileString
+      - or:
+        - string: /default/i
+        - string: /boot loader/i
+        - string: /operating systems/i
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

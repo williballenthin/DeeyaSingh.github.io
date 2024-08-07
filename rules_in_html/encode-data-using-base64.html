@@ -1,67 +1,85 @@
----
-permalink: "/data-manipulation/encoding/base64/encode-data-using-base64/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>encode data using Base64</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/data-manipulation/encoding/base64/encode-data-using-base64/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">encode data using Base64</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> data-manipulation/encoding/base64</p>
-    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "anushka.virgaonkar@mandiant.com", "michael.hunhoff@mandiant.com"]</p>
-    <pre><strong>Scope:</strong>
-      static: function
-      dynamic: unsupported</pre>
-    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02]</p>
-    <p><strong>References:</strong> </p>
-    <p><strong>Examples:</strong> BFB9B5391A13D0AFD787E87AB90F14F5:0x1314889C, 074072B261FC27B65C72671F13510C05:0x100049B2, 5DB2D2BE20D59AA0BE6709A6850F1775:0x18001CC30, 08AC667C65D36D6542917655571E61C8:0x406EAA</p>
-    <pre><strong>Features</strong>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>encode data using Base64</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>encode data using Base64</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> data-manipulation/encoding/base64</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - moritz.raabe@mandiant.com
+  - anushka.virgaonkar@mandiant.com
+  - michael.hunhoff@mandiant.com
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> unsupported</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box">  - Defense Evasion::Obfuscated Files or Information [T1027]
+</div>
+                <div><b>MBC:</b></div><div class="grey-box">  - Defense Evasion::Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02]
+  - Data::Encode Data::Base64 [C0026.001]
+</div>
+                <div><b>References:</b> </div>
+                <div><b>Examples:</b></div><div class="grey-box">  - BFB9B5391A13D0AFD787E87AB90F14F5:0x1314889C
+  - 074072B261FC27B65C72671F13510C05:0x100049B2
+  - 5DB2D2BE20D59AA0BE6709A6850F1775:0x18001CC30
+  - 08AC667C65D36D6542917655571E61C8:0x406EAA
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- or:
+  - and:
+    - mnemonic: shl
+    - mnemonic: shr
+    - number: 0x3F = modulo 64
     - or:
-      - and:
-        - mnemonic: shl
-        - mnemonic: shr
-        - number: 0x3F = modulo 64
-        - or:
-          - number: 0x3D = '='
-          - number: 0x3D3D = '=='
-        - match: contain loop
-        - optional:
-          - number: 2
-          - number: 3
-          - number: 4
-          - number: 6
-          - number: 15
-          - string: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
-      - api: System.Convert::ToBase64String
-      - api: System.Convert::ToBase64CharArray
-      - api: System.Convert::TryToBase64Chars
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: data-manipulation"></span>  
-  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
-  <span data-pagefind-filter="MBC: Defense Evasion"></span>
-  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
-  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
-<span data-pagefind-filter="author: anushka.virgaonkar@mandiant.com"></span>
-<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+      - number: 0x3D = '='
+      - number: 0x3D3D = '=='
+    - match: contain loop
+    - optional:
+      - number: 2
+      - number: 3
+      - number: 4
+      - number: 6
+      - number: 15
+      - string: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+  - api: System.Convert::ToBase64String
+  - api: System.Convert::ToBase64CharArray
+  - api: System.Convert::TryToBase64Chars
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

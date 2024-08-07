@@ -1,49 +1,63 @@
----
-permalink: "/host-interaction/registry/create-registry-key-via-offline-registry-library/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>create registry key via offline registry library</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/host-interaction/registry/create-registry-key-via-offline-registry-library/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">create registry key via offline registry library</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> host-interaction/registry</p>
-    <p><strong>Authors:</strong> ["johnk3r"]</p>
-    <pre><strong>Scope:</strong>
-      static: function
-      dynamic: call</pre>
-    <p><strong>ATT&CK:</strong> Defense Evasion::Modify Registry [T1112]</p>
-    <p><strong>MBC:</strong> Operating System::Registry::Create Registry Key [C0036.004]</p>
-    <p><strong>References:</strong> </p>
-    <p><strong>Examples:</strong> 5fbbfeed28b258c42e0cfeb16718b31c:0x100481A0</p>
-    <pre><strong>Features</strong>
-    - or:
-      - api: ORCreateHive
-      - api: ORCreateKey
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: host-interaction"></span>  
-  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
-  <span data-pagefind-filter="MBC: Operating System"></span>
-  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): call"></span>
-  <span data-pagefind-filter="author: johnk3r"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>create registry key via offline registry library</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>create registry key via offline registry library</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> host-interaction/registry</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - johnk3r
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> call</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box">  - Defense Evasion::Modify Registry [T1112]
+</div>
+                <div><b>MBC:</b></div><div class="grey-box">  - Operating System::Registry::Create Registry Key [C0036.004]
+</div>
+                <div><b>References:</b> </div>
+                <div><b>Examples:</b></div><div class="grey-box">  - 5fbbfeed28b258c42e0cfeb16718b31c:0x100481A0
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- or:
+  - api: ORCreateHive
+  - api: ORCreateKey
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

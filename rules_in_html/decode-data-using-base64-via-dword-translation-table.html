@@ -1,66 +1,82 @@
----
-permalink: "/data-manipulation/encoding/base64/decode-data-using-base64-via-dword-translation-table/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>decode data using Base64 via dword translation table</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/data-manipulation/encoding/base64/decode-data-using-base64-via-dword-translation-table/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">decode data using Base64 via dword translation table</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> data-manipulation/encoding/base64</p>
-    <p><strong>Authors:</strong> ["gilbert.elliot@mandiant.com", "sara.rincon@mandiant.com"]</p>
-    <pre><strong>Scope:</strong>
-      static: function
-      dynamic: unsupported</pre>
-    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02]</p>
-    <p><strong>References:</strong> </p>
-    <p><strong>Examples:</strong> 9efa86b43b4367bcdc1591aee59bda25:0x10001000, 09bf850be5da44a1c3629a1f62813a83:0x10001100</p>
-    <pre><strong>Features</strong>
-    - and:
-      - mnemonic: shl
-      - or:
-        - mnemonic: sar
-        - mnemonic: shr
-      - match: contain loop
-      - number: 2
-      - number: 3
-      - number: 4
-      - number: 6
-      - or:
-        - number: 15
-        - number: 61
-        - number: 64
-      - or:
-        - bytes: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 3E 00 00 00 FF FF FF FF FF FF FF FF FF FF FF FF 3F 00 00 00 34 00 00 00 35 00 00 00 36 00 00 00 37 00 00 00 38 00 00 00 39 00 00 00 3A 00 00 00 3B 00 00 00 3C 00 00 00 3D 00 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF = hardcoded base64 translation table (first 64 of 256 dwords)
-        - bytes: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 3E FF FF FF 3F 34 35 36 37 38 39 3A 3B 3C 3D FF FF FF FF FF FF FF 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16 17 18 19 FF FF FF FF FF FF 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25 26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 FF FF FF FF FF = hardcoded base64 translation table
-        - bytes: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3E 00 00 00 3F 00 00 00 3E 00 00 00 3E 00 00 00 3F 00 00 00 34 00 00 00 35 00 00 00 36 00 00 00 37 00 00 00 38 00 00 00 39 00 00 00 3A 00 00 00 3B 00 00 00 3C 00 00 00 3D 00 00 00
-        - string: BBBBBBBBBB@BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB>BBB?456789:;<=BBBABBB
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: data-manipulation"></span>  
-  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
-  <span data-pagefind-filter="MBC: Defense Evasion"></span>
-  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
-  <span data-pagefind-filter="author: gilbert.elliot@mandiant.com"></span>
-<span data-pagefind-filter="author: sara.rincon@mandiant.com"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>decode data using Base64 via dword translation table</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>decode data using Base64 via dword translation table</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> data-manipulation/encoding/base64</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - gilbert.elliot@mandiant.com
+  - sara.rincon@mandiant.com
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> unsupported</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box">  - Defense Evasion::Obfuscated Files or Information [T1027]
+</div>
+                <div><b>MBC:</b></div><div class="grey-box">  - Defense Evasion::Obfuscated Files or Information::Encoding-Standard Algorithm [E1027.m02]
+  - Data::Encode Data::Base64 [C0026.001]
+</div>
+                <div><b>References:</b> </div>
+                <div><b>Examples:</b></div><div class="grey-box">  - 9efa86b43b4367bcdc1591aee59bda25:0x10001000
+  - 09bf850be5da44a1c3629a1f62813a83:0x10001100
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- and:
+  - mnemonic: shl
+  - or:
+    - mnemonic: sar
+    - mnemonic: shr
+  - match: contain loop
+  - number: 2
+  - number: 3
+  - number: 4
+  - number: 6
+  - or:
+    - number: 15
+    - number: 61
+    - number: 64
+  - or:
+    - bytes: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 3E 00 00 00 FF FF FF FF FF FF FF FF FF FF FF FF 3F 00 00 00 34 00 00 00 35 00 00 00 36 00 00 00 37 00 00 00 38 00 00 00 39 00 00 00 3A 00 00 00 3B 00 00 00 3C 00 00 00 3D 00 00 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF = hardcoded base64 translation table (first 64 of 256 dwords)
+    - bytes: FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF 3E FF FF FF 3F 34 35 36 37 38 39 3A 3B 3C 3D FF FF FF FF FF FF FF 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16 17 18 19 FF FF FF FF FF FF 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25 26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 FF FF FF FF FF = hardcoded base64 translation table
+    - bytes: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3E 00 00 00 3F 00 00 00 3E 00 00 00 3E 00 00 00 3F 00 00 00 34 00 00 00 35 00 00 00 36 00 00 00 37 00 00 00 38 00 00 00 39 00 00 00 3A 00 00 00 3B 00 00 00 3C 00 00 00 3D 00 00 00
+    - string: BBBBBBBBBB@BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB>BBB?456789:;<=BBBABBB
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

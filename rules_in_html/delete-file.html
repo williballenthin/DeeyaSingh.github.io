@@ -1,76 +1,91 @@
----
-permalink: "/host-interaction/file-system/delete/delete-file/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>delete file</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/host-interaction/file-system/delete/delete-file/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">delete file</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> host-interaction/file-system/delete</p>
-    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com", "michael.hunhoff@mandiant.com"]</p>
-    <pre><strong>Scope:</strong>
-      static: function
-      dynamic: thread</pre>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> File System::Delete File [C0047]</p>
-    <p><strong>References:</strong> </p>
-    <p><strong>Examples:</strong> 946A99F36A46D335DEC080D9A4371940:0x100015F0, 31600AD0D1A7EA615690DF111AE36C73:0x401A15, 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x140001E04</p>
-    <pre><strong>Features</strong>
-    - or:
-      - api: kernel32.DeleteFile
-      - api: DeleteFileTransacted
-      - api: NtDeleteFile
-      - api: ZwDeleteFile
-      - api: remove
-      - api: _wremove
-      - api: System.IO.File::Delete
-      - api: System.IO.FileSystemInfo::Delete
-      - basic block:
-        - and:
-          - number: 3 = FO_DELETE
-          - or:
-            - api: kernel32.SHFileOperation
-      - basic block:
-        - and:
-          - number: 4 = MOVEFILE_DELAY_UNTIL_REBOOT
-          - number: 0 = NULL
-          - api: MoveFileEx
-      - call:
-        - and:
-          - number: 3 = FO_DELETE
-          - or:
-            - api: kernel32.SHFileOperation
-      - call:
-        - and:
-          - number: 4 = MOVEFILE_DELAY_UNTIL_REBOOT
-          - number: 0 = NULL
-          - api: MoveFileEx
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: host-interaction"></span>  
-   
-  <span data-pagefind-filter="MBC: File System"></span>
-  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): thread"></span>
-  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
-<span data-pagefind-filter="author: michael.hunhoff@mandiant.com"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>delete file</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>delete file</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> host-interaction/file-system/delete</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - moritz.raabe@mandiant.com
+  - michael.hunhoff@mandiant.com
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> thread</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box"></div>
+                <div><b>MBC:</b></div><div class="grey-box">  - File System::Delete File [C0047]
+</div>
+                <div><b>References:</b> </div>
+                <div><b>Examples:</b></div><div class="grey-box">  - 946A99F36A46D335DEC080D9A4371940:0x100015F0
+  - 31600AD0D1A7EA615690DF111AE36C73:0x401A15
+  - 563653399B82CD443F120ECEFF836EA3678D4CF11D9B351BB737573C2D856299:0x140001E04
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- or:
+  - api: kernel32.DeleteFile
+  - api: DeleteFileTransacted
+  - api: NtDeleteFile
+  - api: ZwDeleteFile
+  - api: remove
+  - api: _wremove
+  - api: System.IO.File::Delete
+  - api: System.IO.FileSystemInfo::Delete
+  - basic block:
+    - and:
+      - number: 3 = FO_DELETE
+      - or:
+        - api: kernel32.SHFileOperation
+  - basic block:
+    - and:
+      - number: 4 = MOVEFILE_DELAY_UNTIL_REBOOT
+      - number: 0 = NULL
+      - api: MoveFileEx
+  - call:
+    - and:
+      - number: 3 = FO_DELETE
+      - or:
+        - api: kernel32.SHFileOperation
+  - call:
+    - and:
+      - number: 4 = MOVEFILE_DELAY_UNTIL_REBOOT
+      - number: 0 = NULL
+      - api: MoveFileEx
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

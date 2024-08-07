@@ -1,66 +1,81 @@
----
-permalink: "/data-manipulation/checksum/crc32/hash-data-with-crc32/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>hash data with CRC32</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/data-manipulation/checksum/crc32/hash-data-with-crc32/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">hash data with CRC32</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> data-manipulation/checksum/crc32</p>
-    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
-    <pre><strong>Scope:</strong>
-      static: function
-      dynamic: unsupported</pre>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> Data::Checksum::CRC32 [C0032.001]</p>
-    <p><strong>References:</strong> </p>
-    <p><strong>Examples:</strong> 2D3EDC218A90F03089CC01715A9F047F:0x403CBD, 7D28CB106CB54876B2A5C111724A07CD:0x402350, 7EFF498DE13CC734262F87E6B3EF38AB:0x100084A6</p>
-    <pre><strong>Features</strong>
-    - or:
-      - and:
-        - number: 1 = bits in a byte
-        - instruction:
-          - description: is bit set?
-          - or:
-            - mnemonic: and
-            - mnemonic: test
-          - operand[1].number: 1
-        - instruction:
-          - mnemonic: shr
-          - number: 1
-        - characteristic: nzxor
-        - operand[1].number: 3988292384
-      - and:
-        - number: 33568
-        - number: 60856
-        - characteristic: nzxor
-      - api: RtlComputeCrc32
-      - bytes: 00 00 00 00 96 30 07 77 2C 61 0E EE BA 51 09 99 19 C4 6D 07 8F F4 6A 70 35 A5 63 E9 A3 95 64 9E = crc32_tab
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: data-manipulation"></span>  
-   
-  <span data-pagefind-filter="MBC: Data"></span>
-  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
-  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hash data with CRC32</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>hash data with CRC32</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> data-manipulation/checksum/crc32</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - moritz.raabe@mandiant.com
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> unsupported</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box"></div>
+                <div><b>MBC:</b></div><div class="grey-box">  - Data::Checksum::CRC32 [C0032.001]
+</div>
+                <div><b>References:</b> </div>
+                <div><b>Examples:</b></div><div class="grey-box">  - 2D3EDC218A90F03089CC01715A9F047F:0x403CBD
+  - 7D28CB106CB54876B2A5C111724A07CD:0x402350
+  - 7EFF498DE13CC734262F87E6B3EF38AB:0x100084A6
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- or:
+  - and:
+    - number: 1 = bits in a byte
+    - instruction:
+      - description: is bit set?
+      - or:
+        - mnemonic: and
+        - mnemonic: test
+      - operand[1].number: 1
+    - instruction:
+      - mnemonic: shr
+      - number: 1
+    - characteristic: nzxor
+    - operand[1].number: 3988292384
+  - and:
+    - number: 33568
+    - number: 60856
+    - characteristic: nzxor
+  - api: RtlComputeCrc32
+  - bytes: 00 00 00 00 96 30 07 77 2C 61 0E EE BA 51 09 99 19 C4 6D 07 8F F4 6A 70 35 A5 63 E9 A3 95 64 9E = crc32_tab
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

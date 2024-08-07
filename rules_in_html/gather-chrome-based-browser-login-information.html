@@ -1,65 +1,79 @@
----
-permalink: "/collection/browser/gather-chrome-based-browser-login-information/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>gather chrome based browser login information</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/collection/browser/gather-chrome-based-browser-login-information/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">gather chrome based browser login information</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> collection/browser</p>
-    <p><strong>Authors:</strong> ["@_re_fox", "still@teamt5.org"]</p>
-    <pre><strong>Scope:</strong>
-      static: file
-      dynamic: file</pre>
-    <p><strong>ATT&CK:</strong> Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]</p>
-    <p><strong>MBC:</strong> </p>
-    <p><strong>References:</strong> </p>
-    <p><strong>Examples:</strong> 2fd45662e3d0ec0077ea2fa66b6378f0:0x6000039, 54390bda109aab7fc006b8b4ead5b6c2:0x1006E8D3</p>
-    <pre><strong>Features</strong>
-    - and:
-      - or:
-        - string: /\\+(Edge|Chrome|Chromium|Brave\-Browser|YandexBrowser|Kometa|Orbitum|Dragon|Torch|Amigo)\\+User Data\\+Default(\\+Network)?\\+(Cookies|Login Data)/i
-        - string: /\\Opera Software\\Opera Stable\\(Login Data|Cookies)/i
-      - or:
-        - string: /SELECT ((date_created|username_element|password_element|origin_url|signon_realm|action_url|username_value|password_value),?\s?)+ FROM logins/i
-        - string: /SELECT ((creation_utc|encrypted_value),?\s?)+ FROM cookies/i
-        - 2 or more:
-          - substring: date_created
-          - substring: encrypted_value
-          - substring: creation_utc
-          - substring: username_element
-          - substring: username_value
-          - substring: password_element
-          - substring: origin_url
-          - substring: signon_realm
-          - substring: action_url
-          - substring: password_value
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: collection"></span>  
-  <span data-pagefind-filter="ATT&CK: Credential Access"></span> 
-  
-  <span data-pagefind-filter="scope(static): file"></span><span data-pagefind-filter="scope(dynamic): file"></span>
-  <span data-pagefind-filter="author: @_re_fox"></span>
-<span data-pagefind-filter="author: still@teamt5.org"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>gather chrome based browser login information</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>gather chrome based browser login information</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> collection/browser</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - @_re_fox
+  - still@teamt5.org
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> file<br><b>Dynamic:</b> file</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box">  - Credential Access::Credentials from Password Stores::Credentials from Web Browsers [T1555.003]
+</div>
+                <div><b>MBC:</b></div><div class="grey-box"></div>
+                <div><b>References:</b> </div>
+                <div><b>Examples:</b></div><div class="grey-box">  - 2fd45662e3d0ec0077ea2fa66b6378f0:0x6000039
+  - 54390bda109aab7fc006b8b4ead5b6c2:0x1006E8D3
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- and:
+  - or:
+    - string: /\\+(Edge|Chrome|Chromium|Brave\-Browser|YandexBrowser|Kometa|Orbitum|Dragon|Torch|Amigo)\\+User Data\\+Default(\\+Network)?\\+(Cookies|Login Data)/i
+    - string: /\\Opera Software\\Opera Stable\\(Login Data|Cookies)/i
+  - or:
+    - string: /SELECT ((date_created|username_element|password_element|origin_url|signon_realm|action_url|username_value|password_value),?\s?)+ FROM logins/i
+    - string: /SELECT ((creation_utc|encrypted_value),?\s?)+ FROM cookies/i
+    - 2 or more:
+      - substring: date_created
+      - substring: encrypted_value
+      - substring: creation_utc
+      - substring: username_element
+      - substring: username_value
+      - substring: password_element
+      - substring: origin_url
+      - substring: signon_realm
+      - substring: action_url
+      - substring: password_value
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

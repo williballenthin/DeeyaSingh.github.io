@@ -1,67 +1,80 @@
----
-permalink: "/communication/socket/tcp/send/obtain-transmitpackets-callback-function-via-wsaioctl/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>obtain TransmitPackets callback function via WSAIoctl</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/communication/socket/tcp/send/obtain-transmitpackets-callback-function-via-wsaioctl/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">obtain TransmitPackets callback function via WSAIoctl</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> communication/socket/tcp/send</p>
-    <p><strong>Authors:</strong> ["jonathan.lepore@mandiant.com"]</p>
-    <pre><strong>Scope:</strong>
-      static: function
-      dynamic: unsupported</pre>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> Communication::Socket Communication::Send TCP Data [C0001.014]</p>
-    <p><strong>References:</strong> https://docs.microsoft.com/en-us/windows/win32/api/mswsock/nc-mswsock-lpfn_transmitpackets</p>
-    <p><strong>Examples:</strong> 138C71E94961FE9E31CEC5DFBA62A639:0x100FF55</p>
-    <pre><strong>Features</strong>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>obtain TransmitPackets callback function via WSAIoctl</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>obtain TransmitPackets callback function via WSAIoctl</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> communication/socket/tcp/send</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - jonathan.lepore@mandiant.com
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> unsupported</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box"></div>
+                <div><b>MBC:</b></div><div class="grey-box">  - Communication::Socket Communication::Send TCP Data [C0001.014]
+</div>
+                <div><b>References:</b> https://docs.microsoft.com/en-us/windows/win32/api/mswsock/nc-mswsock-lpfn_transmitpackets</div>
+                <div><b>Examples:</b></div><div class="grey-box">  - 138C71E94961FE9E31CEC5DFBA62A639:0x100FF55
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- and:
+  - mnemonic: call
+  - number: 0x10 = inbuffer size (16 bytes to hold guid)
+  - number: 0x0C8000006 = SIO_GET_EXTENSION_FUNCTION_POINTER
+  - or:
+    - bytes: A0 9D 68 D9 90 1F D3 11 99 71 00 C0 4F 68 C8 76 = WSAID_TRANSMITPACKETS guid
     - and:
-      - mnemonic: call
-      - number: 0x10 = inbuffer size (16 bytes to hold guid)
-      - number: 0x0C8000006 = SIO_GET_EXTENSION_FUNCTION_POINTER
-      - or:
-        - bytes: A0 9D 68 D9 90 1F D3 11 99 71 00 C0 4F 68 C8 76 = WSAID_TRANSMITPACKETS guid
-        - and:
-          - number: 0x76C8684F = WSAID_TRANSMITPACKETS guid part
-          - number: 0xC0007199 = WSAID_TRANSMITPACKETS guid part
-          - number: 0x11D31F90 = WSAID_TRANSMITPACKETS guid part
-          - number: 0xD9689DA0 = WSAID_TRANSMITPACKETS guid part
-      - or:
-        - and:
-          - arch: i386
-          - number: 0x4 = 32-bit function ptr
-        - and:
-          - arch: amd64
-          - number: 0x8 = 64-bit function ptr
-      - optional:
-        - api: WSAIoctl
-        - api: WSAGetLastError
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: communication"></span>  
-   
-  <span data-pagefind-filter="MBC: Communication"></span>
-  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
-  <span data-pagefind-filter="author: jonathan.lepore@mandiant.com"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+      - number: 0x76C8684F = WSAID_TRANSMITPACKETS guid part
+      - number: 0xC0007199 = WSAID_TRANSMITPACKETS guid part
+      - number: 0x11D31F90 = WSAID_TRANSMITPACKETS guid part
+      - number: 0xD9689DA0 = WSAID_TRANSMITPACKETS guid part
+  - or:
+    - and:
+      - arch: i386
+      - number: 0x4 = 32-bit function ptr
+    - and:
+      - arch: amd64
+      - number: 0x8 = 64-bit function ptr
+  - optional:
+    - api: WSAIoctl
+    - api: WSAGetLastError
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

@@ -1,55 +1,68 @@
----
-permalink: "/data-manipulation/hmac/authenticate-hmac/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>authenticate HMAC</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/data-manipulation/hmac/authenticate-hmac/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">authenticate HMAC</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> data-manipulation/hmac</p>
-    <p><strong>Authors:</strong> ["moritz.raabe@mandiant.com"]</p>
-    <pre><strong>Scope:</strong>
-      static: function
-      dynamic: unsupported</pre>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> Cryptography::Hashed Message Authentication Code [C0061]</p>
-    <p><strong>References:</strong> https://tools.ietf.org/html/rfc2104, https://tools.ietf.org/html/rfc4634, https://github.com/ogay/hmac</p>
-    <p><strong>Examples:</strong> mimikatz.exe_:0x403408</p>
-    <pre><strong>Features</strong>
-    - and:
-      - number: 0x36 = inner padding byte value
-      - number: 0x5C = outer padding byte value
-      - match: contain loop
-      - count(characteristic(nzxor)): 2 or more
-      - optional:
-        - description: block size
-        - number: 64 = MD5, SHA-1, SHA-224, or SHA-256
-        - number: 128 = SHA-384 or SHA-512
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: data-manipulation"></span>  
-   
-  <span data-pagefind-filter="MBC: Cryptography"></span>
-  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
-  <span data-pagefind-filter="author: moritz.raabe@mandiant.com"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>authenticate HMAC</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>authenticate HMAC</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> data-manipulation/hmac</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - moritz.raabe@mandiant.com
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> unsupported</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box"></div>
+                <div><b>MBC:</b></div><div class="grey-box">  - Cryptography::Hashed Message Authentication Code [C0061]
+</div>
+                <div><b>References:</b> https://tools.ietf.org/html/rfc2104, https://tools.ietf.org/html/rfc4634, https://github.com/ogay/hmac</div>
+                <div><b>Examples:</b></div><div class="grey-box">  - mimikatz.exe_:0x403408
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- and:
+  - number: 0x36 = inner padding byte value
+  - number: 0x5C = outer padding byte value
+  - match: contain loop
+  - count(characteristic(nzxor)): 2 or more
+  - optional:
+    - description: block size
+    - number: 64 = MD5, SHA-1, SHA-224, or SHA-256
+    - number: 128 = SHA-384 or SHA-512
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

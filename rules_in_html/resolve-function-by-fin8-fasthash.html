@@ -1,69 +1,83 @@
----
-permalink: "/linking/runtime-linking/resolve-function-by-fin8-fasthash/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>resolve function by FIN8 fasthash</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/linking/runtime-linking/resolve-function-by-fin8-fasthash/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">resolve function by FIN8 fasthash</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> linking/runtime-linking</p>
-    <p><strong>Authors:</strong> ["@r3c0nst (frank boldewin)"]</p>
-    <pre><strong>Scope:</strong>
-      static: function
-      dynamic: unsupported</pre>
-    <p><strong>ATT&CK:</strong> </p>
-    <p><strong>MBC:</strong> Cryptography::Cryptographic Hash [C0029]</p>
-    <p><strong>References:</strong> https://www.bitdefender.com/files/News/CaseStudies/study/394/Bitdefender-PR-Whitepaper-BADHATCH-creat5237-en-EN.pdf, https://raw.githubusercontent.com/fboldewin/YARA-rules/master/Shellcode.APIHashing.FIN8.yar</p>
-    <p><strong>Examples:</strong> B43FCA5283BFC7022553EFF663683834:0x12F, 4BF70EA92979DD88C9761EE848370050:0x28b</p>
-    <pre><strong>Features</strong>
-    - or:
-      - basic block:
-        - and:
-          - description: 64-bit constants
-          - mnemonic: mov
-          - number: 9800771712469244261
-          - number: 2388976653695081527
-          - mnemonic: add
-      - basic block:
-        - and:
-          - description: 32-bit constants
-          - mnemonic: push
-          - number: 2281919986
-          - number: 510466405
-          - mnemonic: shr
-          - mnemonic: xor
-      - basic block:
-        - and:
-          - mnemonic: push
-          - number: 556226971
-          - mnemonic: shr
-          - mnemonic: xor
-          - number: 4096941111
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: linking"></span>  
-   
-  <span data-pagefind-filter="MBC: Cryptography"></span>
-  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
-  <span data-pagefind-filter="author: @r3c0nst (frank boldewin)"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>resolve function by FIN8 fasthash</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>resolve function by FIN8 fasthash</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> linking/runtime-linking</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - @r3c0nst (Frank Boldewin)
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> unsupported</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box"></div>
+                <div><b>MBC:</b></div><div class="grey-box">  - Cryptography::Cryptographic Hash [C0029]
+</div>
+                <div><b>References:</b> https://www.bitdefender.com/files/News/CaseStudies/study/394/Bitdefender-PR-Whitepaper-BADHATCH-creat5237-en-EN.pdf, https://raw.githubusercontent.com/fboldewin/YARA-rules/master/Shellcode.APIHashing.FIN8.yar</div>
+                <div><b>Examples:</b></div><div class="grey-box">  - B43FCA5283BFC7022553EFF663683834:0x12F
+  - 4BF70EA92979DD88C9761EE848370050:0x28b
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- or:
+  - basic block:
+    - and:
+      - description: 64-bit constants
+      - mnemonic: mov
+      - number: 9800771712469244261
+      - number: 2388976653695081527
+      - mnemonic: add
+  - basic block:
+    - and:
+      - description: 32-bit constants
+      - mnemonic: push
+      - number: 2281919986
+      - number: 510466405
+      - mnemonic: shr
+      - mnemonic: xor
+  - basic block:
+    - and:
+      - mnemonic: push
+      - number: 556226971
+      - mnemonic: shr
+      - mnemonic: xor
+      - number: 4096941111
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

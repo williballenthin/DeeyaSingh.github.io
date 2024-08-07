@@ -1,70 +1,84 @@
----
-permalink: "/data-manipulation/encryption/aes/encrypt-data-using-aes/"
----
-<!DOCTYPE html>
-<html>
-<head>
-  <title>encrypt data using AES</title>
-  <link rel="stylesheet" type="text/css" href="{{ "assets/styles.css" | relative_url }}">
-  <link rel="icon" type="image/png"  href="{{ "assets/img/favicon.png" | relative_url }}"  > 
-  <link data-pagefind-meta="url[href]" rel="canonical" href="/data-manipulation/encryption/aes/encrypt-data-using-aes/">
-</head>
-<body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">
-          <img src="{{ "assets/img/logo.png" | relative_url }}" alt="CAPA" width="170" height="60">
-        </a>
-      </div>
-    </nav>
-  </header>
-  <div id="rule-name-container">
-    <h1 id="rule-name">encrypt data using AES</h1>
-  </div>
-  <div id="rule-details">
-    <p><strong>Namespace:</strong> data-manipulation/encryption/aes</p>
-    <p><strong>Authors:</strong> ["william.ballenthin@mandiant.com", "ivan kwiatkowski (@justicerage)"]</p>
-    <pre><strong>Scope:</strong>
-      static: function
-      dynamic: unsupported</pre>
-    <p><strong>ATT&CK:</strong> Defense Evasion::Obfuscated Files or Information [T1027]</p>
-    <p><strong>MBC:</strong> Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]</p>
-    <p><strong>References:</strong> https://github.com/JusticeRage/Manalyze/blob/8e77642c911d5d82b5f43b198667ab8c77a88763/bin/yara_rules/findcrypt.yara#L351, https://github.com/creaktive/tsh/blob/53b822b9a07d8cc65f1f31c915cf834a2944e833/aes.c</p>
-    <p><strong>Examples:</strong> </p>
-    <pre><strong>Features</strong>
-    - or:
-      - bytes: 63 7c 77 7b f2 6b 6f c5 30 01 67 2b fe d7 ab 76 = AES_SBOX_ENC
-      - bytes: 63 00 00 00 00 00 00 00 7c 00 00 00 00 00 00 00 77 00 00 00 00 00 00 00 7b 00 00 00 00 00 00 00 f2 00 00 00 00 00 00 00 6b 00 00 00 00 00 00 00 6f 00 00 00 00 00 00 00 c5 00 00 00 00 00 00 00 30 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 67 00 00 00 00 00 00 00 2b 00 00 00 00 00 00 00 fe 00 00 00 00 00 00 00 d7 00 00 00 00 00 00 00 ab 00 00 00 00 00 00 00 76 = AES_SBOX_ENC
-      - bytes: 52 09 6a d5 30 36 a5 38 bf 40 a3 9e 81 f3 d7 fb = AES_SBOX_DEC
-      - bytes: 52 00 00 00 00 00 00 00 09 00 00 00 00 00 00 00 6a 00 00 00 00 00 00 00 d5 00 00 00 00 00 00 00 30 00 00 00 00 00 00 00 36 00 00 00 00 00 00 00 a5 00 00 00 00 00 00 00 38 00 00 00 00 00 00 00 bf 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00 a3 00 00 00 00 00 00 00 9e 00 00 00 00 00 00 00 81 00 00 00 00 00 00 00 f3 00 00 00 00 00 00 00 d7 00 00 00 00 00 00 00 fb = AES_SBOX_DEC
-      - bytes: a5 63 63 c6 84 7c 7c f8 99 77 77 ee 8d 7b 7b f6 = AES_T0_ENC
-      - bytes: a5 63 63 c6 00 00 00 00 84 7c 7c f8 00 00 00 00 99 77 77 ee 00 00 00 00 8d 7b 7b f6 = AES_T0_ENC
-      - bytes: 63 63 c6 a5 7c 7c f8 84 77 77 ee 99 7b 7b f6 8d = AES_T1_ENC
-      - bytes: 63 63 c6 a5 00 00 00 00 7c 7c f8 84 00 00 00 00 77 77 ee 99 00 00 00 00 7b 7b f6 8d = AES_T1_ENC
-      - bytes: 63 c6 a5 63 7c f8 84 7c 77 ee 99 77 7b f6 8d 7b = AES_T2_ENC
-      - bytes: 63 c6 a5 63 00 00 00 00 7c f8 84 7c 00 00 00 00 77 ee 99 77 00 00 00 00 7b f6 8d 7b = AES_T2_ENC
-      - bytes: c6 a5 63 63 f8 84 7c 7c ee 99 77 77 f6 8d 7b 7b = AES_T3_ENC
-      - bytes: c6 a5 63 63 00 00 00 00 f8 84 7c 7c 00 00 00 00 ee 99 77 77 00 00 00 00 f6 8d 7b 7b = AES_T3_ENC
-      - bytes: 63 63 63 63 7c 7c 7c 7c 77 77 77 77 7b 7b 7b 7b = AES_T4_ENC
-      - bytes: 50 a7 f4 51 53 65 41 7e c3 a4 17 1a 96 5e 27 3a = AES_T0_DEC
-      - bytes: 50 a7 f4 51 00 00 00 00 53 65 41 7e 00 00 00 00 c3 a4 17 1a 00 00 00 00 96 5e 27 3a = AES_T0_DEC
-      - bytes: a7 f4 51 50 65 41 7e 53 a4 17 1a c3 5e 27 3a 96 = AES_T1_DEC
-      - bytes: a7 f4 51 50 00 00 00 00 65 41 7e 53 00 00 00 00 a4 17 1a c3 00 00 00 00 5e 27 3a 96 = AES_T1_DEC
-      - bytes: f4 51 50 a7 41 7e 53 65 17 1a c3 a4 27 3a 96 5e = AES_T2_DEC
-      - bytes: f4 51 50 a7 00 00 00 00 41 7e 53 65 00 00 00 00 17 1a c3 a4 00 00 00 00 27 3a 96 5e = AES_T2_DEC
-      - bytes: 51 50 a7 f4 7e 53 65 41 1a c3 a4 17 3a 96 5e 27 = AES_T3_DEC
-      - bytes: 51 50 a7 f4 00 00 00 00 7e 53 65 41 00 00 00 00 1a c3 a4 17 00 00 00 00 3a 96 5e 27 = AES_T3_DEC
-      - bytes: 52 52 52 52 09 09 09 09 6a 6a 6a 6a d5 d5 d5 d5 = AES_T4_DEC
-</pre>
-  </div>
-  <span data-pagefind-filter="namespace: data-manipulation"></span>  
-  <span data-pagefind-filter="ATT&CK: Defense Evasion"></span> 
-  <span data-pagefind-filter="MBC: Defense Evasion"></span>
-  <span data-pagefind-filter="scope(static): function"></span><span data-pagefind-filter="scope(dynamic): unsupported"></span>
-  <span data-pagefind-filter="author: william.ballenthin@mandiant.com"></span>
-<span data-pagefind-filter="author: ivan kwiatkowski (@justicerage)"></span>
-  <footer>
-  </footer>
-</body>
-</html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>encrypt data using AES</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>encrypt data using AES</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> data-manipulation/encryption/aes</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - william.ballenthin@mandiant.com
+  - Ivan Kwiatkowski (@JusticeRage)
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> unsupported</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box">  - Defense Evasion::Obfuscated Files or Information [T1027]
+</div>
+                <div><b>MBC:</b></div><div class="grey-box">  - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+  - Cryptography::Encrypt Data::AES [C0027.001]
+</div>
+                <div><b>References:</b> https://github.com/JusticeRage/Manalyze/blob/8e77642c911d5d82b5f43b198667ab8c77a88763/bin/yara_rules/findcrypt.yara#L351, https://github.com/creaktive/tsh/blob/53b822b9a07d8cc65f1f31c915cf834a2944e833/aes.c</div>
+                <div><b>Examples:</b></div><div class="grey-box"></div>
+                <div><b>Features:</b></div><div class="grey-box">- or:
+  - bytes: 63 7c 77 7b f2 6b 6f c5 30 01 67 2b fe d7 ab 76 = AES_SBOX_ENC
+  - bytes: 63 00 00 00 00 00 00 00 7c 00 00 00 00 00 00 00 77 00 00 00 00 00 00 00 7b 00 00 00 00 00 00 00 f2 00 00 00 00 00 00 00 6b 00 00 00 00 00 00 00 6f 00 00 00 00 00 00 00 c5 00 00 00 00 00 00 00 30 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 67 00 00 00 00 00 00 00 2b 00 00 00 00 00 00 00 fe 00 00 00 00 00 00 00 d7 00 00 00 00 00 00 00 ab 00 00 00 00 00 00 00 76 = AES_SBOX_ENC
+  - bytes: 52 09 6a d5 30 36 a5 38 bf 40 a3 9e 81 f3 d7 fb = AES_SBOX_DEC
+  - bytes: 52 00 00 00 00 00 00 00 09 00 00 00 00 00 00 00 6a 00 00 00 00 00 00 00 d5 00 00 00 00 00 00 00 30 00 00 00 00 00 00 00 36 00 00 00 00 00 00 00 a5 00 00 00 00 00 00 00 38 00 00 00 00 00 00 00 bf 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00 a3 00 00 00 00 00 00 00 9e 00 00 00 00 00 00 00 81 00 00 00 00 00 00 00 f3 00 00 00 00 00 00 00 d7 00 00 00 00 00 00 00 fb = AES_SBOX_DEC
+  - bytes: a5 63 63 c6 84 7c 7c f8 99 77 77 ee 8d 7b 7b f6 = AES_T0_ENC
+  - bytes: a5 63 63 c6 00 00 00 00 84 7c 7c f8 00 00 00 00 99 77 77 ee 00 00 00 00 8d 7b 7b f6 = AES_T0_ENC
+  - bytes: 63 63 c6 a5 7c 7c f8 84 77 77 ee 99 7b 7b f6 8d = AES_T1_ENC
+  - bytes: 63 63 c6 a5 00 00 00 00 7c 7c f8 84 00 00 00 00 77 77 ee 99 00 00 00 00 7b 7b f6 8d = AES_T1_ENC
+  - bytes: 63 c6 a5 63 7c f8 84 7c 77 ee 99 77 7b f6 8d 7b = AES_T2_ENC
+  - bytes: 63 c6 a5 63 00 00 00 00 7c f8 84 7c 00 00 00 00 77 ee 99 77 00 00 00 00 7b f6 8d 7b = AES_T2_ENC
+  - bytes: c6 a5 63 63 f8 84 7c 7c ee 99 77 77 f6 8d 7b 7b = AES_T3_ENC
+  - bytes: c6 a5 63 63 00 00 00 00 f8 84 7c 7c 00 00 00 00 ee 99 77 77 00 00 00 00 f6 8d 7b 7b = AES_T3_ENC
+  - bytes: 63 63 63 63 7c 7c 7c 7c 77 77 77 77 7b 7b 7b 7b = AES_T4_ENC
+  - bytes: 50 a7 f4 51 53 65 41 7e c3 a4 17 1a 96 5e 27 3a = AES_T0_DEC
+  - bytes: 50 a7 f4 51 00 00 00 00 53 65 41 7e 00 00 00 00 c3 a4 17 1a 00 00 00 00 96 5e 27 3a = AES_T0_DEC
+  - bytes: a7 f4 51 50 65 41 7e 53 a4 17 1a c3 5e 27 3a 96 = AES_T1_DEC
+  - bytes: a7 f4 51 50 00 00 00 00 65 41 7e 53 00 00 00 00 a4 17 1a c3 00 00 00 00 5e 27 3a 96 = AES_T1_DEC
+  - bytes: f4 51 50 a7 41 7e 53 65 17 1a c3 a4 27 3a 96 5e = AES_T2_DEC
+  - bytes: f4 51 50 a7 00 00 00 00 41 7e 53 65 00 00 00 00 17 1a c3 a4 00 00 00 00 27 3a 96 5e = AES_T2_DEC
+  - bytes: 51 50 a7 f4 7e 53 65 41 1a c3 a4 17 3a 96 5e 27 = AES_T3_DEC
+  - bytes: 51 50 a7 f4 00 00 00 00 7e 53 65 41 00 00 00 00 1a c3 a4 17 00 00 00 00 3a 96 5e 27 = AES_T3_DEC
+  - bytes: 52 52 52 52 09 09 09 09 6a 6a 6a 6a d5 d5 d5 d5 = AES_T4_DEC
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    
