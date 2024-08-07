@@ -1,4 +1,4 @@
-name: Update Modified Dates
+name: Update Modified Dates and Generate HTML
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-dates:
+  update-dates-and-generate-html:
     runs-on: ubuntu-latest
     
     steps:
@@ -21,13 +21,22 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install dependencies
+        run: pip install pyyaml
+
       - name: Run the modified-dates script
         run: python modified-dates.py
+
+      - name: Run the convert script
+        run: python convert.py
+
+      - name: Run the generate script
+        run: python generate.py
 
       - name: Commit and push changes
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
-          git add file_modification_dates.txt
-          git commit -m "Update file modification dates"
+          git add file_modification_dates.txt rules_in_html/* output.html
+          git commit -m "Update file modification dates and regenerate HTML"
           git push origin main
