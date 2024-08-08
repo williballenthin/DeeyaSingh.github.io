@@ -1,0 +1,71 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>generate random numbers via WinAPI</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>generate random numbers via WinAPI</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> data-manipulation/prng</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - michael.hunhoff@mandiant.com
+  - johnk3r
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> thread</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box"></div>
+                <div><b>MBC:</b></div><div class="grey-box">  - Cryptography::Generate Pseudo-random Sequence::Use API [C0021.003]
+</div>
+                <div><b>References:</b> </div>
+                <div><b>Examples:</b></div><div class="grey-box">  - ba947eb07d8c823949316a97364d060f:0x1400031E0
+  - 3ca359f5085bb96a7950d4735b089ffe:0x403A80
+  - e59ffeaf7acb0c326e452fa30bb71a36:0x40403E
+  - 1195d0d18be9362fb8dd9e1738404c9d:0x404E90
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- and:
+  - or:
+    - api: BCryptGenRandom
+    - api: CryptGenRandom
+  - optional:
+    - api: BCryptOpenAlgorithmProvider
+    - api: BCryptCloseAlgorithmProvider
+    - api: CryptAquireContext
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

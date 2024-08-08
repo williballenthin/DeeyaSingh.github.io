@@ -1,0 +1,69 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>get kernel32 base address</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>get kernel32 base address</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> linking/runtime-linking</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - moritz.raabe@mandiant.com
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> basic block<br><b>Dynamic:</b> unsupported</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box">  - Execution::Shared Modules [T1129]
+</div>
+                <div><b>MBC:</b></div><div class="grey-box"></div>
+                <div><b>References:</b> https://idafchev.github.io/exploit/2017/09/26/writing_windows_shellcode.html, https://www.geoffchappell.com/studies/windows/win32/ntdll/structs/ldr_data_table_entry.htm</div>
+                <div><b>Examples:</b></div><div class="grey-box">  - 67f8302a2fd28d15f62d6d20d748bfe350334e5353cbdef112bd1f8231b5599d:0x406936
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- and:
+  - match: access PEB ldr_data
+  - count(offset(0)): 2
+  - or:
+    - and:
+      - arch: i386
+      - offset: 0x18 = LDR_DATA_TABLE_ENTRY.DllBase
+    - and:
+      - arch: amd64
+      - offset: 0x30 = LDR_DATA_TABLE_ENTRY.DllBase
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

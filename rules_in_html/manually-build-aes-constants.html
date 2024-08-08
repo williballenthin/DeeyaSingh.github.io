@@ -1,0 +1,77 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>manually build AES constants</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>manually build AES constants</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> data-manipulation/encryption/aes</div>
+                <div><b>Authors:</b></div><div class="grey-box">  - huynh.t.nhan@gmail.com
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> unsupported</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box">  - Defense Evasion::Obfuscated Files or Information [T1027]
+</div>
+                <div><b>MBC:</b></div><div class="grey-box">  - Defense Evasion::Obfuscated Files or Information::Encryption-Standard Algorithm [E1027.m05]
+  - Cryptography::Encrypt Data::AES [C0027.001]
+</div>
+                <div><b>References:</b> </div>
+                <div><b>Examples:</b></div><div class="grey-box">  - 8333822ed41d9f2b302cf8e21b126efc:0x40646a
+  - 5553bbc23dea546192d07f268c4764a9:0x1149
+  - 316aad44bb75e0c7676e173bcb56413e:0x11CD
+  - 142300d78d9fb083122332235d93d3ae:0x1210
+  - e735a3df2b9ac89ca35ae643d3e73cf9:0x1240
+  - fbddca0225a3b806d4b4c933c1c4a636:0x140001000
+  - 84b777dc2d7083fd983d946f9fe2bf00:0x401000
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- and:
+  - or:
+    - count(mnemonic(rol)): 4 or more
+    - count(mnemonic(shl)): 4 or more
+  - count(number(0x63)): 2
+  - number: 27
+  - basic block:
+    - and:
+      - number: 99
+      - count(characteristic(nzxor)): 5 or more
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    

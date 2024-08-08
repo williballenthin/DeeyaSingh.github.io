@@ -1,0 +1,117 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>validate payment card number using luhn algorithm with lookup table</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.css">
+        <link rel="stylesheet" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-modular-ui.css">
+        <link rel="icon" href="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand" href="#">
+                <img src="C:/Users/deeya/OneDrive/Desktop/tgbbd/assets/logo.png" alt="Logo" style="max-height: 65px;">
+            </a>
+            <div id="search"></div>
+        </nav>
+        <section id="showcase">
+            <div class="container">
+                <h1>validate payment card number using luhn algorithm with lookup table</h1>
+            </div>
+        </section>
+        <div class="container">
+            <div class="buttons">
+                <button>Last edited: today</button>
+            </div>
+            <div class="card">
+                <div><b>Namespace:</b> </div>
+                <div><b>Authors:</b></div><div class="grey-box">  - @_re_fox
+</div>
+                <div><b>Scope:</b></div><div class="grey-box"><b>Static:</b> function<br><b>Dynamic:</b> unsupported</div>
+                <div><b>ATT&CK:</b></div><div class="grey-box"></div>
+                <div><b>MBC:</b></div><div class="grey-box">  - Data::Checksum::Luhn [C0032.002]
+</div>
+                <div><b>References:</b> </div>
+                <div><b>Examples:</b></div><div class="grey-box">  - 1d8fd13c890060464019c0f07b928b1a:0x401920
+  - 60abaef3fda131ffa20df480cb3f8029:0x4048e0
+</div>
+                <div><b>Features:</b></div><div class="grey-box">- and:
+  - not:
+    - characteristic: nzxor
+  - characteristic: loop
+  - description: Iterate over CC digits
+  - basic block:
+    - or:
+      - 8 or more:
+        - description: Digital root lookup table
+        - number: 0
+        - number: 2
+        - number: 4
+        - number: 6
+        - number: 8
+        - number: 1
+        - number: 3
+        - number: 5
+        - number: 7
+        - number: 9
+      - 8 or more:
+        - description: Digital root lookup table via neg numbers
+        - number: 0
+        - number: 1
+        - number: 2
+        - number: 3
+        - number: 4
+        - number: 4294967292
+        - number: 4294967293
+        - number: 4294967294
+        - number: 4294967295
+  - or:
+    - instruction:
+      - description: Conversion of chr to int (SUB 0x30)
+      - number: 48
+      - mnemonic: sub
+    - instruction:
+      - description: Conversion of chr to int (LEA REG,[REG+ -0x30])
+      - mnemonic: lea
+      - offset: -48
+  - basic block:
+    - or:
+      - and:
+        - description: Final section returning checkum % 10
+        - mnemonic: idiv
+        - mnemonic: cdq
+        - number: 10
+        - optional:
+          - mnemonic: neg
+      - and:
+        - description: Compiler optimized returning checkum % 10
+        - mnemonic: shr
+        - mnemonic: imul
+        - number: 1717986919
+        - number: 31
+        - number: 2
+        - optional:
+          - mnemonic: neg
+</div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="C:/Users/deeya/OneDrive/Desktop/tgbbd/pagefind/pagefind-ui.js" type="text/javascript"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new PagefindUI({
+                    element: "#search",
+                    showEmptyFilters: false,
+                    excerptLength: 15
+                });
+            });
+        </script>
+    </body>
+    </html>
+    
