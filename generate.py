@@ -81,7 +81,7 @@ def generate_html(categories_data, color_map):
     <link rel="stylesheet" href="pagefind/pagefind-modular-ui.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" href="assets/favicon.png" type="image/x-icon"> <!-- Favicon -->
+    <link rel="icon" href="https://deeyasingh.github.io/assets/img/favicon.png" type="image/x-icon"> <!-- Favicon -->
     <style>
          body {
             background-color: #ffffff;
@@ -204,14 +204,14 @@ def generate_html(categories_data, color_map):
 <body>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="assets\logo.png" width="30" height="30" alt="Logo">
+            <img src="https://deeyasingh.github.io/assets/img/logo.png" width="30" height="30" alt="Logo">
         </a>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         </form>
     </nav>
     <div class="container-fluid">
-        <img src="assets\HeroImage.png" alt="Hero Image" class="hero-image">
+        <img src="https://deeyasingh.github.io/assets/img/HeroImage.png" alt="Hero Image" class="hero-image">
 '''
 
     
