@@ -1,4 +1,5 @@
 import os
+import subprocess
 from datetime import datetime, timedelta
 
 start_dir = 'capa-rules'
