@@ -15,7 +15,24 @@ def get_yml_files_and_dates(start_dir):
         for file in files:
             if file.endswith('.yml') or file.endswith('.yaml'):
                 file_path = os.path.join(root, file)
-                last_modified_date = os.path.getmtime(file_path)
+
+                proc = subprocess.run([
+                        "git",
+                        "log",
+                        "-1",  # only show most recent commit
+                        '--pretty="%ct"',  # unix timestmp, https://git-scm.com/docs/pretty-formats#Documentation/pretty-formats.txt-emctem
+                        file, # just the filename, will run from the containing directory
+                    ],
+                    cwd=root, # the directory with the file we're inspecting
+                    capture_output=True,
+                )
+
+                last_modified_date = int(proc
+                                           .stdout
+                                           .decode("utf-8")
+                                           .partition("\n")[0]
+                                           .strip('"'))
+
                 yml_files.append((file_path, last_modified_date))
     return yml_files
 
