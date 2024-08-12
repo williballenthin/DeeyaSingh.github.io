@@ -3,7 +3,17 @@ name: Update Modified Dates and Generate HTML
 on:
   schedule:
     - cron: '0 0 * * *'
+
+  push:
+    branches: [ master, main, 'push-*' ]
+
   workflow_dispatch:
+
+# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   update-dates-and-generate-html:
@@ -11,15 +21,14 @@ jobs:
     
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          ssh-key: ${{ secrets.PRIVSSH }}
-          submodules: true
+          submodules: 'recursive'
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: pip install pyyaml
@@ -33,12 +42,26 @@ jobs:
       - name: Run the generate script
         run: python generate.py
 
-      - name: Commit and push changes
+      - name: Collect website files
         run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git add file_modification_dates.txt rules_in_html/* output.html
-          git commit -m "Update file modification dates and regenerate HTML"
-          git push origin main
+          mkdir -p ./public
+          mv ./output.html ./public/index.html
+          mv ./rules_in_html/ ./public/rules
 
-      
+      # upload the build website to artifacts
+      # so that we can download and inspect, if desired.
+      - uses: actions/upload-artifact@v4
+        with:
+          path: './public'
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './public'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
